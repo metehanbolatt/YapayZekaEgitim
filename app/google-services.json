@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "92964843799",
+    "project_id": "teknofestegitimg",
+    "storage_bucket": "teknofestegitimg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92964843799:android:71f803532dfb6094dcc752",
+        "android_client_info": {
+          "package_name": "com.metehanbolat.teknofestegitim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92964843799-2umadf9eupajma8kro6m5pu1f0uiale0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY2qBiH-QurmgRHi-LCInEqMKHisvvCqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92964843799-2umadf9eupajma8kro6m5pu1f0uiale0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

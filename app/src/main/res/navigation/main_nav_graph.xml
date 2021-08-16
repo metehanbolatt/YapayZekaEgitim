@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_giftFragment"
+            app:destination="@id/giftFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_mainFragment_to_artificialIntelligenceFragment"
+            app:destination="@id/artificialIntelligenceFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_machineLearningFragment"
+            app:destination="@id/machineLearningFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_mainFragment_to_achievementFragment"
+            app:destination="@id/achievementFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_computerVisionFragment"
+            app:destination="@id/computerVisionFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/giftFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.GiftFragment"
+        android:label="fragment_gift"
+        tools:layout="@layout/fragment_gift" >
+        <action
+            android:id="@+id/action_giftFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/artificialIntelligenceFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.ArtificialIntelligenceFragment"
+        android:label="fragment_artificial_intelligence"
+        tools:layout="@layout/fragment_artificial_intelligence" >
+        <action
+            android:id="@+id/action_artificialIntelligenceFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/machineLearningFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.MachineLearningFragment"
+        android:label="fragment_machine_learning"
+        tools:layout="@layout/fragment_machine_learning" >
+        <action
+            android:id="@+id/action_machineLearningFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/achievementFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.AchievementFragment"
+        android:label="fragment_achievement"
+        tools:layout="@layout/fragment_achievement" >
+        <action
+            android:id="@+id/action_achievementFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/computerVisionFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.computervision.ComputerVisionFragment"
+        android:label="fragment_computer_vision"
+        tools:layout="@layout/fragment_computer_vision" >
+        <action
+            android:id="@+id/action_computerVisionFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_computerVisionFragment_to_computerVisionInfoFragment"
+            app:destination="@id/computerVisionInfoFragment"
+            app:enterAnim="@anim/fade_out"
+            app:exitAnim="@anim/fade_in"
+            app:popEnterAnim="@anim/fade_out"
+            app:popExitAnim="@anim/fade_in" />
+        <argument
+            android:name="userEmail"
+            app:argType="string"
+            android:defaultValue="false" />
+        <argument
+            android:name="coin"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/computerVisionInfoFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.computervision.ComputerVisionInfoFragment"
+        android:label="fragment_computer_vision_info"
+        tools:layout="@layout/fragment_computer_vision_info" >
+        <action
+            android:id="@+id/action_computerVisionInfoFragment_to_computerVisionFragment"
+            app:destination="@id/computerVisionFragment"
+            app:enterAnim="@anim/fade_out"
+            app:exitAnim="@anim/fade_in" />
+    </fragment>
+</navigation>

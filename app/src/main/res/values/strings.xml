@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">TeknofestEgitim</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user_nick">Kullanıcı Adı</string>
+    <string name="password">Şifre</string>
+    <string name="enter">Giriş</string>
+    <string name="forget_password">Şifrenizi mi unuttunuz?</string>
+    <string name="app_namee">Genç Yazilimci </string>
+    <string name="email">Email</string>
+    <string name="birthday">Doğum Tarihi</string>
+    <string name="education_level">Eğitim Düzeyi</string>
+    <string name="user_name">İsim</string>
+    <string name="user_surname">Soy İsim</string>
+    <string name="sign_up">Kayıt Ol</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="primary_school">İlkokul</string>
+    <string name="metehan_bolat">Metehan Bolat</string>
+    <string name="seviye_29">Seviye 29</string>
+    <string name="welcome">Hoş Geldin</string>
+    <string name="information_2">Işık canlılar tarafından algılandıktan sonra her canlının sahip olduğu organlara ve bu organların yeteneklerine göre ayrı ayrı yorumlanır ve anlamlı hale getirilir. Bu sebeple her canlı nesneleri farklı görmektedir.</string>
+    <string name="information_1">Görme eyleminin gerçekleşmesi için gereken ilk şey ışıktır.</string>
+    <string name="information_title">Canlılar nasıl görür?</string>
+    <string name="canli"> Canlı</string>
+    <string name="snake">Yılan</string>
+    <string name="bee">Arı</string>
+    <string name="bat">Yarasa</string>
+    <string name="rabbit">Tavşan</string>
+    <string name="computer">Bilgisayar ?</string>
+
+    <string-array name="education_level">
+        <item>Okul Öncesi</item>
+        <item>İlkokul</item>
+        <item>Ortaokul</item>
+        <item>Lise</item>
+        <item>Diğer</item>
+    </string-array>
+</resources>
