@@ -29,6 +29,20 @@
     <string name="rabbit">Tavşan</string>
     <string name="computer">Bilgisayar ?</string>
 
+    <string name="reallycant">Gerçekten göremedin mi? \n Biraz yaklaş…</string>
+    <string name="really">Gerçekten orada bir 8 mi gördün :(</string>
+    <string name="cant_see">Gördüğüne gerçekten emin misin?</string>
+    <string name="againLook">Madem bu kadar eminsin.\n Tekrar bakalım :)</string>
+    <string name="stillSee">Hala 8 rakamı gördüğüne emin misin?</string>
+    <string name="finaally">Merak etme altının duruyor.\n Görmediğine emindim :)</string>
+    <string name="absoNot">Kesinlikle yok. \n Ya da… Biz mi göremiyoruz?</string>
+    <string name="closeLook">Hadi biraz rengini değiştirelim.</string>
+    <string name="nowSee">İşte şimdi biraz görüyorsun.</string>
+    <string name="hardLook">Gerçekten göremedin mi :(</string>
+    <string name="hereItIs">Artık görmemek imkansız</string>
+    <string name="congrats">Tebrikler.\n Artık tamamen görmeye hazırız.</string>
+    <string name="stillNo">Hala göremiyor musun?</string>
+
     <string-array name="education_level">
         <item>Okul Öncesi</item>
         <item>İlkokul</item>
