@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.header_status_bar)
+        //window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.header_status_bar)
 
         binding.navigationView.setNavigationItemSelectedListener {
             navController = findNavController(R.id.fragmentContainerView2)

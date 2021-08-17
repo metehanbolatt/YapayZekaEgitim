@@ -126,5 +126,23 @@
             app:destination="@id/computerVisionFragment"
             app:enterAnim="@anim/fade_out"
             app:exitAnim="@anim/fade_in" />
+        <action
+            android:id="@+id/action_computerVisionInfoFragment_to_gameListFragment"
+            app:destination="@id/gameListFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameListFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.computervision.GameListFragment"
+        android:label="fragment_game_list"
+        tools:layout="@layout/fragment_game_list" >
+        <action
+            android:id="@+id/action_gameListFragment_to_computerVisionInfoFragment"
+            app:destination="@id/computerVisionInfoFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
     </fragment>
 </navigation>

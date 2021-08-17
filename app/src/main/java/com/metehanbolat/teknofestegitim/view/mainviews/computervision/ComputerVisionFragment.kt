@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -42,6 +43,8 @@ class ComputerVisionFragment : Fragment() {
     ): View? {
         _binding = FragmentComputerVisionBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.header_status_bar)
 
         auth = Firebase.auth
         firestore = Firebase.firestore

@@ -2,12 +2,14 @@ package com.metehanbolat.teknofestegitim.view.mainviews
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -45,6 +47,7 @@ class MainFragment : Fragment() {
     ): View? {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         val view = binding.root
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.header_status_bar)
 
         auth = Firebase.auth
         firestore = Firebase.firestore

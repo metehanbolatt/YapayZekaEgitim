@@ -11,7 +11,10 @@
     <color name="edittext_background">#8F8F8F</color>
     <color name="drawable_color">#595959</color>
     <color name="header_status_bar">#DDE5F2</color>
-    <color name="green">#96FB21</color>
+    <color name="green">#74BD20</color>
     <color name="yellow">#f1d93b</color>
+    <color name="game_list_status">#FFE603</color>
+    <color name="game_list_title_card">#FCB100</color>
+    <color name="game_fragment">#272151</color>
 
 </resources>
