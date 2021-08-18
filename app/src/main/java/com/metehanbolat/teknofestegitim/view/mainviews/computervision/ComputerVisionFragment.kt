@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -43,6 +44,15 @@ class ComputerVisionFragment : Fragment() {
     ): View? {
         _binding = FragmentComputerVisionBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        val callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                navController = findNavController()
+                navController.navigate(R.id.action_computerVisionFragment_to_mainFragment)
+            }
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
 
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.header_status_bar)
 

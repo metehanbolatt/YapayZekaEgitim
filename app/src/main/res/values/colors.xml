@@ -17,5 +17,6 @@
     <color name="game_list_title_card">#FCB100</color>
     <color name="game_fragment">#272151</color>
     <color name="red">#9E2121</color>
+    <color name="transparent">#FF000000</color>
 
 </resources>

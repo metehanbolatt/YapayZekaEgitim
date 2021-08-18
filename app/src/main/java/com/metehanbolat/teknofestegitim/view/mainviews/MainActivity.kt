@@ -21,21 +21,5 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        //window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.header_status_bar)
-
-        binding.navigationView.setNavigationItemSelectedListener {
-            navController = findNavController(R.id.fragmentContainerView2)
-            when(it.itemId){
-
-                R.id.menuInbox -> navController.navigate(R.id.action_mainFragment_to_giftFragment).also {
-                    binding.drawerLayout.closeDrawer(GravityCompat.START)
-                }
-                R.id.menuInbox2 -> navController.navigate(R.id.action_giftFragment_to_mainFragment).also{
-                    binding.drawerLayout.closeDrawer(GravityCompat.START)
-                }
-            }
-
-            true
-        }
     }
 }

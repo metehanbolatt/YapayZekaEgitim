@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/computerVisionInfoFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -133,6 +133,10 @@
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left" />
+        <argument
+            android:name="control"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/gameListFragment"
@@ -162,5 +166,45 @@
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_howComputerVisionFragment_to_eightDrawBigFragment"
+            app:destination="@id/eightDrawBigFragment" />
+        <action
+            android:id="@+id/action_howComputerVisionFragment_to_eightDrawHashFragment"
+            app:destination="@id/eightDrawHashFragment" />
+        <action
+            android:id="@+id/action_howComputerVisionFragment_to_eightHashBigFragment"
+            app:destination="@id/eightHashBigFragment" />
+        <argument
+            android:name="bigControl"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/eightDrawBigFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.computervision.EightDrawBigFragment"
+        android:label="fragment_eight_draw_big"
+        tools:layout="@layout/fragment_eight_draw_big" >
+        <action
+            android:id="@+id/action_eightDrawBigFragment_to_howComputerVisionFragment"
+            app:destination="@id/howComputerVisionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eightDrawHashFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.computervision.EightDrawHashFragment"
+        android:label="fragment_eight_draw_hash"
+        tools:layout="@layout/fragment_eight_draw_hash" >
+        <action
+            android:id="@+id/action_eightDrawHashFragment_to_howComputerVisionFragment"
+            app:destination="@id/howComputerVisionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eightHashBigFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.computervision.EightHashBigFragment"
+        android:label="fragment_eight_hash_big"
+        tools:layout="@layout/fragment_eight_hash_big" >
+        <action
+            android:id="@+id/action_eightHashBigFragment_to_howComputerVisionFragment"
+            app:destination="@id/howComputerVisionFragment" />
     </fragment>
 </navigation>

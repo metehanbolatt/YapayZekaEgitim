@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.google.android.material.snackbar.Snackbar
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentComputerVisionInfoBinding
@@ -30,8 +32,33 @@ class ComputerVisionInfoFragment : Fragment() {
     ): View? {
         _binding = FragmentComputerVisionInfoBinding.inflate(inflater, container, false)
         val view = binding.root
-
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.black)
+
+        val callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                navController = findNavController()
+                navController.navigate(R.id.action_computerVisionInfoFragment_to_computerVisionFragment)
+            }
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
+        val bundle : ComputerVisionInfoFragmentArgs by navArgs()
+        val control = bundle.control
+
+        if (control == 1){
+            binding.question.visibility = View.INVISIBLE
+            binding.noButton.visibility = View.INVISIBLE
+            binding.yesButton.visibility = View.INVISIBLE
+            binding.giphy.visibility = View.INVISIBLE
+            binding.duvarSekizImage.visibility = View.INVISIBLE
+            binding.linearLayoutImages.visibility = View.VISIBLE
+            binding.information4.visibility = View.VISIBLE
+            binding.information5.visibility = View.VISIBLE
+            binding.colorScala.visibility = View.VISIBLE
+            binding.questionRobot.visibility = View.VISIBLE
+            binding.buttonRobot.visibility = View.VISIBLE
+        }
+
         counterYes = 1
         counterNo = 1
         counter = 0

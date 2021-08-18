@@ -63,6 +63,14 @@
     <string name="loseTenGold">Üzgünüm 10 altın kaybettin</string>
     <string name="saw">Gördüm</string>
     <string name="noSaw">Görmedim</string>
+    <string name="how_robot_does">Canlıların nasıl gördüğünü öğrendin. Peki robotlar bu renkleri nasıl ayırt edebiliyor?</string>
+    <string name="close_eight">1-) İlk görselde duvara çizili 8 rakamına yakından bakalım.</string>
+    <string name="string_to_hash">2-) İkinci görselde daha önceden öğrendiğimiz bilgiler ile renkleri sayısal hale getirdik.</string>
+    <string name="machine_look">3-) Son görselde duvardaki 8 rakamına bakan bir makine ne görüyor onu görüyoruz.</string>
+    <string name="learn">Öğrenelim</string>
+    <string name="click_look">Lütfen görsele tıklayarak yakından bak</string>
+    <string name="are_u_sure_exit">Çıkmak istediğine emin misin?</string>
+    <string name="againClickExit">Çıkmak için tekrar basın.</string>
 
     <string-array name="education_level">
         <item>Okul Öncesi</item>

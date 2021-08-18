@@ -9,9 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -40,6 +42,7 @@ class MainFragment : Fragment() {
     private var userCoin : Any? = null
     private var firstCoinComputerVision : Any? = null
     private var secondCoinComputerVision : Any? = null
+    private var counter = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +50,23 @@ class MainFragment : Fragment() {
     ): View? {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        val callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                when(counter){
+                    0 -> {
+                        Snackbar.make(view,resources.getString(R.string.againClickExit),Snackbar.LENGTH_SHORT).show()
+                        counter++
+                    }
+                    1 -> {
+                        activity?.finish()
+                    }
+                }
+            }
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
+
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.header_status_bar)
 
         auth = Firebase.auth
