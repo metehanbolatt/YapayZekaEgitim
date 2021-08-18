@@ -127,8 +127,8 @@
             app:enterAnim="@anim/fade_out"
             app:exitAnim="@anim/fade_in" />
         <action
-            android:id="@+id/action_computerVisionInfoFragment_to_gameListFragment"
-            app:destination="@id/gameListFragment"
+            android:id="@+id/action_computerVisionInfoFragment_to_howComputerVisionFragment"
+            app:destination="@id/howComputerVisionFragment"
             app:enterAnim="@anim/from_left"
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
@@ -140,9 +140,27 @@
         android:label="fragment_game_list"
         tools:layout="@layout/fragment_game_list" >
         <action
-            android:id="@+id/action_gameListFragment_to_computerVisionInfoFragment"
+            android:id="@+id/action_gameListFragment_to_howComputerVisionFragment"
+            app:destination="@id/howComputerVisionFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/howComputerVisionFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.computervision.HowComputerVisionFragment"
+        android:label="fragment_how_computer_vision"
+        tools:layout="@layout/fragment_how_computer_vision" >
+        <action
+            android:id="@+id/action_howComputerVisionFragment_to_computerVisionInfoFragment"
             app:destination="@id/computerVisionInfoFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_howComputerVisionFragment_to_gameListFragment"
+            app:destination="@id/gameListFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
 </navigation>
