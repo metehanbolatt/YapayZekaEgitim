@@ -80,7 +80,7 @@ class MainFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+/*
         binding.artificialIntelligenceCardView.setOnClickListener {
             navController = findNavController()
             navController.navigate(R.id.action_mainFragment_to_artificialIntelligenceFragment)
@@ -96,17 +96,21 @@ class MainFragment : Fragment() {
             navController.navigate(R.id.action_mainFragment_to_achievementFragment)
         }
 
+ */
+
         binding.computerVision.setOnClickListener {
             navController = findNavController()
             val action = MainFragmentDirections.actionMainFragmentToComputerVisionFragment(auth.currentUser?.email.toString(),userCoin.toString().toInt())
             navController.navigate(R.id.action_mainFragment_to_computerVisionFragment,action.arguments)
 
         }
-
+/*
         binding.giftCardView.setOnClickListener {
             navController = findNavController()
             navController.navigate(R.id.action_mainFragment_to_giftFragment)
         }
+
+ */
 
         binding.signOutCardView.setOnClickListener {
             auth.signOut()
