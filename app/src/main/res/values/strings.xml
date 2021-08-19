@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">TeknofestEgitim</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -52,7 +52,7 @@
     <string name="sure">Görmediğine emin misin :)</string>
     <string name="machine_how_see">Makineler nasıl görür?</string>
     <string name="eight_on_the_wall">Nesneleri birbirinden ayırabilmemiz tamamen renklerine bağlıdır. Örneğin duvara asılı bir 8 rakamı düşünelim.</string>
-    <string name="same_color_wall_eight">Sence duvar ile aynı renk olsaydı görebilir miydin?</string>
+    <string name="same_color_wall_eight" tools:ignore="Typos">Sence duvar ile aynı renk olsaydı görebilir miydin?</string>
     <string name="is_there_eight">Bu duvarda 8 rakamı var mı?</string>
     <string name="yes">Evet</string>
     <string name="no">Hayır</string>
@@ -74,6 +74,7 @@
 
     <string name="no_user_data">Kullanıcı verisi bulunamadı.</string>
     <string name="earned_gold">Altın kazanılmış.</string>
+    <string name="earn_ten_gold">10 Altın kazandın.</string>
 
     <string-array name="education_level">
         <item>Okul Öncesi</item>

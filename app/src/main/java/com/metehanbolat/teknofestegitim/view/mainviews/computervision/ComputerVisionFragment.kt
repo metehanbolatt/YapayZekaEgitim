@@ -148,6 +148,7 @@ class ComputerVisionFragment : Fragment() {
                     firstCoinControl = document.data!!["userCoin"]
                     if (firstCoinControl.toString().toInt() == 0){
                         updateCoin()
+                        Snackbar.make(requireView(),resources.getString(R.string.earn_ten_gold),Snackbar.LENGTH_SHORT).show()
                     }else{
                         Snackbar.make(requireView(),resources.getString(R.string.earned_gold),Snackbar.LENGTH_SHORT).show()
                     }
