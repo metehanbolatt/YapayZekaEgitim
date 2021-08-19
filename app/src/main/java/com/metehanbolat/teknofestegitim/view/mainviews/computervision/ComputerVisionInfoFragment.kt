@@ -10,9 +10,15 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentComputerVisionInfoBinding
 
@@ -24,6 +30,11 @@ class ComputerVisionInfoFragment : Fragment() {
     private var counterNo : Int? = null
     private var counter : Int? = null
 
+    private var thirdCoinControl : Any? = null
+
+    private lateinit var auth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
+
     private lateinit var navController: NavController
 
     override fun onCreateView(
@@ -33,6 +44,9 @@ class ComputerVisionInfoFragment : Fragment() {
         _binding = FragmentComputerVisionInfoBinding.inflate(inflater, container, false)
         val view = binding.root
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.black)
+
+        auth = Firebase.auth
+        firestore = Firebase.firestore
 
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
@@ -71,8 +85,8 @@ class ComputerVisionInfoFragment : Fragment() {
 
         binding.buttonRobot.setOnClickListener {
             Snackbar.make(it,resources.getString(R.string.didYouReadInfo),Snackbar.LENGTH_INDEFINITE).setAction(resources.getString(R.string.iRead)){
-                navController = findNavController()
-                navController.navigate(R.id.action_computerVisionInfoFragment_to_howComputerVisionFragment)
+                secondCoinChange()
+                getNextFragment()
             }.show()
         }
 
@@ -389,6 +403,24 @@ class ComputerVisionInfoFragment : Fragment() {
         binding.colorScala.visibility = View.VISIBLE
         binding.questionRobot.visibility = View.VISIBLE
         binding.buttonRobot.visibility = View.VISIBLE
+    }
+
+    private fun secondCoinChange(){
+        val coinControlUpdate = firestore.collection("UserData").document(auth.currentUser?.email.toString())
+        coinControlUpdate.update("secondCoin",1)
+    }
+
+    private fun getNextFragment(){
+        val getCoinInfo = firestore.collection("UserData").document(auth.currentUser?.email.toString())
+        getCoinInfo.get().addOnSuccessListener { document ->
+            if (document != null){
+                if (document.data != null){
+                    thirdCoinControl = document.data!!["thirdCoin"]
+                    val action = ComputerVisionInfoFragmentDirections.actionComputerVisionInfoFragmentToHowComputerVisionFragment(thirdCoinControl.toString().toInt())
+                    Navigation.findNavController(requireView()).navigate(R.id.action_computerVisionInfoFragment_to_howComputerVisionFragment,action.arguments)
+                }
+            }
+        }
     }
 
     override fun onDestroyView() {

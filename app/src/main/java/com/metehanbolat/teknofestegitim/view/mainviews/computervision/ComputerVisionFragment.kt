@@ -10,11 +10,13 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -32,6 +34,7 @@ class ComputerVisionFragment : Fragment() {
     private var userEmail : String? = null
     private var userCoin : Int? = null
     private var firstCoinControl : Any? = null
+    private var secondCoinControl : Any? = null
 
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
@@ -53,7 +56,6 @@ class ComputerVisionFragment : Fragment() {
         }
 
         requireActivity().onBackPressedDispatcher.addCallback(callback)
-
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.header_status_bar)
 
         auth = Firebase.auth
@@ -112,8 +114,7 @@ class ComputerVisionFragment : Fragment() {
         })
 
         binding.button.setOnClickListener {
-            navController = findNavController()
-            navController.navigate(R.id.action_computerVisionFragment_to_computerVisionInfoFragment)
+            getNextFragment()
             auth.currentUser?.email?.let { email -> getUserData(email) }
         }
 
@@ -123,6 +124,19 @@ class ComputerVisionFragment : Fragment() {
         val coinUpdate = firestore.collection("UserData").document(userEmail!!)
         coinUpdate.update("userCoin", userCoin?.plus(10))
         coinUpdate.update("firstCoin",1)
+    }
+
+    private fun getNextFragment(){
+        val getCoinInfo = firestore.collection("UserData").document(auth.currentUser?.email.toString())
+        getCoinInfo.get().addOnSuccessListener { document ->
+            if (document != null){
+                if (document.data != null){
+                    secondCoinControl = document.data!!["secondCoin"]
+                    val action = ComputerVisionFragmentDirections.actionComputerVisionFragmentToComputerVisionInfoFragment(secondCoinControl.toString().toInt())
+                    Navigation.findNavController(requireView()).navigate(R.id.action_computerVisionFragment_to_computerVisionInfoFragment,action.arguments)
+                }
+            }
+        }
     }
 
     @SuppressLint("SetTextI18n")
@@ -135,10 +149,11 @@ class ComputerVisionFragment : Fragment() {
                     if (firstCoinControl.toString().toInt() == 0){
                         updateCoin()
                     }else{
-                        Toast.makeText(requireContext(), "Altın kazanılmış", Toast.LENGTH_SHORT).show()
+                        Snackbar.make(requireView(),resources.getString(R.string.earned_gold),Snackbar.LENGTH_SHORT).show()
                     }
                 }else{
-                    Toast.makeText(requireContext(),"Kullanıcı verisi bulunamadı",Toast.LENGTH_SHORT).show()
+                    Snackbar.make(requireView(),resources.getString(R.string.no_user_data), Snackbar.LENGTH_SHORT).show()
+
                 }
             }
         }.addOnFailureListener {

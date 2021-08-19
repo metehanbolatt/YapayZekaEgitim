@@ -15,6 +15,11 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentHowComputerVisionBinding
 
@@ -31,12 +36,18 @@ class HowComputerVisionFragment : Fragment() {
     private var counterAll = 0
     private var bigControl = 0
 
+    private lateinit var auth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHowComputerVisionBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        auth = Firebase.auth
+        firestore = Firebase.firestore
 
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
@@ -190,9 +201,11 @@ class HowComputerVisionFragment : Fragment() {
             }else if (bigControl == 3 && counterZoomHash == 1){
                 navController = findNavController()
                 navController.navigate(R.id.action_howComputerVisionFragment_to_gameListFragment)
+                thirdCoinUpdate()
             }else if (bigControl == 4){
                 navController = findNavController()
                 navController.navigate(R.id.action_howComputerVisionFragment_to_gameListFragment)
+                thirdCoinUpdate()
             }
         }
 
@@ -202,6 +215,11 @@ class HowComputerVisionFragment : Fragment() {
             binding.informationHow2.visibility = View.VISIBLE
             binding.buttonHowComputer.visibility = View.VISIBLE
         }
+    }
+
+    private fun thirdCoinUpdate(){
+        val coinControlUpdate = firestore.collection("UserData").document(auth.currentUser?.email.toString())
+        coinControlUpdate.update("thirdCoin",4)
     }
 
     override fun onDestroyView() {

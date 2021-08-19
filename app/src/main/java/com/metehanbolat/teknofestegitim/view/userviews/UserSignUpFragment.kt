@@ -92,6 +92,10 @@ class UserSignUpFragment : Fragment() {
         userDataMap["userCoin"] = 0
         userDataMap["firstCoin"] = 0
         userDataMap["secondCoin"] = 0
+        userDataMap["thirdCoin"] = 0
+        userDataMap["fourthCoin"] = 0
+        userDataMap["fifthCoin"] = 0
+        userDataMap["sixthCoin"] = 0
 
         firestore.collection("UserData").document(binding.userEmailSignUp.text.toString()).set(userDataMap).addOnSuccessListener {
             auth.createUserWithEmailAndPassword(binding.userEmailSignUp.text.toString(),binding.userPasswordSignUp.text.toString()).addOnSuccessListener {

@@ -103,10 +103,10 @@
         <action
             android:id="@+id/action_computerVisionFragment_to_computerVisionInfoFragment"
             app:destination="@id/computerVisionInfoFragment"
-            app:enterAnim="@anim/fade_out"
-            app:exitAnim="@anim/fade_in"
-            app:popEnterAnim="@anim/fade_out"
-            app:popExitAnim="@anim/fade_in" />
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
         <argument
             android:name="userEmail"
             app:argType="string"
@@ -124,8 +124,8 @@
         <action
             android:id="@+id/action_computerVisionInfoFragment_to_computerVisionFragment"
             app:destination="@id/computerVisionFragment"
-            app:enterAnim="@anim/fade_out"
-            app:exitAnim="@anim/fade_in" />
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
         <action
             android:id="@+id/action_computerVisionInfoFragment_to_howComputerVisionFragment"
             app:destination="@id/howComputerVisionFragment"
