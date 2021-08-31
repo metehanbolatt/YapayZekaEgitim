@@ -135,6 +135,8 @@ class MainFragment : Fragment() {
 
                     binding.userName.text = "$userName $userSurname"
                     binding.userCoin.text = userCoin.toString()
+                    binding.progressBar.visibility = View.INVISIBLE
+                    binding.cardGridLayout.visibility = View.VISIBLE
 
                 }else{
                     Toast.makeText(requireContext(),"Kullanıcı verisi bulunamadı",Toast.LENGTH_SHORT).show()

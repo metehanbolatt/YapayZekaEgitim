@@ -56,7 +56,7 @@ class ComputerVisionFragment : Fragment() {
         }
 
         requireActivity().onBackPressedDispatcher.addCallback(callback)
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.header_status_bar)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_design_start_color)
 
         auth = Firebase.auth
         firestore = Firebase.firestore

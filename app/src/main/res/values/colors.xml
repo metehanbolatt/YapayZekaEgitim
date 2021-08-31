@@ -18,5 +18,9 @@
     <color name="game_fragment">#272151</color>
     <color name="red">#9E2121</color>
     <color name="transparent">#FF000000</color>
+    <color name="background_design_start_color">#4FF9ED</color>
+    <color name="background_design_end_color">#7943FC</color>
+
+    <color name="button_move_on_color">#FC9917</color>
 
 </resources>

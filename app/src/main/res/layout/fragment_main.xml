@@ -74,11 +74,23 @@
         app:layout_constraintEnd_toEndOf="@id/userName"
         app:layout_constraintTop_toBottomOf="@id/userName" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/ProgressBarStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
     <GridLayout
+        android:id="@+id/cardGridLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:columnCount="2"
         android:rowCount="3"
+        android:visibility="invisible"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="30dp"

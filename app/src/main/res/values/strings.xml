@@ -75,6 +75,8 @@
     <string name="no_user_data">Kullanıcı verisi bulunamadı.</string>
     <string name="earned_gold">Altın kazanılmış.</string>
     <string name="earn_ten_gold">10 Altın kazandın.</string>
+    <string name="todo">TODO</string>
+    <string name="machine_view">Makine Görüsü</string>
 
     <string-array name="education_level">
         <item>Okul Öncesi</item>

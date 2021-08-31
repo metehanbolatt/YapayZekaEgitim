@@ -43,7 +43,7 @@ class ComputerVisionInfoFragment : Fragment() {
     ): View {
         _binding = FragmentComputerVisionInfoBinding.inflate(inflater, container, false)
         val view = binding.root
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.black)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_design_start_color)
 
         auth = Firebase.auth
         firestore = Firebase.firestore
