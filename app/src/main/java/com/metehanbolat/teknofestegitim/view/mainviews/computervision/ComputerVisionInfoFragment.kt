@@ -40,7 +40,7 @@ class ComputerVisionInfoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentComputerVisionInfoBinding.inflate(inflater, container, false)
         val view = binding.root
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.black)

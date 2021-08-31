@@ -2,7 +2,6 @@ package com.metehanbolat.teknofestegitim.view.mainviews
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -40,14 +39,14 @@ class MainFragment : Fragment() {
     private var userEducationLevel : Any? = null
     private var userBirthday : Any? = null
     private var userCoin : Any? = null
-    private var firstCoinComputerVision : Any? = null
-    private var secondCoinComputerVision : Any? = null
+    //private var firstCoinComputerVision : Any? = null
+    //private var secondCoinComputerVision : Any? = null
     private var counter = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         val view = binding.root
 

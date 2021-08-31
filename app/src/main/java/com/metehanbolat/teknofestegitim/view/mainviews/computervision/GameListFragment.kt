@@ -22,7 +22,7 @@ class GameListFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentGameListBinding.inflate(inflater, container, false)
         val view = binding.root
 
@@ -39,10 +39,6 @@ class GameListFragment : Fragment() {
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.game_fragment)
 
         return view
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onDestroyView() {

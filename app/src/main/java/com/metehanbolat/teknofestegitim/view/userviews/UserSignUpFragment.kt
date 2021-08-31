@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.navigation.NavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -26,15 +25,13 @@ class UserSignUpFragment : Fragment() {
     private var _binding : FragmentUserSignUpBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var navController : NavController
-
     private lateinit var auth : FirebaseAuth
     private lateinit var firestore : FirebaseFirestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentUserSignUpBinding.inflate(inflater, container, false)
         val view = binding.root
 
@@ -58,7 +55,7 @@ class UserSignUpFragment : Fragment() {
         val day = c.get(Calendar.DAY_OF_MONTH)
 
         binding.userDateSignUp.setOnClickListener {
-            val dpd = DatePickerDialog(requireContext(), { view, mYear, mMonth, mDay->
+            val dpd = DatePickerDialog(requireContext(), { _, mYear, mMonth, mDay->
                 binding.userDateSignUp.setText("$mDay/$mMonth/$mYear")
             },year,month,day)
             dpd.show()

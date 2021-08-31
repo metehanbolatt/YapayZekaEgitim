@@ -20,7 +20,7 @@ class EightDrawHashFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentEightDrawHashBinding.inflate(inflater, container, false)
         val view = binding.root
 

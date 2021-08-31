@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -28,7 +29,7 @@ class UserSignInFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentUserSignInBinding.inflate(inflater, container, false)
         val view = binding.root
 
@@ -45,14 +46,14 @@ class UserSignInFragment : Fragment() {
             val password = binding.userPasswordSignIn.text.toString()
 
             if (email.isEmpty() || password.isEmpty()){
-                Toast.makeText(requireContext(), "Email or Password is empty.", Toast.LENGTH_SHORT).show()
+                Snackbar.make(it, "Email veya şifre boş bırakılmış.", Snackbar.LENGTH_SHORT).show()
             }else{
                 auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
                     val intent = Intent(requireContext(), MainActivity::class.java)
                     startActivity(intent)
                     activity?.finish()
-                }.addOnFailureListener {
-                    Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener { e ->
+                    Toast.makeText(requireContext(), e.localizedMessage, Toast.LENGTH_SHORT).show()
                 }
             }
         }

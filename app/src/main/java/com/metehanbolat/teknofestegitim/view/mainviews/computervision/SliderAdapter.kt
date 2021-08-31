@@ -10,9 +10,11 @@ import com.metehanbolat.teknofestegitim.databinding.SlideItemContainerBinding
 class SliderAdapter(sliderItems : MutableList<SliderItem>, viewPager : ViewPager2) : RecyclerView.Adapter<SliderAdapter.SliderViewHolder>() {
 
     private val sliderItems : List<SliderItem>
+    private val viewPager : ViewPager2
 
     init {
         this.sliderItems = sliderItems
+        this.viewPager = viewPager
     }
 
     class SliderViewHolder(val binding: SlideItemContainerBinding) : RecyclerView.ViewHolder(binding.root){

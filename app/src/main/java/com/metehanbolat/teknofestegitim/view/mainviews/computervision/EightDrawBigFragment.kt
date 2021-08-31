@@ -20,7 +20,7 @@ class EightDrawBigFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentEightDrawBigBinding.inflate(inflater, container, false)
         val view = binding.root
 

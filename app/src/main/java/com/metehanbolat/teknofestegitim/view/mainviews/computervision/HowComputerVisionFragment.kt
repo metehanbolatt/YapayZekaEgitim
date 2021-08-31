@@ -6,10 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
-import androidx.navigation.NavArgs
 import androidx.navigation.NavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
@@ -33,7 +31,7 @@ class HowComputerVisionFragment : Fragment() {
     private var counterZoomDraw = 0
     private var counterZoomHashDraw = 0
     private var counterZoomHash = 0
-    private var counterAll = 0
+    //private var counterAll = 0
     private var bigControl = 0
 
     private lateinit var auth: FirebaseAuth
@@ -42,7 +40,7 @@ class HowComputerVisionFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHowComputerVisionBinding.inflate(inflater, container, false)
         val view = binding.root
 
