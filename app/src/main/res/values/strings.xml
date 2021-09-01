@@ -77,6 +77,7 @@
     <string name="earn_ten_gold">10 Altın kazandın.</string>
     <string name="todo">TODO</string>
     <string name="machine_view">Makine Görüsü</string>
+    <string name="default_coin">10</string>
 
     <string-array name="education_level">
         <item>Okul Öncesi</item>

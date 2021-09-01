@@ -22,5 +22,6 @@
     <color name="background_design_end_color">#7943FC</color>
 
     <color name="button_move_on_color">#FC9917</color>
+    <color name="background_color">#7D9BF4</color>
 
 </resources>

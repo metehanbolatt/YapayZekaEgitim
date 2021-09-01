@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/giftFragment"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.GiftFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gift.GiftFragment"
         android:label="fragment_gift"
         tools:layout="@layout/fragment_gift" >
         <action

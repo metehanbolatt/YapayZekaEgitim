@@ -103,13 +103,11 @@ class MainFragment : Fragment() {
             navController.navigate(R.id.action_mainFragment_to_computerVisionFragment,action.arguments)
 
         }
-/*
+
         binding.giftCardView.setOnClickListener {
             navController = findNavController()
             navController.navigate(R.id.action_mainFragment_to_giftFragment)
         }
-
- */
 
         binding.signOutCardView.setOnClickListener {
             auth.signOut()
