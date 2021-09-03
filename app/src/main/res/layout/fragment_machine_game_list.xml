@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.mainviews.machinelearning.MachineGameListFragment"
+    android:background="@drawable/background_user">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@android:color/transparent"
+        android:foregroundGravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/gameListCard"
+        android:elevation="100dp"
+        android:layout_marginTop="20dp"
+        >
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oyun Listesi"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"
+            android:textAllCaps="false"
+            android:clickable="false"
+            android:backgroundTint="#E91E63"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/gameListCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        >
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/gotowordgameButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="50dp"
+            android:text="Kelime Oyununa Giriş"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:backgroundTint="#E91E63"
+            android:elevation="999dp"
+            />
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/gototictoctoeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="TicTocToe (XOX) Oyna"
+            android:elevation="999dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:backgroundTint="#E91E63"
+            android:layout_marginTop="50dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/gotoquizgameButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="50dp"
+            android:text="Bilgi Yarışmasına Katıl"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:backgroundTint="#E91E63"
+            android:elevation="999dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/gotovideosButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Eğitim Videolarını İzle"
+            android:elevation="999dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="#E91E63" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/gotominesweeperButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="50dp"
+            android:text="Mayın Tarlasında Hayatta Kal"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:backgroundTint="#E91E63"
+            android:elevation="999dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

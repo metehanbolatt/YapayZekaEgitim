@@ -15,7 +15,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentUserSignInBinding
-import com.metehanbolat.teknofestegitim.view.mainviews.MainActivity
+import com.metehanbolat.teknofestegitim.view.mainviews.main.MainActivity
 
 class UserSignInFragment : Fragment() {
 

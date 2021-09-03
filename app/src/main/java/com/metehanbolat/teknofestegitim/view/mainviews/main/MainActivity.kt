@@ -1,4 +1,4 @@
-package com.metehanbolat.teknofestegitim.view.mainviews
+package com.metehanbolat.teknofestegitim.view.mainviews.main
 
 import  androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

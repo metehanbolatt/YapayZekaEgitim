@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.mainviews.machinelearning.MachineQuizGameFragment"
+    android:background="@drawable/background_user">
+
+    <LinearLayout
+        android:id="@+id/questionLinear"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/gridAnswers"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/questionCardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="10000dp"
+            app:cardCornerRadius="30dp"
+            >
+
+            <TextView
+                android:id="@+id/questionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="Lütfen Bekleyiniz..."
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:gravity="center"/>
+
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+    <GridLayout
+        android:id="@+id/gridAnswers"
+        android:layout_width="match_parent"
+        android:layout_height="455dp"
+        app:layout_constraintTop_toBottomOf="@+id/questionLinear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:columnCount="1"
+        android:rowCount="4">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/answer1CardView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="10000dp"
+            app:cardCornerRadius="30dp">
+
+            <TextView
+                android:id="@+id/answer1TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Lütfen bekleyiniz..."
+                android:textColor="@color/black"
+
+                android:textAlignment="center"
+                android:gravity="center"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/answer2CardView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="10000dp"
+            app:cardCornerRadius="30dp">
+
+
+            <TextView
+                android:id="@+id/answer2TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="Yaşanan gecikme için özür dileriz..."
+                android:textColor="@color/black"
+
+                />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/answer3CardView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="10000dp"
+            app:cardCornerRadius="30dp">
+
+            <TextView
+                android:id="@+id/answer3TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="Çok az kaldı..."
+                android:textColor="@color/black"
+
+                />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/answer4CardView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="10000dp"
+            app:cardCornerRadius="30dp">
+
+
+            <TextView
+                android:id="@+id/answer4TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="Sorular birazdan geliyor..."
+                android:textColor="@color/black"
+                />
+        </androidx.cardview.widget.CardView>
+
+
+    </GridLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="Sonraki"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gridAnswers"
+        android:layout_marginBottom="90dp"
+        android:background="@drawable/game_list_button"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

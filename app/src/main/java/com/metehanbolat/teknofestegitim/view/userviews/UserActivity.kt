@@ -7,7 +7,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.databinding.ActivityUserBinding
-import com.metehanbolat.teknofestegitim.view.mainviews.MainActivity
+import com.metehanbolat.teknofestegitim.view.mainviews.main.MainActivity
 
 class UserActivity : AppCompatActivity() {
 

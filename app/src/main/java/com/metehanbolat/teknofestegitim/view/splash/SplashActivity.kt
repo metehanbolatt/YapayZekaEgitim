@@ -1,4 +1,4 @@
-package com.metehanbolat.teknofestegitim.view
+package com.metehanbolat.teknofestegitim.view.splash
 
 import android.annotation.SuppressLint
 import android.content.Intent

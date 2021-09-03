@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeknofestEgitim">
         <activity
-            android:name=".view.SplashActivity"
+            android:name=".view.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.mainviews.MainActivity"
+            android:name=".view.mainviews.main.MainActivity"
             android:exported="true" />
         <activity
             android:name=".view.userviews.UserActivity"

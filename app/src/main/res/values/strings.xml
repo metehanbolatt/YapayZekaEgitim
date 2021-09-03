@@ -79,6 +79,57 @@
     <string name="machine_view">Makine Görüsü</string>
     <string name="default_coin">10</string>
 
+    <string name="error_occurred">Hata oluştu.</string>
+    <string name="not_seen">Görülmedi</string>
+    <string name="not_answered">Cevaplanmadı</string>
+
+    <string name="congratulations">Tebrikler kazandınız!</string>
+    <string name="press_mine">Mayına bastınız!</string>
+
+    <string name="already_seen">görüldü</string>
+    <string name="already_answered">cevaplandı</string>
+    <string name="havent_seen">görülmedi</string>
+    <string name="havent_answered">cevaplanmadı</string>
+    <string name="true_answer">Doğru cevap oynamaya devam edebilirsin!</string>
+    <string name="wrong_answer">Malesef yanlış cevap. Oyuna yeniden başla.</string>
+    <string name="answer_one" tools:ignore="Typos">answer1</string>
+    <string name="answer_two">answer2</string>
+    <string name="answer_three">answer3</string>
+    <string name="answer_four">answer4</string>
+
+    <string name="please_answer">Lütfen soruyu cevaplandırın</string>
+    <string name="all_question_answered">Tüm soruları cevaplandırdınız. Tebrikler!</string>
+    <string name="empty" />
+
+    <string name="baseUrl">"https://raw.githubusercontent.com/"</string>
+    
+    <string name="your_turn">Sıra sende!</string>
+    <string name="rival_turn">Sıra rakipte!</string>
+
+    <string name="see_question">Soruyu gör</string>
+    
+    <string name="third_round_start">3. Tura Başla</string>
+    
+    <string name="zero">0</string>
+    <string name="x">X</string>
+    
+    <string name="game_win">Oyunu Kazandınız. Tebrikler!</string>
+    <string name="game_lose">Oyunu Kaybettiniz. Tekrar Oynayın!</string>
+    <string name="lets_play">Hadi Oynayalım!</string>
+    
+    <string name="click_question_see">Lütfen soruyu gör butonuna tıklayın</string>
+
+    <string name="true_answer_two">Doğru cevap! Oynamaya devam.</string>
+    <string name="wrong_answer_two">Yanlış cevap! Sıra rakipte.</string>
+
+    <string name="random">random</string>
+    <string name="not_random">notRandom</string>
+
+    <string name="nice_answer">Doğru bildiniz. Devam edin!</string>
+
+    <string name="you_won">Tebrikler rakibini yenmeyi başardın!</string>
+    <string name="last_word_press_enter">Lütfen yukarıdaki ifadenin son harfi ile başlayan bir kelime girip klavyedeki enter tuşuna basınız</string>
+
     <string-array name="education_level">
         <item>Okul Öncesi</item>
         <item>İlkokul</item>
@@ -86,4 +137,30 @@
         <item>Lise</item>
         <item>Diğer</item>
     </string-array>
+
+    <string-array name="word_array">
+        <item>makine</item>
+        <item>yapay zeka</item>
+        <item>makine öğrenme</item>
+        <item>yapay sinir ağları</item>
+        <item>bilgisayar</item>
+        <item>işlem gücü</item>
+        <item>veri tabanları</item>
+        <item>veri madenciliği</item>
+        <item>gözetimli öğrenme</item>
+        <item>gözetimsiz öğrenme</item>
+        <item>bayes</item>
+        <item>bulanık mantık</item>
+        <item>örüntü tanıma</item>
+        <item>tümevarımsal mantık programlama</item>
+        <item>derin öğrenme</item>
+        <item>nöral ağlar</item>
+        <item>veri bilimi</item>
+        <item>büyük veri</item>
+        <item>bulut teknolojisi</item>
+        <item>robot</item>
+        <item>pekiştirmeye dayalı öğrenme</item>
+        <item>edison</item>
+    </string-array>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.metehanbolat.teknofestegitim.view.mainviews
+package com.metehanbolat.teknofestegitim.view.mainviews.main
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -79,15 +79,10 @@ class MainFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-/*
+
         binding.artificialIntelligenceCardView.setOnClickListener {
             navController = findNavController()
             navController.navigate(R.id.action_mainFragment_to_artificialIntelligenceFragment)
-        }
-
-        binding.machineLearningCardView.setOnClickListener {
-            navController = findNavController()
-            navController.navigate(R.id.action_mainFragment_to_machineLearningFragment)
         }
 
         binding.achievementCardView.setOnClickListener {
@@ -95,7 +90,10 @@ class MainFragment : Fragment() {
             navController.navigate(R.id.action_mainFragment_to_achievementFragment)
         }
 
- */
+        binding.machineLearningCardView.setOnClickListener {
+            navController = findNavController()
+            navController.navigate(R.id.action_mainFragment_to_machineLearningFragment)
+        }
 
         binding.computerVision.setOnClickListener {
             navController = findNavController()

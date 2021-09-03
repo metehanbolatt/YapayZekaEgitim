@@ -1,22 +1,22 @@
-package com.metehanbolat.teknofestegitim.view.mainviews
+package com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.metehanbolat.teknofestegitim.databinding.FragmentAchievementBinding
+import com.metehanbolat.teknofestegitim.databinding.FragmentArtificialIntelligenceBinding
 
-class AchievementFragment : Fragment() {
+class ArtificialIntelligenceFragment : Fragment() {
 
-    private var _binding : FragmentAchievementBinding? = null
+    private var _binding : FragmentArtificialIntelligenceBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAchievementBinding.inflate(inflater, container, false)
+        _binding = FragmentArtificialIntelligenceBinding.inflate(inflater, container, false)
         val view = binding.root
 
         return view

@@ -17,7 +17,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentUserSignUpBinding
-import com.metehanbolat.teknofestegitim.view.mainviews.MainActivity
+import com.metehanbolat.teknofestegitim.view.mainviews.main.MainActivity
 import java.util.*
 
 class UserSignUpFragment : Fragment() {
