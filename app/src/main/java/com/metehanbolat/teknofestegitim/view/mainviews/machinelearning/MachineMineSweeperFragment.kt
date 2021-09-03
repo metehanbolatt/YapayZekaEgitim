@@ -40,6 +40,7 @@ class MachineMineSweeperFragment : Fragment() {
     private lateinit var questionSeen : String
     private lateinit var questionAnswered : String
     private lateinit var baseUrl : String
+    private lateinit var empty : String
 
     private lateinit var navController : NavController
 
@@ -59,6 +60,7 @@ class MachineMineSweeperFragment : Fragment() {
         questionSeen = resources.getString(R.string.not_seen)
         questionAnswered = resources.getString(R.string.not_answered)
         baseUrl = resources.getString(R.string.baseUrl)
+        empty = resources.getString(R.string.empty)
 
         return view
     }
@@ -406,6 +408,7 @@ class MachineMineSweeperFragment : Fragment() {
                     Snackbar.make(view, wrongAnswer, Snackbar.LENGTH_SHORT).show()
                     questionAnswered = haventAnswered
                     questionSeen = haventSeen
+                    bombProcess()
                 }
                 questionNumber += 1
             }
@@ -418,10 +421,11 @@ class MachineMineSweeperFragment : Fragment() {
                     Snackbar.make(view, wrongAnswer, Snackbar.LENGTH_SHORT).show()
                     questionAnswered = haventAnswered
                     questionSeen = haventSeen
+                    bombProcess()
                 }
                 questionNumber += 1
             }
-            if (i==2){
+            if (i == 2){
                 if (questionsRightAnswer == answerThree){
                     Snackbar.make(view, trueAnswer, Snackbar.LENGTH_SHORT).show()
                     questionAnswered = alreadyAnswered
@@ -430,23 +434,191 @@ class MachineMineSweeperFragment : Fragment() {
                     Snackbar.make(view, wrongAnswer, Snackbar.LENGTH_SHORT).show()
                     questionAnswered = haventAnswered
                     questionSeen = haventSeen
+                    bombProcess()
                 }
                 questionNumber += 1
 
             }
-            if (i==3){
+            if (i == 3){
                 if (questionsRightAnswer == answerFour){
                     Snackbar.make(view, trueAnswer, Snackbar.LENGTH_SHORT).show()
                     questionAnswered = alreadyAnswered
                     questionSeen = alreadySeen
                 }else{
                     Snackbar.make(view, wrongAnswer, Snackbar.LENGTH_SHORT).show()
-                    questionAnswered = alreadyAnswered
-                    questionSeen = alreadySeen
+                    questionAnswered = haventSeen
+                    questionSeen = haventAnswered
+                    bombProcess()
                 }
                 questionNumber += 1
             }
         }
         builder.create().show()
     }
+
+    private fun bombProcess(){
+
+        binding.btn1.isClickable = false
+        binding.btn2.isClickable = false
+        binding.btn3.isClickable = false
+        binding.btn4.isClickable = false
+        binding.btn5.isClickable = false
+        binding.btn6.isClickable = false
+        binding.btn7.isClickable = false
+        binding.btn8.isClickable = false
+        binding.btn9.isClickable = false
+        binding.btn10.isClickable = false
+        binding.btn11.isClickable = false
+        binding.btn12.isClickable = false
+        binding.btn13.isClickable = false
+        binding.btn14.isClickable = false
+        binding.btn15.isClickable = false
+        binding.btn16.isClickable = false
+
+        if (map[0][0] != -1){
+            if (binding.btn1.text == empty){
+                checkMine(0,0)
+                binding.btn1.text = board[0][0].toString()
+            }
+        }else{
+            binding.btn1.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[0][1] != -1){
+            if (binding.btn2.text == empty){
+                checkMine(0,1)
+                binding.btn2.text = board[0][1].toString()
+            }
+        }else{
+            binding.btn2.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[0][2]!=-1){
+            if (binding.btn3.text == empty){
+                checkMine(0,2)
+
+                binding.btn3.text = board[0][2].toString()
+            }
+        }else{
+            binding.btn3.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[0][3] != -1){
+            if (binding.btn4.text == empty){
+                checkMine(0,3)
+                binding.btn4.text = board[0][3].toString()
+            }
+        }else{
+            binding.btn4.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[1][0] != -1){
+            if (binding.btn5.text == empty){
+                checkMine(1,0)
+                binding.btn5.text = board[1][0].toString()
+            }
+        }else{
+            binding.btn5.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[1][1] != -1){
+            if (binding.btn6.text == empty){
+                checkMine(1,1)
+                binding.btn6.text = board[1][1].toString()
+            }
+        }else{
+            binding.btn6.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[1][2] != -1){
+            if (binding.btn7.text == empty){
+                checkMine(1,2)
+                binding.btn7.text = board[1][2].toString()
+            }
+        }else{
+            binding.btn7.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[1][3] != -1){
+            if (binding.btn8.text == empty){
+                checkMine(1,3)
+                binding.btn8.text = board[1][3].toString()
+            }
+        }else{
+            binding.btn8.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[2][0] != -1){
+            if(binding.btn9.text == empty){
+                checkMine(2,0)
+                binding.btn9.text = board[2][0].toString()
+            }
+        }else{
+            binding.btn9.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[2][1] != -1){
+            if (binding.btn10.text == empty){
+                checkMine(2,1)
+                binding.btn10.text = board[2][1].toString()
+            }
+        }else{
+            binding.btn10.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[2][2] != -1){
+            if (binding.btn11.text == empty){
+                checkMine(2,2)
+                binding.btn11.text = board[2][2].toString()
+            }
+        }else{
+            binding.btn11.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[2][3] != -1){
+            if (binding.btn12.text == empty){
+                checkMine(2,3)
+                binding.btn12.text = board[2][3].toString()
+            }
+        }else{
+            binding.btn12.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[3][0] != -1){
+            if (binding.btn13.text == empty){
+                checkMine(3,0)
+                binding.btn13.text = board[3][0].toString()
+            }
+        }else{
+            binding.btn13.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[3][1] != -1){
+            if (binding.btn14.text == empty){
+                checkMine(3,1)
+                binding.btn14.text = board[3][1].toString()
+            }
+        }else{
+            binding.btn14.setBackgroundResource(R.drawable.bomb)
+        }
+
+        if (map[3][2] != -1){
+            if (binding.btn15.text == empty){
+                checkMine(3,2)
+                binding.btn15.text = board[3][2].toString()
+            }
+        }else{
+            binding.btn15.setBackgroundResource(R.drawable.bomb)
+        }
+        
+        if (map[3][3] != -1){
+            if (binding.btn16.text == empty){
+                checkMine(3,3)
+                binding.btn16.text = board[3][3].toString()
+            }
+        }else{
+            binding.btn16.setBackgroundResource(R.drawable.bomb)
+        }
+    }
+
 }
