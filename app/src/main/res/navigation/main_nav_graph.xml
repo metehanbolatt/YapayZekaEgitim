@@ -260,6 +260,9 @@
         <action
             android:id="@+id/action_machineTicTacToeFragment_to_machineGameListFragment"
             app:destination="@id/machineGameListFragment" />
+        <action
+            android:id="@+id/action_machineTicTacToeFragment_self"
+            app:destination="@id/machineTicTacToeFragment" />
     </fragment>
     <fragment
         android:id="@+id/machineWordGameFragment"

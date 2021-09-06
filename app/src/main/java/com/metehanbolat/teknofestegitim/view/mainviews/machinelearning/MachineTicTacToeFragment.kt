@@ -1,7 +1,6 @@
 package com.metehanbolat.teknofestegitim.view.mainviews.machinelearning
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -180,13 +179,13 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
 
             if (!activePlayer) {
                 view.text = resources.getString(R.string.zero)
-                view.setTextColor(Color.parseColor("#FF1500"))
+                view.setTextColor(ContextCompat.getColor(view.context, R.color.tic_tac_toe_red))
                 gameState[gameStatePointer] = 0
                 questionSeeControl = false
                 activePlayer = true
             } else {
                 view.text = resources.getString(R.string.x)
-                view.setTextColor(Color.parseColor("#FFFFFF"))
+                view.setTextColor(ContextCompat.getColor(view.context, R.color.white))
                 gameState[gameStatePointer] = 1
                 questionSeeControl = false
                 activePlayer = false
@@ -217,30 +216,17 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                     binding.turnButton.visibility = View.INVISIBLE
                     binding.raundButton.visibility = View.VISIBLE
                     updatePlayerScore()
-                    if (playerTwoScoreCount == 3) {
-                        Snackbar.make(view, resources.getString(R.string.game_lose), Snackbar.LENGTH_SHORT).show()
-                    }
+
                 }
             }
 
             binding.resetGame.setOnClickListener {
-                turSayaci = 1
-                playerAgain()
-                playerOneScoreCount = 0
-                playerTwoScoreCount = 0
-                binding.playerStatus.text = resources.getString(R.string.lets_play)
-                updatePlayerScore()
-                buttonControl = true
-                control = true
-                questionSeeControl = true
-                for (i in buttons.indices) {
-                    buttons[i]!!.text = resources.getString(R.string.empty)
-                }
-                showImagePickDialog(it)
-
+                navController = findNavController()
+                navController.navigate(R.id.action_machineTicTacToeFragment_self)
             }
+
         } else if (questionSeeControl && !control) {
-            activePlayer = !activePlayer
+            activePlayer =! activePlayer
         } else {
             Snackbar.make(view, resources.getString(R.string.click_question_see), Snackbar.LENGTH_SHORT).show()
         }
@@ -286,6 +272,7 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                     Snackbar.make(view, resources.getString(R.string.wrong_answer_two), Snackbar.LENGTH_SHORT).show()
                     control = false
                     questionSeeControl = false
+                    wrongAnswer()
                 }
                 questionNumber += 1
             }
@@ -299,6 +286,8 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                     Snackbar.make(view, resources.getString(R.string.wrong_answer_two), Snackbar.LENGTH_SHORT).show()
                     control = false
                     questionSeeControl = false
+                    wrongAnswer()
+
                 }
                 questionNumber += 1
             }
@@ -311,6 +300,8 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                     Snackbar.make(view, resources.getString(R.string.wrong_answer_two), Snackbar.LENGTH_SHORT).show()
                     control = false
                     questionSeeControl = false
+                    wrongAnswer()
+
                 }
                 questionNumber += 1
 
@@ -324,6 +315,8 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                     Snackbar.make(view, resources.getString(R.string.wrong_answer_two), Snackbar.LENGTH_SHORT).show()
                     control = false
                     questionSeeControl = false
+                    wrongAnswer()
+
                 }
                 questionNumber += 1
             }
@@ -354,4 +347,15 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
             }
         })
     }
+
+    private fun wrongAnswer(){
+
+        activePlayer =! activePlayer
+        if (binding.playerStatus.text == resources.getString(R.string.your_turn)){
+            binding.playerStatus.text = resources.getString(R.string.rival_turn)
+        }else{
+            binding.playerStatus.text = resources.getString(R.string.your_turn)
+        }
+    }
+
 }

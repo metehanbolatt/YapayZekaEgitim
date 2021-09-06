@@ -14,10 +14,24 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="splashScreenTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_image</item>
+        <item name="android:statusBarColor">@color/black</item>
+    </style>
+
     <style name="ShapeAppearanceOverlay.App.CornerSize30" parent="">
         <item name="cornerSize">30%</item>
     </style>
     <style name="ShapeAppearanceOverlay.App.CornerSize15" parent="">
         <item name="cornerSize">15%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize20" parent="">
+        <item name="cornerSizeBottomLeft">20%</item>
+        <item name="cornerSizeBottomRight">20%</item>
+    </style>
+
+    <style name="ProgressBarStyle">
+        <item name="colorAccent">@color/red</item>
     </style>
 </resources>

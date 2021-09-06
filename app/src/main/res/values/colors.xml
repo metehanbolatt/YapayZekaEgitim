@@ -24,4 +24,7 @@
     <color name="button_move_on_color">#FC9917</color>
     <color name="background_color">#7D9BF4</color>
 
+    <color name="tic_tac_toe_red">#FF1500</color>
+
+
 </resources>
