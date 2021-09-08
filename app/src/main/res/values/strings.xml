@@ -1,6 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">TeknofestEgitim</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="developer">Metehan Bolat</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="user_nick">Kullanıcı Adı</string>
     <string name="password">Şifre</string>
@@ -161,6 +163,100 @@
     <string name="click_main_menu">Anasayfaya Dön</string>
     <string name="back">Dön</string>
     <string name="click_image">Resme tıklayabilirsin.</string>
+    <string name="your">Sen: </string>
+    <string name="retry_game">Oyunu Yeniden Başlat</string>
+    <string name="reset">Sıfırla</string>
+    <string name="next_question">Sıradaki Soru</string>
+    <string name="are_u_sure_quit_game">Oyundan ayrılmak istiyor musun?</string>
+
+    <string name="ai_game_true">Doğru</string>
+    <string name="ai_game_false">False</string>
+
+    <string name="exit">Ayrıl</string>
+    <string name="true_ai">True</string>
+    <string name="false_ai">False</string>
+    <string name="awards_already_collected_ai">Ödül daha önce alındı.</string>
+    <string name="ai_learning_three">aiLearningThree</string>
+    <string name="ai_learning_two">aiLearningTwo</string>
+    <string name="ai_learning_one">aiLearningOne</string>
+    <string name="click_screen">Ekrana Tıklayarak Bilgilere Ulaşabilirsiniz</string>
+
+    <string name="game_one">İlk Oyun</string>
+    <string name="game_two">İkinci Oyun</string>
+    <string name="score">Skor</string>
+
+    <string name="question">Soru: </string>
+
+    <string name="what_is_ai">Yapay Zeka Nedir?</string>
+    <string name="is_ai_one">Yapay zekâ, bir bilgisayar sisteminin, genellikle akıllı varlıklara özgü yeteneklerle ilişkili görevleri gerçekleştirme yeteneğidir.</string>
+    <string name="need_ai">Neden Yapay Zekaya İhtiyaç Duyarız?</string>
+    <string name="education_two_info">Günümüz teknolojisinin gelişimiyle birlikte yeni buluşlar ortaya çıkmıştır. Ortaya çıkan bu buluşların amacı insan hayatını kolaylaştırmaktır. Yapay zekayla birlikte insan hayatını kolaylaştıracak buluşların giderek artması neden yapay zekaya ihtiyacımız olduğunu açıklamaktadır. Örnek olarak otonom araçlar gösterilebilir.</string>
+    <string name="how_work_ai">Yapay Zeka Nasıl Çalışır?</string>
+    <string name="that_work_ai">Yapay zekanın çalışma prensibi, çok fazla veri toplanarak veri havuzları oluşturulur ve bu veriler yapay zeka tarafından kullanılarak ne yapılacağı konusunda yönergeler hazırlanır. Bu yönergeler gerçeğe benzeyen simülasyonlarda milyonlarca kere test edilir. Hatalı yönergeler ayıklanıp doğrular çoğaltılarak sürekli bir iyileştirme döngüsünde geliştirilir. Bu süreç sonunda sıradan kodlama teknikleri kullanılarak yapılabileceğinden daha hızlı ve isabetli bir kontrol mekanizması elde edilir. Yeterince iyi bir yönerge seti elde edilince sonuçlandırılıp gerçek dünyada test edilebilir.</string>
+    <string name="where_use_ai">Yapay Zeka Nerelerde Kullanılır?</string>
+    <string name="that_where_work_ai">Yapay zeka görüntü işleme, ses işleme, metin işleme, veri işleme, otonom araçların karar destek sistemleri, sanal asistanlar, oyun motorları, öneri sistemleri ve benzeri alanlarda kullanılmaktadır.</string>
+    <string name="when_work_ai">Yapay Zeka Terimi İlk Ne Zaman Kullanılmıştır?</string>
+    <string name="that_when_work_ai">“Yapay Zekâ” terimi ilk kez düzenlenen yapay zekâ konferansı olan “Dartmouth Konferansı”nda 1956 yılında kullanılmıştır.</string>
+    <string name="who_use_ai">Yapay Zeka Terimi Kimin Tarafından Kullanılmıştır?</string>
+    <string name="that_who_use_ai">Bilgisayar Bilimci ve Bilişsel Bilimci “John McCarthy” tarafından “Yapay Zekâ” terimi ilk kez kullanılmıştır.</string>
+
+    <string name="otonom_cars">Otonom Araçlar</string>
+    <string name="education_four_ai_info_one">Yapay zeka ve derin öğrenme algoritmalarıyla desteklenen otonom araçlar, çevresel algılama yetenekleri sayesinde sürücü olmadan kendi kendine çalışabilen araçlara denmektedir. Hali hazırda günlük seyahatlerde ve taşımacılık alanında kullanılmaya başlanan bu teknoloji otomotiv dünyasında gelecek  yıllara önemli ipuçları vermektedir.</string>
+    <string name="education_four_ai_info_two">Yukarıda belirtilen görsellerin izlenimleri sonucunda otonom araçlarda insanlar gibi yolda gördüğü nesneleri ayırt ederek ve trafik kurallarını takip ederek güvenli bir sürüş gerçekleştirebilmektedir.</string>
+
+    <string name="education_one_info_one">Yapay zeka, bilgisayar sisteminin öğrenme ve sorun çözme gibi insanlara özgü bilişsel fonksiyonları taklit edebilme becerisidir.</string>
+    <string name="education_one_info_two">Yapay zeka terimi ilk olarak 1956 yılında İngiltere de New Hampshire da bulunan Dartmouth College’da yapılan bir konferansında ortaya atıldı.</string>
+    <string name="education_one_info_three">Ancak yapay zekanın günümüzde bu kadar popüler olmasanın nedeni gelişen dünyamızda analiz edebilecek veri saysının giderek artmasıdır.</string>
+    <string name="education_one_info_four">Ayrıca yapay zekanın yetenekleri arasında insan konuşmalarını anlama, karşı hamle gerektiren oyunları oynayabilme, otonom işlem gerektiren aletlerin kontrolü, veri analizleme, askeri simülasyon ve fotoğraf-video çözümleme gibi işlevler bulunmaktadır.</string>
+
+    <string name="education_three_info">Yapay Sinir Ağı</string>
+    <string name="education_three_info_one">Yapay Sinir Ağları, insan beyninden esinlenerek geliştirilmiş, ağırlıklı bağlantılar aracılığıyla birbirine bağlanan ve her biri kendi belleğine sahip işlem elemanlarından oluşan paralel ve dağıtılmış bilgi işleme yapılarıdır</string>
+    <string name="education_three_info_two">Hadi Yapay Sinir Ağı Modeline Bir Göz Atalım</string>
+    <string name="education_three_info_three">Hadi Gerçek Bir Yapay Sinir Ağına Bir Göz Atalım</string>
+    <string name="education_three_info_four">Görsellerde gördüğümüz üzere yapay sinir ağı ile basit biyolojik sinir sisteminin çalışma şekli oldukça benzerdir. Yani biyolojik nöron hücrelerinin ve bu hücrelerin birbirleri ile arasında kurduğu sinaptik bağın dijital olarak modellenmesidir.</string>
+
+    <string name="education_four_info">Yapay Zekanın Kullanım Alanı Otonom Araçlar</string>
+    <string name="education_four_info_one">Hadi Yapay Zekanın Farkını Görelim</string>
+    <string name="done_education_four">Yapay Zeka Temel Seviye Eğitimini Başarıyla Tamamladın</string>
+
+    <string name="basic_ai">Yapay Zeka Temelleri</string>
+
+    <string name="classification">Sınıflandırma</string>
+    <string name="clustering">Kümeleme</string>
+    <string name="algorithm">Algoritma</string>
+
+    <string name="education_threetwo_info_one">Sınıflandırmada, bir veri kümesi birbirinden farklı ve önceden belirlenmiş sınıflardan birine atanmasıdır. Sınıflandırma algoritmaları, verilen eğitim kümesinden hangi veriyi hangi sınıfa atayacağını öğrenmesi üzerine kuruludur.</string>
+    <string name="education_threetwo_info_two">Kümeleme bir veri setinde benzer özellikler gösteren verilerin gruplara ayrılmasına denir. Aynı küme içinde benzerlikler fazla, kümeler arası benzerlikler azdır. </string>
+    <string name="education_three_two_info_three">Bir problemin çözümü için ihtiyaç olan tüm işlemlerin mantıksal olarak, sıralı bir şekilde ifade edilmesidir. Algoritma kavramı programlama ya da yazılım geliştirmenin yanı sıra, günlük hayattaki aktiviteler, matematik vb. derslerde karşılaşılan sorunları daha kolaylıkla çözme olanağı sağlar.</string>
+
+
+    <string name="done_introduction_ai_lesson">Yapay Zekaya Giriş Eğitimini Başarıyla Tamamladın</string>
+    <string name="get_awards_and_back_main">Ödülünü al ve Anasayfaya dön</string>
+
+    <string name="ai">Yapay Zeka</string>
+    <string name="fiveNoneK">5N1K</string>
+    <string name="games">Oyunlar</string>
+    <string name="ai_with_fiveNoneK">Yapay Zeka ile 5N1K</string>
+    <string name="done_ai_with_fiveNoneK">Yapay Zekaya 5N1K Eğitimini Başarıyla Tamamladın</string>
+
+    <string name="question_one">Soru 1</string>
+    <string name="example_question">Yaşlılar tarafından, dondurma yedikten sonra, ılık su içmesi için uyarılmayan yoktur herhalde. Peki bunun nedeni ne? Gerçekten sağlıklı mı, yoksa bir saçmalık mı?</string>
+    <string name="firebase_userData">UserData</string>
+    <string name="firebase_userName">userName</string>
+    <string name="firebase_userSurname">userSurname</string>
+    <string name="firebase_userEmail">userEmail</string>
+    <string name="firebase_userNick">userNick</string>
+    <string name="firebase_educationLevel">userEducationLevel</string>
+    <string name="firebase_userBirthday">userBirthday</string>
+    <string name="firebase_aiLearningOne">aiLearningOne</string>
+    <string name="firebase_aiLearningTwo">aiLearningTwo</string>
+    <string name="firebase_aiLearningThree">aiLearningThree</string>
+    <string name="firebase_userCoin">userCoin</string>
+    <string name="firebase_thirdCoin">thirdCoin</string>
+
+
+    <string name="introduction_ai">Yapay Zekaya Giriş</string>
+
 
     <string-array name="education_level">
         <item>Okul Öncesi</item>

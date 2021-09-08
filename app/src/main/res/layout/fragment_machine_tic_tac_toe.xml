@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_user"
-    tools:context=".view.mainviews.machinelearning.MachineTicTacToeFragment">
+    android:background="@color/tictactoe_background"
+    tools:context=".view.mainviews.gameroom.MachineTicTacToeFragment">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/infoLinear"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/infoConstraint"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -17,93 +17,90 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:textAlignment="center"
-        android:layout_marginTop="10dp"
-        >
+        android:layout_marginTop="30dp">
 
-        <TextView
-            android:id="@+id/playerOne"
+        <LinearLayout
+            android:id="@+id/tictactoeYouLinear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sen: "
-            android:textAllCaps="false"
-            android:textSize="20sp"
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-            />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_butterfly" />
 
-        <TextView
-            android:id="@+id/playerOneScore"
+            <TextView
+                android:id="@+id/playerOneScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothambold"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:text="@string/zero"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tictactoeRivalLinear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="25sp"
+            android:orientation="horizontal"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-            />
+            <TextView
+                android:id="@+id/playerTwoScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothambold"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                android:text="@string/zero"
+                android:textSize="25sp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/enemy_robot" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/playerStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="15sp"
-            android:text="Sıra sende"
-            android:layout_marginLeft="50dp"
-            android:layout_gravity="center"
-            android:gravity="center"
+            android:textSize="24sp"
+            android:textColor="#EA1A74"
+            android:fontFamily="@font/gothambold"
+            android:text="@string/your_turn"
+            app:layout_constraintStart_toEndOf="@id/tictactoeYouLinear"
+            app:layout_constraintEnd_toStartOf="@id/tictactoeRivalLinear"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-            />
-
-        <TextView
-            android:id="@+id/playerTwo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rakibin: "
-            android:textSize="20sp"
-            android:layout_marginLeft="50dp"
-            />
-
-        <TextView
-            android:id="@+id/playerTwoScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="25sp"
-
-            />
-
-
-
-
-
-
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/infoLinear"
-        app:layout_constraintBottom_toTopOf="@id/buttonsGrid"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:gravity="center"
-        >
-
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
             android:id="@+id/turnButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#2B8F00"
-            android:text="Soruyu Gör"
+            android:backgroundTint="@color/machine_learning_button"
+            android:textStyle="bold"
+            android:text="@string/see_question"
             android:textAllCaps="false"
-            />
-
-
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonsGrid"/>
 
     <GridLayout
         android:id="@+id/buttonsGrid"
@@ -111,12 +108,10 @@
         android:layout_height="wrap_content"
         android:columnCount="3"
         android:rowCount="3"
-        app:layout_constraintTop_toBottomOf="@id/infoLinear"
+        app:layout_constraintTop_toBottomOf="@id/infoConstraint"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="100dp"
-
-        >
+        android:layout_marginTop="80dp">
 
         <Button
             android:id="@+id/btn_0"
@@ -125,9 +120,7 @@
             android:backgroundTint="#E8FF05"
             android:gravity="center"
             android:textSize="60sp"
-            android:textStyle="bold"
-
-            />
+            android:textStyle="bold" />
 
 
         <Button
@@ -138,8 +131,7 @@
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-            />
+            android:layout_marginStart="10dp" />
 
         <Button
             android:id="@+id/btn_2"
@@ -149,10 +141,7 @@
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-
-            />
-
+            android:layout_marginStart="10dp" />
 
         <Button
             android:id="@+id/btn_3"
@@ -161,11 +150,7 @@
             android:backgroundTint="#E8FF05"
             android:gravity="center"
             android:textSize="60sp"
-            android:textStyle="bold"
-            />
-
-
-
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_4"
@@ -175,10 +160,7 @@
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-
-            />
-
+            android:layout_marginStart="10dp" />
 
         <Button
             android:id="@+id/btn_5"
@@ -188,10 +170,7 @@
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-
-            />
-
+            android:layout_marginStart="10dp" />
 
         <Button
             android:id="@+id/btn_6"
@@ -200,10 +179,7 @@
             android:backgroundTint="#E8FF05"
             android:gravity="center"
             android:textSize="60sp"
-            android:textStyle="bold"
-            />
-
-
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_7"
@@ -213,10 +189,7 @@
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-
-            />
-
+            android:layout_marginStart="10dp" />
 
         <Button
             android:id="@+id/btn_8"
@@ -226,74 +199,39 @@
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-
-            />
-
-
-
-
-
-
-
-
-
-
+            android:layout_marginStart="10dp" />
 
     </GridLayout>
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/resetGame"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/reset_game"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/raundButton"
+        app:layout_constraintEnd_toEndOf="@id/raundButton"
+        app:layout_constraintTop_toBottomOf="@id/raundButton"/>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/buttonsGrid"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginTop="80dp"
-        >
-        <Button
-            android:id="@+id/resetGame"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:backgroundTint="#2B8F00"
-            android:gravity="center"
-            android:text="Oyunu Yeniden Başlat"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAllCaps="false"
-            />
+        android:text="@string/retry_game"
+        android:fontFamily="@font/gothambold"
+        app:layout_constraintStart_toStartOf="@id/resetGame"
+        app:layout_constraintEnd_toEndOf="@id/resetGame"
+        app:layout_constraintTop_toBottomOf="@id/resetGame" />
 
-
-
-        <Button
-            android:id="@+id/raundButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#2B8F00"
-            android:text="Sıfırla"
-            android:textAllCaps="false"
-
-            tools:layout_editor_absoluteX="159dp"
-            tools:layout_editor_absoluteY="4dp" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="399dp"
-            android:layout_height="82dp"
-            android:background="@drawable/ic_launcher_foreground"
-            app:srcCompat="@drawable/mchnlrngrbt"
-            tools:layout_editor_absoluteX="6dp"
-            tools:layout_editor_absoluteY="28dp" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    <Button
+        android:id="@+id/raundButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2B8F00"
+        android:text="@string/reset"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/turnButton"
+        app:layout_constraintTop_toBottomOf="@id/turnButton"
+        app:layout_constraintEnd_toEndOf="@id/turnButton"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-

@@ -1,4 +1,4 @@
-package com.metehanbolat.teknofestegitim.view.mainviews.machinelearning
+package com.metehanbolat.teknofestegitim.view.mainviews.gameroom
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -76,7 +76,7 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
         _binding = FragmentMachineTicTacToeBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_design_start_color)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.tictactoe_background)
 
         baseUrl = resources.getString(R.string.baseUrl)
         answerOne = resources.getString(R.string.answer_one)
@@ -93,8 +93,10 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
 
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                navController = findNavController()
-                navController.navigate(R.id.action_machineTicTacToeFragment_to_machineGameListFragment)
+                Snackbar.make(view, resources.getString(R.string.are_u_sure_quit_game), Snackbar.LENGTH_INDEFINITE).setAction(resources.getString(R.string.exit)){
+                    navController = findNavController()
+                    navController.navigate(R.id.action_machineTicTacToeFragment_to_machineGameListFragment)
+                }.show()
             }
         }
 

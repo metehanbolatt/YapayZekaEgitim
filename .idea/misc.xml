@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/anim_mine_sweeper_background.xml" value="0.32666666666666666" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/awards_background.xml" value="0.3310810810810811" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/background_design.xml" value="0.3310810810810811" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/best_score_background.xml" value="0.3310810810810811" />
@@ -11,11 +12,23 @@
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/how_computer_card.xml" value="0.3310810810810811" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/ic_butterfly.xml" value="0.32666666666666666" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/machine_learning_background.xml" value="0.32666666666666666" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/quiz_game_question_background.xml" value="0.3310810810810811" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/activity_main.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_a_i_game_one.xml" value="0.30495495495495495" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_a_i_game_two.xml" value="0.3171171171171171" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_anim_machine_mine_sweeper.xml" value="0.3171171171171171" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_anim_machine_quiz_game.xml" value="0.3171171171171171" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_anim_machine_tic_tac_toe.xml" value="0.18" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_anim_machine_word_game.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_artificial_intelligence.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_computer_vision.xml" value="0.33" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_computer_vision_info.xml" value="0.33" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_education_four.xml" value="0.3171171171171171" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_education_one.xml" value="0.3171171171171171" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_education_three.xml" value="0.3171171171171171" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_education_threetwo.xml" value="0.3171171171171171" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_education_two.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_eight_draw_big.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_eight_draw_hash.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_eight_hash_big.xml" value="0.30495495495495495" />
@@ -31,9 +44,10 @@
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_machine_machine_neural.xml" value="0.30495495495495495" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_machine_mine_sweeper.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_machine_quiz_game.xml" value="0.3171171171171171" />
-        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_machine_tic_tac_toe.xml" value="0.3171171171171171" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_machine_tic_tac_toe.xml" value="0.33" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_machine_word_game.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_main.xml" value="0.3171171171171171" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_main_education.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/gift_card_layout.xml" value="0.5" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/layout_nav_drawer_header.xml" value="0.22" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/menu/main_nav_drawer_menu.xml" value="0.3171171171171171" />

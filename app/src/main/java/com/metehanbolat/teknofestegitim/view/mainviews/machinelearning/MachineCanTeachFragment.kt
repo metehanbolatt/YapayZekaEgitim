@@ -1,8 +1,6 @@
 package com.metehanbolat.teknofestegitim.view.mainviews.machinelearning
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +9,6 @@ import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.snackbar.Snackbar
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentMachineCanTeachBinding
 
@@ -44,12 +41,6 @@ class MachineCanTeachFragment : Fragment() {
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
-
-        Handler(Looper.getMainLooper()).postDelayed({
-            if (binding.machineCanTeachInfoOne.alpha == 1f){
-                Snackbar.make(view, resources.getString(R.string.click_image), Snackbar.LENGTH_LONG).show()
-            }
-        },5000)
 
         binding.machineCanTeachButton.setOnClickListener {
             navController = findNavController()

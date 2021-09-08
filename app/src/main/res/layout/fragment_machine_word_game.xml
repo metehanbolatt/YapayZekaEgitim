@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.mainviews.machinelearning.MachineWordGameFragment"
+    tools:context=".view.mainviews.gameroom.MachineWordGameFragment"
     android:background="@drawable/background_user">
 
     <androidx.cardview.widget.CardView
@@ -20,8 +20,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:foregroundGravity="center"
-        app:cardBackgroundColor="#F1E506"
-        >
+        app:cardBackgroundColor="#F1E506">
 
         <TextView
             android:id="@+id/wordTextView"
@@ -35,14 +34,9 @@
             android:layout_marginRight="20dp"
             android:textAlignment="center"
             android:gravity="center"
-            android:foregroundGravity="center"
-            />
-
+            android:foregroundGravity="center" />
 
     </androidx.cardview.widget.CardView>
-
-
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/writtenWordsCardView"
@@ -71,19 +65,11 @@
             android:textColor="@color/white"
             android:foregroundGravity="center"
             android:textAllCaps="false"
-            android:textStyle="italic"
-
-            />
+            android:textStyle="italic" />
 
     </androidx.cardview.widget.CardView>
 
-
-
-
-
-
     <EditText
-
         android:id="@+id/wordEditText"
         android:inputType="text"
         android:layout_width="300dp"
@@ -97,11 +83,9 @@
         android:ems="10"
         android:gravity="center"
         android:hint="Son harfi ile biten kelime yazın."
-
         android:elevation="999dp"
         android:maxLines="1"
-        android:focusable="true"
-        />
+        android:focusable="true" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -129,9 +113,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-
-            />
+            android:paddingRight="10dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/lastLetterWordButton"
@@ -149,12 +131,9 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            />
+            android:paddingRight="10dp" />
 
     </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

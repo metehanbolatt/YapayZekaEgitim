@@ -46,7 +46,6 @@ class MachineChooseSectionFragment : Fragment() {
             navController = findNavController()
             navController.navigate(R.id.action_machineChooseSectionFragment_to_gameRoomAnimFragment)
         }
-
     }
 
     override fun onDestroyView() {

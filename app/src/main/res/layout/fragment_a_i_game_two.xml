@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_user"
+    tools:context=".view.mainviews.gameroom.AIGameTwoFragment">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewWave"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/backgroundaitrans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAINameGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gothambold"
+        android:text="@string/developer"
+        android:layout_marginTop="5dp"
+        android:textColor="#006D9E"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewTV"
+            android:layout_width="300dp"
+            android:layout_height="175dp"
+            app:cardCornerRadius="15dp"
+            android:layout_gravity="center"
+            app:strokeColor="@color/black"
+            app:strokeWidth="4dp"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="336dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/questionNumber"
+                    android:textColor="#006D9E"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/question_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/question"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:text="@string/example_question"
+                    android:justificationMode="inter_word"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewSS"
+            android:layout_width="345dp"
+            android:layout_height="7dp"
+            app:cardCornerRadius="2dp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp"
+            app:cardBackgroundColor="@color/black"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="336dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewA"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="35dp"
+            android:layout_gravity="center"
+            app:strokeColor="@color/black"
+            app:strokeWidth="4dp"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="336dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewAImage"
+                    android:background="@drawable/aanswer"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="6dp" />
+
+                <TextView
+                    android:id="@+id/textViewAAnswer"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="1dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"/>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewAKey"
+                    android:background="@drawable/chest"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewB"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="35dp"
+            android:layout_gravity="center"
+            app:strokeColor="@color/black"
+            app:strokeWidth="4dp"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="336dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewBImage"
+                    android:background="@drawable/banswer"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="6dp"/>
+
+                <TextView
+                    android:id="@+id/textViewBAnswer"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="1dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewBKey"
+                    android:background="@drawable/chest"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewC"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="35dp"
+            android:layout_gravity="center"
+            app:strokeColor="@color/black"
+            app:strokeWidth="4dp"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="336dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewCImage"
+                    android:background="@drawable/canswer"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="6dp" />
+
+                <TextView
+                    android:id="@+id/textViewCAnswer"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="1dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewCKey"
+                    android:background="@drawable/chest"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewD"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="35dp"
+            android:layout_gravity="center"
+            app:strokeColor="@color/black"
+            app:strokeWidth="4dp"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="336dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewDImage"
+                    android:background="@drawable/danswer"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="6dp"/>
+                <TextView
+                    android:id="@+id/textViewDAnswer"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="1dp"
+                    android:gravity="center_vertical"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewDKey"
+                    android:background="@drawable/chest"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

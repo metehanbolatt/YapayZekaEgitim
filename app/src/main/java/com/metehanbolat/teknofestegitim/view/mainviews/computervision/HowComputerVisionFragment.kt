@@ -197,11 +197,11 @@ class HowComputerVisionFragment : Fragment() {
 
             }else if (bigControl == 3 && counterZoomHash == 1){
                 navController = findNavController()
-                navController.navigate(R.id.action_howComputerVisionFragment_to_gameListFragment)
+                navController.navigate(R.id.action_howComputerVisionFragment_to_gameRoomAnimFragment)
                 thirdCoinUpdate()
             }else if (bigControl == 4){
                 navController = findNavController()
-                navController.navigate(R.id.action_howComputerVisionFragment_to_gameListFragment)
+                navController.navigate(R.id.action_howComputerVisionFragment_to_gameRoomAnimFragment)
                 thirdCoinUpdate()
             }
         }
@@ -215,8 +215,8 @@ class HowComputerVisionFragment : Fragment() {
     }
 
     private fun thirdCoinUpdate(){
-        val coinControlUpdate = firestore.collection("UserData").document(auth.currentUser?.email.toString())
-        coinControlUpdate.update("thirdCoin",4)
+        val coinControlUpdate = firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser?.email.toString())
+        coinControlUpdate.update(resources.getString(R.string.firebase_thirdCoin),4)
     }
 
     override fun onDestroyView() {

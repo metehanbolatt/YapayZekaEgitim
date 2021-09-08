@@ -1,8 +1,9 @@
-package com.metehanbolat.teknofestegitim.view.mainviews.gameroom
+package com.metehanbolat.teknofestegitim.view.mainviews.gameroom.anim
 
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.transition.TransitionInflater
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,30 +14,33 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.metehanbolat.teknofestegitim.R
-import com.metehanbolat.teknofestegitim.databinding.FragmentGameRoomAnimBinding
+import com.metehanbolat.teknofestegitim.databinding.FragmentAnimMachineMineSweeperBinding
 
-class GameRoomAnimFragment : Fragment() {
+class AnimMachineMineSweeperFragment : Fragment() {
 
-    private var _binding : FragmentGameRoomAnimBinding? = null
+    private var _binding : FragmentAnimMachineMineSweeperBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
-        _binding = FragmentGameRoomAnimBinding.inflate(inflater, container, false)
+        _binding = FragmentAnimMachineMineSweeperBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.black)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.anim_mine_sweeper_status)
+
+        val animation = TransitionInflater.from(requireContext()).inflateTransition(android.R.transition.move)
+        sharedElementEnterTransition = animation
 
         val anim = AnimationUtils.loadAnimation(requireContext(), R.anim.game_room_anim)
-        binding.gameRoomAnimGame.animation = anim
+        binding.machineTicTacToeCard.animation = anim
 
         Handler(Looper.getMainLooper()).postDelayed({
             navController = findNavController()
-            navController.navigate(R.id.action_gameRoomAnimFragment_to_machineGameListFragment)
+            navController.navigate(R.id.action_animMachineMineSweeperFragment_to_machineMineSweeperFragment)
         },2000)
 
         return view

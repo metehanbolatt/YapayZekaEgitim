@@ -80,7 +80,7 @@ class MainFragment : Fragment() {
 
         binding.artificialIntelligenceCardView.setOnClickListener {
             navController = findNavController()
-            navController.navigate(R.id.action_mainFragment_to_artificialIntelligenceFragment)
+            navController.navigate(R.id.action_mainFragment_to_mainEducation)
         }
 
         binding.achievementCardView.setOnClickListener {

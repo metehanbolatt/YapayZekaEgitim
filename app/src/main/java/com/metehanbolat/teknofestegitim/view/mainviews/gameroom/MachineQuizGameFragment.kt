@@ -1,4 +1,4 @@
-package com.metehanbolat.teknofestegitim.view.mainviews.machinelearning
+package com.metehanbolat.teknofestegitim.view.mainviews.gameroom
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -60,7 +60,7 @@ class MachineQuizGameFragment : Fragment() {
         _binding= FragmentMachineQuizGameBinding.inflate(inflater,container,false)
         val view = binding.root
 
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_design_start_color)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.quiz_game_background)
 
         baseUrl = resources.getString(R.string.baseUrl)
         answerOne = resources.getString(R.string.answer_one)
@@ -76,12 +76,15 @@ class MachineQuizGameFragment : Fragment() {
 
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                navController=findNavController()
-                navController.navigate(R.id.action_machineQuizGameFragment_to_machineGameListFragment)
+                Snackbar.make(view, resources.getString(R.string.are_u_sure_quit_game), Snackbar.LENGTH_INDEFINITE).setAction(resources.getString(R.string.exit)){
+                    navController = findNavController()
+                    navController.navigate(R.id.action_machineQuizGameFragment_to_machineGameListFragment)
+                }.show()
+
             }
         }
-
         requireActivity().onBackPressedDispatcher.addCallback(callback)
+
         loadData()
 
         firestore = Firebase.firestore

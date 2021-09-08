@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black"
-    tools:context=".view.mainviews.gameroom.GameRoomAnimFragment">
+    tools:context=".view.mainviews.gameroom.anim.GameRoomAnimFragment">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/gameRoomAnimGame"

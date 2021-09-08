@@ -32,4 +32,17 @@
     <color name="machine_human_background_color">#061437</color>
     <color name="machine_can_teach_background_color">#061437</color>
 
+    <color name="tictactoe_background">#03A9F4</color>
+
+    <color name="quiz_game_background">#04123C</color>
+    <color name="quiz_game_answer_background">#ADF5D1</color>
+    <color name="quiz_game_question_background">#F39C69</color>
+
+    <color name="card_education">#003A55</color>
+    <color name="card_education_stroke">#022535</color>
+    <color name="education_textcolor">#BCBCBC</color>
+    <color name="green_text">#41DA47</color>
+
+    <color name="anim_mine_sweeper_status">#86b4ce</color>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.metehanbolat.teknofestegitim.view.mainviews.machinelearning
+package com.metehanbolat.teknofestegitim.view.mainviews.gameroom
 
 import android.os.Bundle
 import android.view.KeyEvent
@@ -45,8 +45,10 @@ class MachineWordGameFragment : Fragment() {
 
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                navController = findNavController()
-                navController.navigate(R.id.action_machineWordGameFragment_to_machineGameListFragment)
+                Snackbar.make(view, resources.getString(R.string.are_u_sure_quit_game), Snackbar.LENGTH_INDEFINITE).setAction(resources.getString(R.string.exit)){
+                    navController = findNavController()
+                    navController.navigate(R.id.action_machineWordGameFragment_to_machineGameListFragment)
+                }.show()
             }
         }
 

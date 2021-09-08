@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/machineGameListFragment">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -17,13 +17,6 @@
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left" />
-        <action
-            android:id="@+id/action_mainFragment_to_artificialIntelligenceFragment"
-            app:destination="@id/artificialIntelligenceFragment"
-            app:enterAnim="@anim/from_right"
-            app:exitAnim="@anim/to_left"
-            app:popEnterAnim="@anim/from_left"
-            app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_mainFragment_to_machineLearningFragment"
             app:destination="@id/machineLearningFragment"
@@ -45,6 +38,9 @@
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_mainFragment_to_mainEducation"
+            app:destination="@id/mainEducation" />
     </fragment>
     <fragment
         android:id="@+id/giftFragment"
@@ -56,17 +52,6 @@
             app:destination="@id/mainFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left" />
-    </fragment>
-    <fragment
-        android:id="@+id/artificialIntelligenceFragment"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.ArtificialIntelligenceFragment"
-        android:label="fragment_artificial_intelligence"
-        tools:layout="@layout/fragment_artificial_intelligence" >
-        <action
-            android:id="@+id/action_artificialIntelligenceFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
-            app:enterAnim="@anim/from_left"
-            app:exitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/machineLearningFragment"
@@ -146,17 +131,6 @@
             android:defaultValue="0" />
     </fragment>
     <fragment
-        android:id="@+id/gameListFragment"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.computervision.GameListFragment"
-        android:label="fragment_game_list"
-        tools:layout="@layout/fragment_game_list" >
-        <action
-            android:id="@+id/action_gameListFragment_to_howComputerVisionFragment"
-            app:destination="@id/howComputerVisionFragment"
-            app:enterAnim="@anim/from_right"
-            app:exitAnim="@anim/to_left" />
-    </fragment>
-    <fragment
         android:id="@+id/howComputerVisionFragment"
         android:name="com.metehanbolat.teknofestegitim.view.mainviews.computervision.HowComputerVisionFragment"
         android:label="fragment_how_computer_vision"
@@ -166,13 +140,6 @@
             app:destination="@id/computerVisionInfoFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left" />
-        <action
-            android:id="@+id/action_howComputerVisionFragment_to_gameListFragment"
-            app:destination="@id/gameListFragment"
-            app:enterAnim="@anim/from_left"
-            app:exitAnim="@anim/to_right"
-            app:popEnterAnim="@anim/from_right"
-            app:popExitAnim="@anim/to_left" />
         <action
             android:id="@+id/action_howComputerVisionFragment_to_eightDrawBigFragment"
             app:destination="@id/eightDrawBigFragment" />
@@ -186,6 +153,13 @@
             android:name="bigControl"
             app:argType="integer"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/action_howComputerVisionFragment_to_gameRoomAnimFragment"
+            app:destination="@id/gameRoomAnimFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
     <fragment
         android:id="@+id/eightDrawBigFragment"
@@ -216,40 +190,40 @@
     </fragment>
     <fragment
         android:id="@+id/machineGameListFragment"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.MachineGameListFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.MachineGameListFragment"
         android:label="fragment_machine_game_list"
         tools:layout="@layout/fragment_machine_game_list" >
         <action
-            android:id="@+id/action_machineGameListFragment_to_machineTicTacToeFragment"
-            app:destination="@id/machineTicTacToeFragment" />
-        <action
-            android:id="@+id/action_machineGameListFragment_to_machineWordGameFragment"
-            app:destination="@id/machineWordGameFragment" />
-        <action
-            android:id="@+id/action_machineGameListFragment_to_machineMineSweeperFragment"
-            app:destination="@id/machineMineSweeperFragment" />
-        <action
-            android:id="@+id/action_machineGameListFragment_to_machineQuizGameFragment"
-            app:destination="@id/machineQuizGameFragment" />
-        <action
             android:id="@+id/action_machineGameListFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_machineGameListFragment_to_animMachineQuizGameFragment"
+            app:destination="@id/animMachineQuizGameFragment" />
+        <action
+            android:id="@+id/action_machineGameListFragment_to_animMachineTicTacToeFragment"
+            app:destination="@id/animMachineTicTacToeFragment" />
+        <action
+            android:id="@+id/action_machineGameListFragment_to_animMachineWordGameFragment"
+            app:destination="@id/animMachineWordGameFragment" />
+        <action
+            android:id="@+id/action_machineGameListFragment_to_animMachineMineSweeperFragment"
+            app:destination="@id/animMachineMineSweeperFragment" />
     </fragment>
     <fragment
         android:id="@+id/machineMineSweeperFragment"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.MachineMineSweeperFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.MachineMineSweeperFragment"
         android:label="fragment_machine_mine_sweeper"
         tools:layout="@layout/fragment_machine_mine_sweeper" >
         <action
-            android:id="@+id/action_machineMineSweeperFragment_to_machineGameListFragment"
-            app:destination="@id/machineGameListFragment" />
-        <action
             android:id="@+id/action_machineMineSweeperFragment_self"
             app:destination="@id/machineMineSweeperFragment" />
+        <action
+            android:id="@+id/action_machineMineSweeperFragment_to_machineGameListFragment"
+            app:destination="@id/machineGameListFragment" />
     </fragment>
     <fragment
         android:id="@+id/machineQuizGameFragment"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.MachineQuizGameFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.MachineQuizGameFragment"
         android:label="fragment_machine_quiz_game"
         tools:layout="@layout/fragment_machine_quiz_game" >
         <action
@@ -258,19 +232,19 @@
     </fragment>
     <fragment
         android:id="@+id/machineTicTacToeFragment"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.MachineTicTacToeFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.MachineTicTacToeFragment"
         android:label="fragment_machine_tic_tac_toe"
         tools:layout="@layout/fragment_machine_tic_tac_toe" >
         <action
-            android:id="@+id/action_machineTicTacToeFragment_to_machineGameListFragment"
-            app:destination="@id/machineGameListFragment" />
-        <action
             android:id="@+id/action_machineTicTacToeFragment_self"
             app:destination="@id/machineTicTacToeFragment" />
+        <action
+            android:id="@+id/action_machineTicTacToeFragment_to_machineGameListFragment"
+            app:destination="@id/machineGameListFragment" />
     </fragment>
     <fragment
         android:id="@+id/machineWordGameFragment"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.MachineWordGameFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.MachineWordGameFragment"
         android:label="fragment_machine_word_game"
         tools:layout="@layout/fragment_machine_word_game" >
         <action
@@ -342,9 +316,6 @@
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left" />
         <action
-            android:id="@+id/action_machineChooseSectionFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-        <action
             android:id="@+id/action_machineChooseSectionFragment_to_gameRoomAnimFragment"
             app:destination="@id/gameRoomAnimFragment"
             app:enterAnim="@anim/from_left"
@@ -354,11 +325,148 @@
     </fragment>
     <fragment
         android:id="@+id/gameRoomAnimFragment"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.GameRoomAnimFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.anim.GameRoomAnimFragment"
         android:label="fragment_game_room_anim"
         tools:layout="@layout/fragment_game_room_anim">
         <action
             android:id="@+id/action_gameRoomAnimFragment_to_machineGameListFragment"
             app:destination="@id/machineGameListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animMachineQuizGameFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.anim.AnimMachineQuizGameFragment"
+        android:label="fragment_anim_machine_quiz_game"
+        tools:layout="@layout/fragment_anim_machine_quiz_game" >
+        <action
+            android:id="@+id/action_animMachineQuizGameFragment_to_machineQuizGameFragment"
+            app:destination="@id/machineQuizGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainEducation"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.MainEducation"
+        android:label="fragment_main_education"
+        tools:layout="@layout/fragment_main_education" >
+        <action
+            android:id="@+id/action_mainEducation_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_mainEducation_to_educationOne"
+            app:destination="@id/educationOne" />
+        <action
+            android:id="@+id/action_mainEducation_to_educationTwo"
+            app:destination="@id/educationTwo" />
+        <action
+            android:id="@+id/action_mainEducation_to_educationThree"
+            app:destination="@id/educationThree" />
+        <action
+            android:id="@+id/action_mainEducation_to_artificialIntelligenceFragment"
+            app:destination="@id/artificialIntelligenceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AIGameOneFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.AIGameOneFragment"
+        android:label="fragment_a_i_game_one"
+        tools:layout="@layout/fragment_a_i_game_one" >
+        <action
+            android:id="@+id/action_AIGameOneFragment_to_artificialIntelligenceFragment"
+            app:destination="@id/artificialIntelligenceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artificialIntelligenceFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.ArtificialIntelligenceFragment"
+        android:label="fragment_artificial_intelligence"
+        tools:layout="@layout/fragment_artificial_intelligence" >
+        <action
+            android:id="@+id/action_artificialIntelligenceFragment_to_mainEducation"
+            app:destination="@id/mainEducation" />
+        <action
+            android:id="@+id/action_artificialIntelligenceFragment_to_AIGameOneFragment"
+            app:destination="@id/AIGameOneFragment" />
+        <action
+            android:id="@+id/action_artificialIntelligenceFragment_to_AIGameTwoFragment"
+            app:destination="@id/AIGameTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationFour"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationFour"
+        android:label="fragment_education_four"
+        tools:layout="@layout/fragment_education_four" >
+        <action
+            android:id="@+id/action_educationFour_to_mainEducation"
+            app:destination="@id/mainEducation" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationOne"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationOne"
+        android:label="fragment_education_one"
+        tools:layout="@layout/fragment_education_one" >
+        <action
+            android:id="@+id/action_educationOne_to_mainEducation"
+            app:destination="@id/mainEducation" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationThree"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationThree"
+        android:label="fragment_education_three"
+        tools:layout="@layout/fragment_education_three" >
+        <action
+            android:id="@+id/action_educationThree_to_mainEducation"
+            app:destination="@id/mainEducation" />
+        <action
+            android:id="@+id/action_educationThree_to_educationThreetwo"
+            app:destination="@id/educationThreetwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationThreetwo"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationThreetwo"
+        android:label="fragment_education_threetwo"
+        tools:layout="@layout/fragment_education_threetwo" >
+        <action
+            android:id="@+id/action_educationThreetwo_to_educationFour"
+            app:destination="@id/educationFour" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationTwo"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationTwo"
+        android:label="fragment_education_two"
+        tools:layout="@layout/fragment_education_two" >
+        <action
+            android:id="@+id/action_educationTwo_to_mainEducation"
+            app:destination="@id/mainEducation" />
+    </fragment>
+    <fragment
+        android:id="@+id/AIGameTwoFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.AIGameTwoFragment"
+        android:label="AIGameTwoFragment" >
+        <action
+            android:id="@+id/action_AIGameTwoFragment_to_artificialIntelligenceFragment"
+            app:destination="@id/artificialIntelligenceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animMachineMineSweeperFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.anim.AnimMachineMineSweeperFragment"
+        android:label="fragment_anim_machine_mine_sweeper"
+        tools:layout="@layout/fragment_anim_machine_mine_sweeper" >
+        <action
+            android:id="@+id/action_animMachineMineSweeperFragment_to_machineMineSweeperFragment"
+            app:destination="@id/machineMineSweeperFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animMachineTicTacToeFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.anim.AnimMachineTicTacToeFragment"
+        android:label="fragment_anim_machine_tic_tac_toe"
+        tools:layout="@layout/fragment_anim_machine_tic_tac_toe" >
+        <action
+            android:id="@+id/action_animMachineTicTacToeFragment_to_machineTicTacToeFragment"
+            app:destination="@id/machineTicTacToeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animMachineWordGameFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.anim.AnimMachineWordGameFragment"
+        android:label="fragment_anim_machine_word_game"
+        tools:layout="@layout/fragment_anim_machine_word_game" >
+        <action
+            android:id="@+id/action_animMachineWordGameFragment_to_machineWordGameFragment"
+            app:destination="@id/machineWordGameFragment" />
     </fragment>
 </navigation>
