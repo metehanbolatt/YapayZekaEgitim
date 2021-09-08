@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -65,7 +66,7 @@ class UserSignUpFragment : Fragment() {
             val email = binding.userEmailSignUp.text.toString()
             val password = binding.userPasswordSignUp.text.toString()
             if (email.isEmpty() || password.isEmpty()){
-                Toast.makeText(requireContext(), "Email veya şifre boş bırakıldı.", Toast.LENGTH_SHORT).show()
+                Snackbar.make(it, resources.getString(R.string.emailorpassword_empty), Snackbar.LENGTH_LONG).show()
             }else{
                 userData()
             }
@@ -80,24 +81,24 @@ class UserSignUpFragment : Fragment() {
 
     private fun userData(){
         val userDataMap = hashMapOf<String, Any>()
-        userDataMap["userName"] = binding.userNameSignUp.text.toString()
-        userDataMap["userSurname"] = binding.userSurnameSignUp.text.toString()
-        userDataMap["userNick"] = binding.userNickSignUp.text.toString()
-        userDataMap["userEmail"] = binding.userEmailSignUp.text.toString()
-        userDataMap["userBirthday"] = binding.userDateSignUp.text.toString()
-        userDataMap["userEducationLevel"] = binding.autoCompleteTextView.text.toString()
-        userDataMap["userCoin"] = 0
-        userDataMap["firstCoin"] = 0
-        userDataMap["secondCoin"] = 0
-        userDataMap["thirdCoin"] = 0
-        userDataMap["fourthCoin"] = 0
-        userDataMap["fifthCoin"] = 0
-        userDataMap["sixthCoin"] = 0
-        userDataMap["aiLearningOne"] = "False"
-        userDataMap["aiLearningTwo"] = "False"
-        userDataMap["aiLearningThree"] = "False"
+        userDataMap[resources.getString(R.string.firebase_userName)] = binding.userNameSignUp.text.toString()
+        userDataMap[resources.getString(R.string.firebase_userSurname)] = binding.userSurnameSignUp.text.toString()
+        userDataMap[resources.getString(R.string.firebase_userNick)] = binding.userNickSignUp.text.toString()
+        userDataMap[resources.getString(R.string.firebase_userEmail)] = binding.userEmailSignUp.text.toString()
+        userDataMap[resources.getString(R.string.firebase_userBirthday)] = binding.userDateSignUp.text.toString()
+        userDataMap[resources.getString(R.string.firebase_educationLevel)] = binding.autoCompleteTextView.text.toString()
+        userDataMap[resources.getString(R.string.firebase_userCoin)] = 0
+        userDataMap[resources.getString(R.string.firebase_firstCoin)] = 0
+        userDataMap[resources.getString(R.string.firebase_secondCoin)] = 0
+        userDataMap[resources.getString(R.string.firebase_thirdCoin)] = 0
+        userDataMap[resources.getString(R.string.firebase_fourthCoin)] = 0
+        userDataMap[resources.getString(R.string.firebase_fifthCoin)] = 0
+        userDataMap[resources.getString(R.string.firebase_sixthCoin)] = 0
+        userDataMap[resources.getString(R.string.ai_learning_one)] = resources.getString(R.string.false_ai)
+        userDataMap[resources.getString(R.string.ai_learning_two)] = resources.getString(R.string.false_ai)
+        userDataMap[resources.getString(R.string.ai_learning_three)] = resources.getString(R.string.false_ai)
 
-        firestore.collection("UserData").document(binding.userEmailSignUp.text.toString()).set(userDataMap).addOnSuccessListener {
+        firestore.collection(resources.getString(R.string.firebase_userData)).document(binding.userEmailSignUp.text.toString()).set(userDataMap).addOnSuccessListener {
             auth.createUserWithEmailAndPassword(binding.userEmailSignUp.text.toString(),binding.userPasswordSignUp.text.toString()).addOnSuccessListener {
                 goMainActivity()
             }.addOnFailureListener {

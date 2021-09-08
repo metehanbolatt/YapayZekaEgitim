@@ -32,7 +32,7 @@ class EightDrawBigFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
         binding.cizimSekizImage.setOnClickListener {
-            val extras = FragmentNavigatorExtras(binding.cizimSekizImage to "image_small")
+            val extras = FragmentNavigatorExtras(binding.cizimSekizImage to resources.getString(R.string.image_small))
             val action = EightDrawBigFragmentDirections.actionEightDrawBigFragmentToHowComputerVisionFragment(1)
             findNavController().navigate(
                 R.id.action_eightDrawBigFragment_to_howComputerVisionFragment,
@@ -42,9 +42,7 @@ class EightDrawBigFragment : Fragment() {
             )
         }
 
-        val animation = TransitionInflater.from(requireContext()).inflateTransition(
-            android.R.transition.move
-        )
+        val animation = TransitionInflater.from(requireContext()).inflateTransition(android.R.transition.move)
         sharedElementEnterTransition = animation
         sharedElementReturnTransition = animation
 

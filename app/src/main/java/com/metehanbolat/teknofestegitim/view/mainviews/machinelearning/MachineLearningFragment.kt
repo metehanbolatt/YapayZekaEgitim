@@ -77,7 +77,7 @@ class MachineLearningFragment : Fragment() {
     }
 
     private fun getData(view: View){
-        firestore.collection("UserData").whereEqualTo("userEmail",userEmail).addSnapshotListener { value, error ->
+        firestore.collection(resources.getString(R.string.firebase_userData)).whereEqualTo(resources.getString(R.string.firebase_userEmail),userEmail).addSnapshotListener { value, error ->
             if (error != null){
                 Snackbar.make(view, resources.getString(R.string.error_occurred), Snackbar.LENGTH_SHORT).show()
             }else{
@@ -85,7 +85,7 @@ class MachineLearningFragment : Fragment() {
                     if (!value.isEmpty){
                         val documents = value.documents
                         for (document in documents){
-                            name = document.get("userName") as String
+                            name = document.get(resources.getString(R.string.firebase_userName)) as String
                         }
                     }
                 }

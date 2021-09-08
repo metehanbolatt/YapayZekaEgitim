@@ -83,7 +83,6 @@ class AIGameTwoFragment : Fragment() {
 
         binding.question.text = listQuestion[randNumber]
         binding.questionNumber.text = resources.getString(R.string.question) + (randNumber + 1)
-
         binding.textViewAAnswer.text = listAnswerA[randNumber]
         binding.textViewBAnswer.text = listAnswerB[randNumber]
         binding.textViewCAnswer.text = listAnswerC[randNumber]

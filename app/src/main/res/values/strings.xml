@@ -252,10 +252,30 @@
     <string name="firebase_aiLearningTwo">aiLearningTwo</string>
     <string name="firebase_aiLearningThree">aiLearningThree</string>
     <string name="firebase_userCoin">userCoin</string>
+    <string name="firebase_userMoney">userMoney</string>
+    <string name="firebase_firstCoin">firstCoin</string>
+    <string name="firebase_secondCoin">secondCoin</string>
     <string name="firebase_thirdCoin">thirdCoin</string>
+    <string name="firebase_fourthCoin">fourthCoin</string>
+    <string name="firebase_fifthCoin">fifthCoin</string>
+    <string name="firebase_sixthCoin">sixthCoin</string>
 
 
     <string name="introduction_ai">Yapay Zekaya Giriş</string>
+
+    <string name="image_small">image_small</string>
+    <string name="image_small2">image_small2</string>
+    <string name="image_small3">image_small3</string>
+    <string name="image_big">image_big</string>
+    <string name="image_big2">image_big2</string>
+    <string name="image_big3">image_big3</string>
+
+    <string name="anim_image_big">anim_image_big</string>
+    <string name="anim_image_big2">anim_image_big2</string>
+    <string name="anim_image_big3">anim_image_big3</string>
+    <string name="anim_image_big4">anim_image_big4</string>
+
+    <string name="emailorpassword_empty">Email veya şifre boş bırakıldı.</string>
 
 
     <string-array name="education_level">

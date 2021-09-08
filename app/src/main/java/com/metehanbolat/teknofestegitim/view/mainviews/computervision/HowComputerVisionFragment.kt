@@ -132,7 +132,7 @@ class HowComputerVisionFragment : Fragment() {
 
         binding.cizimSekizImage.setOnClickListener {
 
-            val extras = FragmentNavigatorExtras(binding.cizimSekizImage to "image_big")
+            val extras = FragmentNavigatorExtras(binding.cizimSekizImage to resources.getString(R.string.image_big))
             findNavController().navigate(
                 R.id.action_howComputerVisionFragment_to_eightDrawBigFragment,
                 null,
@@ -143,7 +143,7 @@ class HowComputerVisionFragment : Fragment() {
 
         binding.cizimHashSekizImage.setOnClickListener {
 
-            val extras2 = FragmentNavigatorExtras(binding.cizimHashSekizImage to "image_big2")
+            val extras2 = FragmentNavigatorExtras(binding.cizimHashSekizImage to resources.getString(R.string.image_big2))
             findNavController().navigate(
                 R.id.action_howComputerVisionFragment_to_eightDrawHashFragment,
                 null,
@@ -154,7 +154,7 @@ class HowComputerVisionFragment : Fragment() {
 
         binding.hashSekizImage.setOnClickListener {
 
-            val extras3 = FragmentNavigatorExtras(binding.hashSekizImage to "image_big3")
+            val extras3 = FragmentNavigatorExtras(binding.hashSekizImage to resources.getString(R.string.image_big3))
             findNavController().navigate(
                 R.id.action_howComputerVisionFragment_to_eightHashBigFragment,
                 null,

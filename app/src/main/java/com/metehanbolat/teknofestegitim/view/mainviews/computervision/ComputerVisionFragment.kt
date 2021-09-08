@@ -1,6 +1,5 @@
 package com.metehanbolat.teknofestegitim.view.mainviews.computervision
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -121,17 +120,17 @@ class ComputerVisionFragment : Fragment() {
     }
 
     private fun updateCoin(){
-        val coinUpdate = firestore.collection("UserData").document(userEmail!!)
-        coinUpdate.update("userCoin", userCoin?.plus(10))
-        coinUpdate.update("firstCoin",1)
+        val coinUpdate = firestore.collection(resources.getString(R.string.firebase_userData)).document(userEmail!!)
+        coinUpdate.update(resources.getString(R.string.firebase_userCoin), userCoin?.plus(10))
+        coinUpdate.update(resources.getString(R.string.firebase_firstCoin),1)
     }
 
     private fun getNextFragment(){
-        val getCoinInfo = firestore.collection("UserData").document(auth.currentUser?.email.toString())
+        val getCoinInfo = firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser?.email.toString())
         getCoinInfo.get().addOnSuccessListener { document ->
             if (document != null){
                 if (document.data != null){
-                    secondCoinControl = document.data!!["secondCoin"]
+                    secondCoinControl = document.data!![resources.getString(R.string.firebase_secondCoin)]
                     val action = ComputerVisionFragmentDirections.actionComputerVisionFragmentToComputerVisionInfoFragment(secondCoinControl.toString().toInt())
                     Navigation.findNavController(requireView()).navigate(R.id.action_computerVisionFragment_to_computerVisionInfoFragment,action.arguments)
                 }
@@ -139,13 +138,12 @@ class ComputerVisionFragment : Fragment() {
         }
     }
 
-    @SuppressLint("SetTextI18n")
     private fun getUserData(name : String){
-        val getUserData = firestore.collection("UserData").document(name)
+        val getUserData = firestore.collection(resources.getString(R.string.firebase_userData)).document(name)
         getUserData.get().addOnSuccessListener { document ->
             if (document != null){
                 if (document.data != null){
-                    firstCoinControl = document.data!!["userCoin"]
+                    firstCoinControl = document.data!![resources.getString(R.string.firebase_userCoin)]
                     if (firstCoinControl.toString().toInt() == 0){
                         updateCoin()
                         Snackbar.make(requireView(),resources.getString(R.string.earn_ten_gold),Snackbar.LENGTH_SHORT).show()

@@ -69,12 +69,11 @@ class MainFragment : Fragment() {
         auth = Firebase.auth
         firestore = Firebase.firestore
 
-        getUserData(auth.currentUser!!.email.toString())
+        getUserData(auth.currentUser!!.email.toString(), view)
 
         return view
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -114,18 +113,18 @@ class MainFragment : Fragment() {
     }
 
     @SuppressLint("SetTextI18n")
-    private fun getUserData(name : String){
-        val getUserData = firestore.collection("UserData").document(name)
+    private fun getUserData(name : String, view : View){
+        val getUserData = firestore.collection(resources.getString(R.string.firebase_userData)).document(name)
         getUserData.get().addOnSuccessListener { document ->
             if (document != null){
                 if (document.data != null){
-                    userName = document.data!!["userName"]
-                    userSurname = document.data!!["userSurname"]
-                    userEmail = document.data!!["userEmail"]
-                    userNick = document.data!!["userNick"]
-                    userEducationLevel = document.data!!["userEducationLevel"]
-                    userBirthday = document.data!!["userBirthday"]
-                    userCoin = document.data!!["userCoin"]
+                    userName = document.data!![resources.getString(R.string.firebase_userName)]
+                    userSurname = document.data!![resources.getString(R.string.firebase_userSurname)]
+                    userEmail = document.data!![resources.getString(R.string.firebase_userEmail)]
+                    userNick = document.data!![resources.getString(R.string.firebase_userNick)]
+                    userEducationLevel = document.data!![resources.getString(R.string.firebase_educationLevel)]
+                    userBirthday = document.data!![resources.getString(R.string.firebase_userBirthday)]
+                    userCoin = document.data!![resources.getString(R.string.firebase_userCoin)]
 
                     binding.userName.text = "$userName $userSurname"
                     binding.userCoin.text = userCoin.toString()
@@ -133,7 +132,7 @@ class MainFragment : Fragment() {
                     binding.cardGridLayout.visibility = View.VISIBLE
 
                 }else{
-                    Toast.makeText(requireContext(),"Kullanıcı verisi bulunamadı",Toast.LENGTH_SHORT).show()
+                    Snackbar.make(view, resources.getString(R.string.no_user_data), Snackbar.LENGTH_LONG).show()
                 }
             }
         }.addOnFailureListener {

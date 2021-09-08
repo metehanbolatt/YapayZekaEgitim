@@ -49,25 +49,25 @@ class MachineGameListFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
         binding.machineTicTacToeCard.setOnClickListener {
-            val extras = FragmentNavigatorExtras(binding.machineTicTacToeCard to "image_big")
+            val extras = FragmentNavigatorExtras(binding.machineTicTacToeCard to resources.getString(R.string.anim_image_big))
             navController = findNavController()
             navController.navigate(R.id.action_machineGameListFragment_to_animMachineTicTacToeFragment, null, null, extras)
         }
 
         binding.machineQuizCard.setOnClickListener {
-            val extras = FragmentNavigatorExtras(binding.machineQuizCard to "image_big2")
+            val extras = FragmentNavigatorExtras(binding.machineQuizCard to resources.getString(R.string.anim_image_big2))
             navController = findNavController()
             navController.navigate(R.id.action_machineGameListFragment_to_animMachineQuizGameFragment, null, null, extras)
         }
 
         binding.machineWordCard.setOnClickListener {
-            val extras = FragmentNavigatorExtras(binding.machineWordCard to "image_big3")
+            val extras = FragmentNavigatorExtras(binding.machineWordCard to resources.getString(R.string.anim_image_big3))
             navController = findNavController()
             navController.navigate(R.id.action_machineGameListFragment_to_animMachineWordGameFragment, null, null, extras)
         }
 
         binding.machineMineSweeperCard.setOnClickListener {
-            val extras = FragmentNavigatorExtras(binding.machineMineSweeperCard to "image_big4")
+            val extras = FragmentNavigatorExtras(binding.machineMineSweeperCard to resources.getString(R.string.anim_image_big4))
             navController = findNavController()
             navController.navigate(R.id.action_machineGameListFragment_to_animMachineMineSweeperFragment, null, null, extras)
         }

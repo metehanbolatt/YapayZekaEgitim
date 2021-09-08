@@ -32,7 +32,7 @@ class EightDrawHashFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
         binding.cizimHashSekizImage.setOnClickListener {
-            val extras = FragmentNavigatorExtras(binding.cizimHashSekizImage to "image_small2")
+            val extras = FragmentNavigatorExtras(binding.cizimHashSekizImage to resources.getString(R.string.image_small2))
             val action = EightDrawHashFragmentDirections.actionEightDrawHashFragmentToHowComputerVisionFragment(2)
             findNavController().navigate(
                 R.id.action_eightDrawHashFragment_to_howComputerVisionFragment,

@@ -406,16 +406,16 @@ class ComputerVisionInfoFragment : Fragment() {
     }
 
     private fun secondCoinChange(){
-        val coinControlUpdate = firestore.collection("UserData").document(auth.currentUser?.email.toString())
-        coinControlUpdate.update("secondCoin",1)
+        val coinControlUpdate = firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser?.email.toString())
+        coinControlUpdate.update(resources.getString(R.string.firebase_secondCoin),1)
     }
 
     private fun getNextFragment(){
-        val getCoinInfo = firestore.collection("UserData").document(auth.currentUser?.email.toString())
+        val getCoinInfo = firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser?.email.toString())
         getCoinInfo.get().addOnSuccessListener { document ->
             if (document != null){
                 if (document.data != null){
-                    thirdCoinControl = document.data!!["thirdCoin"]
+                    thirdCoinControl = document.data!![resources.getString(R.string.firebase_thirdCoin)]
                     val action = ComputerVisionInfoFragmentDirections.actionComputerVisionInfoFragmentToHowComputerVisionFragment(thirdCoinControl.toString().toInt())
                     Navigation.findNavController(requireView()).navigate(R.id.action_computerVisionInfoFragment_to_howComputerVisionFragment,action.arguments)
                 }

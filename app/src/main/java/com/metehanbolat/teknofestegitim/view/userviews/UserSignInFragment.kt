@@ -46,7 +46,7 @@ class UserSignInFragment : Fragment() {
             val password = binding.userPasswordSignIn.text.toString()
 
             if (email.isEmpty() || password.isEmpty()){
-                Snackbar.make(it, "Email veya şifre boş bırakılmış.", Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(it, resources.getString(R.string.emailorpassword_empty), Snackbar.LENGTH_SHORT).show()
             }else{
                 auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
                     val intent = Intent(requireContext(), MainActivity::class.java)

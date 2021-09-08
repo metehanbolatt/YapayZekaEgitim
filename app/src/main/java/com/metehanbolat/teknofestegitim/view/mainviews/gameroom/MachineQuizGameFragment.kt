@@ -131,20 +131,19 @@ class MachineQuizGameFragment : Fragment() {
                 binding.answer1CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_green_light))
                 getMoneyData(it)
                 userMoney = userMoney!! + 10
-                firestore.collection("UserData").document(auth.currentUser!!.email.toString()).update("userMoney",userMoney)
+                firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString()).update(resources.getString(R.string.firebase_userMoney), userMoney)
             }else if (chosen == 0 && choosable == 1 && questionsRightAnswer != answerOne){
                 binding.answer1CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_red_dark))
             }
             chosen = 1
         }
 
-
         binding.answer2CardView.setOnClickListener {
             if (chosen == 0 && choosable == 1 && questionsRightAnswer == answerTwo){
                 binding.answer2CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_green_dark))
                 getMoneyData(it)
                 userMoney = userMoney!! + 10
-                firestore.collection("UserData").document(auth.currentUser!!.email.toString()).update("userMoney",userMoney)
+                firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString()).update(resources.getString(R.string.firebase_userMoney), userMoney)
             }else if (chosen == 0 && choosable == 1 && questionsRightAnswer != answerTwo){
                 binding.answer2CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_red_dark))
             }
@@ -156,7 +155,7 @@ class MachineQuizGameFragment : Fragment() {
                 binding.answer3CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_green_dark))
                 getMoneyData(it)
                 userMoney = userMoney!! + 10
-                firestore.collection("UserData").document(auth.currentUser!!.email.toString()).update("userMoney",userMoney)
+                firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString()).update(resources.getString(R.string.firebase_userMoney), userMoney)
             }else if (chosen == 0 && choosable == 1 && questionsRightAnswer != answerThree){
                 binding.answer3CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_red_dark))
             }
@@ -168,7 +167,7 @@ class MachineQuizGameFragment : Fragment() {
                 binding.answer4CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_green_dark))
                 getMoneyData(it)
                 userMoney = userMoney!! + 10
-                firestore.collection("UserData").document(auth.currentUser!!.email.toString()).update("userMoney",userMoney)
+                firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString()).update(resources.getString(R.string.firebase_userMoney), userMoney)
             }else if (chosen == 0 && choosable == 1 && questionsRightAnswer != answerFour){
                 binding.answer4CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_red_dark))
             }
@@ -210,7 +209,7 @@ class MachineQuizGameFragment : Fragment() {
     }
 
     private fun getMoneyData(view : View){
-        firestore.collection("UserData").whereEqualTo("userEmail",auth.currentUser!!.email.toString()).addSnapshotListener { value, error ->
+        firestore.collection(resources.getString(R.string.firebase_userData)).whereEqualTo(resources.getString(R.string.firebase_userEmail),auth.currentUser!!.email.toString()).addSnapshotListener { value, error ->
             if (error != null){
                 Snackbar.make(view, resources.getString(R.string.error_occurred),Snackbar.LENGTH_SHORT).show()
             }else{
@@ -218,7 +217,7 @@ class MachineQuizGameFragment : Fragment() {
                     if (!value.isEmpty){
                         val documents=value.documents
                         for (document in documents){
-                            userMoney= (document.get("userCoin") as Long).toInt()
+                            userMoney= (document.get(resources.getString(R.string.firebase_userCoin)) as Long).toInt()
                         }
                     }
                 }
