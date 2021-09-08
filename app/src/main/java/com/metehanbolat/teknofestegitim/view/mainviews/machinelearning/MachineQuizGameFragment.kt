@@ -1,6 +1,5 @@
 package com.metehanbolat.teknofestegitim.view.mainviews.machinelearning
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -93,11 +92,11 @@ class MachineQuizGameFragment : Fragment() {
 
         binding.nextButton.setOnClickListener {
 
-            binding.answer1CardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
-            binding.answer2CardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
-            binding.answer3CardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
-            binding.answer4CardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
-            binding.questionCardView.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
+            binding.answer1CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+            binding.answer2CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+            binding.answer3CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+            binding.answer4CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+            binding.questionCardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
 
             if (questionNumber < (questionModels!!.size)){
                 if (chosen == 1){

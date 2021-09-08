@@ -1,129 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.mainviews.machinelearning.MachineLearningFragment"
-    android:background="@drawable/background_user"
-    android:layout_gravity="center"
-    android:textAlignment="center">
+    android:background="@color/machine_learning_background_color"
+    app:layoutDescription="@xml/fragment_machine_learning_scene2"
+    tools:context=".view.mainviews.machinelearning.MachineLearningFragment">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+    <TextView
+        android:id="@+id/machineLearningTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/gothambold"
+        android:text="@string/machine_learning"
+        android:textColor="@color/white"
+        android:textSize="42sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/machineLearningRobotDrawImage"
+        android:layout_width="350dp"
+        android:layout_height="500dp"
         android:layout_marginTop="20dp"
-        >
+        android:src="@drawable/robot_draw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/machineLearningTitle" />
 
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/mchnlrngrbt" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="30dp"
-            android:elevation="10000dp"
-            app:cardBackgroundColor="#E84A4A">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:text="MAKİNE ÖĞRENME NEDİR?"
-                android:textSize="23dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:gravity="center"/>
-        </androidx.cardview.widget.CardView>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <LinearLayout
-
+    <TextView
+        android:id="@+id/machineLearningInfoOne"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="220dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/gothombook"
+        android:justificationMode="inter_word"
+        android:text="@string/machine_learning_information"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/machineLearningRobotDrawImage" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="#E84A4A"
-            app:cardCornerRadius="30dp"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:paddingLeft="10dp"
-                android:textSize="20dp"
-                android:textColor="@color/white"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:text="   Makine öğrenmesi, insanların öğrenme şekillerini taklit etmek için veri ve algoritmaların kullanımına odaklanıp doğruluğunu kademeli olarak artıran bir yapay zeka (AI) ve bilgisayar bilimi dalıdır."/>
+    <Button
+        android:id="@+id/machineLearningButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/moveOn"
+        android:textStyle="bold"
+        android:backgroundTint="@color/machine_learning_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/machineLearningInfoOne" />
 
-
-        </androidx.cardview.widget.CardView>
-
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:cardBackgroundColor="#FFEB3B"
-            app:cardCornerRadius="30dp"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:text="HAZIR MISIN"
-                android:textSize="40dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="#2196F3"
-                />
-
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="30dp"
-            app:cardBackgroundColor="#22D129"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:id="@+id/userNameText"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textSize="40dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textAllCaps="true"
-                android:text="selam"
-                android:textColor="@color/white"
-                />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/baslaButton"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:text="BAŞLA!"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:foregroundGravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/game_list_button" />
-
-    </LinearLayout>
-
-</FrameLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

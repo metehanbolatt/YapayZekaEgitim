@@ -79,8 +79,12 @@
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left" />
         <action
-            android:id="@+id/action_machineLearningFragment_to_machineGameListFragment"
-            app:destination="@id/machineGameListFragment" />
+            android:id="@+id/action_machineLearningFragment_to_machineHumanNeuralFragment"
+            app:destination="@id/machineHumanNeuralFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
     <fragment
         android:id="@+id/achievementFragment"
@@ -216,9 +220,6 @@
         android:label="fragment_machine_game_list"
         tools:layout="@layout/fragment_machine_game_list" >
         <action
-            android:id="@+id/action_machineGameListFragment_to_machineLearningFragment"
-            app:destination="@id/machineLearningFragment" />
-        <action
             android:id="@+id/action_machineGameListFragment_to_machineTicTacToeFragment"
             app:destination="@id/machineTicTacToeFragment" />
         <action
@@ -230,6 +231,9 @@
         <action
             android:id="@+id/action_machineGameListFragment_to_machineQuizGameFragment"
             app:destination="@id/machineQuizGameFragment" />
+        <action
+            android:id="@+id/action_machineGameListFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/machineMineSweeperFragment"
@@ -271,6 +275,90 @@
         tools:layout="@layout/fragment_machine_word_game" >
         <action
             android:id="@+id/action_machineWordGameFragment_to_machineGameListFragment"
+            app:destination="@id/machineGameListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/machineHumanNeuralFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.MachineHumanNeuralFragment"
+        android:label="fragment_machine_human_neural"
+        tools:layout="@layout/fragment_machine_human_neural" >
+        <action
+            android:id="@+id/action_machineHumanNeuralFragment_to_machineLearningFragment"
+            app:destination="@id/machineLearningFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_machineHumanNeuralFragment_to_machineMachineNeuralFragment"
+            app:destination="@id/machineMachineNeuralFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/machineMachineNeuralFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.MachineMachineNeuralFragment"
+        android:label="fragment_machine_machine_neural"
+        tools:layout="@layout/fragment_machine_machine_neural" >
+        <action
+            android:id="@+id/action_machineMachineNeuralFragment_to_machineHumanNeuralFragment"
+            app:destination="@id/machineHumanNeuralFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_machineMachineNeuralFragment_to_machineCanTeachFragment"
+            app:destination="@id/machineCanTeachFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/machineCanTeachFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.MachineCanTeachFragment"
+        android:label="fragment_machine_can_teach"
+        tools:layout="@layout/fragment_machine_can_teach" >
+        <action
+            android:id="@+id/action_machineCanTeachFragment_to_machineMachineNeuralFragment"
+            app:destination="@id/machineMachineNeuralFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_machineCanTeachFragment_to_machineChooseSectionFragment"
+            app:destination="@id/machineChooseSectionFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/machineChooseSectionFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.MachineChooseSectionFragment"
+        android:label="fragment_machine_choose_section"
+        tools:layout="@layout/fragment_machine_choose_section" >
+        <action
+            android:id="@+id/action_machineChooseSectionFragment_to_machineCanTeachFragment"
+            app:destination="@id/machineCanTeachFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_machineChooseSectionFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_machineChooseSectionFragment_to_gameRoomAnimFragment"
+            app:destination="@id/gameRoomAnimFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameRoomAnimFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.GameRoomAnimFragment"
+        android:label="fragment_game_room_anim"
+        tools:layout="@layout/fragment_game_room_anim">
+        <action
+            android:id="@+id/action_gameRoomAnimFragment_to_machineGameListFragment"
             app:destination="@id/machineGameListFragment" />
     </fragment>
 </navigation>

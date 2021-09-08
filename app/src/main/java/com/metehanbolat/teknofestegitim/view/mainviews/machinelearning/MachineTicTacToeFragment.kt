@@ -11,6 +11,7 @@ import android.widget.ImageView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
@@ -102,7 +103,7 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
 
         for (i in buttons.indices) {
             val buttonID = "btn_$i"
-            val resourceID = resources.getIdentifier(buttonID, "id", context?.packageName)
+            val resourceID = resources.getIdentifier(buttonID, "id", view.context.packageName)
             buttons[i] = getView()?.findViewById<View>(resourceID) as Button
             buttons[i]!!.setOnClickListener(this)
         }
@@ -201,9 +202,8 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                         secondTour = 1
                     } else if (playerOneScoreCount == 3 && secondTour == 1) {
                         thirdTour = 1
-                    } else {
-                        showImagePickDialog(view)
                     }
+
                     updatePlayerScore()
                     if (playerOneScoreCount == 3) {
                         Snackbar.make(view, resources.getString(R.string.game_win) , Snackbar.LENGTH_SHORT).show()
@@ -228,7 +228,11 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
         } else if (questionSeeControl && !control) {
             activePlayer =! activePlayer
         } else {
-            Snackbar.make(view, resources.getString(R.string.click_question_see), Snackbar.LENGTH_SHORT).show()
+            if (binding.turnButton.isVisible){
+                Snackbar.make(view, resources.getString(R.string.click_question_see), Snackbar.LENGTH_SHORT).show()
+            }else if (binding.raundButton.isVisible){
+                Snackbar.make(view, resources.getString(R.string.please_click_round_button), Snackbar.LENGTH_SHORT).show()
+            }
         }
         if (activePlayer) {
             binding.playerStatus.text = resources.getString(R.string.your_turn)

@@ -102,21 +102,21 @@
     <string name="empty" />
 
     <string name="baseUrl">"https://raw.githubusercontent.com/"</string>
-    
+
     <string name="your_turn">Sıra sende!</string>
     <string name="rival_turn">Sıra rakipte!</string>
 
     <string name="see_question">Soruyu gör</string>
-    
+
     <string name="third_round_start">3. Tura Başla</string>
-    
+
     <string name="zero">0</string>
     <string name="x">X</string>
-    
+
     <string name="game_win">Oyunu Kazandınız. Tebrikler!</string>
     <string name="game_lose">Oyunu Kaybettiniz. Tekrar Oynayın!</string>
     <string name="lets_play">Hadi Oynayalım!</string>
-    
+
     <string name="click_question_see">Lütfen soruyu gör butonuna tıklayın</string>
 
     <string name="true_answer_two">Doğru cevap! Oynamaya devam.</string>
@@ -126,9 +126,41 @@
     <string name="not_random">notRandom</string>
 
     <string name="nice_answer">Doğru bildiniz. Devam edin!</string>
+    <string name="please_click_round_button">Lütfen tura başla butonuna tıklayın</string>
 
     <string name="you_won">Tebrikler rakibini yenmeyi başardın!</string>
     <string name="last_word_press_enter">Lütfen yukarıdaki ifadenin son harfi ile başlayan bir kelime girip klavyedeki enter tuşuna basınız</string>
+    <string name="machine_learning">Makine Öğrenmesi</string>
+    <string name="machine_learning_information">Makine öğrenmesi, bir robota insan gibi düşünebilme yeteneği kazandırır. Peki bir robot tamamen insan gibi düşünebilir mi?</string>
+    <string name="machine_human_info_one">Gözümüzle gördüğümüz her şey beynimiz tarafından yorumlanır ve anlamlı hale getirilmeye çalışılır.</string>
+    <string name="machine_human_info_two">Gördüğümüz şeyleri anlamlı hale getirebilme sürecine öğrenme diyoruz.</string>
+    <string name="machine_human_info_three">Bu öğrenme süreci için birçok duyu organı kullanmakla birlikte temel olarak göz ile başlayıp beyin ile bitiyor diyebiliriz.</string>
+    <string name="machine_human_info_four">Vücudumuzun her yerinde bulunan sinirler yardımıyla duyu organlarımızla algıladığımız her şey beyin tarafından yorumlanır.</string>
+    <string name="machine_human_info_five">Peki bir makine nasıl öğrenir?</string>
+    <string name="machine_human_info">İnsan beyninin gizemi günümüzde dahi çözülebilmiş değildir.</string>
+    <string name="machine_machine_neural">Bir makine tam anlamıyla bir insan gibi öğrenebilir ve düşünebilir mi?</string>
+    <string name="machine_machine_neural_info_two">Daha insan beynini tam olarak anlayamamışken bu sorunun cevabı muhtemelen hayır olmalıdır.</string>
+    <string name="machine_machine_info_three">Geliştirilen teknolojiler ve yapılan birçok araştırma sonucunda makineler oldukça büyük yetenekler kazanmıştır. Bunlardan bazıları aşağıdaki gibidir:</string>
+    <string name="machine_machine_info_four">- Sorulan sorulara cevap verebilme \n- Fiziksel hareketler gerçekleştirebilme\n- Nesneleri algılayabilme</string>
+    <string name="machine_machine_neural_info_five">Bu bahsedilenlerin dışında daha birçok yeteneğe sahip olan makineler hakkında ileride çok fazla şey öğreneceğiz.</string>
+    <string name="machine_can_teach_info_one">İnsan beyni ve makinelerin neler öğrenebildiği ile ilgili biraz bilgi sahibi olduk.</string>
+    <string name="machine_can_teach_info_two">Peki bir makine insanlara kendi öğrendiklerini öğretmeye başlayabilir mi ?</string>
+    <string name="machine_can_teach_info_three">Makineler kendi kendine öğrenebilme yeteneği kazanabilseler de bu insanlarla karşılaştırılabilecek seviyede değildir.</string>
+    <string name="machine_can_teach_info_four">Teknolojinin gelişmesiyle birlikte sürekli gelişen makineler gelecekte insan beyninden çok daha ileri seviyelere çıkabilir.</string>
+    <string name="machine_can_teach_info_five">Bunu başarabilmenin önündeki en büyük engel bu teknolojileri geliştirecek insanların bu alanda yeterince çalışmıyor olması.</string>
+    <string name="machine_can_teach_info_six">Bunu seninle başarabiliriz.</string>
+    <string name="rules">Kurallar</string>
+    <string name="choose_category">- Kategori seçin</string>
+    <string name="win_game">- Oyunları kazanın</string>
+    <string name="collect_awards">- Ödülleri toplayın</string>
+    <string name="ready_to_fun">- Eğlenmeye hazır olun</string>
+    <string name="machine_choose_section_info_one">Şuana kadar insanlar ve robotlar hakkında birçok bilgi edindin. Bunları pekiştirmek ve daha fazlasını öğrenmek için oyun dünyasına geçebiliriz.</string>
+    <string name="game_world">Oyun Dünyası</string>
+
+    <string name="back_main_menu">Anasayfaya dönmek ister misin?</string>
+    <string name="click_main_menu">Anasayfaya Dön</string>
+    <string name="back">Dön</string>
+    <string name="click_image">Resme tıklayabilirsin.</string>
 
     <string-array name="education_level">
         <item>Okul Öncesi</item>

@@ -39,8 +39,6 @@ class MainFragment : Fragment() {
     private var userEducationLevel : Any? = null
     private var userBirthday : Any? = null
     private var userCoin : Any? = null
-    //private var firstCoinComputerVision : Any? = null
-    //private var secondCoinComputerVision : Any? = null
     private var counter = 0
 
     override fun onCreateView(

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    tools:context=".view.mainviews.machinelearning.MachineChooseSectionFragment">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/machineChooseSectionImageRobotHand"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/robot_hand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/machineChooseSectionImageHumanHand"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/human_hand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/machineChooseSectionImageBrain"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/brain_tree"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/machineChooseSectionAndroid"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/android_robot"
+        app:layout_constraintTop_toBottomOf="@id/machineChooseSectionImageHumanHand"
+        app:layout_constraintBottom_toTopOf="@id/machineChooseSectionImageRobotHand"
+        app:layout_constraintStart_toEndOf="@id/machineChooseSectionImageRobotHand"
+        app:layout_constraintEnd_toStartOf="@id/machineChooseSectionImageHumanHand" />
+
+    <TextView
+        android:id="@+id/machineChooseSectionInfoOne"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"
+        android:text="@string/machine_choose_section_info_one"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/machineChooseSectionImageRobotHand"/>
+
+    <Button
+        android:id="@+id/machineChooseSectionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/game_world"
+        android:backgroundTint="#304BE3"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/machineChooseSectionInfoOne" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,7 +31,6 @@ class HowComputerVisionFragment : Fragment() {
     private var counterZoomDraw = 0
     private var counterZoomHashDraw = 0
     private var counterZoomHash = 0
-    //private var counterAll = 0
     private var bigControl = 0
 
     private lateinit var auth: FirebaseAuth

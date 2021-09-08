@@ -493,7 +493,7 @@ class MachineMineSweeperFragment : Fragment() {
             binding.btn2.setBackgroundResource(R.drawable.bomb)
         }
 
-        if (map[0][2]!=-1){
+        if (map[0][2] != -1){
             if (binding.btn3.text == empty){
                 checkMine(0,2)
 

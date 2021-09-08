@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.mainviews.computervision.GameListFragment">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/coinImage"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/title_Image"
         android:layout_width="100dp"
         android:layout_height="110dp"
@@ -74,7 +74,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kurallar"
+            android:text="@string/rules"
             android:layout_marginBottom="4dp"
             android:textColor="@color/white"
             android:layout_marginStart="8dp"
@@ -84,26 +84,26 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="- Kategori seçin"
+            android:text="@string/choose_category"
             android:textColor="@color/white"
             android:textSize="14sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="- Oyunları kazanın"
+            android:text="@string/win_game"
             android:textColor="@color/white"
             android:textSize="14sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="- Ödülleri toplayın"
+            android:text="@string/collect_awards"
             android:textColor="@color/white"
             android:textSize="14sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="- Eğlenmeye hazır olun"
+            android:text="@string/ready_to_fun"
             android:textColor="@color/white"
             android:textSize="14sp"/>
 
@@ -135,7 +135,7 @@
             app:cardCornerRadius="20dp"
             app:cardElevation="8dp">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -154,10 +154,9 @@
             app:cardBackgroundColor="#B8EDF8"
             android:layout_margin="8dp"
             app:cardCornerRadius="20dp"
-
             app:cardElevation="8dp">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -178,7 +177,7 @@
             app:cardCornerRadius="20dp"
             app:cardElevation="8dp">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -199,7 +198,7 @@
             app:cardCornerRadius="20dp"
             app:cardElevation="8dp">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -209,8 +208,5 @@
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

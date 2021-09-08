@@ -23,8 +23,13 @@
 
     <color name="button_move_on_color">#FC9917</color>
     <color name="background_color">#7D9BF4</color>
+    <color name="machine_can_teach_text_color">#FBCA4F</color>
 
     <color name="tic_tac_toe_red">#FF1500</color>
 
+    <color name="machine_learning_button">#F3B028</color>
+    <color name="machine_learning_background_color">#1D7AD9</color>
+    <color name="machine_human_background_color">#061437</color>
+    <color name="machine_can_teach_background_color">#061437</color>
 
 </resources>

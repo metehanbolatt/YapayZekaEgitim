@@ -9,6 +9,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentMachineGameListBinding
 
@@ -26,7 +27,7 @@ class MachineGameListFragment : Fragment() {
         _binding = FragmentMachineGameListBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_design_start_color)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.game_fragment)
 
         return view
     }
@@ -36,29 +37,32 @@ class MachineGameListFragment : Fragment() {
 
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                navController = findNavController()
-                navController.navigate(R.id.action_machineGameListFragment_to_machineLearningFragment)
+
+                Snackbar.make(view,resources.getString(R.string.back_main_menu), Snackbar.LENGTH_INDEFINITE).setAction(resources.getString(R.string.back)){
+                    navController = findNavController()
+                    navController.navigate(R.id.action_machineGameListFragment_to_mainFragment)
+                }.show()
+
             }
         }
-
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
-        binding.gototictoctoeButton.setOnClickListener {
+        binding.machineTicTacToeCard.setOnClickListener {
             navController = findNavController()
             navController.navigate(R.id.action_machineGameListFragment_to_machineTicTacToeFragment)
         }
 
-        binding.gotoquizgameButton.setOnClickListener {
+        binding.machineQuizCard.setOnClickListener {
             navController = findNavController()
             navController.navigate(R.id.action_machineGameListFragment_to_machineQuizGameFragment)
         }
 
-        binding.gotowordgameButton.setOnClickListener {
+        binding.machineWordCard.setOnClickListener {
             navController = findNavController()
             navController.navigate(R.id.action_machineGameListFragment_to_machineWordGameFragment)
         }
 
-        binding.gotominesweeperButton.setOnClickListener {
+        binding.machineMineSweeperCard.setOnClickListener {
             navController = findNavController()
             navController.navigate(R.id.action_machineGameListFragment_to_machineMineSweeperFragment)
         }
