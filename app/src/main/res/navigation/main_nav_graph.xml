@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/machineGameListFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -39,8 +39,12 @@
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left" />
         <action
-            android:id="@+id/action_mainFragment_to_mainEducation"
-            app:destination="@id/mainEducation" />
+            android:id="@+id/action_mainFragment_to_animMainEducationFragment"
+            app:destination="@id/animMainEducationFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/giftFragment"
@@ -208,6 +212,9 @@
         <action
             android:id="@+id/action_machineGameListFragment_to_animMachineMineSweeperFragment"
             app:destination="@id/animMachineMineSweeperFragment" />
+        <action
+            android:id="@+id/action_machineGameListFragment_to_animAIQuizGameFragment"
+            app:destination="@id/animAIQuizGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/machineMineSweeperFragment"
@@ -347,9 +354,6 @@
         android:label="fragment_main_education"
         tools:layout="@layout/fragment_main_education" >
         <action
-            android:id="@+id/action_mainEducation_to_mainFragment"
-            app:destination="@id/mainFragment" />
-        <action
             android:id="@+id/action_mainEducation_to_educationOne"
             app:destination="@id/educationOne" />
         <action
@@ -359,33 +363,21 @@
             android:id="@+id/action_mainEducation_to_educationThree"
             app:destination="@id/educationThree" />
         <action
-            android:id="@+id/action_mainEducation_to_artificialIntelligenceFragment"
-            app:destination="@id/artificialIntelligenceFragment" />
+            android:id="@+id/action_mainEducation_to_gameRoomAnimFragment"
+            app:destination="@id/gameRoomAnimFragment" />
+        <action
+            android:id="@+id/action_mainEducation_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
     <fragment
         android:id="@+id/AIGameOneFragment"
         android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.AIGameOneFragment"
         android:label="fragment_a_i_game_one"
-        tools:layout="@layout/fragment_a_i_game_one" >
-        <action
-            android:id="@+id/action_AIGameOneFragment_to_artificialIntelligenceFragment"
-            app:destination="@id/artificialIntelligenceFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/artificialIntelligenceFragment"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.ArtificialIntelligenceFragment"
-        android:label="fragment_artificial_intelligence"
-        tools:layout="@layout/fragment_artificial_intelligence" >
-        <action
-            android:id="@+id/action_artificialIntelligenceFragment_to_mainEducation"
-            app:destination="@id/mainEducation" />
-        <action
-            android:id="@+id/action_artificialIntelligenceFragment_to_AIGameOneFragment"
-            app:destination="@id/AIGameOneFragment" />
-        <action
-            android:id="@+id/action_artificialIntelligenceFragment_to_AIGameTwoFragment"
-            app:destination="@id/AIGameTwoFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_a_i_game_one" />
     <fragment
         android:id="@+id/educationFour"
         android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationFour"
@@ -424,6 +416,9 @@
         <action
             android:id="@+id/action_educationThreetwo_to_educationFour"
             app:destination="@id/educationFour" />
+        <action
+            android:id="@+id/action_educationThreetwo_to_mainEducation"
+            app:destination="@id/mainEducation" />
     </fragment>
     <fragment
         android:id="@+id/educationTwo"
@@ -433,14 +428,6 @@
         <action
             android:id="@+id/action_educationTwo_to_mainEducation"
             app:destination="@id/mainEducation" />
-    </fragment>
-    <fragment
-        android:id="@+id/AIGameTwoFragment"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.AIGameTwoFragment"
-        android:label="AIGameTwoFragment" >
-        <action
-            android:id="@+id/action_AIGameTwoFragment_to_artificialIntelligenceFragment"
-            app:destination="@id/artificialIntelligenceFragment" />
     </fragment>
     <fragment
         android:id="@+id/animMachineMineSweeperFragment"
@@ -468,5 +455,32 @@
         <action
             android:id="@+id/action_animMachineWordGameFragment_to_machineWordGameFragment"
             app:destination="@id/machineWordGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AIGameTwoFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.AIGameTwoFragment"
+        android:label="fragment_a_i_game_two"
+        tools:layout="@layout/fragment_a_i_game_two" >
+        <action
+            android:id="@+id/action_AIGameTwoFragment_to_machineGameListFragment"
+            app:destination="@id/machineGameListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animAIQuizGameFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.anim.AnimAIQuizGameFragment"
+        android:label="fragment_anim_a_i_quiz_game"
+        tools:layout="@layout/fragment_anim_a_i_quiz_game" >
+        <action
+            android:id="@+id/action_animAIQuizGameFragment_to_AIGameTwoFragment"
+            app:destination="@id/AIGameTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/animMainEducationFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.anim.AnimMainEducationFragment"
+        android:label="fragment_anim_main_education"
+        tools:layout="@layout/fragment_anim_main_education" >
+        <action
+            android:id="@+id/action_animMainEducationFragment_to_mainEducation"
+            app:destination="@id/mainEducation" />
     </fragment>
 </navigation>

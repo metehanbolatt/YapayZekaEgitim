@@ -4,15 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.mainviews.gameroom.anim.AnimMachineMineSweeperFragment">
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/machineTicTacToeCard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        android:src="@drawable/minesweeper"
-        android:transitionName="@string/anim_image_big4"
+    android:background="@color/black"
+    tools:context=".view.mainviews.artificialintelligence.aieducation.anim.AnimMainEducationFragment">
+    
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/animMainEducationGiphy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ai_gif"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

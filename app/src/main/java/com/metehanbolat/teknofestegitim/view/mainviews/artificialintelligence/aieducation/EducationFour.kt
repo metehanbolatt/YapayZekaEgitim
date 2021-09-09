@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
@@ -24,17 +25,8 @@ class EducationFour : Fragment() {
     private lateinit var auth : FirebaseAuth
     private lateinit var firestore : FirebaseFirestore
 
-    private var userName : Any? = null
-    private var userSurname : Any? = null
-    private var userEmail : Any? = null
-    private var userNick : Any? = null
-    private var userEducationLevel : Any? = null
-    private var userBirthday : Any? = null
     private var userCoin : Any? = null
-    private var learningOne : Any? = null
-    private var learningTwo : Any? = null
     private var learningThree : Any? = null
-    private var newUserDataMap = hashMapOf<String, Any>()
 
     private lateinit var navController: NavController
 
@@ -73,16 +65,22 @@ class EducationFour : Fragment() {
                 Snackbar.make(it, resources.getString(R.string.awards_already_collected_ai), Snackbar.LENGTH_LONG).show()
             }else{
                 val getData = firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString())
-                newUserDataMap.replace(resources.getString(R.string.ai_learning_three), resources.getString(R.string.false_ai), resources.getString(R.string.true_ai))
                 val userCoinInt : Int = userCoin.toString().toInt()
                 val newCoin : Int = userCoinInt + 10
-                newUserDataMap[resources.getString(R.string.firebase_userCoin)] = newCoin
-                getData.set(newUserDataMap)
+                getData.update(resources.getString(R.string.ai_learning_three),resources.getString(R.string.true_ai),resources.getString(R.string.firebase_userCoin),newCoin)
             }
 
             navController = findNavController()
             navController.navigate(R.id.action_educationFour_to_mainEducation)
         }
+
+        val callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                navController = findNavController()
+                navController.navigate(R.id.action_educationFour_to_mainEducation)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
     }
 
     private fun getDataFun(mail : String, view: View){
@@ -91,29 +89,8 @@ class EducationFour : Fragment() {
         getUserData.get().addOnSuccessListener { document ->
             if (document != null){
                 if (document.data != null){
-                    userName = document.data!![resources.getString(R.string.firebase_userName)]
-                    userSurname = document.data!![resources.getString(R.string.firebase_userSurname)]
-                    userEmail = document.data!![resources.getString(R.string.firebase_userEmail)]
-                    userNick = document.data!![resources.getString(R.string.firebase_userNick)]
-                    userEducationLevel = document.data!![resources.getString(R.string.firebase_educationLevel)]
-                    userBirthday = document.data!![resources.getString(R.string.firebase_userBirthday)]
-                    learningOne = document.data!![resources.getString(R.string.firebase_aiLearningOne)]
-                    learningTwo = document.data!![resources.getString(R.string.firebase_aiLearningTwo)]
                     learningThree = document.data!![resources.getString(R.string.firebase_aiLearningThree)]
                     userCoin = document.data!![resources.getString(R.string.firebase_userCoin)]
-
-                    newUserDataMap = hashMapOf()
-                    newUserDataMap[resources.getString(R.string.firebase_userCoin)]= userCoin as Any
-                    newUserDataMap[resources.getString(R.string.firebase_userName)] = userName as Any
-                    newUserDataMap[resources.getString(R.string.firebase_userSurname)] = userSurname as Any
-                    newUserDataMap[resources.getString(R.string.firebase_userNick)] = userNick as Any
-                    newUserDataMap[resources.getString(R.string.firebase_userEmail)] = userEmail as Any
-                    newUserDataMap[resources.getString(R.string.firebase_userBirthday)] = userBirthday as Any
-                    newUserDataMap[resources.getString(R.string.firebase_educationLevel)] = userEducationLevel as Any
-                    newUserDataMap[resources.getString(R.string.firebase_aiLearningOne)] = learningOne as Any
-                    newUserDataMap[resources.getString(R.string.firebase_aiLearningTwo)] = learningTwo as Any
-                    newUserDataMap[resources.getString(R.string.firebase_aiLearningThree)] = learningThree as Any
-
                 }else{
                     Snackbar.make(view, resources.getString(R.string.no_user_data), Snackbar.LENGTH_LONG).show()
                 }

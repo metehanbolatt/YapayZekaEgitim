@@ -72,6 +72,12 @@ class MachineGameListFragment : Fragment() {
             navController.navigate(R.id.action_machineGameListFragment_to_animMachineMineSweeperFragment, null, null, extras)
         }
 
+        binding.aiQuizCard.setOnClickListener {
+            val extras = FragmentNavigatorExtras(binding.aiQuizCard to resources.getString(R.string.anim_image_big5))
+            navController = findNavController()
+            navController.navigate(R.id.action_machineGameListFragment_to_animAIQuizGameFragment, null, null, extras)
+        }
+
     }
 
     override fun onDestroyView() {

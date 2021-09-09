@@ -215,7 +215,7 @@
     <string name="education_three_info_three">Hadi Gerçek Bir Yapay Sinir Ağına Bir Göz Atalım</string>
     <string name="education_three_info_four">Görsellerde gördüğümüz üzere yapay sinir ağı ile basit biyolojik sinir sisteminin çalışma şekli oldukça benzerdir. Yani biyolojik nöron hücrelerinin ve bu hücrelerin birbirleri ile arasında kurduğu sinaptik bağın dijital olarak modellenmesidir.</string>
 
-    <string name="education_four_info">Yapay Zekanın Kullanım Alanı Otonom Araçlar</string>
+    <string name="education_four_info">Yapay Zekânın Kullanım Alanı Otonom Araçlar</string>
     <string name="education_four_info_one">Hadi Yapay Zekanın Farkını Görelim</string>
     <string name="done_education_four">Yapay Zeka Temel Seviye Eğitimini Başarıyla Tamamladın</string>
 
@@ -230,8 +230,10 @@
     <string name="education_three_two_info_three">Bir problemin çözümü için ihtiyaç olan tüm işlemlerin mantıksal olarak, sıralı bir şekilde ifade edilmesidir. Algoritma kavramı programlama ya da yazılım geliştirmenin yanı sıra, günlük hayattaki aktiviteler, matematik vb. derslerde karşılaşılan sorunları daha kolaylıkla çözme olanağı sağlar.</string>
 
 
-    <string name="done_introduction_ai_lesson">Yapay Zekaya Giriş Eğitimini Başarıyla Tamamladın</string>
+    <string name="done_introduction_ai_lesson">Yapay Zekâya Giriş Eğitimini Başarıyla Tamamladın</string>
     <string name="get_awards_and_back_main">Ödülünü al ve Anasayfaya dön</string>
+
+    <string name="back_to_education_ai">Yapay Zekâ eğitim sayfasına mı dönmek istiyorsunuz?</string>
 
     <string name="ai">Yapay Zeka</string>
     <string name="fiveNoneK">5N1K</string>
@@ -240,43 +242,10 @@
     <string name="done_ai_with_fiveNoneK">Yapay Zekaya 5N1K Eğitimini Başarıyla Tamamladın</string>
 
     <string name="question_one">Soru 1</string>
-    <string name="example_question">Yaşlılar tarafından, dondurma yedikten sonra, ılık su içmesi için uyarılmayan yoktur herhalde. Peki bunun nedeni ne? Gerçekten sağlıklı mı, yoksa bir saçmalık mı?</string>
-    <string name="firebase_userData">UserData</string>
-    <string name="firebase_userName">userName</string>
-    <string name="firebase_userSurname">userSurname</string>
-    <string name="firebase_userEmail">userEmail</string>
-    <string name="firebase_userNick">userNick</string>
-    <string name="firebase_educationLevel">userEducationLevel</string>
-    <string name="firebase_userBirthday">userBirthday</string>
-    <string name="firebase_aiLearningOne">aiLearningOne</string>
-    <string name="firebase_aiLearningTwo">aiLearningTwo</string>
-    <string name="firebase_aiLearningThree">aiLearningThree</string>
-    <string name="firebase_userCoin">userCoin</string>
-    <string name="firebase_userMoney">userMoney</string>
-    <string name="firebase_firstCoin">firstCoin</string>
-    <string name="firebase_secondCoin">secondCoin</string>
-    <string name="firebase_thirdCoin">thirdCoin</string>
-    <string name="firebase_fourthCoin">fourthCoin</string>
-    <string name="firebase_fifthCoin">fifthCoin</string>
-    <string name="firebase_sixthCoin">sixthCoin</string>
-
-
     <string name="introduction_ai">Yapay Zekaya Giriş</string>
-
-    <string name="image_small">image_small</string>
-    <string name="image_small2">image_small2</string>
-    <string name="image_small3">image_small3</string>
-    <string name="image_big">image_big</string>
-    <string name="image_big2">image_big2</string>
-    <string name="image_big3">image_big3</string>
-
-    <string name="anim_image_big">anim_image_big</string>
-    <string name="anim_image_big2">anim_image_big2</string>
-    <string name="anim_image_big3">anim_image_big3</string>
-    <string name="anim_image_big4">anim_image_big4</string>
+    <string name="example_question">Yaşlılar tarafından, dondurma yedikten sonra, ılık su içmesi için uyarılmayan yoktur herhalde. Peki bunun nedeni ne? Gerçekten sağlıklı mı, yoksa bir saçmalık mı?</string>
 
     <string name="emailorpassword_empty">Email veya şifre boş bırakıldı.</string>
-
 
     <string-array name="education_level">
         <item>Okul Öncesi</item>
@@ -310,5 +279,41 @@
         <item>pekiştirmeye dayalı öğrenme</item>
         <item>edison</item>
     </string-array>
+
+    <string name="firebase_userData">UserData</string>
+    <string name="firebase_userName">userName</string>
+    <string name="firebase_userSurname">userSurname</string>
+    <string name="firebase_userEmail">userEmail</string>
+    <string name="firebase_userNick">userNick</string>
+    <string name="firebase_educationLevel">userEducationLevel</string>
+    <string name="firebase_userBirthday">userBirthday</string>
+    <string name="firebase_aiLearningOne">aiLearningOne</string>
+    <string name="firebase_aiLearningTwo">aiLearningTwo</string>
+    <string name="firebase_aiLearningThree">aiLearningThree</string>
+    <string name="firebase_userCoin">userCoin</string>
+    <string name="firebase_userMoney">userMoney</string>
+    <string name="firebase_firstCoin">firstCoin</string>
+    <string name="firebase_secondCoin">secondCoin</string>
+    <string name="firebase_thirdCoin">thirdCoin</string>
+    <string name="firebase_fourthCoin">fourthCoin</string>
+    <string name="firebase_fifthCoin">fifthCoin</string>
+    <string name="firebase_sixthCoin">sixthCoin</string>
+
+    <string name="image_small">image_small</string>
+    <string name="image_small2">image_small2</string>
+    <string name="image_small3">image_small3</string>
+    <string name="image_big">image_big</string>
+    <string name="image_big2">image_big2</string>
+    <string name="image_big3">image_big3</string>
+
+    <string name="anim_image_big">anim_image_big</string>
+    <string name="anim_image_big2">anim_image_big2</string>
+    <string name="anim_image_big3">anim_image_big3</string>
+    <string name="anim_image_big4">anim_image_big4</string>
+    <string name="anim_image_big5">anim_image_big5</string>
+    <string name="anim_image_big6">anim_image_big6</string>
+    <string name="main_education_info_one">Bu bölümde yapay zekâ hakkında detaylı bilgiler edinebileceksin.</string>
+    <string name="main_education_welcome">Hoşgeldin Metehan</string>
+
 
 </resources>

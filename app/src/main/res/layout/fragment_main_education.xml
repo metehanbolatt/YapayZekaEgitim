@@ -5,41 +5,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_user"
+    android:background="@color/black"
     tools:context=".view.mainviews.artificialintelligence.aieducation.MainEducation">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageViewWave"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/backgroundaitrans"
+    <TextView
+        android:id="@+id/mainEducationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_education_welcome"
+        android:textColor="@color/background_blue"
+        android:textSize="22sp"
+        android:fontFamily="@font/gothambold"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+        android:id="@+id/mainEducationInfo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ai"
-        android:textAllCaps="true"
-        android:textColor="@color/card_education"
-        android:textSize="16sp"
-        android:fontFamily="@font/summer"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/gothombook"
+        android:justificationMode="inter_word"
+        android:lineSpacingExtra="4dp"
+        android:text="@string/main_education_info_one"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/mainEducationTitle" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/ai_robot_human_hand"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
+        android:layout_marginTop="90dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/mainEducationTitle">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,6 +72,7 @@
                 app:cardCornerRadius="35dp"
                 app:strokeColor="@color/card_education_stroke"
                 app:strokeWidth="2dp">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -72,10 +89,13 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="@string/introduction_ai"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/gothambold"
+                        android:text="Giriş"
                         android:textColor="@color/white" />
 
                 </LinearLayout>
+
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -104,6 +124,8 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/gothambold"
                         android:text="@string/fiveNoneK"
                         android:textColor="@color/white" />
 
@@ -145,6 +167,8 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@string/ai"
+                        android:fontFamily="@font/gothambold"
+                        android:layout_marginTop="10dp"
                         android:textColor="@color/white" />
 
                 </LinearLayout>
@@ -176,7 +200,9 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:fontFamily="@font/gothambold"
                         android:text="@string/games"
+                        android:layout_marginTop="10dp"
                         android:textColor="@color/white" />
 
                 </LinearLayout>

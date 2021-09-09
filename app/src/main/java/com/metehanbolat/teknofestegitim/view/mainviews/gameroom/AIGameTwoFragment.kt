@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentAIGameTwoBinding
@@ -21,6 +24,7 @@ class AIGameTwoFragment : Fragment() {
 
     private var _binding : FragmentAIGameTwoBinding? = null
     private val binding get() = _binding!!
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +44,18 @@ class AIGameTwoFragment : Fragment() {
         val api = rf.create(RetrofitInterface::class.java)
 
         val call = api.posts
+
+        val callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+
+                Snackbar.make(view, resources.getString(R.string.are_u_sure_quit_game), Snackbar.LENGTH_INDEFINITE).setAction(resources.getString(R.string.back)){
+                    navController = findNavController()
+                    navController.navigate(R.id.action_AIGameTwoFragment_to_machineGameListFragment)
+                }.show()
+
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
 
         call?.enqueue(object: Callback<List<PostModel?>?> {
             override fun onResponse(

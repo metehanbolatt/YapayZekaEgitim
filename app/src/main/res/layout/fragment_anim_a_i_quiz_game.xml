@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.mainviews.gameroom.anim.AnimMachineMineSweeperFragment">
+    tools:context=".view.mainviews.gameroom.anim.AnimAIQuizGameFragment">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/machineTicTacToeCard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        android:src="@drawable/minesweeper"
-        android:transitionName="@string/anim_image_big4"
+        android:id="@+id/aiQuizCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/quiz_machine"
+        android:transitionName="@string/anim_image_big5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

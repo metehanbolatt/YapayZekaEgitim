@@ -8,24 +8,15 @@
     android:layout_height="match_parent"
     tools:context=".view.mainviews.artificialintelligence.aieducation.EducationOne">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageViewWave"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/backgroundaitrans"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/eduOneNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/card_education"
+        android:textColor="@color/white"
         android:text="@string/introduction_ai"
-        android:textAllCaps="true"
-        android:layout_marginTop="5dp"
-        android:textSize="16sp"
+        android:fontFamily="@font/gothambold"
+        android:layout_marginTop="50dp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,6 +33,8 @@
             android:layout_marginStart="15dp"
             android:id="@+id/informationTextEduOne"
             android:textColor="@color/white"
+            android:fontFamily="@font/gothombook"
+            android:justificationMode="inter_word"
             android:textSize="16sp"
             android:layout_width="250dp"
             android:layout_height="wrap_content" />
@@ -73,8 +66,10 @@
     <LinearLayout
         android:id="@+id/informationAll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eduOneNameText">
@@ -94,6 +89,9 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/gothombook"
+                android:justificationMode="inter_word"
                 android:text="@string/education_one_info_one"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
@@ -122,6 +120,9 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/gothombook"
+                android:justificationMode="inter_word"
                 android:text="@string/education_one_info_two"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
@@ -149,6 +150,9 @@
                 android:id="@+id/informationTextEduThrees"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/gothombook"
+                android:justificationMode="inter_word"
+                android:layout_marginEnd="5dp"
                 android:layout_marginStart="8dp"
                 android:text="@string/education_one_info_three"
                 android:textColor="@color/white"
@@ -178,6 +182,9 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:fontFamily="@font/gothombook"
+                android:layout_marginEnd="5dp"
+                android:justificationMode="inter_word"
                 android:text="@string/education_one_info_four"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
@@ -199,6 +206,8 @@
         android:layout_marginBottom="5dp"
         android:text="@string/done_introduction_ai_lesson"
         android:textColor="@color/white"
+        android:fontFamily="@font/gothombook"
+        android:justificationMode="inter_word"
         android:textSize="12sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/educationOneEndTextGift"
