@@ -1,6 +1,8 @@
 package com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentMainEducationBinding
+import java.util.*
 
 class MainEducation : Fragment() {
 
@@ -32,8 +35,14 @@ class MainEducation : Fragment() {
         return view
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        arguments?.let {
+            val userName = MainEducationArgs.fromBundle(it).name
+            binding.mainEducationTitle.text = "${resources.getString(R.string.welcome)} $userName"
+        }
 
         binding.cardViewEducationOne.setOnClickListener {
             navController = findNavController()

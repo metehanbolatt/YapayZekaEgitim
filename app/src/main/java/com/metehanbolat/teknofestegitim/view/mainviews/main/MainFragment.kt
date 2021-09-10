@@ -79,7 +79,8 @@ class MainFragment : Fragment() {
 
         binding.artificialIntelligenceCardView.setOnClickListener {
             navController = findNavController()
-            navController.navigate(R.id.action_mainFragment_to_animMainEducationFragment)
+            val action = MainFragmentDirections.actionMainFragmentToAnimMainEducationFragment(userName.toString())
+            navController.navigate(action)
         }
 
         binding.achievementCardView.setOnClickListener {

@@ -185,6 +185,8 @@
     <string name="game_two">İkinci Oyun</string>
     <string name="score">Skor</string>
 
+    <string name="mine_sweeper">Mayın Tarlası</string>
+
     <string name="question">Soru: </string>
 
     <string name="what_is_ai">Yapay Zeka Nedir?</string>

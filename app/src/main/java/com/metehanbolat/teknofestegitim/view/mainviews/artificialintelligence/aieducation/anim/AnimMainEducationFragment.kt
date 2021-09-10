@@ -22,6 +22,8 @@ class AnimMainEducationFragment : Fragment() {
 
     private lateinit var navController: NavController
 
+    private lateinit var userName : String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -45,9 +47,14 @@ class AnimMainEducationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        arguments?.let {
+            userName = AnimMainEducationFragmentArgs.fromBundle(it).name
+        }
+
         Handler(Looper.getMainLooper()).postDelayed({
             navController = findNavController()
-            navController.navigate(R.id.action_animMainEducationFragment_to_mainEducation)
+            val action = AnimMainEducationFragmentDirections.actionAnimMainEducationFragmentToMainEducation(userName)
+            navController.navigate(action)
         },2200)
     }
 

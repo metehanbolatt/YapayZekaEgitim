@@ -12,7 +12,6 @@
         android:id="@+id/mainEducationTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/main_education_welcome"
         android:textColor="@color/background_blue"
         android:textSize="22sp"
         android:fontFamily="@font/gothambold"
@@ -40,9 +39,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="230dp"
         android:src="@drawable/ai_robot_human_hand"
-        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />

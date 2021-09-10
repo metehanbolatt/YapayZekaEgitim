@@ -55,7 +55,7 @@ class MachineMineSweeperFragment : Fragment() {
         _binding = FragmentMachineMineSweeperBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_design_start_color)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.mine_sweeper_background_color)
 
         questionSeen = resources.getString(R.string.not_seen)
         questionAnswered = resources.getString(R.string.not_answered)

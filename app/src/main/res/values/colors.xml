@@ -32,6 +32,8 @@
     <color name="machine_human_background_color">#061437</color>
     <color name="machine_can_teach_background_color">#061437</color>
 
+    <color name="mine_sweeper_background_color">#00E5FF</color>
+
     <color name="tictactoe_background">#03A9F4</color>
 
     <color name="quiz_game_background">#04123C</color>

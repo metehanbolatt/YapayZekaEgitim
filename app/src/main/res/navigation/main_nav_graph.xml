@@ -372,6 +372,9 @@
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left" />
+        <argument
+            android:name="name"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/AIGameOneFragment"
@@ -482,5 +485,8 @@
         <action
             android:id="@+id/action_animMainEducationFragment_to_mainEducation"
             app:destination="@id/mainEducation" />
+        <argument
+            android:name="name"
+            app:argType="string" />
     </fragment>
 </navigation>
