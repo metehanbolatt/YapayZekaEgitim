@@ -29,6 +29,7 @@ class AchievementFragment : Fragment() {
             override fun handleOnBackPressed() {
                 navController = findNavController()
                 navController.navigate(R.id.action_achievementFragment_to_mainFragment)
+
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
