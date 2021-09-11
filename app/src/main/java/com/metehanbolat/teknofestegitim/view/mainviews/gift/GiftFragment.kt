@@ -64,7 +64,8 @@ class GiftFragment : Fragment() {
         binding.floatingButton.setOnClickListener {
 
             navController = findNavController()
-            navController.navigate(R.id.action_giftFragment_to_giftAwardsAddFragment)
+            val action = GiftFragmentDirections.actionGiftFragmentToGiftAwardsAddFragment(null)
+            navController.navigate(action)
 
         }
 

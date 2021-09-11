@@ -1,294 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">TeknofestEgitim</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="developer">Metehan Bolat</string>
 
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
+    <string name="get_Awards">Get Awards</string>
+
+    <string name="this_awards_delete"> prize have been deleted.</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="user_nick">Kullanıcı Adı</string>
-    <string name="password">Şifre</string>
-    <string name="enter">Giriş</string>
-    <string name="forget_password">Şifrenizi mi unuttunuz?</string>
+    <string name="user_nick">Username</string>
+    <string name="password">Password</string>
+    <string name="enter">Enter</string>
+    <string name="forget_password">Forgot your password?</string>
     <string name="app_namee">Genç Yazilimci </string>
     <string name="email">Email</string>
-    <string name="birthday">Doğum Tarihi</string>
-    <string name="education_level">Eğitim Düzeyi</string>
-    <string name="user_name">İsim</string>
-    <string name="user_surname">Soy İsim</string>
-    <string name="sign_up">Kayıt Ol</string>
+    <string name="birthday">Birthday</string>
+    <string name="education_level">Education Level</string>
+    <string name="user_name">Name</string>
+    <string name="user_surname">Surname</string>
+    <string name="sign_up">Sign Up</string>
     <string name="facebook">Facebook</string>
     <string name="google">Google</string>
-    <string name="primary_school">İlkokul</string>
+    <string name="primary_school">Primary School</string>
     <string name="metehan_bolat">Metehan Bolat</string>
-    <string name="seviye_29">Seviye 29</string>
-    <string name="welcome">Hoş Geldin</string>
-    <string name="information_2">Işık canlılar tarafından algılandıktan sonra her canlının sahip olduğu organlara ve bu organların yeteneklerine göre yorumlanır ve anlamlı hale getirilir. Bu sebeple her canlı nesneleri farklı görmektedir.</string>
-    <string name="information_1">Görme eyleminin gerçekleşmesi için gereken ilk şey ışıktır.</string>
-    <string name="information_title">Canlılar nasıl görür?</string>
-    <string name="canli"> Canlı</string>
-    <string name="snake">Yılan</string>
-    <string name="bee">Arı</string>
-    <string name="bat">Yarasa</string>
-    <string name="rabbit">Tavşan</string>
-    <string name="computer">Bilgisayar ?</string>
-    <string name="moveOn">İlerle</string>
-    <string name="didYouReadInfo">Bilgileri okudun mu?</string>
-    <string name="iRead">Okudum</string>
+    <string name="seviye_29">Level 29</string>
+    <string name="welcome">Welcome</string>
+    <string name="information_2">After light is perceived by living things, it is interpreted and made meaningful according to the organs each living thing has and the abilities of these organs. Thats why, every living things see objects differently.</string>
+    <string name="information_1">The first thing required for the act of seeing to occur is light. </string>
+    <string name="information_title">How does living things see?</string>
+    <string name="canli"> Living Thing</string>
+    <string name="snake">Snake</string>
+    <string name="bee">Bee</string>
+    <string name="bat">Bat</string>
+    <string name="rabbit">Rabbşt</string>
+    <string name="computer">Computer ?</string>
+    <string name="moveOn">Move On</string>
+    <string name="didYouReadInfo">Did you read the info?</string>
+    <string name="iRead">Yes, i have read</string>
 
-    <string name="reallyCant">Gerçekten göremedin mi? \n Biraz yaklaş…</string>
-    <string name="really">Gerçekten orada bir 8 mi gördün :(</string>
-    <string name="cant_see">Gördüğüne gerçekten emin misin?</string>
-    <string name="againLook">Madem bu kadar eminsin.\n Tekrar bakalım :)</string>
-    <string name="stillSee">Hala 8 rakamı gördüğüne emin misin?</string>
-    <string name="sureNoSee">Merak etme altının duruyor.\n Görmediğine emindim :)</string>
-    <string name="sureSee">Merak etme altının duruyor.\n Gördüğüne emindim :)</string>
-    <string name="absolutelyNot">Kesinlikle yok. \n Ya da… Biz mi göremiyoruz?</string>
-    <string name="closeLook">Hadi biraz rengini değiştirelim.</string>
-    <string name="nowSee">İşte şimdi biraz görüyorsun.</string>
-    <string name="hardLook">Gerçekten göremedin mi :(</string>
-    <string name="hereItIs">Artık görmemek imkansız</string>
-    <string name="congrats">Tebrikler.\n Artık tamamen görmeye hazırız.</string>
-    <string name="stillNo">Şimdi görebiliyor musun?</string>
-    <string name="hereEight">İşte karşında bir 8 rakamı.</string>
-    <string name="more">Daha fazlasına hazır gibisin.</string>
-    <string name="perfect">Mükemmel. \n O zaman daha iyi görelim.</string>
-    <string name="sure">Görmediğine emin misin :)</string>
-    <string name="machine_how_see">Makineler nasıl görür?</string>
-    <string name="eight_on_the_wall">Nesneleri birbirinden ayırabilmemiz tamamen renklerine bağlıdır. Örneğin duvara asılı bir 8 rakamı düşünelim.</string>
-    <string name="same_color_wall_eight" tools:ignore="Typos">Sence duvar ile aynı renk olsaydı görebilir miydin?</string>
-    <string name="is_there_eight">Bu duvarda 8 rakamı var mı?</string>
-    <string name="yes">Evet</string>
-    <string name="no">Hayır</string>
-    <string name="important_color">Yukarıdaki resimlerden görebileceğin üzere bir nesneyi tanımlayabilmek için renkler çok önemlidir.</string>
-    <string name="machine_equals_string">Her rengin makineler için bir sayısal karşılığı vardır. Aşağıdaki grafik sana bunu basitçe anlatmaktadır.</string>
-    <string name="question_robot_see">Bir robotun nasıl gördüğünü öğrenmek ister misin?</string>
-    <string name="wantTenGoldLose">10 altın kaybetmek istiyor gibisin</string>
-    <string name="loseTenGold">Üzgünüm 10 altın kaybettin</string>
-    <string name="saw">Gördüm</string>
-    <string name="noSaw">Görmedim</string>
-    <string name="how_robot_does">Canlıların nasıl gördüğünü öğrendin. Peki robotlar bu renkleri nasıl ayırt edebiliyor?</string>
-    <string name="close_eight">1-) İlk görselde duvara çizili 8 rakamına yakından bakalım.</string>
-    <string name="string_to_hash">2-) İkinci görselde daha önceden öğrendiğimiz bilgiler ile renkleri sayısal hale getirdik.</string>
-    <string name="machine_look">3-) Son görselde duvardaki 8 rakamına bakan bir makine ne görüyor onu görüyoruz.</string>
-    <string name="learn">Öğrenelim</string>
-    <string name="click_look">Lütfen görsele tıklayarak yakından bak</string>
-    <string name="are_u_sure_exit">Çıkmak istediğine emin misin?</string>
-    <string name="againClickExit">Çıkmak için tekrar basın.</string>
+    <string name="reallyCant">Your really did not see that? \n Look closer…</string>
+    <string name="really">Did you really saw there a number 8 :(</string>
+    <string name="cant_see">Are you pretty sure to see that?</string>
+    <string name="againLook">Since you are so sure.\n Lets look it again :)</string>
+    <string name="stillSee">Are you sure you still see the number 8?</string>
+    <string name="sureNoSee">Do not worry you still have your coins.\n I was sure that you did not see :)</string>
+    <string name="sureSee">Do not worry you still have your coins.\n I was sure that you see that :)</string>
+    <string name="absolutelyNot">There certainly are not. \n Or else… maybe we do not see that?</string>
+    <string name="closeLook">Lets change the color a little bit.</string>
+    <string name="nowSee">Now you can see that a little bit.</string>
+    <string name="hardLook">You really did not see that :(</string>
+    <string name="hereItIs">Now, it is impossible to not to see</string>
+    <string name="congrats">Congratulations.\n Now we are ready for see all of it.</string>
+    <string name="stillNo">Can you see that now?</string>
+    <string name="hereEight">Here is a number 8.</string>
+    <string name="more">You look like ready for more.</string>
+    <string name="perfect">Perfect. \n Lets see that better.</string>
+    <string name="sure">Are you pretty sure that you did not see? :)</string>
+    <string name="machine_how_see">How the machines see?</string>
+    <string name="eight_on_the_wall">Our ability to distinguish objects depends entirely on their colour. For example, lets think about a number 8 hanging on the wall.</string>
+    <string name="same_color_wall_eight" tools:ignore="Typos">Do you think you can see that if it was the same color as wall?</string>
+    <string name="is_there_eight">Is there a number 8 on this wall?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="important_color">As you can see the pictures above, to identify an object, color are very important.</string>
+    <string name="machine_equals_string">Each color has a numerical equivalent for machines. The graphic below tells you this simply.</string>
+    <string name="question_robot_see">Do you want to learn to how a robot can see?</string>
+    <string name="wantTenGoldLose">You look like you want to lose 10 coins.</string>
+    <string name="loseTenGold">I am sorry you lost 10 coins.</string>
+    <string name="saw">I saw</string>
+    <string name="noSaw">I did not see</string>
+    <string name="how_robot_does">You did learn how can living things can see. So how can robots distinguish these colors?</string>
+    <string name="close_eight">1-) Lets look closer to number 8 that drawn at the first picture on the wall.</string>
+    <string name="string_to_hash">2-) We digitized the colors with the information we learned in the second image.</string>
+    <string name="machine_look">3-) In the last image, we see what a machine sees by looking at the number 8 on the wall.</string>
+    <string name="learn">Lets learn</string>
+    <string name="click_look">Please touch the picture to look closer.</string>
+    <string name="are_u_sure_exit">Are you sure that you want to exit?</string>
+    <string name="againClickExit">Please press again to exit.</string>
 
-    <string name="this_awards_delete"> ödülü silindi.</string>
-
-    <string name="no_user_data">Kullanıcı verisi bulunamadı.</string>
-    <string name="earned_gold">Altın kazanılmış.</string>
-    <string name="earn_ten_gold">10 Altın kazandın.</string>
+    <string name="no_user_data">User data not found.</string>
+    <string name="earned_gold">Coins have earned.</string>
+    <string name="earn_ten_gold">10 coins have earned.</string>
     <string name="todo">TODO</string>
-    <string name="machine_view">Makine Görüsü</string>
+    <string name="machine_view">Machine View</string>
     <string name="default_coin">10</string>
 
-    <string name="error_occurred">Hata oluştu.</string>
-    <string name="not_seen">Görülmedi</string>
-    <string name="not_answered">Cevaplanmadı</string>
+    <string name="error_occurred">Error Occurred.</string>
+    <string name="not_seen">Have not seen</string>
+    <string name="not_answered">Have not answered</string>
 
-    <string name="congratulations">Tebrikler kazandınız!</string>
-    <string name="press_mine">Mayına bastınız!</string>
+    <string name="congratulations">Congratulations, you won!</string>
+    <string name="press_mine">You stepped on a mine!</string>
 
-    <string name="already_seen">görüldü</string>
-    <string name="already_answered">cevaplandı</string>
-    <string name="havent_seen">görülmedi</string>
-    <string name="havent_answered">cevaplanmadı</string>
-    <string name="true_answer">Doğru cevap oynamaya devam edebilirsin!</string>
-    <string name="wrong_answer">Malesef yanlış cevap. Oyuna yeniden başla.</string>
+    <string name="already_seen">Already Seen</string>
+    <string name="already_answered">Already Answered</string>
+    <string name="havent_seen">Have not Seen</string>
+    <string name="havent_answered">Have not Answered</string>
+    <string name="true_answer">True, you can continue!</string>
+    <string name="wrong_answer">Wrong answer. Restart the game.</string>
     <string name="answer_one" tools:ignore="Typos">answer1</string>
     <string name="answer_two">answer2</string>
     <string name="answer_three">answer3</string>
     <string name="answer_four">answer4</string>
 
-    <string name="delete">Sil</string>
-    <string name="update">Güncelle</string>
-    <string name="get_Awards">Ödülü Al</string>
-
-    <string name="please_answer">Lütfen soruyu cevaplandırın</string>
-    <string name="all_question_answered">Tüm soruları cevaplandırdınız. Tebrikler!</string>
+    <string name="please_answer">Please answer the question.</string>
+    <string name="all_question_answered">You answer all the questions correctly. Congratulations!</string>
     <string name="empty" />
 
     <string name="baseUrl">"https://raw.githubusercontent.com/"</string>
 
-    <string name="your_turn">Sıra sende!</string>
-    <string name="rival_turn">Sıra rakipte!</string>
+    <string name="your_turn">Your turn!</string>
+    <string name="rival_turn">Enemy\'s turn!</string>
 
-    <string name="see_question">Soruyu gör</string>
+    <string name="see_question">See the question</string>
 
-    <string name="third_round_start">3. Tura Başla</string>
+    <string name="third_round_start">Start to third turn</string>
 
     <string name="zero">0</string>
     <string name="x">X</string>
 
-    <string name="game_win">Oyunu Kazandınız. Tebrikler!</string>
-    <string name="game_lose">Oyunu Kaybettiniz. Tekrar Oynayın!</string>
-    <string name="lets_play">Hadi Oynayalım!</string>
+    <string name="game_win">You won. Congratulations!</string>
+    <string name="game_lose">You lost. Please play again!</string>
+    <string name="lets_play">Let\'s play!</string>
 
-    <string name="click_question_see">Lütfen soruyu gör butonuna tıklayın</string>
+    <string name="click_question_see">Please press the see the question button.</string>
 
-    <string name="true_answer_two">Doğru cevap! Oynamaya devam.</string>
-    <string name="wrong_answer_two">Yanlış cevap! Sıra rakipte.</string>
+    <string name="true_answer_two">Right answer! You can continue to play.</string>
+    <string name="wrong_answer_two">Wrong answer! Enemy\'s turn.</string>
 
     <string name="random">random</string>
     <string name="not_random">notRandom</string>
 
-    <string name="nice_answer">Doğru bildiniz. Devam edin!</string>
-    <string name="please_click_round_button">Lütfen tura başla butonuna tıklayın</string>
+    <string name="nice_answer">Correct answer. Keep continue!</string>
+    <string name="please_click_round_button">Please press the start turn button.</string>
 
-    <string name="you_won">Tebrikler rakibini yenmeyi başardın!</string>
-    <string name="last_word_press_enter">Lütfen yukarıdaki ifadenin son harfi ile başlayan bir kelime girip klavyedeki enter tuşuna basınız</string>
-    <string name="machine_learning">Makine Öğrenmesi</string>
-    <string name="machine_learning_information">Makine öğrenmesi, bir robota insan gibi düşünebilme yeteneği kazandırır. Peki bir robot tamamen insan gibi düşünebilir mi?</string>
-    <string name="machine_human_info_one">Gözümüzle gördüğümüz her şey beynimiz tarafından yorumlanır ve anlamlı hale getirilmeye çalışılır.</string>
-    <string name="machine_human_info_two">Gördüğümüz şeyleri anlamlı hale getirebilme sürecine öğrenme diyoruz.</string>
-    <string name="machine_human_info_three">Bu öğrenme süreci için birçok duyu organı kullanmakla birlikte temel olarak göz ile başlayıp beyin ile bitiyor diyebiliriz.</string>
-    <string name="machine_human_info_four">Vücudumuzun her yerinde bulunan sinirler yardımıyla duyu organlarımızla algıladığımız her şey beyin tarafından yorumlanır.</string>
-    <string name="machine_human_info_five">Peki bir makine nasıl öğrenir?</string>
-    <string name="machine_human_info">İnsan beyninin gizemi günümüzde dahi çözülebilmiş değildir.</string>
-    <string name="machine_machine_neural">Bir makine tam anlamıyla bir insan gibi öğrenebilir ve düşünebilir mi?</string>
-    <string name="machine_machine_neural_info_two">Daha insan beynini tam olarak anlayamamışken bu sorunun cevabı muhtemelen hayır olmalıdır.</string>
-    <string name="machine_machine_info_three">Geliştirilen teknolojiler ve yapılan birçok araştırma sonucunda makineler oldukça büyük yetenekler kazanmıştır. Bunlardan bazıları aşağıdaki gibidir:</string>
-    <string name="machine_machine_info_four">- Sorulan sorulara cevap verebilme \n- Fiziksel hareketler gerçekleştirebilme\n- Nesneleri algılayabilme</string>
-    <string name="machine_machine_neural_info_five">Bu bahsedilenlerin dışında daha birçok yeteneğe sahip olan makineler hakkında ileride çok fazla şey öğreneceğiz.</string>
-    <string name="machine_can_teach_info_one">İnsan beyni ve makinelerin neler öğrenebildiği ile ilgili biraz bilgi sahibi olduk.</string>
-    <string name="machine_can_teach_info_two">Peki bir makine insanlara kendi öğrendiklerini öğretmeye başlayabilir mi ?</string>
-    <string name="machine_can_teach_info_three">Makineler kendi kendine öğrenebilme yeteneği kazanabilseler de bu insanlarla karşılaştırılabilecek seviyede değildir.</string>
-    <string name="machine_can_teach_info_four">Teknolojinin gelişmesiyle birlikte sürekli gelişen makineler gelecekte insan beyninden çok daha ileri seviyelere çıkabilir.</string>
-    <string name="machine_can_teach_info_five">Bunu başarabilmenin önündeki en büyük engel bu teknolojileri geliştirecek insanların bu alanda yeterince çalışmıyor olması.</string>
-    <string name="machine_can_teach_info_six">Bunu seninle başarabiliriz.</string>
+    <string name="you_won">Congratulations! You beat your enemy.</string>
+    <string name="last_word_press_enter">Please enter a word starting with the last letter of the above expression and press the enter key on the keyboard.</string>
+    <string name="machine_learning">Machine Learning</string>
+    <string name="machine_learning_information">Machine learning gives a robot the ability to think like a human. But can a robot think completely like a human?</string>
+    <string name="machine_human_info_one">Everything we see with our eyes is interpreted by our brain and tried to make it meaningful.</string>
+    <string name="machine_human_info_two">The process of making what we see meaningful is learning.</string>
+    <string name="machine_human_info_three">Although many sense organs are used for this learning process, we can say that it basically starts with the eye and ends with the brain.</string>
+    <string name="machine_human_info_four">Everything we perceive with our sense organs is interpreted by the brain, with the help of nerves located all over our body.</string>
+    <string name="machine_human_info_five">So how can machines learn?</string>
+    <string name="machine_human_info">The mystery of the human brain has not been solved even today.</string>
+    <string name="machine_machine_neural">Can a machine literally learn and think like a human?</string>
+    <string name="machine_machine_neural_info_two">The answer to this question should probably be no, while the human brain has not yet fully understood by humanity.</string>
+    <string name="machine_machine_info_three">As a result of the developed technologies and many researches, the machines have gained great capabilities. Some of these are as follows:</string>
+    <string name="machine_machine_info_four">- Answering the questions \n- Making physically moves\n- Ability to detect objects</string>
+    <string name="machine_machine_neural_info_five">We will learn a lot about machines that have many more abilities apart from these mentioned.</string>
+    <string name="machine_can_teach_info_one">We learned a little about the human brain and what machines can learn.</string>
+    <string name="machine_can_teach_info_two">So, can a machine start teaching people what it has learned?</string>
+    <string name="machine_can_teach_info_three">Although machines can gain the ability to learn on their own, they are not comparable to humans.</string>
+    <string name="machine_can_teach_info_four">With the development of technology, machines that are constantly developing may be much more advanced than the human brain in the future.</string>
+    <string name="machine_can_teach_info_five">The biggest obstacle to achieving this is that the people who will develop these technologies are not working enough in this field.</string>
+    <string name="machine_can_teach_info_six">We can accomplish that together.</string>
     <string name="rules">Kurallar</string>
-    <string name="choose_category">- Kategori seçin</string>
-    <string name="win_game">- Oyunları kazanın</string>
-    <string name="collect_awards">- Ödülleri toplayın</string>
-    <string name="ready_to_fun">- Eğlenmeye hazır olun</string>
-    <string name="machine_choose_section_info_one">Şuana kadar insanlar ve robotlar hakkında birçok bilgi edindin. Bunları pekiştirmek ve daha fazlasını öğrenmek için oyun dünyasına geçebiliriz.</string>
-    <string name="game_world">Oyun Dünyası</string>
+    <string name="choose_category">- Choose category</string>
+    <string name="win_game">- Win the games</string>
+    <string name="collect_awards">- Collect the prizes</string>
+    <string name="ready_to_fun">- Ready for fun</string>
+    <string name="machine_choose_section_info_one">You\'ve learned a lot about humans and robots so far. We can move on to the game world to reinforce these and learn more.</string>
+    <string name="game_world">Game World</string>
 
-    <string name="back_main_menu">Anasayfaya dönmek ister misin?</string>
-    <string name="click_main_menu">Anasayfaya Dön</string>
-    <string name="back">Dön</string>
-    <string name="click_image">Resme tıklayabilirsin.</string>
-    <string name="your">Sen: </string>
-    <string name="retry_game">Oyunu Yeniden Başlat</string>
-    <string name="reset">Sıfırla</string>
-    <string name="next_question">Sıradaki Soru</string>
-    <string name="are_u_sure_quit_game">Oyundan ayrılmak istiyor musun?</string>
+    <string name="back_main_menu">Do you want to go to Homepage?</string>
+    <string name="click_main_menu">Go to Homepage</string>
+    <string name="back">Back</string>
+    <string name="click_image">You can click the image.</string>
+    <string name="your">You: </string>
+    <string name="retry_game">Restart the game</string>
+    <string name="reset">Reset</string>
+    <string name="next_question">Next question</string>
+    <string name="are_u_sure_quit_game">Do you want to leave the game?</string>
 
-    <string name="ai_game_true">Doğru</string>
+    <string name="ai_game_true">True</string>
     <string name="ai_game_false">False</string>
 
-    <string name="exit">Ayrıl</string>
+    <string name="exit">Leave</string>
     <string name="true_ai">True</string>
     <string name="false_ai">False</string>
-    <string name="awards_already_collected_ai">Ödül daha önce alındı.</string>
+    <string name="awards_already_collected_ai">The prize have been taken.</string>
     <string name="ai_learning_three">aiLearningThree</string>
     <string name="ai_learning_two">aiLearningTwo</string>
     <string name="ai_learning_one">aiLearningOne</string>
-    <string name="click_screen">Ekrana Tıklayarak Bilgilere Ulaşabilirsiniz</string>
+    <string name="click_screen">You can touch the screen for reaching the information</string>
 
-    <string name="game_one">İlk Oyun</string>
-    <string name="game_two">İkinci Oyun</string>
-    <string name="score">Skor</string>
+    <string name="game_one">First game</string>
+    <string name="game_two">Second game</string>
+    <string name="score">Score</string>
 
-    <string name="mine_sweeper">Mayın Tarlası</string>
+    <string name="mine_sweeper">Mine Sweeper</string>
 
-    <string name="question">Soru: </string>
+    <string name="question">Question: </string>
 
-    <string name="what_is_ai">Yapay Zeka Nedir?</string>
-    <string name="is_ai_one">Yapay zekâ, bir bilgisayar sisteminin, genellikle akıllı varlıklara özgü yeteneklerle ilişkili görevleri gerçekleştirme yeteneğidir.</string>
-    <string name="need_ai">Neden Yapay Zekaya İhtiyaç Duyarız?</string>
-    <string name="education_two_info">Günümüz teknolojisinin gelişimiyle birlikte yeni buluşlar ortaya çıkmıştır. Ortaya çıkan bu buluşların amacı insan hayatını kolaylaştırmaktır. Yapay zekayla birlikte insan hayatını kolaylaştıracak buluşların giderek artması neden yapay zekaya ihtiyacımız olduğunu açıklamaktadır. Örnek olarak otonom araçlar gösterilebilir.</string>
-    <string name="how_work_ai">Yapay Zeka Nasıl Çalışır?</string>
-    <string name="that_work_ai">Yapay zekanın çalışma prensibi, çok fazla veri toplanarak veri havuzları oluşturulur ve bu veriler yapay zeka tarafından kullanılarak ne yapılacağı konusunda yönergeler hazırlanır. Bu yönergeler gerçeğe benzeyen simülasyonlarda milyonlarca kere test edilir. Hatalı yönergeler ayıklanıp doğrular çoğaltılarak sürekli bir iyileştirme döngüsünde geliştirilir. Bu süreç sonunda sıradan kodlama teknikleri kullanılarak yapılabileceğinden daha hızlı ve isabetli bir kontrol mekanizması elde edilir. Yeterince iyi bir yönerge seti elde edilince sonuçlandırılıp gerçek dünyada test edilebilir.</string>
-    <string name="where_use_ai">Yapay Zeka Nerelerde Kullanılır?</string>
-    <string name="that_where_work_ai">Yapay zeka görüntü işleme, ses işleme, metin işleme, veri işleme, otonom araçların karar destek sistemleri, sanal asistanlar, oyun motorları, öneri sistemleri ve benzeri alanlarda kullanılmaktadır.</string>
-    <string name="when_work_ai">Yapay Zeka Terimi İlk Ne Zaman Kullanılmıştır?</string>
-    <string name="that_when_work_ai">“Yapay Zekâ” terimi ilk kez düzenlenen yapay zekâ konferansı olan “Dartmouth Konferansı”nda 1956 yılında kullanılmıştır.</string>
-    <string name="who_use_ai">Yapay Zeka Terimi Kimin Tarafından Kullanılmıştır?</string>
-    <string name="that_who_use_ai">Bilgisayar Bilimci ve Bilişsel Bilimci “John McCarthy” tarafından “Yapay Zekâ” terimi ilk kez kullanılmıştır.</string>
+    <string name="what_is_ai">What is artificial intelligence?</string>
+    <string name="is_ai_one">Artificial intelligence is the ability of a computer system to perform tasks often associated with abilities unique to intelligent beings.</string>
+    <string name="need_ai">Why do we need the Artificial Intelligence?</string>
+    <string name="education_two_info">With the development of today\'s technology, new inventions have emerged. The purpose of these inventions is to make human life easier. The increasing number of inventions that will facilitate human life with artificial intelligence explains why we need artificial intelligence. An example is autonomous vehicles.</string>
+    <string name="how_work_ai">How artificial intelligence works?</string>
+    <string name="that_work_ai">The working principle of artificial intelligence is to collect a lot of data, create data pools and prepare instructions on what to do by using this data by artificial intelligence. These guidelines are tested millions of times in lifelike simulations. It is developed in a continuous improvement cycle by weeding out faulty instructions and replicating the correct ones. At the end of this process, a faster and more accurate control mechanism is obtained than can be done using ordinary coding techniques. Once a good enough set of instructions is obtained, it can be finalized and tested in the real world.</string>
+    <string name="where_use_ai">Where Artificial Intelligence is Used?</string>
+    <string name="that_where_work_ai">Artificial intelligence is used in image processing, audio processing, text processing, data processing, decision support systems of autonomous vehicles, virtual assistants, game engines, suggestion systems and similar areas.</string>
+    <string name="when_work_ai">When Was the Term Artificial Intelligence First Used?</string>
+    <string name="that_when_work_ai">The term "Artificial Intelligence" was first used in 1956 at the "Dartmouth Conference", an artificial intelligence conference.</string>
+    <string name="who_use_ai">By Who Was The Term Artificial Intelligence Used?</string>
+    <string name="that_who_use_ai">The term “Artificial Intelligence” was first used by Computer Scientist and Cognitive Scientist “John McCarthy”.</string>
 
-    <string name="otonom_cars">Otonom Araçlar</string>
-    <string name="education_four_ai_info_one">Yapay zeka ve derin öğrenme algoritmalarıyla desteklenen otonom araçlar, çevresel algılama yetenekleri sayesinde sürücü olmadan kendi kendine çalışabilen araçlara denmektedir. Hali hazırda günlük seyahatlerde ve taşımacılık alanında kullanılmaya başlanan bu teknoloji otomotiv dünyasında gelecek  yıllara önemli ipuçları vermektedir.</string>
-    <string name="education_four_ai_info_two">Yukarıda belirtilen görsellerin izlenimleri sonucunda otonom araçlarda insanlar gibi yolda gördüğü nesneleri ayırt ederek ve trafik kurallarını takip ederek güvenli bir sürüş gerçekleştirebilmektedir.</string>
+    <string name="otonom_cars">Otonom Cars</string>
+    <string name="education_four_ai_info_one">Autonomous vehicles supported by artificial intelligence and deep learning algorithms are called vehicles that can operate without a driver thanks to their environmental sensing capabilities. This technology, which has already started to be used in daily travels and transportation, gives important clues to the future in the automotive world.</string>
+    <string name="education_four_ai_info_two">As a result of the impressions of the above-mentioned visuals, autonomous vehicles can drive safely by distinguishing the objects they see on the road, such as people, and by following the traffic rules.</string>
 
-    <string name="education_one_info_one">Yapay zeka, bilgisayar sisteminin öğrenme ve sorun çözme gibi insanlara özgü bilişsel fonksiyonları taklit edebilme becerisidir.</string>
+    <string name="education_one_info_one">Artificial intelligence is the ability of a computer system to mimic human cognitive functions such as learning and problem solving.</string>
     <string name="education_one_info_two">Yapay zeka terimi ilk olarak 1956 yılında İngiltere de New Hampshire da bulunan Dartmouth College’da yapılan bir konferansında ortaya atıldı.</string>
-    <string name="education_one_info_three">Ancak yapay zekanın günümüzde bu kadar popüler olmasanın nedeni gelişen dünyamızda analiz edebilecek veri saysının giderek artmasıdır.</string>
-    <string name="education_one_info_four">Ayrıca yapay zekanın yetenekleri arasında insan konuşmalarını anlama, karşı hamle gerektiren oyunları oynayabilme, otonom işlem gerektiren aletlerin kontrolü, veri analizleme, askeri simülasyon ve fotoğraf-video çözümleme gibi işlevler bulunmaktadır.</string>
+    <string name="education_one_info_three">However, the reason why artificial intelligence is not so popular today is the increasing number of data that can be analyzed in our developing world.</string>
+    <string name="education_one_info_four">In addition, the capabilities of artificial intelligence include functions such as understanding human speech, playing games that require counter-move, controlling devices that require autonomous operation, data analysis, military simulation, and photo-video analysis.</string>
 
-    <string name="education_three_info">Yapay Sinir Ağı</string>
-    <string name="education_three_info_one">Yapay Sinir Ağları, insan beyninden esinlenerek geliştirilmiş, ağırlıklı bağlantılar aracılığıyla birbirine bağlanan ve her biri kendi belleğine sahip işlem elemanlarından oluşan paralel ve dağıtılmış bilgi işleme yapılarıdır</string>
-    <string name="education_three_info_two">Hadi Yapay Sinir Ağı Modeline Bir Göz Atalım</string>
-    <string name="education_three_info_three">Hadi Gerçek Bir Yapay Sinir Ağına Bir Göz Atalım</string>
-    <string name="education_three_info_four">Görsellerde gördüğümüz üzere yapay sinir ağı ile basit biyolojik sinir sisteminin çalışma şekli oldukça benzerdir. Yani biyolojik nöron hücrelerinin ve bu hücrelerin birbirleri ile arasında kurduğu sinaptik bağın dijital olarak modellenmesidir.</string>
+    <string name="education_three_info">Artificial Neural Network</string>
+    <string name="education_three_info_one">Artificial Neural Networks are parallel and distributed information processing structures, inspired by the human brain, connected to each other through weighted connections and consisting of processing elements, each of which has its own memory.</string>
+    <string name="education_three_info_two">Let\'s Take A Look At The Neural Network Model</string>
+    <string name="education_three_info_three">Let\'s Take A Look At A Real Neural Network</string>
+    <string name="education_three_info_four">As we can see in the images, the way the artificial neural network and the simple biological nervous system work is very similar. In other words, it is the digital modeling of biological neuron cells and the synaptic bond that these cells establish with each other.</string>
 
-    <string name="education_four_info">Yapay Zekânın Kullanım Alanı Otonom Araçlar</string>
-    <string name="education_four_info_one">Hadi Yapay Zekanın Farkını Görelim</string>
-    <string name="done_education_four">Yapay Zeka Temel Seviye Eğitimini Başarıyla Tamamladın</string>
+    <string name="education_four_info">Uses of Artificial Intelligence Autonomous Vehicles</string>
+    <string name="education_four_info_one">Let\'s See the Difference of Artificial Intelligence</string>
+    <string name="done_education_four">You Have Successfully Completed the Artificial Intelligence Basic Level Training</string>
 
-    <string name="basic_ai">Yapay Zeka Temelleri</string>
+    <string name="basic_ai">Artificial Intelligence Fundamentals</string>
 
-    <string name="classification">Sınıflandırma</string>
-    <string name="clustering">Kümeleme</string>
-    <string name="algorithm">Algoritma</string>
+    <string name="classification">Classification</string>
+    <string name="clustering">Clustering</string>
+    <string name="algorithm">Algorithm</string>
 
-    <string name="education_threetwo_info_one">Sınıflandırmada, bir veri kümesi birbirinden farklı ve önceden belirlenmiş sınıflardan birine atanmasıdır. Sınıflandırma algoritmaları, verilen eğitim kümesinden hangi veriyi hangi sınıfa atayacağını öğrenmesi üzerine kuruludur.</string>
-    <string name="education_threetwo_info_two">Kümeleme bir veri setinde benzer özellikler gösteren verilerin gruplara ayrılmasına denir. Aynı küme içinde benzerlikler fazla, kümeler arası benzerlikler azdır. </string>
-    <string name="education_three_two_info_three">Bir problemin çözümü için ihtiyaç olan tüm işlemlerin mantıksal olarak, sıralı bir şekilde ifade edilmesidir. Algoritma kavramı programlama ya da yazılım geliştirmenin yanı sıra, günlük hayattaki aktiviteler, matematik vb. derslerde karşılaşılan sorunları daha kolaylıkla çözme olanağı sağlar.</string>
+    <string name="education_threetwo_info_one">In classification, a dataset is assigned to one of the different and predetermined classes. Classification algorithms are based on learning which data to assign to which class from the given training set.</string>
+    <string name="education_threetwo_info_two">Clustering is the grouping of data showing similar characteristics in a data set. Within the same cluster, the similarities are high, and the similarities between the clusters are low. </string>
+    <string name="education_three_two_info_three">It is the logical, sequential expression of all the operations needed to solve a problem. The concept of algorithm can be used in programming or software development, as well as activities in daily life, mathematics, etc. It provides the opportunity to solve the problems encountered in the lessons more easily.</string>
 
-    <string name="not_enough_money">Yeterli miktarda altının yok. Altın kazanmak için öğrenmeye devam edebilirsin</string>
+    <string name="not_enough_money">You don\'t have enough gold. You can keep learning to earn gold.</string>
 
-    <string name="done_introduction_ai_lesson">Yapay Zekâya Giriş Eğitimini Başarıyla Tamamladın</string>
-    <string name="get_awards_and_back_main">Ödülünü al ve Anasayfaya dön</string>
+    <string name="done_introduction_ai_lesson">You Have Successfully Completed the Introduction to Artificial Intelligence Training</string>
+    <string name="get_awards_and_back_main">Get your reward and return to the Homepage</string>
 
-    <string name="back_to_education_ai">Yapay Zekâ eğitim sayfasına mı dönmek istiyorsunuz?</string>
+    <string name="back_to_education_ai">Get your reward and return to the Homepage</string>
 
-    <string name="ai">Yapay Zeka</string>
-    <string name="fiveNoneK">5N1K</string>
-    <string name="games">Oyunlar</string>
-    <string name="ai_with_fiveNoneK">Yapay Zeka ile 5N1K</string>
-    <string name="done_ai_with_fiveNoneK">Yapay Zekaya 5N1K Eğitimini Başarıyla Tamamladın</string>
+    <string name="ai">Artificial Intelligence</string>
+    <string name="fiveNoneK">5 Ws</string>
+    <string name="games">Games</string>
+    <string name="ai_with_fiveNoneK">Artificial Intelligence with 5 Ws</string>
+    <string name="done_ai_with_fiveNoneK">You Have Successfully Completed Your Artificial Intelligence 5 Ws Training</string>
 
-    <string name="main_education_info_one">Bu bölümde yapay zekâ hakkında detaylı bilgiler edinebileceksin.</string>
-    <string name="main_education_welcome">Hoşgeldin Metehan</string>
+    <string name="main_education_info_one">In this section, you will be able to get detailed information about artificial intelligence.</string>
+    <string name="main_education_welcome">Welcome Metehan</string>
 
-    <string name="question_one">Soru 1</string>
-    <string name="introduction_ai">Yapay Zekaya Giriş</string>
-    <string name="example_question">Yaşlılar tarafından, dondurma yedikten sonra, ılık su içmesi için uyarılmayan yoktur herhalde. Peki bunun nedeni ne? Gerçekten sağlıklı mı, yoksa bir saçmalık mı?</string>
+    <string name="question_one">Question 1</string>
+    <string name="introduction_ai">Introduction to Artificial Intelligence</string>
+    <string name="example_question">There is hardly anyone who is not warned by the elderly to drink warm water after eating ice cream. So what\'s the reason for this? Is it really healthy or is it a bullshit?</string>
 
-    <string name="emailorpassword_empty">Email veya şifre boş bırakıldı.</string>
+    <string name="emailorpassword_empty">Email or password is empty.</string>
 
     <string-array name="education_level">
-        <item>Okul Öncesi</item>
-        <item>İlkokul</item>
-        <item>Ortaokul</item>
-        <item>Lise</item>
-        <item>Diğer</item>
+        <item>pre-school education</item>
+        <item>Primary School</item>
+        <item>Middle School</item>
+        <item>High School</item>
+        <item>Other</item>
     </string-array>
 
     <string-array name="word_array">
-        <item>makine</item>
-        <item>yapay zeka</item>
-        <item>makine öğrenme</item>
-        <item>yapay sinir ağları</item>
-        <item>bilgisayar</item>
-        <item>işlem gücü</item>
-        <item>veri tabanları</item>
-        <item>veri madenciliği</item>
-        <item>gözetimli öğrenme</item>
-        <item>gözetimsiz öğrenme</item>
+        <item>machine</item>
+        <item>artificial intelligence</item>
+        <item>machine learning</item>
+        <item>artificial intelligence networks</item>
+        <item>computer</item>
+        <item>processing power</item>
+        <item>Database</item>
+        <item>data mining</item>
+        <item>supervised learning</item>
+        <item>unsupervised learning</item>
         <item>bayes</item>
-        <item>bulanık mantık</item>
-        <item>örüntü tanıma</item>
-        <item>tümevarımsal mantık programlama</item>
-        <item>derin öğrenme</item>
-        <item>nöral ağlar</item>
-        <item>veri bilimi</item>
-        <item>büyük veri</item>
-        <item>bulut teknolojisi</item>
+        <item>fuzzy logic</item>
+        <item>pattern recognition</item>
+        <item>inductive logic programming</item>
+        <item>deep learning</item>
+        <item>neural networks</item>
+        <item>data science</item>
+        <item>big data</item>
+        <item>cloud technology</item>
         <item>robot</item>
-        <item>pekiştirmeye dayalı öğrenme</item>
+        <item>reinforcement learning</item>
         <item>edison</item>
     </string-array>
 

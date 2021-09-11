@@ -35,6 +35,14 @@ class GiftAwardsAddFragment : Fragment() {
         _binding = FragmentGiftAwardsAddBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        arguments?.let {
+            if (GiftAwardsAddFragmentArgs.fromBundle(it).award != null){
+                val awardName = GiftAwardsAddFragmentArgs.fromBundle(it).award
+                binding.awardName.setText(awardName)
+                binding.awardName.isEnabled = false
+            }
+        }
+
         firebaseAuth = Firebase.auth
         firestore = Firebase.firestore
 

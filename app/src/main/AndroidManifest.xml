@@ -12,11 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeknofestEgitim">
         <activity
+            android:name=".view.userviews.DenemeActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.userviews.UserActivity"
-            android:theme="@style/splashScreenTheme"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/splashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
