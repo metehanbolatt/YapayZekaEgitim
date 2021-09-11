@@ -514,5 +514,9 @@
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left" />
+        <argument
+            android:name="award"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 </navigation>

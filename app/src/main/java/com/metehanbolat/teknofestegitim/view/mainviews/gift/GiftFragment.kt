@@ -88,6 +88,7 @@ class GiftFragment : Fragment() {
 
         val listDocRef = docRef.collection(firebaseAuth.currentUser!!.email.toString())
         listDocRef.addSnapshotListener { value, error ->
+            giftList.clear()
             if (error == null){
                 if (value != null){
                     val documents = value.documents
@@ -104,7 +105,7 @@ class GiftFragment : Fragment() {
         }
 
         binding.giftRecyclerView.layoutManager = StaggeredGridLayoutManager(2,GridLayoutManager.VERTICAL)
-        val giftAdapter = GiftRecyclerAdapter(resources.getString(R.string.firebase_userData),firebaseAuth.currentUser!!.email.toString(), resources.getString(R.string.firebase_userCoin),firestore, giftList)
+        val giftAdapter = GiftRecyclerAdapter(resources.getString(R.string.firebase_userData),firebaseAuth.currentUser!!.email.toString(), resources.getString(R.string.firebase_userCoin),firestore, firebaseAuth, giftList)
         binding.giftRecyclerView.adapter = giftAdapter
 
     }

@@ -47,4 +47,6 @@
 
     <color name="anim_mine_sweeper_status">#86b4ce</color>
 
+    <color name="green_color_button">#00C853</color>
+
 </resources>

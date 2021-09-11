@@ -74,6 +74,8 @@
     <string name="are_u_sure_exit">Çıkmak istediğine emin misin?</string>
     <string name="againClickExit">Çıkmak için tekrar basın.</string>
 
+    <string name="this_awards_delete"> ödülü silindi.</string>
+
     <string name="no_user_data">Kullanıcı verisi bulunamadı.</string>
     <string name="earned_gold">Altın kazanılmış.</string>
     <string name="earn_ten_gold">10 Altın kazandın.</string>
@@ -98,6 +100,10 @@
     <string name="answer_two">answer2</string>
     <string name="answer_three">answer3</string>
     <string name="answer_four">answer4</string>
+
+    <string name="delete">Sil</string>
+    <string name="update">Güncelle</string>
+    <string name="get_Awards">Ödülü Al</string>
 
     <string name="please_answer">Lütfen soruyu cevaplandırın</string>
     <string name="all_question_answered">Tüm soruları cevaplandırdınız. Tebrikler!</string>
