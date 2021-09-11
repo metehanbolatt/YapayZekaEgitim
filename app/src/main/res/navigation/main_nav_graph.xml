@@ -45,6 +45,9 @@
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_coinDenemeFragment"
+            app:destination="@id/coinDenemeFragment" />
     </fragment>
     <fragment
         android:id="@+id/giftFragment"
@@ -56,6 +59,13 @@
             app:destination="@id/mainFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_giftFragment_to_giftAwardsAddFragment"
+            app:destination="@id/giftAwardsAddFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/machineLearningFragment"
@@ -372,9 +382,6 @@
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left" />
-        <argument
-            android:name="name"
-            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/AIGameOneFragment"
@@ -485,8 +492,27 @@
         <action
             android:id="@+id/action_animMainEducationFragment_to_mainEducation"
             app:destination="@id/mainEducation" />
-        <argument
-            android:name="name"
-            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/coinDenemeFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.main.CoinDenemeFragment"
+        android:label="fragment_coin_deneme"
+        tools:layout="@layout/fragment_coin_deneme" >
+        <action
+            android:id="@+id/action_coinDenemeFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/giftAwardsAddFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gift.GiftAwardsAddFragment"
+        android:label="fragment_gift_awards_add"
+        tools:layout="@layout/fragment_gift_awards_add" >
+        <action
+            android:id="@+id/action_giftAwardsAddFragment_to_giftFragment"
+            app:destination="@id/giftFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
 </navigation>

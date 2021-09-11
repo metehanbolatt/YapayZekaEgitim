@@ -8,7 +8,7 @@
     app:layoutDescription="@xml/fragment_gift_scene"
     tools:context=".view.mainviews.gift.GiftFragment">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/giftImage"
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/giftCoinImage"
             android:layout_width="30dp"
             android:layout_height="30dp"

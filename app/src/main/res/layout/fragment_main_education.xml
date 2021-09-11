@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:textColor="@color/background_blue"
         android:textSize="22sp"
-        android:fontFamily="@font/gothambold"
+        android:text="@string/welcome"
+        android:fontFamily="@font/gotham_bold"
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +28,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:fontFamily="@font/gothombook"
+        android:fontFamily="@font/gotham_book"
         android:justificationMode="inter_word"
         android:lineSpacingExtra="4dp"
         android:text="@string/main_education_info_one"
@@ -81,15 +82,15 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/aione" />
+                        android:background="@drawable/ai_one" />
 
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:layout_marginTop="10dp"
-                        android:fontFamily="@font/gothambold"
-                        android:text="Giriş"
+                        android:fontFamily="@font/gotham_bold"
+                        android:text="@string/enter"
                         android:textColor="@color/white" />
 
                 </LinearLayout>
@@ -123,7 +124,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:layout_marginTop="10dp"
-                        android:fontFamily="@font/gothambold"
+                        android:fontFamily="@font/gotham_bold"
                         android:text="@string/fiveNoneK"
                         android:textColor="@color/white" />
 
@@ -165,7 +166,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@string/ai"
-                        android:fontFamily="@font/gothambold"
+                        android:fontFamily="@font/gotham_bold"
                         android:layout_marginTop="10dp"
                         android:textColor="@color/white" />
 
@@ -198,7 +199,7 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:fontFamily="@font/gothambold"
+                        android:fontFamily="@font/gotham_bold"
                         android:text="@string/games"
                         android:layout_marginTop="10dp"
                         android:textColor="@color/white" />

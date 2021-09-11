@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.mainviews.gift.GiftAwardsAddFragment">
+
+    <EditText
+        android:id="@+id/awardName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ödül gir"
+        android:textColor="@color/black"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/coinAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="coin gir"
+        android:textColor="@color/black"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/awardName"/>
+
+    <Button
+        android:id="@+id/awardsAddButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/coinAmount"
+        app:layout_constraintEnd_toEndOf="@id/coinAmount"
+        app:layout_constraintTop_toBottomOf="@id/coinAmount"
+        android:layout_marginTop="20dp"
+        android:text="Ekle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
@@ -21,8 +20,6 @@ class AnimMainEducationFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var navController: NavController
-
-    private lateinit var userName : String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,21 +37,15 @@ class AnimMainEducationFragment : Fragment() {
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
-
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        arguments?.let {
-            userName = AnimMainEducationFragmentArgs.fromBundle(it).name
-        }
-
         Handler(Looper.getMainLooper()).postDelayed({
             navController = findNavController()
-            val action = AnimMainEducationFragmentDirections.actionAnimMainEducationFragmentToMainEducation(userName)
-            navController.navigate(action)
+            navController.navigate(R.id.action_animMainEducationFragment_to_mainEducation)
         },2200)
     }
 

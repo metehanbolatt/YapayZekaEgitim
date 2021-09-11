@@ -48,6 +48,8 @@ class MainFragment : Fragment() {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         val view = binding.root
 
+
+
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 when(counter){
@@ -79,8 +81,7 @@ class MainFragment : Fragment() {
 
         binding.artificialIntelligenceCardView.setOnClickListener {
             navController = findNavController()
-            val action = MainFragmentDirections.actionMainFragmentToAnimMainEducationFragment(userName.toString())
-            navController.navigate(action)
+            navController.navigate(R.id.action_mainFragment_to_animMainEducationFragment)
         }
 
         binding.achievementCardView.setOnClickListener {
@@ -97,7 +98,6 @@ class MainFragment : Fragment() {
             navController = findNavController()
             val action = MainFragmentDirections.actionMainFragmentToComputerVisionFragment(auth.currentUser?.email.toString(),userCoin.toString().toInt())
             navController.navigate(R.id.action_mainFragment_to_computerVisionFragment,action.arguments)
-
         }
 
         binding.giftCardView.setOnClickListener {
@@ -110,6 +110,11 @@ class MainFragment : Fragment() {
             val intent = Intent(requireContext(), UserActivity::class.java)
             startActivity(intent)
             activity?.finish()
+        }
+
+        binding.userLevel.setOnClickListener {
+            navController = findNavController()
+            navController.navigate(R.id.action_mainFragment_to_coinDenemeFragment)
         }
     }
 

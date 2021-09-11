@@ -6,7 +6,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="170dp"
-        android:layout_height="190dp"
+        android:layout_height="220dp"
         android:layout_margin="5dp"
         app:cardBackgroundColor="@color/header_status_bar"
         app:cardCornerRadius="15dp">
@@ -28,21 +28,32 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:src="@drawable/aqua" />
 
+            <TextView
+                android:id="@+id/recyclerAwardText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/award"
+                android:fontFamily="@font/gotham_bold"
+                android:textColor="@color/red"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="@id/cardImageView"
+                app:layout_constraintEnd_toEndOf="@id/cardImageView"
+                app:layout_constraintTop_toBottomOf="@id/cardImageView" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
                 android:layout_marginBottom="5dp"
                 app:layout_constraintStart_toStartOf="@id/cardImageView"
                 app:layout_constraintEnd_toEndOf="@id/cardImageView"
-                app:layout_constraintTop_toBottomOf="@id/cardImageView"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerAwardText"
                 android:orientation="horizontal">
 
-                <ImageView
+                <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/coin"/>
+
                 <TextView
                     android:id="@+id/cardCoin"
                     android:layout_width="wrap_content"

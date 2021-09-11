@@ -231,6 +231,7 @@
     <string name="education_threetwo_info_two">Kümeleme bir veri setinde benzer özellikler gösteren verilerin gruplara ayrılmasına denir. Aynı küme içinde benzerlikler fazla, kümeler arası benzerlikler azdır. </string>
     <string name="education_three_two_info_three">Bir problemin çözümü için ihtiyaç olan tüm işlemlerin mantıksal olarak, sıralı bir şekilde ifade edilmesidir. Algoritma kavramı programlama ya da yazılım geliştirmenin yanı sıra, günlük hayattaki aktiviteler, matematik vb. derslerde karşılaşılan sorunları daha kolaylıkla çözme olanağı sağlar.</string>
 
+    <string name="not_enough_money">Yeterli miktarda altının yok. Altın kazanmak için öğrenmeye devam edebilirsin</string>
 
     <string name="done_introduction_ai_lesson">Yapay Zekâya Giriş Eğitimini Başarıyla Tamamladın</string>
     <string name="get_awards_and_back_main">Ödülünü al ve Anasayfaya dön</string>
@@ -242,6 +243,9 @@
     <string name="games">Oyunlar</string>
     <string name="ai_with_fiveNoneK">Yapay Zeka ile 5N1K</string>
     <string name="done_ai_with_fiveNoneK">Yapay Zekaya 5N1K Eğitimini Başarıyla Tamamladın</string>
+
+    <string name="main_education_info_one">Bu bölümde yapay zekâ hakkında detaylı bilgiler edinebileceksin.</string>
+    <string name="main_education_welcome">Hoşgeldin Metehan</string>
 
     <string name="question_one">Soru 1</string>
     <string name="introduction_ai">Yapay Zekaya Giriş</string>
@@ -314,8 +318,6 @@
     <string name="anim_image_big4">anim_image_big4</string>
     <string name="anim_image_big5">anim_image_big5</string>
     <string name="anim_image_big6">anim_image_big6</string>
-    <string name="main_education_info_one">Bu bölümde yapay zekâ hakkında detaylı bilgiler edinebileceksin.</string>
-    <string name="main_education_welcome">Hoşgeldin Metehan</string>
-
+    <string name="award">Award</string>
 
 </resources>

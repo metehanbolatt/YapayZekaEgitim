@@ -23,6 +23,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentComputerVisionBinding
+import com.metehanbolat.teknofestegitim.utils.UserCoin
 import kotlin.math.abs
 
 class ComputerVisionFragment : Fragment() {
@@ -53,8 +54,8 @@ class ComputerVisionFragment : Fragment() {
                 navController.navigate(R.id.action_computerVisionFragment_to_mainFragment)
             }
         }
-
         requireActivity().onBackPressedDispatcher.addCallback(callback)
+
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_design_start_color)
 
         auth = Firebase.auth
@@ -120,9 +121,13 @@ class ComputerVisionFragment : Fragment() {
     }
 
     private fun updateCoin(){
-        val coinUpdate = firestore.collection(resources.getString(R.string.firebase_userData)).document(userEmail!!)
-        coinUpdate.update(resources.getString(R.string.firebase_userCoin), userCoin?.plus(10))
-        coinUpdate.update(resources.getString(R.string.firebase_firstCoin),1)
+
+        val userCoin = UserCoin(firestore,resources.getString(R.string.firebase_userData),auth.currentUser!!.email.toString())
+        userCoin.getCoin(resources.getString(R.string.firebase_userCoin)){
+            userCoin.userCoinIncrease(resources.getString(R.string.firebase_userCoin),it!!,10)
+            userCoin.getUserCoin.update(resources.getString(R.string.firebase_firstCoin),1)
+        }
+
     }
 
     private fun getNextFragment(){
@@ -143,7 +148,7 @@ class ComputerVisionFragment : Fragment() {
         getUserData.get().addOnSuccessListener { document ->
             if (document != null){
                 if (document.data != null){
-                    firstCoinControl = document.data!![resources.getString(R.string.firebase_userCoin)]
+                    firstCoinControl = document.data!![resources.getString(R.string.firebase_firstCoin)]
                     if (firstCoinControl.toString().toInt() == 0){
                         updateCoin()
                         Snackbar.make(requireView(),resources.getString(R.string.earn_ten_gold),Snackbar.LENGTH_SHORT).show()

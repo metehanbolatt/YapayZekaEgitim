@@ -11,6 +11,12 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentGiftBinding
 
@@ -23,6 +29,9 @@ class GiftFragment : Fragment() {
 
     private lateinit var giftList : ArrayList<Gift>
 
+    private lateinit var firestore: FirebaseFirestore
+    private lateinit var firebaseAuth: FirebaseAuth
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,16 +39,19 @@ class GiftFragment : Fragment() {
         _binding = FragmentGiftBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        firestore = Firebase.firestore
+        firebaseAuth = Firebase.auth
+
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 navController = findNavController()
                 navController.navigate(R.id.action_giftFragment_to_mainFragment)
-
             }
         }
-
         requireActivity().onBackPressedDispatcher.addCallback(callback)
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_color)
+
+        giftList = ArrayList()
 
         return view
     }
@@ -47,36 +59,52 @@ class GiftFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        giftList = ArrayList()
+        val docRef = firestore.collection(resources.getString(R.string.firebase_userData)).document(firebaseAuth.currentUser!!.email.toString())
 
-        val aqua = Gift("50", R.drawable.aqua)
-        val zoo = Gift("40", R.drawable.zoo)
-        val aqua2 = Gift("50", R.drawable.aqua)
-        val zoo2 = Gift("40", R.drawable.zoo)
-        val aqua3 = Gift("50", R.drawable.aqua)
-        val zoo3 = Gift("40", R.drawable.zoo)
-        val aqua4 = Gift("50", R.drawable.aqua)
-        val zoo4 = Gift("40", R.drawable.zoo)
-        val aqua5 = Gift("50", R.drawable.aqua)
-        val zoo5 = Gift("40", R.drawable.zoo)
-        val aqua6 = Gift("50", R.drawable.aqua)
-        val zoo6 = Gift("40", R.drawable.zoo)
+        binding.floatingButton.setOnClickListener {
 
-        giftList.add(aqua)
-        giftList.add(zoo)
-        giftList.add(aqua2)
-        giftList.add(zoo2)
-        giftList.add(aqua3)
-        giftList.add(zoo3)
-        giftList.add(aqua4)
-        giftList.add(zoo4)
-        giftList.add(aqua5)
-        giftList.add(zoo5)
-        giftList.add(aqua6)
-        giftList.add(zoo6)
+            navController = findNavController()
+            navController.navigate(R.id.action_giftFragment_to_giftAwardsAddFragment)
+
+        }
+
+        docRef.addSnapshotListener { value, error ->
+            if (error == null){
+                if (value != null){
+                    binding.giftCoin.text = value[resources.getString(R.string.firebase_userCoin)].toString()
+                }
+            }
+        }
+
+        docRef.get().addOnSuccessListener { createControl ->
+            if (createControl != null){
+                val isCreate = createControl[resources.getString(R.string.firebase_sixthCoin)].toString()
+                if (isCreate == resources.getString(R.string.zero)){
+                    Snackbar.make(view, "Ödüller sistemine hoşgeldiniz. Butona tıklayarak ödül havuzu oluşturabilirsiniz.", Snackbar.LENGTH_LONG).show()
+                    docRef.update(resources.getString(R.string.firebase_sixthCoin), 1)
+                }
+            }
+        }
+
+        val listDocRef = docRef.collection(firebaseAuth.currentUser!!.email.toString())
+        listDocRef.addSnapshotListener { value, error ->
+            if (error == null){
+                if (value != null){
+                    val documents = value.documents
+                    for (document in documents){
+                        val award = document["award"] as String
+                        val coin = document["coin"] as String
+
+                        val gift = Gift(award, coin)
+                        giftList.add(gift)
+
+                    }
+                }
+            }
+        }
 
         binding.giftRecyclerView.layoutManager = StaggeredGridLayoutManager(2,GridLayoutManager.VERTICAL)
-        val giftAdapter = GiftRecyclerAdapter(giftList)
+        val giftAdapter = GiftRecyclerAdapter(resources.getString(R.string.firebase_userData),firebaseAuth.currentUser!!.email.toString(), resources.getString(R.string.firebase_userCoin),firestore, giftList)
         binding.giftRecyclerView.adapter = giftAdapter
 
     }

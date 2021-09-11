@@ -32,7 +32,7 @@
             android:textColor="@color/black"
             android:padding="10dp"
             android:textSize="22sp"
-            android:fontFamily="@font/lemonmilkbolditalic" />
+            android:fontFamily="@font/lemon_milk_bold_italic" />
 
         <ImageView
             android:id="@+id/girl"
