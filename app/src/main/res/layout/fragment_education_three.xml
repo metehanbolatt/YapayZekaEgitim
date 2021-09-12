@@ -7,13 +7,6 @@
     android:background="@color/card_education"
     tools:context=".view.mainviews.artificialintelligence.aieducation.EducationThree">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageViewWave"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/backgroundaitrans"
-        tools:ignore="MissingConstraints" />
-
     <TextView
         android:id="@+id/ysaText"
         android:layout_width="wrap_content"
@@ -61,7 +54,7 @@
         android:layout_height="150dp"
         android:layout_marginTop="5dp"
         android:visibility="invisible"
-        android:background="@drawable/aiysa"
+        android:background="@drawable/ai_artificial_neural_networks"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/showModelText" />
@@ -72,7 +65,7 @@
         android:layout_height="150dp"
         android:layout_marginTop="5dp"
         android:visibility="invisible"
-        android:background="@drawable/realysa"
+        android:background="@drawable/real_artificial_neural_networks"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/showRealText" />

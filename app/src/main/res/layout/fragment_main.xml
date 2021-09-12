@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:scaleType="center"
-        android:src="@drawable/mainheaderbackground"
+        android:src="@drawable/main_header_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/seviye_29"
+        android:text="@string/level_29"
         android:textColor="@color/black"
         android:fontFamily="@font/lemon_milk"
         app:layout_constraintStart_toStartOf="@id/userName"
@@ -284,7 +284,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/logout"
+                    android:src="@drawable/log_out"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

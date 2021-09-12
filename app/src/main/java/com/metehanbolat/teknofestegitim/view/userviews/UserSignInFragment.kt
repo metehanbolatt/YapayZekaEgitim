@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
@@ -23,7 +22,6 @@ class UserSignInFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var navController : NavController
-
     private lateinit var auth : FirebaseAuth
 
     override fun onCreateView(
@@ -46,14 +44,18 @@ class UserSignInFragment : Fragment() {
             val password = binding.userPasswordSignIn.text.toString()
 
             if (email.isEmpty() || password.isEmpty()){
-                Snackbar.make(it, resources.getString(R.string.emailorpassword_empty), Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(it, resources.getString(R.string.email_or_password_empty), Snackbar.LENGTH_SHORT).show()
             }else{
                 auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
                     val intent = Intent(requireContext(), MainActivity::class.java)
                     startActivity(intent)
                     activity?.finish()
                 }.addOnFailureListener { e ->
-                    Toast.makeText(requireContext(), e.localizedMessage, Toast.LENGTH_SHORT).show()
+                    if (e.localizedMessage == resources.getString(R.string.firebase_mail_error)){
+                        Snackbar.make(view, resources.getString(R.string.please_check_your_email), Snackbar.LENGTH_LONG).show()
+                    }else if (e.localizedMessage == resources.getString(R.string.firebase_pass_error)){
+                        Snackbar.make(view, resources.getString(R.string.please_check_your_pass), Snackbar.LENGTH_LONG).show()
+                    }
                 }
             }
         }

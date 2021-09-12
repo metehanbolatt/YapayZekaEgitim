@@ -117,7 +117,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/aitwo" />
+                        android:background="@drawable/ai_two" />
 
                     <TextView
                         android:layout_width="100dp"
@@ -159,7 +159,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/aithree" />
+                        android:background="@drawable/ai_three" />
 
                     <TextView
                         android:layout_width="100dp"
@@ -193,7 +193,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/aieducationgame" />
+                        android:background="@drawable/ai_education_game" />
 
                     <TextView
                         android:layout_width="100dp"

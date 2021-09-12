@@ -51,25 +51,25 @@ class EducationOne : Fragment() {
         firestore = Firebase.firestore
 
         binding.informationTextEduOne.text = resources.getString(R.string.education_one_info_one)
-        binding.informationEduOneImageTwo.setImageResource(R.drawable.rarrow)
-        binding.informationEduOneImage.setImageResource(R.drawable.aitwo)
+        binding.informationEduOneImageTwo.setImageResource(R.drawable.right_arrow)
+        binding.informationEduOneImage.setImageResource(R.drawable.ai_two)
 
         binding.informationEduOneImageTwo.setOnClickListener {
 
             when(eduControl){
                 0 -> {
                     binding.informationTextEduOne.text = resources.getString(R.string.education_one_info_two)
-                    binding.informationEduOneImageTwo.setImageResource(R.drawable.rarrow)
-                    binding.informationEduOneImage.setImageResource(R.drawable.aidate)
+                    binding.informationEduOneImageTwo.setImageResource(R.drawable.right_arrow)
+                    binding.informationEduOneImage.setImageResource(R.drawable.ai_date)
                 }
                 1 -> {
                     binding.informationTextEduOne.text = resources.getString(R.string.education_one_info_three)
-                    binding.informationEduOneImageTwo.setImageResource(R.drawable.rarrow)
-                    binding.informationEduOneImage.setImageResource(R.drawable.dataanalysis)
+                    binding.informationEduOneImageTwo.setImageResource(R.drawable.right_arrow)
+                    binding.informationEduOneImage.setImageResource(R.drawable.data_analysis)
                 }
                 2 -> {
                     binding.informationTextEduOne.text = resources.getString(R.string.education_one_info_four)
-                    binding.informationEduOneImageTwo.setImageResource(R.drawable.rarrow)
+                    binding.informationEduOneImageTwo.setImageResource(R.drawable.right_arrow)
                     binding.informationEduOneImage.setImageResource(R.drawable.chess)
                 }
                 3 -> {

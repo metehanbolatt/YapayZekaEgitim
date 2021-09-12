@@ -1,5 +1,6 @@
 package com.metehanbolat.teknofestegitim.view.mainviews.gameroom
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -27,15 +28,15 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class MachineQuizGameFragment : Fragment() {
-    private lateinit var navController: NavController
 
     private var _binding : FragmentMachineQuizGameBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var navController : NavController
+
     private lateinit var baseUrl : String
 
-    private var questionModels : ArrayList<QuestionModel>?=null
-
+    private var questionModels : ArrayList<QuestionModel>? = null
     private var questionNumber = 1
 
     private var chosen = 0
@@ -57,10 +58,10 @@ class MachineQuizGameFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding= FragmentMachineQuizGameBinding.inflate(inflater,container,false)
+        _binding = FragmentMachineQuizGameBinding.inflate(inflater, container,false)
         val view = binding.root
 
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.quiz_game_background)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.quiz_game_background)
 
         baseUrl = resources.getString(R.string.baseUrl)
         answerOne = resources.getString(R.string.answer_one)
@@ -93,13 +94,23 @@ class MachineQuizGameFragment : Fragment() {
 
         getMoneyData(view)
 
+        val colorIdGreen = android.R.color.holo_green_dark
+        val colorIdRed = android.R.color.holo_red_dark
+        val colorIdQuizGameAnswers = R.color.quiz_game_answer_background
+        val colorQuestID = R.color.quiz_game_question_background
+
         binding.nextButton.setOnClickListener {
 
-            binding.answer1CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
-            binding.answer2CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
-            binding.answer3CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
-            binding.answer4CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
-            binding.questionCardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+            val color1Answer = binding.answer1CardView.context.getColor(colorIdQuizGameAnswers)
+            binding.answer1CardView.backgroundTintList = ColorStateList.valueOf(color1Answer)
+            val color2Answer = binding.answer2CardView.context.getColor(colorIdQuizGameAnswers)
+            binding.answer2CardView.backgroundTintList = ColorStateList.valueOf(color2Answer)
+            val color3Answer = binding.answer3CardView.context.getColor(colorIdQuizGameAnswers)
+            binding.answer3CardView.backgroundTintList = ColorStateList.valueOf(color3Answer)
+            val color4Answer = binding.answer4CardView.context.getColor(colorIdQuizGameAnswers)
+            binding.answer4CardView.backgroundTintList = ColorStateList.valueOf(color4Answer)
+            val colorQuest = binding.questionCardView.context.getColor(colorQuestID)
+            binding.questionCardView.backgroundTintList = ColorStateList.valueOf(colorQuest)
 
             if (questionNumber < (questionModels!!.size)){
                 if (chosen == 1){
@@ -128,48 +139,116 @@ class MachineQuizGameFragment : Fragment() {
 
         binding.answer1CardView.setOnClickListener {
             if (chosen == 0 && choosable == 1 && questionsRightAnswer == answerOne){
-                binding.answer1CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_green_light))
+                val colorGreen = binding.answer1CardView.context.getColor(colorIdGreen)
+                binding.answer1CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
                 getMoneyData(it)
                 userMoney = userMoney!! + 10
                 firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString()).update(resources.getString(R.string.firebase_userMoney), userMoney)
             }else if (chosen == 0 && choosable == 1 && questionsRightAnswer != answerOne){
-                binding.answer1CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_red_dark))
+                val colorRed = binding.answer1CardView.context.getColor(colorIdRed)
+                binding.answer1CardView.backgroundTintList = ColorStateList.valueOf(colorRed)
+
+                when(questionsRightAnswer){
+                    resources.getString(R.string.answer_two) -> {
+                        val colorGreen = binding.answer2CardView.context.getColor(colorIdGreen)
+                        binding.answer2CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
+                    }
+                    resources.getString(R.string.answer_three) -> {
+                        val colorGreen = binding.answer3CardView.context.getColor(colorIdGreen)
+                        binding.answer3CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
+                    }
+                    resources.getString(R.string.answer_four) -> {
+                        val colorGreen = binding.answer4CardView.context.getColor(colorIdGreen)
+                        binding.answer4CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
+                    }
+                }
             }
             chosen = 1
         }
 
         binding.answer2CardView.setOnClickListener {
             if (chosen == 0 && choosable == 1 && questionsRightAnswer == answerTwo){
-                binding.answer2CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_green_dark))
+                val colorGreen = binding.answer2CardView.context.getColor(colorIdGreen)
+                binding.answer2CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
                 getMoneyData(it)
                 userMoney = userMoney!! + 10
                 firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString()).update(resources.getString(R.string.firebase_userMoney), userMoney)
             }else if (chosen == 0 && choosable == 1 && questionsRightAnswer != answerTwo){
-                binding.answer2CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_red_dark))
+                val colorRed = binding.answer2CardView.context.getColor(colorIdRed)
+                binding.answer2CardView.backgroundTintList = ColorStateList.valueOf(colorRed)
+
+                when(questionsRightAnswer){
+                    resources.getString(R.string.answer_one) -> {
+                        val colorGreen = binding.answer1CardView.context.getColor(colorIdGreen)
+                        binding.answer1CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
+                    }
+                    resources.getString(R.string.answer_three) -> {
+                        val colorGreen = binding.answer3CardView.context.getColor(colorIdGreen)
+                        binding.answer3CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
+                    }
+                    resources.getString(R.string.answer_four) -> {
+                        val colorGreen = binding.answer4CardView.context.getColor(colorIdGreen)
+                        binding.answer4CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
+                    }
+                }
             }
             chosen = 1
         }
 
         binding.answer3CardView.setOnClickListener {
             if (chosen == 0 && choosable == 1 && questionsRightAnswer == answerThree){
-                binding.answer3CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_green_dark))
+                val colorGreen = binding.answer3CardView.context.getColor(colorIdGreen)
+                binding.answer3CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
                 getMoneyData(it)
                 userMoney = userMoney!! + 10
                 firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString()).update(resources.getString(R.string.firebase_userMoney), userMoney)
             }else if (chosen == 0 && choosable == 1 && questionsRightAnswer != answerThree){
-                binding.answer3CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_red_dark))
+                val colorRed = binding.answer3CardView.context.getColor(colorIdRed)
+                binding.answer3CardView.backgroundTintList = ColorStateList.valueOf(colorRed)
+
+                when(questionsRightAnswer){
+                    resources.getString(R.string.answer_one) -> {
+                        val colorGreen = binding.answer1CardView.context.getColor(colorIdGreen)
+                        binding.answer1CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
+                    }
+                    resources.getString(R.string.answer_two) -> {
+                        val colorGreen = binding.answer2CardView.context.getColor(colorIdGreen)
+                        binding.answer2CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
+                    }
+                    resources.getString(R.string.answer_four) -> {
+                        val colorGreen = binding.answer4CardView.context.getColor(colorIdGreen)
+                        binding.answer4CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
+                    }
+                }
             }
             chosen = 1
         }
 
         binding.answer4CardView.setOnClickListener {
             if (chosen == 0 && choosable == 1 && questionsRightAnswer == answerFour){
-                binding.answer4CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_green_dark))
+                val colorGreen = binding.answer4CardView.context.getColor(colorIdGreen)
+                binding.answer4CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
                 getMoneyData(it)
                 userMoney = userMoney!! + 10
                 firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString()).update(resources.getString(R.string.firebase_userMoney), userMoney)
             }else if (chosen == 0 && choosable == 1 && questionsRightAnswer != answerFour){
-                binding.answer4CardView.setCardBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_red_dark))
+                val colorRed = binding.answer4CardView.context.getColor(colorIdRed)
+                binding.answer4CardView.backgroundTintList = ColorStateList.valueOf(colorRed)
+
+                when(questionsRightAnswer){
+                    resources.getString(R.string.answer_one) -> {
+                        val colorGreen = binding.answer1CardView.context.getColor(colorIdGreen)
+                        binding.answer1CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
+                    }
+                    resources.getString(R.string.answer_two) -> {
+                        val colorGreen = binding.answer2CardView.context.getColor(colorIdGreen)
+                        binding.answer2CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
+                    }
+                    resources.getString(R.string.answer_three) -> {
+                        val colorGreen = binding.answer3CardView.context.getColor(colorIdGreen)
+                        binding.answer3CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
+                    }
+                }
             }
             chosen = 1
         }
@@ -177,18 +256,18 @@ class MachineQuizGameFragment : Fragment() {
 
     private fun loadData(){
 
-        val retrofit=Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build()
-        val service=retrofit.create(QuestionAPI::class.java)
-        val call=service.getData()
+        val retrofit = Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build()
+        val service = retrofit.create(QuestionAPI::class.java)
+        val call = service.getData()
 
-        call.enqueue(object :Callback<List<QuestionModel>>{
+        call.enqueue(object : Callback<List<QuestionModel>>{
             override fun onResponse(
-                call: Call<List<QuestionModel>>,
-                response: Response<List<QuestionModel>>
+                call : Call<List<QuestionModel>>,
+                response : Response<List<QuestionModel>>
             ) {
                 if (response.isSuccessful){
                     response.body()?.let {
-                        questionModels= ArrayList(it)
+                        questionModels = ArrayList(it)
 
                         binding.questionTextView.text = questionModels!![0].question
                         binding.answer1TextView.text = questionModels!![0].answer1
@@ -201,11 +280,10 @@ class MachineQuizGameFragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<List<QuestionModel>>, t: Throwable) {
+            override fun onFailure(call : Call<List<QuestionModel>>, t : Throwable) {
                 t.printStackTrace()
             }
         })
-
     }
 
     private fun getMoneyData(view : View){
@@ -213,11 +291,11 @@ class MachineQuizGameFragment : Fragment() {
             if (error != null){
                 Snackbar.make(view, resources.getString(R.string.error_occurred),Snackbar.LENGTH_SHORT).show()
             }else{
-                if (value!=null){
+                if (value != null){
                     if (!value.isEmpty){
-                        val documents=value.documents
+                        val documents = value.documents
                         for (document in documents){
-                            userMoney= (document.get(resources.getString(R.string.firebase_userCoin)) as Long).toInt()
+                            userMoney = (document.get(resources.getString(R.string.firebase_userCoin)) as Long).toInt()
                         }
                     }
                 }

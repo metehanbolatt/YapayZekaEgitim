@@ -90,7 +90,7 @@
             android:transitionName="image_small"
             android:visibility="invisible"
             android:layout_weight="1"
-            android:src="@drawable/sekizcizim" />
+            android:src="@drawable/draw_eight" />
 
         <ImageView
             android:id="@+id/cizimHashSekizImage"
@@ -99,7 +99,7 @@
             android:transitionName="image_small2"
             android:visibility="invisible"
             android:layout_weight="1"
-            android:src="@drawable/sekizcizimhash" />
+            android:src="@drawable/draw_hash_eight" />
 
         <ImageView
             android:id="@+id/hashSekizImage"
@@ -108,7 +108,7 @@
             android:transitionName="image_small3"
             android:visibility="invisible"
             android:layout_weight="1"
-            android:src="@drawable/sekizhash" />
+            android:src="@drawable/hash_eight" />
 
     </LinearLayout>
 

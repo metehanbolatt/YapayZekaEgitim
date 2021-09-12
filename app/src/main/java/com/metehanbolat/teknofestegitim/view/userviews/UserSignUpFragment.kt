@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -65,10 +64,14 @@ class UserSignUpFragment : Fragment() {
         binding.signUpButton.setOnClickListener {
             val email = binding.userEmailSignUp.text.toString()
             val password = binding.userPasswordSignUp.text.toString()
-            if (email.isEmpty() || password.isEmpty()){
-                Snackbar.make(it, resources.getString(R.string.emailorpassword_empty), Snackbar.LENGTH_LONG).show()
+            val name = binding.userNameSignUp.text.toString()
+            val surname = binding.userSurnameSignUp.text.toString()
+            val birthday = binding.userDateSignUp.text.toString()
+            val educationLevel = binding.autoCompleteTextView.text.toString()
+            if (email.isEmpty() || password.isEmpty() || name.isEmpty() || surname.isEmpty() || birthday.isEmpty() || educationLevel.isEmpty()){
+                Snackbar.make(it, resources.getString(R.string.please_check_field), Snackbar.LENGTH_LONG).show()
             }else{
-                userData()
+                userData(it)
             }
         }
     }
@@ -79,7 +82,7 @@ class UserSignUpFragment : Fragment() {
         activity?.finish()
     }
 
-    private fun userData(){
+    private fun userData(view : View){
         val userDataMap = hashMapOf<String, Any>()
         userDataMap[resources.getString(R.string.firebase_userName)] = binding.userNameSignUp.text.toString()
         userDataMap[resources.getString(R.string.firebase_userSurname)] = binding.userSurnameSignUp.text.toString()
@@ -102,11 +105,12 @@ class UserSignUpFragment : Fragment() {
             auth.createUserWithEmailAndPassword(binding.userEmailSignUp.text.toString(),binding.userPasswordSignUp.text.toString()).addOnSuccessListener {
                 goMainActivity()
             }.addOnFailureListener {
-                Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_SHORT).show()
+                if (it.localizedMessage == resources.getString(R.string.firebase_mail_error)){
+                    Snackbar.make(view, resources.getString(R.string.please_check_your_email), Snackbar.LENGTH_LONG).show()
+                }else if (it.localizedMessage == resources.getString(R.string.firebase_sign_up_pass_error)){
+                    Snackbar.make(view, resources.getString(R.string.please_check_your_pass_size), Snackbar.LENGTH_LONG).show()
+                }
             }
-
-        }.addOnFailureListener {
-            Toast.makeText(requireContext(),it.localizedMessage, Toast.LENGTH_SHORT).show()
         }
     }
 

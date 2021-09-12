@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -28,6 +29,10 @@ class GiftAwardsAddFragment : Fragment() {
     private lateinit var firestore : FirebaseFirestore
     private lateinit var firebaseAuth : FirebaseAuth
 
+    private lateinit var awardName : String
+
+    private lateinit var docRef : DocumentReference
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -35,16 +40,52 @@ class GiftAwardsAddFragment : Fragment() {
         _binding = FragmentGiftAwardsAddBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        firebaseAuth = Firebase.auth
+        firestore = Firebase.firestore
+
+        docRef = firestore.collection(resources.getString(R.string.firebase_userData)).document(firebaseAuth.currentUser!!.email.toString())
+
         arguments?.let {
             if (GiftAwardsAddFragmentArgs.fromBundle(it).award != null){
-                val awardName = GiftAwardsAddFragmentArgs.fromBundle(it).award
+                awardName = GiftAwardsAddFragmentArgs.fromBundle(it).award.toString()
                 binding.awardName.setText(awardName)
                 binding.awardName.isEnabled = false
+
+                binding.awardsAddButton.setOnClickListener { awardsAddButtonView ->
+                    if (binding.coinAmount.text.toString() == resources.getString(R.string.empty)){
+                        Snackbar.make(awardsAddButtonView, resources.getString(R.string.new_coin_value), Snackbar.LENGTH_LONG).show()
+                    }else{
+                        val award = hashMapOf(
+                            resources.getString(R.string.hash_award) to binding.awardName.text.toString(),
+                            resources.getString(R.string.hash_coin) to binding.coinAmount.text.toString())
+
+                        docRef.collection(firebaseAuth.currentUser!!.email.toString()).document(binding.awardName.text.toString()).set(award).addOnSuccessListener {
+                            Snackbar.make(view, binding.awardName.text.toString() + resources.getString(R.string.prize_updated_as) + binding.coinAmount.text.toString() + resources.getString(R.string.coin_updated_as), Snackbar.LENGTH_LONG).show()
+                        }
+                    }
+                }
+            }else{
+                binding.awardsAddButton.setOnClickListener { awardsAddButtonView ->
+                    if (binding.coinAmount.text.toString() == resources.getString(R.string.empty) && binding.awardName.text.toString() == resources.getString(R.string.empty)){
+                        Snackbar.make(awardsAddButtonView, resources.getString(R.string.please_enter_award_and_coin), Snackbar.LENGTH_LONG).show()
+                    }else if (binding.coinAmount.text.toString() != resources.getString(R.string.empty) && binding.awardName.text.toString() == resources.getString(R.string.empty)){
+                        Snackbar.make(awardsAddButtonView, resources.getString(R.string.please_enter_two) + binding.coinAmount.text.toString() + resources.getString(R.string.please_worth_coin_enter_prize), Snackbar.LENGTH_LONG).show()
+                    }else if (binding.coinAmount.text.toString() == resources.getString(R.string.empty) && binding.awardName.text.toString() != resources.getString(R.string.empty)){
+                        Snackbar.make(awardsAddButtonView, resources.getString(R.string.please_enter_one) + binding.awardName.text.toString() + resources.getString(R.string.please_prize_for_enter_coin), Snackbar.LENGTH_LONG).show()
+                    }else{
+                        val award = hashMapOf(
+                            resources.getString(R.string.hash_award) to binding.awardName.text.toString(),
+                            resources.getString(R.string.hash_coin) to binding.coinAmount.text.toString())
+
+                        docRef.collection(firebaseAuth.currentUser!!.email.toString()).document(binding.awardName.text.toString()).set(award).addOnSuccessListener {
+                            Snackbar.make(view, binding.awardName.text.toString() + resources.getString(R.string.prize_has_been_added), Snackbar.LENGTH_LONG).show()
+                        }
+                    }
+                }
             }
         }
 
-        firebaseAuth = Firebase.auth
-        firestore = Firebase.firestore
+
 
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
@@ -57,23 +98,6 @@ class GiftAwardsAddFragment : Fragment() {
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_color)
 
         return view
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val docRef = firestore.collection(resources.getString(R.string.firebase_userData)).document(firebaseAuth.currentUser!!.email.toString())
-
-        binding.awardsAddButton.setOnClickListener {
-            val award = hashMapOf(
-                "award" to binding.awardName.text.toString(),
-                "coin" to binding.coinAmount.text.toString())
-
-            docRef.collection(firebaseAuth.currentUser!!.email.toString()).document(binding.awardName.text.toString()).set(award).addOnSuccessListener {
-                Snackbar.make(view, "Eklendi", Snackbar.LENGTH_LONG).show()
-            }
-        }
-
     }
 
     override fun onDestroyView() {

@@ -7,15 +7,6 @@
     android:background="@color/card_education"
     tools:context=".view.mainviews.artificialintelligence.aieducation.EducationFour">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageViewWave"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/backgroundaitrans"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <TextView
         android:id="@+id/educationFourNameText"
         android:layout_width="wrap_content"
@@ -92,7 +83,7 @@
 
         <pl.droidsonroids.gif.GifImageView
             android:id="@+id/gif"
-            android:src="@drawable/otonomcar"
+            android:src="@drawable/autonomous_car"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

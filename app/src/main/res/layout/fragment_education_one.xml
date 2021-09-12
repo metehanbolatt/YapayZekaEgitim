@@ -101,7 +101,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="8dp"
-                android:background="@drawable/aitwo" />
+                android:background="@drawable/ai_two" />
 
         </LinearLayout>
 
@@ -132,7 +132,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/aidate" />
+                android:background="@drawable/ai_date" />
 
         </LinearLayout>
 
@@ -163,7 +163,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="8dp"
-                android:background="@drawable/dataanalysis" />
+                android:background="@drawable/data_analysis" />
 
         </LinearLayout>
 

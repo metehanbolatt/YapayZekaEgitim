@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="20dp">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/boy"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -28,13 +28,14 @@
             android:id="@+id/logoText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Genç Yazilimci "
+            android:text="@string/app_name"
             android:textColor="@color/black"
+            android:textAllCaps="true"
             android:padding="10dp"
             android:textSize="22sp"
-            android:fontFamily="@font/lemon_milk_bold_italic" />
+            android:fontFamily="@font/lemon_milk_bold" />
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/girl"
             android:layout_width="80dp"
             android:layout_height="80dp"

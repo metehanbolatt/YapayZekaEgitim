@@ -7,15 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".view.mainviews.artificialintelligence.aieducation.EducationThreetwo">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageViewWave"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/backgroundaitrans"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/nameTextYSA"
         android:layout_width="wrap_content"
@@ -84,7 +75,7 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/classvsclus"
             android:layout_gravity="center"
-            android:background="@drawable/clasvsclus"
+            android:background="@drawable/classification_vs_clustring"
             android:visibility="invisible"
             android:layout_marginBottom="3dp"
             android:layout_width="wrap_content"

@@ -146,7 +146,7 @@
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize15"
                 android:layout_gravity="center"
                 android:layout_margin="18dp"
-                android:src="@drawable/minesweeper" />
+                android:src="@drawable/mine_sweeper" />
 
         </androidx.cardview.widget.CardView>
 
@@ -220,7 +220,7 @@
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize15"
                 android:layout_gravity="center"
                 android:layout_margin="18dp"
-                android:src="@drawable/tictactoe" />
+                android:src="@drawable/tic_tac_toe" />
 
         </androidx.cardview.widget.CardView>
 

@@ -10,7 +10,7 @@
         android:id="@+id/cizimSekizImage"
         android:layout_width="0dp"
         android:layout_height="500dp"
-        android:src="@drawable/sekizcizim"
+        android:src="@drawable/draw_eight"
         android:transitionName="image_big"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"

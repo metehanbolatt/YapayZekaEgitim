@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">TeknofestEgitim</string>
+    <string name="app_name">Genç Yazılımcı</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="developer">Metehan Bolat</string>
 
     <string name="delete">Delete</string>
     <string name="update">Update</string>
     <string name="get_Awards">Get Awards</string>
 
-    <string name="this_awards_delete"> prize have been deleted.</string>
+    <string name="this_awards_delete">prize have been deleted.</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="user_nick">Username</string>
     <string name="password">Password</string>
     <string name="enter">Enter</string>
     <string name="forget_password">Forgot your password?</string>
-    <string name="app_namee">Genç Yazilimci </string>
+
     <string name="email">Email</string>
     <string name="birthday">Birthday</string>
     <string name="education_level">Education Level</string>
     <string name="user_name">Name</string>
     <string name="user_surname">Surname</string>
+    <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
     <string name="facebook">Facebook</string>
     <string name="google">Google</string>
     <string name="primary_school">Primary School</string>
-    <string name="metehan_bolat">Metehan Bolat</string>
-    <string name="seviye_29">Level 29</string>
+    <string name="level_29">Level 29</string>
     <string name="welcome">Welcome</string>
-    <string name="information_2">After light is perceived by living things, it is interpreted and made meaningful according to the organs each living thing has and the abilities of these organs. Thats why, every living things see objects differently.</string>
+    <string name="information_2">After light is perceived by living things, it is interpreted and made meaningful according to the organs each living thing has and the abilities of these organs. That\'s why, every living things see objects differently.</string>
     <string name="information_1">The first thing required for the act of seeing to occur is light. </string>
     <string name="information_title">How does living things see?</string>
-    <string name="canli"> Living Thing</string>
+    <string name="alive">Living Thing</string>
     <string name="snake">Snake</string>
     <string name="bee">Bee</string>
     <string name="bat">Bat</string>
-    <string name="rabbit">Rabbşt</string>
+    <string name="rabbit">Rabbit</string>
     <string name="computer">Computer ?</string>
     <string name="moveOn">Move On</string>
     <string name="didYouReadInfo">Did you read the info?</string>
@@ -109,6 +108,23 @@
     <string name="all_question_answered">You answer all the questions correctly. Congratulations!</string>
     <string name="empty" />
 
+    <string name="prize_updated_as">\u0020prize update as\u0020</string>
+    <string name="coin_updated_as">\u0020coin</string>
+    <string name="prize_has_been_added">\u0020prize has been added</string>
+    <string name="new_coin_value">You must enter the new coin value.</string>
+
+    <string name="please_enter_one">Please enter coin for the\u0020</string>
+    <string name="please_enter_two">Please enter a gift for\u0020</string>
+    <string name="please_enter_award_and_coin">Please enter gift name and gold value first.</string>
+    <string name="please_worth_coin_enter_prize">\u0020coin</string>
+    <string name="please_prize_for_enter_coin">\u0020prize.</string>
+
+    <string name="please_check_your_email">Please check your email.</string>
+    <string name="please_check_your_pass">Please check your password.</string>
+    <string name="please_check_your_pass_size">Password should be at least 6 characters</string>
+
+    <string name="please_check_field">Please do not leave any blank field.</string>
+
     <string name="baseUrl">"https://raw.githubusercontent.com/"</string>
 
     <string name="your_turn">Your turn!</string>
@@ -157,7 +173,7 @@
     <string name="machine_can_teach_info_four">With the development of technology, machines that are constantly developing may be much more advanced than the human brain in the future.</string>
     <string name="machine_can_teach_info_five">The biggest obstacle to achieving this is that the people who will develop these technologies are not working enough in this field.</string>
     <string name="machine_can_teach_info_six">We can accomplish that together.</string>
-    <string name="rules">Kurallar</string>
+    <string name="rules">Rules</string>
     <string name="choose_category">- Choose category</string>
     <string name="win_game">- Win the games</string>
     <string name="collect_awards">- Collect the prizes</string>
@@ -208,12 +224,12 @@
     <string name="who_use_ai">By Who Was The Term Artificial Intelligence Used?</string>
     <string name="that_who_use_ai">The term “Artificial Intelligence” was first used by Computer Scientist and Cognitive Scientist “John McCarthy”.</string>
 
-    <string name="otonom_cars">Otonom Cars</string>
+    <string name="autonomous_cars">Autonomous Cars</string>
     <string name="education_four_ai_info_one">Autonomous vehicles supported by artificial intelligence and deep learning algorithms are called vehicles that can operate without a driver thanks to their environmental sensing capabilities. This technology, which has already started to be used in daily travels and transportation, gives important clues to the future in the automotive world.</string>
     <string name="education_four_ai_info_two">As a result of the impressions of the above-mentioned visuals, autonomous vehicles can drive safely by distinguishing the objects they see on the road, such as people, and by following the traffic rules.</string>
 
     <string name="education_one_info_one">Artificial intelligence is the ability of a computer system to mimic human cognitive functions such as learning and problem solving.</string>
-    <string name="education_one_info_two">Yapay zeka terimi ilk olarak 1956 yılında İngiltere de New Hampshire da bulunan Dartmouth College’da yapılan bir konferansında ortaya atıldı.</string>
+    <string name="education_one_info_two">The term artificial intelligence was first coined in 1956 at a conference held at Dartmouth College in New Hampshire, England.</string>
     <string name="education_one_info_three">However, the reason why artificial intelligence is not so popular today is the increasing number of data that can be analyzed in our developing world.</string>
     <string name="education_one_info_four">In addition, the capabilities of artificial intelligence include functions such as understanding human speech, playing games that require counter-move, controlling devices that require autonomous operation, data analysis, military simulation, and photo-video analysis.</string>
 
@@ -251,13 +267,12 @@
     <string name="done_ai_with_fiveNoneK">You Have Successfully Completed Your Artificial Intelligence 5 Ws Training</string>
 
     <string name="main_education_info_one">In this section, you will be able to get detailed information about artificial intelligence.</string>
-    <string name="main_education_welcome">Welcome Metehan</string>
 
     <string name="question_one">Question 1</string>
     <string name="introduction_ai">Introduction to Artificial Intelligence</string>
     <string name="example_question">There is hardly anyone who is not warned by the elderly to drink warm water after eating ice cream. So what\'s the reason for this? Is it really healthy or is it a bullshit?</string>
 
-    <string name="emailorpassword_empty">Email or password is empty.</string>
+    <string name="email_or_password_empty">Email or password is empty.</string>
 
     <string-array name="education_level">
         <item>pre-school education</item>
@@ -325,5 +340,12 @@
     <string name="anim_image_big5">anim_image_big5</string>
     <string name="anim_image_big6">anim_image_big6</string>
     <string name="award">Award</string>
+
+    <string name="hash_award">award</string>
+    <string name="hash_coin">coin</string>
+
+    <string name="firebase_mail_error">The email address is badly formatted.</string>
+    <string name="firebase_pass_error">The password is invalid or the user does not have a password.</string>
+    <string name="firebase_sign_up_pass_error">The given password is invalid. [ Password should be at least 6 characters ]</string>
 
 </resources>

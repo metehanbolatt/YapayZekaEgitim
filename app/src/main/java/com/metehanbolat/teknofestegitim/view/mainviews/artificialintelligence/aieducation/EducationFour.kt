@@ -52,10 +52,10 @@ class EducationFour : Fragment() {
         auth = Firebase.auth
         firestore = Firebase.firestore
 
-        binding.nameText.text = resources.getString(R.string.otonom_cars)
+        binding.nameText.text = resources.getString(R.string.autonomous_cars)
         binding.infoText.text = resources.getString(R.string.education_four_ai_info_one)
-        binding.modelImage.setImageResource(R.drawable.modelcar)
-        binding.realImage.setImageResource(R.drawable.realcar)
+        binding.modelImage.setImageResource(R.drawable.model_car)
+        binding.realImage.setImageResource(R.drawable.real_car)
         binding.informationText.text = resources.getString(R.string.education_four_ai_info_two)
         binding.gif.visibility = View.VISIBLE
 

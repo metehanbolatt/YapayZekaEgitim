@@ -98,7 +98,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.nowSee)
-                            binding.duvarSekizImage.setImageResource(R.drawable.azgorunensekiz)
+                            binding.duvarSekizImage.setImageResource(R.drawable.pale_look_eight)
                             visibleButton()
                         },3000)
                         counterNo = 2
@@ -108,7 +108,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.nowSee)
-                            binding.duvarSekizImage.setImageResource(R.drawable.azgorunensekiz)
+                            binding.duvarSekizImage.setImageResource(R.drawable.pale_look_eight)
                             visibleButton()
                         },3000)
                         counterNo = 2
@@ -119,7 +119,7 @@ class ComputerVisionInfoFragment : Fragment() {
                             invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.nowSee)
-                            binding.duvarSekizImage.setImageResource(R.drawable.azgorunensekiz)
+                            binding.duvarSekizImage.setImageResource(R.drawable.pale_look_eight)
                             visibleButton()
                         },3000)
                         counterNo = 2
@@ -132,7 +132,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         Snackbar.make(it,resources.getString(R.string.wantTenGoldLose),Snackbar.LENGTH_INDEFINITE).setAction(resources.getString(R.string.no)){
                             invisibleGiphy()
                             visibleImage()
-                            binding.duvarSekizImage.setImageResource(R.drawable.gorunensekiz)
+                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
                             binding.question.text = resources.getString(R.string.hereItIs)
                             Handler(Looper.getMainLooper()).postDelayed({
                                 endGame()
@@ -174,11 +174,11 @@ class ComputerVisionInfoFragment : Fragment() {
                         binding.question.text = resources.getString(R.string.sure)
                         Snackbar.make(it,resources.getString(R.string.loseTenGold),Snackbar.LENGTH_INDEFINITE).setAction(resources.getString(R.string.saw)){
                             binding.question.text = resources.getString(R.string.sureSee)
-                            binding.giphy.setImageResource(R.drawable.sunglass)
+                            binding.giphy.setImageResource(R.drawable.sunglasses)
                             Handler(Looper.getMainLooper()).postDelayed({
                                 invisibleGiphy()
                                 visibleImage()
-                                binding.duvarSekizImage.setImageResource(R.drawable.gorunensekiz)
+                                binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
                                 binding.question.text = resources.getString(R.string.hereEight)
                                 Handler(Looper.getMainLooper()).postDelayed({
                                     endGame()
@@ -195,7 +195,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereItIs)
-                            binding.duvarSekizImage.setImageResource(R.drawable.gorunensekiz)
+                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -210,7 +210,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereItIs)
-                            binding.duvarSekizImage.setImageResource(R.drawable.gorunensekiz)
+                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -240,12 +240,12 @@ class ComputerVisionInfoFragment : Fragment() {
                     }
                     2 -> {
                         binding.question.text = resources.getString(R.string.more)
-                        visibleGiphy(R.drawable.sunglass)
+                        visibleGiphy(R.drawable.sunglasses)
                         invisibleImage()
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereEight)
-                            binding.duvarSekizImage.setImageResource(R.drawable.gorunensekiz)
+                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -255,12 +255,12 @@ class ComputerVisionInfoFragment : Fragment() {
                     }
                     3 -> {
                         binding.question.text = resources.getString(R.string.perfect)
-                        visibleGiphy(R.drawable.sunglass)
+                        visibleGiphy(R.drawable.sunglasses)
                         invisibleImage()
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereEight)
-                            binding.duvarSekizImage.setImageResource(R.drawable.gorunensekiz)
+                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -272,7 +272,7 @@ class ComputerVisionInfoFragment : Fragment() {
                 2 -> when(counterNo){
                     1 -> {
                         binding.question.text = resources.getString(R.string.againLook)
-                        visibleGiphy(R.drawable.sunglass)
+                        visibleGiphy(R.drawable.sunglasses)
                         invisibleImage()
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
@@ -285,12 +285,12 @@ class ComputerVisionInfoFragment : Fragment() {
                     }
                     2 -> {
                         binding.question.text = resources.getString(R.string.congrats)
-                        visibleGiphy(R.drawable.sunglass)
+                        visibleGiphy(R.drawable.sunglasses)
                         invisibleImage()
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereEight)
-                            binding.duvarSekizImage.setImageResource(R.drawable.gorunensekiz)
+                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -307,12 +307,12 @@ class ComputerVisionInfoFragment : Fragment() {
                         visibleGiphy(R.drawable.stop)
                         Snackbar.make(it,resources.getString(R.string.loseTenGold),Snackbar.LENGTH_INDEFINITE).setAction(resources.getString(R.string.noSaw)){
                             binding.question.text = resources.getString(R.string.sureNoSee)
-                            binding.giphy.setImageResource(R.drawable.sunglass)
+                            binding.giphy.setImageResource(R.drawable.sunglasses)
                             Handler(Looper.getMainLooper()).postDelayed({
                                 invisibleGiphy()
                                 visibleButton()
                                 visibleImage()
-                                binding.duvarSekizImage.setImageResource(R.drawable.azgorunensekiz)
+                                binding.duvarSekizImage.setImageResource(R.drawable.pale_look_eight)
                                 binding.question.text = resources.getString(R.string.nowSee)
                             },3000)
                         }.show()
@@ -320,12 +320,12 @@ class ComputerVisionInfoFragment : Fragment() {
                     }
                     2 -> {
                         binding.question.text = resources.getString(R.string.congrats)
-                        visibleGiphy(R.drawable.sunglass)
+                        visibleGiphy(R.drawable.sunglasses)
                         invisibleImage()
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereEight)
-                            binding.duvarSekizImage.setImageResource(R.drawable.gorunensekiz)
+                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -337,12 +337,12 @@ class ComputerVisionInfoFragment : Fragment() {
                 4 -> when(counterNo){
                     1 -> {
                         binding.question.text = resources.getString(R.string.congrats)
-                        visibleGiphy(R.drawable.sunglass)
+                        visibleGiphy(R.drawable.sunglasses)
                         invisibleImage()
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereEight)
-                            binding.duvarSekizImage.setImageResource(R.drawable.gorunensekiz)
+                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -352,12 +352,12 @@ class ComputerVisionInfoFragment : Fragment() {
                     }
                     2 -> {
                         binding.question.text = resources.getString(R.string.congrats)
-                        visibleGiphy(R.drawable.sunglass)
+                        visibleGiphy(R.drawable.sunglasses)
                         invisibleImage()
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereEight)
-                            binding.duvarSekizImage.setImageResource(R.drawable.gorunensekiz)
+                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({

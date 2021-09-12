@@ -81,7 +81,7 @@
         android:id="@+id/canliText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/canli"
+        android:text="@string/alive"
         android:fontFamily="@font/gotham_book"
         android:textStyle="bold"
         android:textColor="@color/white"

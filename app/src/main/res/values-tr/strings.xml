@@ -1,30 +1,28 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">TeknofestEgitim</string>
+    <string name="app_name">Genç Yazılımcı</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="developer">Metehan Bolat</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="user_nick">Kullanıcı Adı</string>
     <string name="password">Şifre</string>
     <string name="enter">Giriş</string>
     <string name="forget_password">Şifrenizi mi unuttunuz?</string>
-    <string name="app_namee">Genç Yazilimci </string>
     <string name="email">Email</string>
     <string name="birthday">Doğum Tarihi</string>
     <string name="education_level">Eğitim Düzeyi</string>
     <string name="user_name">İsim</string>
     <string name="user_surname">Soy İsim</string>
+    <string name="sign_in">Giriş Yap</string>
     <string name="sign_up">Kayıt Ol</string>
     <string name="facebook">Facebook</string>
     <string name="google">Google</string>
     <string name="primary_school">İlkokul</string>
-    <string name="metehan_bolat">Metehan Bolat</string>
-    <string name="seviye_29">Seviye 29</string>
+    <string name="level_29">Seviye 29</string>
     <string name="welcome">Hoş Geldin</string>
     <string name="information_2">Işık canlılar tarafından algılandıktan sonra her canlının sahip olduğu organlara ve bu organların yeteneklerine göre yorumlanır ve anlamlı hale getirilir. Bu sebeple her canlı nesneleri farklı görmektedir.</string>
     <string name="information_1">Görme eyleminin gerçekleşmesi için gereken ilk şey ışıktır.</string>
     <string name="information_title">Canlılar nasıl görür?</string>
-    <string name="canli"> Canlı</string>
+    <string name="alive"> Canlı</string>
     <string name="snake">Yılan</string>
     <string name="bee">Arı</string>
     <string name="bat">Yarasa</string>
@@ -108,6 +106,23 @@
     <string name="please_answer">Lütfen soruyu cevaplandırın</string>
     <string name="all_question_answered">Tüm soruları cevaplandırdınız. Tebrikler!</string>
     <string name="empty" />
+
+    <string name="prize_updated_as">\u0020ödülü </string>
+    <string name="coin_updated_as">\u0020altın olarak güncellendi.</string>
+    <string name="prize_has_been_added">\u0020ödülü eklendi.</string>
+    <string name="new_coin_value">Yeni altın değerini girmelisiniz.</string>
+    
+    <string name="please_enter_one">Lütfen\u0020</string>
+    <string name="please_enter_two">Lütfen\u0020</string>
+    <string name="please_enter_award_and_coin">Lütfen önce hediye ismi ve altın değerini giriniz.</string>
+    <string name="please_worth_coin_enter_prize">\u0020altın değerinde bir ödül giriniz.</string>
+    <string name="please_prize_for_enter_coin">\u0020ödülü için bir altın değeri giriniz.</string>
+
+    <string name="please_check_your_email">Lütfen email adresini kontrol et.</string>
+    <string name="please_check_your_pass">Lütfen şifreni kontrol et.</string>
+    <string name="please_check_your_pass_size">Şifreniz 6 karakterden uzun olmalıdır.</string>
+
+    <string name="please_check_field">Lütfen boş alan bırakmayınız.</string>
 
     <string name="baseUrl">"https://raw.githubusercontent.com/"</string>
 
@@ -208,7 +223,7 @@
     <string name="who_use_ai">Yapay Zeka Terimi Kimin Tarafından Kullanılmıştır?</string>
     <string name="that_who_use_ai">Bilgisayar Bilimci ve Bilişsel Bilimci “John McCarthy” tarafından “Yapay Zekâ” terimi ilk kez kullanılmıştır.</string>
 
-    <string name="otonom_cars">Otonom Araçlar</string>
+    <string name="autonomous_cars">Otonom Araçlar</string>
     <string name="education_four_ai_info_one">Yapay zeka ve derin öğrenme algoritmalarıyla desteklenen otonom araçlar, çevresel algılama yetenekleri sayesinde sürücü olmadan kendi kendine çalışabilen araçlara denmektedir. Hali hazırda günlük seyahatlerde ve taşımacılık alanında kullanılmaya başlanan bu teknoloji otomotiv dünyasında gelecek  yıllara önemli ipuçları vermektedir.</string>
     <string name="education_four_ai_info_two">Yukarıda belirtilen görsellerin izlenimleri sonucunda otonom araçlarda insanlar gibi yolda gördüğü nesneleri ayırt ederek ve trafik kurallarını takip ederek güvenli bir sürüş gerçekleştirebilmektedir.</string>
 
@@ -251,13 +266,12 @@
     <string name="done_ai_with_fiveNoneK">Yapay Zekaya 5N1K Eğitimini Başarıyla Tamamladın</string>
 
     <string name="main_education_info_one">Bu bölümde yapay zekâ hakkında detaylı bilgiler edinebileceksin.</string>
-    <string name="main_education_welcome">Hoşgeldin Metehan</string>
 
     <string name="question_one">Soru 1</string>
     <string name="introduction_ai">Yapay Zekaya Giriş</string>
     <string name="example_question">Yaşlılar tarafından, dondurma yedikten sonra, ılık su içmesi için uyarılmayan yoktur herhalde. Peki bunun nedeni ne? Gerçekten sağlıklı mı, yoksa bir saçmalık mı?</string>
 
-    <string name="emailorpassword_empty">Email veya şifre boş bırakıldı.</string>
+    <string name="email_or_password_empty">Email veya şifre boş bırakıldı.</string>
 
     <string-array name="education_level">
         <item>Okul Öncesi</item>
@@ -325,5 +339,12 @@
     <string name="anim_image_big5">anim_image_big5</string>
     <string name="anim_image_big6">anim_image_big6</string>
     <string name="award">Award</string>
+
+    <string name="hash_award">award</string>
+    <string name="hash_coin">coin</string>
+
+    <string name="firebase_mail_error">The email address is badly formatted.</string>
+    <string name="firebase_pass_error">The password is invalid or the user does not have a password.</string>
+    <string name="firebase_sign_up_pass_error">The given password is invalid. [ Password should be at least 6 characters ]</string>
 
 </resources>

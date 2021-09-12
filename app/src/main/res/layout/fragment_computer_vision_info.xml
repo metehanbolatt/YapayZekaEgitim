@@ -104,7 +104,7 @@
        android:id="@+id/duvarSekizImage"
        android:layout_width="150dp"
        android:layout_height="150dp"
-       android:src="@drawable/gorunmeyensekiz"
+       android:src="@drawable/invisible_eight"
        android:layout_marginTop="20dp"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
@@ -128,19 +128,19 @@
           android:layout_height="150dp"
           android:layout_weight="1"
           android:layout_marginEnd="10dp"
-          android:src="@drawable/gorunmeyensekiz" />
+          android:src="@drawable/invisible_eight" />
 
       <ImageView
           android:layout_width="150dp"
           android:layout_height="150dp"
           android:layout_weight="1"
           android:layout_marginEnd="10dp"
-          android:src="@drawable/azgorunensekiz" />
+          android:src="@drawable/pale_look_eight" />
       <ImageView
           android:layout_width="150dp"
           android:layout_height="150dp"
           android:layout_weight="1"
-          android:src="@drawable/gorunensekiz" />
+          android:src="@drawable/visible_eight" />
 
    </LinearLayout>
 

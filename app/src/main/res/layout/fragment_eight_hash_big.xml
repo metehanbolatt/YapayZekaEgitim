@@ -10,7 +10,7 @@
         android:id="@+id/hashSekizImage"
         android:layout_width="0dp"
         android:layout_height="500dp"
-        android:src="@drawable/sekizhash"
+        android:src="@drawable/hash_eight"
         android:transitionName="image_big3"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
