@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
@@ -34,6 +35,8 @@ class EducationOne : Fragment() {
     ): View {
         _binding = FragmentEducationOneBinding.inflate(inflater,container,false)
         val view = binding.root
+
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_design_start_color)
 
         auth = Firebase.auth
         firestore = Firebase.firestore

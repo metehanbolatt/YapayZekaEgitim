@@ -48,7 +48,6 @@ class EducationFour : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         auth = Firebase.auth
         firestore = Firebase.firestore
 

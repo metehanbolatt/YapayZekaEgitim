@@ -40,6 +40,8 @@ class GiftAwardsAddFragment : Fragment() {
         _binding = FragmentGiftAwardsAddBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.gift_add_background)
+
         firebaseAuth = Firebase.auth
         firestore = Firebase.firestore
 
@@ -50,6 +52,7 @@ class GiftAwardsAddFragment : Fragment() {
                 awardName = GiftAwardsAddFragmentArgs.fromBundle(it).award.toString()
                 binding.awardName.setText(awardName)
                 binding.awardName.isEnabled = false
+                binding.awardsAddButton.text = resources.getString(R.string.update)
 
                 binding.awardsAddButton.setOnClickListener { awardsAddButtonView ->
                     if (binding.coinAmount.text.toString() == resources.getString(R.string.empty)){
@@ -61,6 +64,8 @@ class GiftAwardsAddFragment : Fragment() {
 
                         docRef.collection(firebaseAuth.currentUser!!.email.toString()).document(binding.awardName.text.toString()).set(award).addOnSuccessListener {
                             Snackbar.make(view, binding.awardName.text.toString() + resources.getString(R.string.prize_updated_as) + binding.coinAmount.text.toString() + resources.getString(R.string.coin_updated_as), Snackbar.LENGTH_LONG).show()
+                            navController = findNavController()
+                            navController.navigate(R.id.action_giftAwardsAddFragment_to_giftFragment)
                         }
                     }
                 }
@@ -85,8 +90,6 @@ class GiftAwardsAddFragment : Fragment() {
             }
         }
 
-
-
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 navController = findNavController()
@@ -94,8 +97,6 @@ class GiftAwardsAddFragment : Fragment() {
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
-
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_color)
 
         return view
     }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
@@ -27,11 +28,21 @@ class EducationThree : Fragment() {
         _binding = FragmentEducationThreeBinding.inflate(inflater,container,false)
         val view = binding.root
 
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_design_start_color)
+
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                navController = findNavController()
+                navController.navigate(R.id.action_educationThree_to_mainEducation)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
 
         Snackbar.make(view, resources.getString(R.string.click_screen), Snackbar.LENGTH_LONG).show()
 
@@ -51,15 +62,6 @@ class EducationThree : Fragment() {
                 }
             }
         }
-
-        val callback = object : OnBackPressedCallback(true){
-            override fun handleOnBackPressed() {
-                navController = findNavController()
-                navController.navigate(R.id.action_educationThree_to_mainEducation)
-            }
-        }
-        requireActivity().onBackPressedDispatcher.addCallback(callback)
-
     }
 
     override fun onDestroyView() {

@@ -43,11 +43,7 @@ class MachineLearningFragment : Fragment() {
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.machine_learning_background_color)
 
         auth = Firebase.auth
-
-        binding.machineLearningButton.setOnClickListener {
-            navController = findNavController()
-            navController.navigate(R.id.action_machineLearningFragment_to_machineHumanNeuralFragment)
-        }
+        firestore = Firebase.firestore
 
         return view
     }
@@ -61,10 +57,13 @@ class MachineLearningFragment : Fragment() {
                 navController.navigate(R.id.action_machineLearningFragment_to_mainFragment)
             }
         }
-
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
-        firestore = Firebase.firestore
+        binding.machineLearningButton.setOnClickListener {
+            navController = findNavController()
+            navController.navigate(R.id.action_machineLearningFragment_to_machineHumanNeuralFragment)
+        }
+
         firebaseUser = FirebaseAuth.getInstance().currentUser!!
 
         userEmail = firebaseUser.email.toString()

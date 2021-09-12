@@ -43,6 +43,7 @@ class ComputerVisionInfoFragment : Fragment() {
     ): View {
         _binding = FragmentComputerVisionInfoBinding.inflate(inflater, container, false)
         val view = binding.root
+
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_design_start_color)
 
         auth = Firebase.auth
@@ -391,7 +392,6 @@ class ComputerVisionInfoFragment : Fragment() {
     private fun invisibleImage(){
         binding.duvarSekizImage.visibility = View.INVISIBLE
     }
-
     private fun endGame(){
         binding.question.visibility = View.INVISIBLE
         binding.noButton.visibility = View.INVISIBLE

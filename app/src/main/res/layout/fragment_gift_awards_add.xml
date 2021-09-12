@@ -3,18 +3,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gift_add_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.mainviews.gift.GiftAwardsAddFragment">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cloud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="match_parent"
+        android:layout_height="390dp"
+        android:src="@drawable/gift_background_2_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/coin"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="@id/coinAmount"
+        app:layout_constraintTop_toTopOf="@id/coinAmount"
+        app:layout_constraintBottom_toBottomOf="@id/coinAmount" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/treasure"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="@id/awardName"
+        app:layout_constraintTop_toTopOf="@id/awardName"
+        app:layout_constraintBottom_toBottomOf="@id/awardName" />
 
     <EditText
         android:id="@+id/awardName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="ödül gir"
+        android:hint="@string/enter_prize"
         android:textColor="@color/black"
+        android:background="@drawable/gift_edit_text_background"
+        android:fontFamily="@font/gotham_bold"
+        android:gravity="center"
+        android:padding="10dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="170dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,23 +63,30 @@
         android:id="@+id/coinAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="coin gir"
+        android:hint="@string/enter_coin"
         android:textColor="@color/black"
+        android:background="@drawable/gift_edit_text_background"
+        android:fontFamily="@font/gotham_bold"
+        android:inputType="number"
+        android:gravity="center"
+        android:padding="10dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/awardName"/>
+        app:layout_constraintTop_toBottomOf="@id/awardName" />
 
     <Button
         android:id="@+id/awardsAddButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#25ADE3"
+        android:fontFamily="@font/gotham_bold"
         app:layout_constraintStart_toStartOf="@id/coinAmount"
         app:layout_constraintEnd_toEndOf="@id/coinAmount"
         app:layout_constraintTop_toBottomOf="@id/coinAmount"
         android:layout_marginTop="20dp"
-        android:text="Ekle" />
+        android:text="@string/add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

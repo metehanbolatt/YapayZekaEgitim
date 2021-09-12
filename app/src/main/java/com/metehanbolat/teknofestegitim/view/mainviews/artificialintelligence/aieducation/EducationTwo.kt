@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
@@ -36,6 +37,8 @@ class EducationTwo : Fragment() {
         _binding = FragmentEducationTwoBinding.inflate(inflater,container,false)
         val view = binding.root
 
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_design_start_color)
+
         auth = Firebase.auth
         firestore = Firebase.firestore
 
@@ -47,7 +50,13 @@ class EducationTwo : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        navController = findNavController()
+        val callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                navController = findNavController()
+                navController.navigate(R.id.action_educationTwo_to_mainEducation)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
 
         binding.aiQuestionWhat.text = resources.getString(R.string.what_is_ai)
         binding.aiInfoWhat.text = resources.getString(R.string.is_ai_one)
@@ -100,16 +109,9 @@ class EducationTwo : Fragment() {
                 val newCoin: Int = userCoinInt + 5
                 getData.update(resources.getString(R.string.ai_learning_two),resources.getString(R.string.true_ai),resources.getString(R.string.firebase_userCoin),newCoin)
             }
+            navController = findNavController()
             navController.navigate(R.id.action_educationTwo_to_mainEducation)
         }
-        val callback = object : OnBackPressedCallback(true){
-            override fun handleOnBackPressed() {
-                navController = findNavController()
-                navController.navigate(R.id.action_educationTwo_to_mainEducation)
-            }
-        }
-        requireActivity().onBackPressedDispatcher.addCallback(callback)
-
     }
 
     private fun getDataFun(mail:String, view: View){

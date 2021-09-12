@@ -48,8 +48,6 @@ class MainFragment : Fragment() {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         val view = binding.root
 
-
-
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 when(counter){
@@ -112,10 +110,6 @@ class MainFragment : Fragment() {
             activity?.finish()
         }
 
-        binding.userLevel.setOnClickListener {
-            navController = findNavController()
-            navController.navigate(R.id.action_mainFragment_to_coinDenemeFragment)
-        }
     }
 
     @SuppressLint("SetTextI18n")

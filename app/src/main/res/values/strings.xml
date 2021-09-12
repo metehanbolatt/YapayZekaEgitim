@@ -24,7 +24,7 @@
     <string name="facebook">Facebook</string>
     <string name="google">Google</string>
     <string name="primary_school">Primary School</string>
-    <string name="level_29">Level 29</string>
+    <string name="level_1">Level 1</string>
     <string name="welcome">Welcome</string>
     <string name="information_2">After light is perceived by living things, it is interpreted and made meaningful according to the organs each living thing has and the abilities of these organs. That\'s why, every living things see objects differently.</string>
     <string name="information_1">The first thing required for the act of seeing to occur is light. </string>
@@ -52,6 +52,9 @@
     <string name="hardLook">You really did not see that :(</string>
     <string name="hereItIs">Now, it is impossible to not to see</string>
     <string name="congrats">Congratulations.\n Now we are ready for see all of it.</string>
+
+    <string name="congratulations_gift">Congratulations, you won the\u0020</string>
+
     <string name="stillNo">Can you see that now?</string>
     <string name="hereEight">Here is a number 8.</string>
     <string name="more">You look like ready for more.</string>
@@ -108,8 +111,10 @@
     <string name="all_question_answered">You answer all the questions correctly. Congratulations!</string>
     <string name="empty" />
 
+    <string name="add">Add</string>
+
     <string name="prize_updated_as">\u0020prize update as\u0020</string>
-    <string name="coin_updated_as">\u0020coin</string>
+    <string name="coin_updated_as">\u0020coin\u0020</string>
     <string name="prize_has_been_added">\u0020prize has been added</string>
     <string name="new_coin_value">You must enter the new coin value.</string>
 
@@ -207,6 +212,8 @@
     <string name="game_two">Second game</string>
     <string name="score">Score</string>
 
+    <string name="prize">prize</string>
+
     <string name="mine_sweeper">Mine Sweeper</string>
 
     <string name="question">Question: </string>
@@ -248,6 +255,11 @@
     <string name="classification">Classification</string>
     <string name="clustering">Clustering</string>
     <string name="algorithm">Algorithm</string>
+
+    <string name="enter_coin">Enter amount of coin…</string>
+    <string name="enter_prize">Enter prize name…</string>
+
+    <string name="welcome_gift_fragment_snackbar">Welcome to the prize page. You can create a prize pool by clicking the button.</string>
 
     <string name="education_threetwo_info_one">In classification, a dataset is assigned to one of the different and predetermined classes. Classification algorithms are based on learning which data to assign to which class from the given training set.</string>
     <string name="education_threetwo_info_two">Clustering is the grouping of data showing similar characteristics in a data set. Within the same cluster, the similarities are high, and the similarities between the clusters are low. </string>

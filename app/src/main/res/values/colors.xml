@@ -49,4 +49,7 @@
 
     <color name="green_color_button">#00C853</color>
 
+    <color name="gift_edit_text_stroke_color">#94d3ec</color>
+    <color name="gift_add_background">#E8F8FA</color>
+
 </resources>

@@ -64,7 +64,6 @@
                     android:paddingTop="10dp"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
-                    android:text="@string/example_question"
                     android:justificationMode="inter_word"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -81,6 +80,7 @@
             app:cardCornerRadius="2dp"
             app:strokeColor="@color/black"
             app:strokeWidth="2dp"
+            android:layout_marginBottom="5dp"
             app:cardBackgroundColor="@color/black"
             tools:layout_editor_absoluteX="55dp"
             tools:layout_editor_absoluteY="336dp" />
@@ -93,6 +93,7 @@
             android:layout_gravity="center"
             app:strokeColor="@color/black"
             app:strokeWidth="4dp"
+            android:layout_marginBottom="5dp"
             tools:layout_editor_absoluteX="55dp"
             tools:layout_editor_absoluteY="336dp" >
 
@@ -116,15 +117,9 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="1dp"
                     android:gravity="center_vertical"
-                    android:layout_width="180dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imageViewAKey"
-                    android:background="@drawable/chest"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="5dp" />
 
             </LinearLayout>
 
@@ -138,6 +133,7 @@
             android:layout_gravity="center"
             app:strokeColor="@color/black"
             app:strokeWidth="4dp"
+            android:layout_marginBottom="5dp"
             tools:layout_editor_absoluteX="55dp"
             tools:layout_editor_absoluteY="336dp" >
 
@@ -162,15 +158,9 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="1dp"
                     android:gravity="center_vertical"
-                    android:layout_width="180dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent" />
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imageViewBKey"
-                    android:background="@drawable/chest"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="5dp" />
 
             </LinearLayout>
 
@@ -184,6 +174,7 @@
             android:layout_gravity="center"
             app:strokeColor="@color/black"
             app:strokeWidth="4dp"
+            android:layout_marginBottom="5dp"
             tools:layout_editor_absoluteX="55dp"
             tools:layout_editor_absoluteY="336dp">
 
@@ -208,15 +199,9 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="1dp"
                     android:gravity="center_vertical"
-                    android:layout_width="180dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent" />
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imageViewCKey"
-                    android:background="@drawable/chest"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="5dp" />
 
             </LinearLayout>
 
@@ -230,6 +215,7 @@
             android:layout_gravity="center"
             app:strokeColor="@color/black"
             app:strokeWidth="4dp"
+            android:layout_marginBottom="5dp"
             tools:layout_editor_absoluteX="55dp"
             tools:layout_editor_absoluteY="336dp" >
 
@@ -253,15 +239,9 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="1dp"
                     android:gravity="center_vertical"
-                    android:layout_width="180dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent" />
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imageViewDKey"
-                    android:background="@drawable/chest"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="5dp" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

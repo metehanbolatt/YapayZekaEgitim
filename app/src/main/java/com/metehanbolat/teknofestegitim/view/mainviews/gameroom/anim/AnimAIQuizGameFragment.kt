@@ -15,7 +15,6 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentAnimAIQuizGameBinding
-import com.metehanbolat.teknofestegitim.databinding.FragmentAnimMachineQuizGameBinding
 
 class AnimAIQuizGameFragment : Fragment() {
 

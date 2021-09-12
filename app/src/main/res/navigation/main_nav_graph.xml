@@ -45,9 +45,6 @@
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right" />
-        <action
-            android:id="@+id/action_mainFragment_to_coinDenemeFragment"
-            app:destination="@id/coinDenemeFragment" />
     </fragment>
     <fragment
         android:id="@+id/giftFragment"
@@ -492,15 +489,6 @@
         <action
             android:id="@+id/action_animMainEducationFragment_to_mainEducation"
             app:destination="@id/mainEducation" />
-    </fragment>
-    <fragment
-        android:id="@+id/coinDenemeFragment"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.main.CoinDenemeFragment"
-        android:label="fragment_coin_deneme"
-        tools:layout="@layout/fragment_coin_deneme" >
-        <action
-            android:id="@+id/action_coinDenemeFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/giftAwardsAddFragment"

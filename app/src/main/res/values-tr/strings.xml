@@ -17,7 +17,7 @@
     <string name="facebook">Facebook</string>
     <string name="google">Google</string>
     <string name="primary_school">İlkokul</string>
-    <string name="level_29">Seviye 29</string>
+    <string name="level_1">Seviye 1</string>
     <string name="welcome">Hoş Geldin</string>
     <string name="information_2">Işık canlılar tarafından algılandıktan sonra her canlının sahip olduğu organlara ve bu organların yeteneklerine göre yorumlanır ve anlamlı hale getirilir. Bu sebeple her canlı nesneleri farklı görmektedir.</string>
     <string name="information_1">Görme eyleminin gerçekleşmesi için gereken ilk şey ışıktır.</string>
@@ -53,6 +53,8 @@
     <string name="machine_how_see">Makineler nasıl görür?</string>
     <string name="eight_on_the_wall">Nesneleri birbirinden ayırabilmemiz tamamen renklerine bağlıdır. Örneğin duvara asılı bir 8 rakamı düşünelim.</string>
     <string name="same_color_wall_eight" tools:ignore="Typos">Sence duvar ile aynı renk olsaydı görebilir miydin?</string>
+    <string name="congratulations_gift">Tebrikler,\u0020</string>
+
     <string name="is_there_eight">Bu duvarda 8 rakamı var mı?</string>
     <string name="yes">Evet</string>
     <string name="no">Hayır</string>
@@ -107,7 +109,9 @@
     <string name="all_question_answered">Tüm soruları cevaplandırdınız. Tebrikler!</string>
     <string name="empty" />
 
-    <string name="prize_updated_as">\u0020ödülü </string>
+    <string name="add">Ekle</string>
+
+    <string name="prize_updated_as">\u0020ödülü\u0020</string>
     <string name="coin_updated_as">\u0020altın olarak güncellendi.</string>
     <string name="prize_has_been_added">\u0020ödülü eklendi.</string>
     <string name="new_coin_value">Yeni altın değerini girmelisiniz.</string>
@@ -208,6 +212,8 @@
 
     <string name="mine_sweeper">Mayın Tarlası</string>
 
+    <string name="prize">\u0020ödülünü kazandın</string>
+
     <string name="question">Soru: </string>
 
     <string name="what_is_ai">Yapay Zeka Nedir?</string>
@@ -247,6 +253,11 @@
     <string name="classification">Sınıflandırma</string>
     <string name="clustering">Kümeleme</string>
     <string name="algorithm">Algoritma</string>
+
+    <string name="enter_coin">Altın miktarı giriniz…</string>
+    <string name="enter_prize">Ödülün ismini giriniz…</string>
+
+    <string name="welcome_gift_fragment_snackbar">Ödüller sistemine hoşgeldiniz. Butona tıklayarak ödül havuzu oluşturabilirsiniz.</string>
 
     <string name="education_threetwo_info_one">Sınıflandırmada, bir veri kümesi birbirinden farklı ve önceden belirlenmiş sınıflardan birine atanmasıdır. Sınıflandırma algoritmaları, verilen eğitim kümesinden hangi veriyi hangi sınıfa atayacağını öğrenmesi üzerine kuruludur.</string>
     <string name="education_threetwo_info_two">Kümeleme bir veri setinde benzer özellikler gösteren verilerin gruplara ayrılmasına denir. Aynı küme içinde benzerlikler fazla, kümeler arası benzerlikler azdır. </string>
