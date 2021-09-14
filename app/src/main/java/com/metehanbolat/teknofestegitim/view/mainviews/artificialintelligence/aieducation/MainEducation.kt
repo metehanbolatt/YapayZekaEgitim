@@ -1,7 +1,5 @@
 package com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation
 
-import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -33,7 +31,6 @@ class MainEducation : Fragment() {
         return view
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

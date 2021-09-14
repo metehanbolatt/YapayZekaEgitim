@@ -23,7 +23,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentComputerVisionBinding
-import com.metehanbolat.teknofestegitim.utils.UserCoin
+import com.metehanbolat.teknofestegitim.utils.UserFirebaseProcess
 import kotlin.math.abs
 
 class ComputerVisionFragment : Fragment() {
@@ -99,13 +99,13 @@ class ComputerVisionFragment : Fragment() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 when(position){
-                    0 -> binding.canliText.text = resources.getString(R.string.bee)
-                    1 -> binding.canliText.text = resources.getString(R.string.rabbit)
-                    2 -> binding.canliText.text = resources.getString(R.string.snake)
-                    3 -> binding.canliText.text = resources.getString(R.string.bat).also {
+                    0 -> binding.aliveText.text = resources.getString(R.string.bee)
+                    1 -> binding.aliveText.text = resources.getString(R.string.rabbit)
+                    2 -> binding.aliveText.text = resources.getString(R.string.snake)
+                    3 -> binding.aliveText.text = resources.getString(R.string.bat).also {
                         binding.button.visibility = View.INVISIBLE
                     }
-                    4 -> binding.canliText.text = resources.getString(R.string.computer).also {
+                    4 -> binding.aliveText.text = resources.getString(R.string.computer).also {
                         binding.button.visibility = View.VISIBLE
 
                     }
@@ -116,13 +116,14 @@ class ComputerVisionFragment : Fragment() {
         binding.button.setOnClickListener {
             getNextFragment()
             auth.currentUser?.email?.let { email -> getUserData(email) }
+
         }
 
     }
 
     private fun updateCoin(){
 
-        val userCoin = UserCoin(firestore,resources.getString(R.string.firebase_userData),auth.currentUser!!.email.toString())
+        val userCoin = UserFirebaseProcess(firestore,resources.getString(R.string.firebase_userData),auth.currentUser!!.email.toString())
         userCoin.getCoin(resources.getString(R.string.firebase_userCoin)){
             userCoin.userCoinIncrease(resources.getString(R.string.firebase_userCoin),it!!,10)
             userCoin.getUserCoin.update(resources.getString(R.string.firebase_firstCoin),1)

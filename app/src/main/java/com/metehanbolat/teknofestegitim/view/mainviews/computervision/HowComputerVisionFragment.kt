@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
@@ -19,12 +20,17 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
+import com.metehanbolat.teknofestegitim.databinding.AchievementAlertDialogBinding
 import com.metehanbolat.teknofestegitim.databinding.FragmentHowComputerVisionBinding
+import com.metehanbolat.teknofestegitim.utils.UserFirebaseProcess
 
 class HowComputerVisionFragment : Fragment() {
 
     private var _binding : FragmentHowComputerVisionBinding? = null
     private val binding get() = _binding!!
+
+    private var _achievementBinding : AchievementAlertDialogBinding? = null
+    private val achievementBinding get() = _achievementBinding!!
 
     private lateinit var navController: NavController
 
@@ -41,6 +47,7 @@ class HowComputerVisionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHowComputerVisionBinding.inflate(inflater, container, false)
+        _achievementBinding = AchievementAlertDialogBinding.inflate(inflater, container, false)
         val view = binding.root
 
         auth = Firebase.auth
@@ -63,7 +70,7 @@ class HowComputerVisionFragment : Fragment() {
 
         when(bigControl){
             1 -> {
-                binding.cizimSekizImage.visibility = View.VISIBLE
+                binding.drawEightImage.visibility = View.VISIBLE
                 binding.learnButton.visibility = View.INVISIBLE
                 binding.informationHow2.visibility = View.VISIBLE
                 binding.buttonHowComputer.visibility = View.VISIBLE
@@ -77,10 +84,10 @@ class HowComputerVisionFragment : Fragment() {
                 sharedElementReturnTransition = animation
             }
             2 -> {
-                binding.cizimSekizImage.visibility = View.VISIBLE
+                binding.drawEightImage.visibility = View.VISIBLE
                 binding.learnButton.visibility = View.INVISIBLE
                 binding.informationHow2.visibility = View.VISIBLE
-                binding.cizimHashSekizImage.visibility = View.VISIBLE
+                binding.drawHashEightImage.visibility = View.VISIBLE
                 binding.informationHow3.visibility = View.VISIBLE
                 binding.buttonHowComputer.visibility = View.VISIBLE
 
@@ -93,13 +100,13 @@ class HowComputerVisionFragment : Fragment() {
                 sharedElementReturnTransition = animation
             }
             3 -> {
-                binding.cizimSekizImage.visibility = View.VISIBLE
+                binding.drawEightImage.visibility = View.VISIBLE
                 binding.learnButton.visibility = View.INVISIBLE
                 binding.informationHow2.visibility = View.VISIBLE
-                binding.cizimHashSekizImage.visibility = View.VISIBLE
+                binding.drawHashEightImage.visibility = View.VISIBLE
                 binding.informationHow3.visibility = View.VISIBLE
                 binding.informationHow4.visibility = View.VISIBLE
-                binding.hashSekizImage.visibility = View.VISIBLE
+                binding.hashEightImage.visibility = View.VISIBLE
                 binding.buttonHowComputer.visibility = View.VISIBLE
                 binding.buttonHowComputer.visibility = View.VISIBLE
 
@@ -112,13 +119,13 @@ class HowComputerVisionFragment : Fragment() {
                 sharedElementReturnTransition = animation
             }
             4 -> {
-                binding.cizimSekizImage.visibility = View.VISIBLE
+                binding.drawEightImage.visibility = View.VISIBLE
                 binding.learnButton.visibility = View.INVISIBLE
                 binding.informationHow2.visibility = View.VISIBLE
-                binding.cizimHashSekizImage.visibility = View.VISIBLE
+                binding.drawHashEightImage.visibility = View.VISIBLE
                 binding.informationHow3.visibility = View.VISIBLE
                 binding.informationHow4.visibility = View.VISIBLE
-                binding.hashSekizImage.visibility = View.VISIBLE
+                binding.hashEightImage.visibility = View.VISIBLE
                 binding.buttonHowComputer.visibility = View.VISIBLE
                 binding.buttonHowComputer.visibility = View.VISIBLE
             }
@@ -130,9 +137,9 @@ class HowComputerVisionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.cizimSekizImage.setOnClickListener {
+        binding.drawEightImage.setOnClickListener {
 
-            val extras = FragmentNavigatorExtras(binding.cizimSekizImage to resources.getString(R.string.image_big))
+            val extras = FragmentNavigatorExtras(binding.drawEightImage to resources.getString(R.string.image_big))
             findNavController().navigate(
                 R.id.action_howComputerVisionFragment_to_eightDrawBigFragment,
                 null,
@@ -141,9 +148,9 @@ class HowComputerVisionFragment : Fragment() {
             )
         }
 
-        binding.cizimHashSekizImage.setOnClickListener {
+        binding.drawHashEightImage.setOnClickListener {
 
-            val extras2 = FragmentNavigatorExtras(binding.cizimHashSekizImage to resources.getString(R.string.image_big2))
+            val extras2 = FragmentNavigatorExtras(binding.drawHashEightImage to resources.getString(R.string.image_big2))
             findNavController().navigate(
                 R.id.action_howComputerVisionFragment_to_eightDrawHashFragment,
                 null,
@@ -152,9 +159,9 @@ class HowComputerVisionFragment : Fragment() {
             )
         }
 
-        binding.hashSekizImage.setOnClickListener {
+        binding.hashEightImage.setOnClickListener {
 
-            val extras3 = FragmentNavigatorExtras(binding.hashSekizImage to resources.getString(R.string.image_big3))
+            val extras3 = FragmentNavigatorExtras(binding.hashEightImage to resources.getString(R.string.image_big3))
             findNavController().navigate(
                 R.id.action_howComputerVisionFragment_to_eightHashBigFragment,
                 null,
@@ -169,10 +176,10 @@ class HowComputerVisionFragment : Fragment() {
                 Snackbar.make(it,resources.getString(R.string.click_look),Snackbar.LENGTH_SHORT).show()
 
             }else if (bigControl == 1 && counterZoomDraw == 1 ){
-                binding.cizimSekizImage.visibility = View.VISIBLE
+                binding.drawEightImage.visibility = View.VISIBLE
                 binding.learnButton.visibility = View.INVISIBLE
                 binding.informationHow2.visibility = View.VISIBLE
-                binding.cizimHashSekizImage.visibility = View.VISIBLE
+                binding.drawHashEightImage.visibility = View.VISIBLE
                 binding.informationHow3.visibility = View.VISIBLE
                 binding.buttonHowComputer.visibility = View.VISIBLE
                 counterZoomDraw = 2
@@ -181,14 +188,14 @@ class HowComputerVisionFragment : Fragment() {
                 Snackbar.make(it,resources.getString(R.string.click_look),Snackbar.LENGTH_SHORT).show()
 
             }else if (bigControl == 2 && counterZoomHashDraw == 1){
-                binding.cizimSekizImage.visibility = View.VISIBLE
+                binding.drawEightImage.visibility = View.VISIBLE
                 binding.learnButton.visibility = View.INVISIBLE
                 binding.informationHow2.visibility = View.VISIBLE
-                binding.cizimHashSekizImage.visibility = View.VISIBLE
+                binding.drawHashEightImage.visibility = View.VISIBLE
                 binding.informationHow3.visibility = View.VISIBLE
                 binding.buttonHowComputer.visibility = View.VISIBLE
                 binding.informationHow4.visibility = View.VISIBLE
-                binding.hashSekizImage.visibility = View.VISIBLE
+                binding.hashEightImage.visibility = View.VISIBLE
 
                 counterZoomHashDraw = 2
 
@@ -196,9 +203,21 @@ class HowComputerVisionFragment : Fragment() {
                 Snackbar.make(it,resources.getString(R.string.click_look),Snackbar.LENGTH_SHORT).show()
 
             }else if (bigControl == 3 && counterZoomHash == 1){
-                navController = findNavController()
-                navController.navigate(R.id.action_howComputerVisionFragment_to_gameRoomAnimFragment)
-                thirdCoinUpdate()
+
+                val achievementUpdate = UserFirebaseProcess(firestore, resources.getString(R.string.firebase_userData), auth.currentUser!!.email.toString())
+                achievementUpdate.userAchievement(resources.getString(R.string.firebase_first_achievement), 1)
+
+                val builder = AlertDialog.Builder(requireContext()).create()
+                builder.setView(achievementBinding.root)
+                achievementBinding.achievementInfoTextView.text = resources.getString(R.string.achievement_first_text)
+                achievementBinding.achievementButton.setOnClickListener {
+                    navController = findNavController()
+                    navController.navigate(R.id.action_howComputerVisionFragment_to_gameRoomAnimFragment)
+                    thirdCoinUpdate()
+                    builder.dismiss()
+                }
+                builder.show()
+
             }else if (bigControl == 4){
                 navController = findNavController()
                 navController.navigate(R.id.action_howComputerVisionFragment_to_gameRoomAnimFragment)
@@ -208,7 +227,7 @@ class HowComputerVisionFragment : Fragment() {
 
         binding.learnButton.setOnClickListener {
             binding.learnButton.visibility = View.INVISIBLE
-            binding.cizimSekizImage.visibility = View.VISIBLE
+            binding.drawEightImage.visibility = View.VISIBLE
             binding.informationHow2.visibility = View.VISIBLE
             binding.buttonHowComputer.visibility = View.VISIBLE
         }
@@ -222,5 +241,6 @@ class HowComputerVisionFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        _achievementBinding = null
     }
 }

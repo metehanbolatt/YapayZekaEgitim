@@ -54,6 +54,7 @@ class GiftFragment : Fragment() {
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
+
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_color)
 
         return view

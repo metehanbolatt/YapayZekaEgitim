@@ -55,8 +55,8 @@ class ComputerVisionInfoFragment : Fragment() {
                 navController.navigate(R.id.action_computerVisionInfoFragment_to_computerVisionFragment)
             }
         }
-
         requireActivity().onBackPressedDispatcher.addCallback(callback)
+
         val bundle : ComputerVisionInfoFragmentArgs by navArgs()
         val control = bundle.control
 
@@ -65,7 +65,7 @@ class ComputerVisionInfoFragment : Fragment() {
             binding.noButton.visibility = View.INVISIBLE
             binding.yesButton.visibility = View.INVISIBLE
             binding.giphy.visibility = View.INVISIBLE
-            binding.duvarSekizImage.visibility = View.INVISIBLE
+            binding.wallEightImage.visibility = View.INVISIBLE
             binding.linearLayoutImages.visibility = View.VISIBLE
             binding.information4.visibility = View.VISIBLE
             binding.information5.visibility = View.VISIBLE
@@ -99,7 +99,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.nowSee)
-                            binding.duvarSekizImage.setImageResource(R.drawable.pale_look_eight)
+                            binding.wallEightImage.setImageResource(R.drawable.pale_look_eight)
                             visibleButton()
                         },3000)
                         counterNo = 2
@@ -109,7 +109,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.nowSee)
-                            binding.duvarSekizImage.setImageResource(R.drawable.pale_look_eight)
+                            binding.wallEightImage.setImageResource(R.drawable.pale_look_eight)
                             visibleButton()
                         },3000)
                         counterNo = 2
@@ -120,7 +120,7 @@ class ComputerVisionInfoFragment : Fragment() {
                             invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.nowSee)
-                            binding.duvarSekizImage.setImageResource(R.drawable.pale_look_eight)
+                            binding.wallEightImage.setImageResource(R.drawable.pale_look_eight)
                             visibleButton()
                         },3000)
                         counterNo = 2
@@ -129,11 +129,11 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         invisibleImage()
                         visibleGiphy(R.drawable.stop)
-                        binding.question.text = ""
+                        binding.question.text = resources.getString(R.string.empty)
                         Snackbar.make(it,resources.getString(R.string.wantTenGoldLose),Snackbar.LENGTH_INDEFINITE).setAction(resources.getString(R.string.no)){
                             invisibleGiphy()
                             visibleImage()
-                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
+                            binding.wallEightImage.setImageResource(R.drawable.visible_eight)
                             binding.question.text = resources.getString(R.string.hereItIs)
                             Handler(Looper.getMainLooper()).postDelayed({
                                 endGame()
@@ -179,7 +179,7 @@ class ComputerVisionInfoFragment : Fragment() {
                             Handler(Looper.getMainLooper()).postDelayed({
                                 invisibleGiphy()
                                 visibleImage()
-                                binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
+                                binding.wallEightImage.setImageResource(R.drawable.visible_eight)
                                 binding.question.text = resources.getString(R.string.hereEight)
                                 Handler(Looper.getMainLooper()).postDelayed({
                                     endGame()
@@ -196,7 +196,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereItIs)
-                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
+                            binding.wallEightImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -211,7 +211,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereItIs)
-                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
+                            binding.wallEightImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -246,7 +246,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereEight)
-                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
+                            binding.wallEightImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -261,7 +261,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereEight)
-                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
+                            binding.wallEightImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -291,7 +291,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereEight)
-                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
+                            binding.wallEightImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -313,7 +313,7 @@ class ComputerVisionInfoFragment : Fragment() {
                                 invisibleGiphy()
                                 visibleButton()
                                 visibleImage()
-                                binding.duvarSekizImage.setImageResource(R.drawable.pale_look_eight)
+                                binding.wallEightImage.setImageResource(R.drawable.pale_look_eight)
                                 binding.question.text = resources.getString(R.string.nowSee)
                             },3000)
                         }.show()
@@ -326,7 +326,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereEight)
-                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
+                            binding.wallEightImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -343,7 +343,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereEight)
-                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
+                            binding.wallEightImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -358,7 +358,7 @@ class ComputerVisionInfoFragment : Fragment() {
                         invisibleButton()
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.question.text = resources.getString(R.string.hereEight)
-                            binding.duvarSekizImage.setImageResource(R.drawable.visible_eight)
+                            binding.wallEightImage.setImageResource(R.drawable.visible_eight)
                             invisibleGiphy()
                             visibleImage()
                             Handler(Looper.getMainLooper()).postDelayed({
@@ -387,16 +387,16 @@ class ComputerVisionInfoFragment : Fragment() {
         binding.giphy.visibility = View.INVISIBLE
     }
     private fun visibleImage(){
-        binding.duvarSekizImage.visibility = View.VISIBLE
+        binding.wallEightImage.visibility = View.VISIBLE
     }
     private fun invisibleImage(){
-        binding.duvarSekizImage.visibility = View.INVISIBLE
+        binding.wallEightImage.visibility = View.INVISIBLE
     }
     private fun endGame(){
         binding.question.visibility = View.INVISIBLE
         binding.noButton.visibility = View.INVISIBLE
         binding.yesButton.visibility = View.INVISIBLE
-        binding.duvarSekizImage.visibility = View.INVISIBLE
+        binding.wallEightImage.visibility = View.INVISIBLE
         binding.linearLayoutImages.visibility = View.VISIBLE
         binding.information4.visibility = View.VISIBLE
         binding.information5.visibility = View.VISIBLE

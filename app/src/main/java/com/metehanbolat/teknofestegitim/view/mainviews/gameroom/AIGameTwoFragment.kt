@@ -1,6 +1,5 @@
 package com.metehanbolat.teknofestegitim.view.mainviews.gameroom
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -60,10 +59,10 @@ class AIGameTwoFragment : Fragment() {
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
-        call?.enqueue(object: Callback<List<PostModel?>?> {
+        call.enqueue(object: Callback<List<PostModel>> {
             override fun onResponse(
-                call: Call<List<PostModel?>?>,
-                response: Response<List<PostModel?>?>,) {
+                call: Call<List<PostModel>>,
+                response: Response<List<PostModel>>,) {
 
                 val postList : List<PostModel> = response.body() as List<PostModel>
                 val question = arrayOfNulls<String>(postList.size)
@@ -83,13 +82,13 @@ class AIGameTwoFragment : Fragment() {
                 }
                 addQuestion(question,answerOne,answerTwo,answerThree,answerFour,correctAnswer)
             }
-            override fun onFailure(call: Call<List<PostModel?>?>, t: Throwable) {
+
+            override fun onFailure(call: Call<List<PostModel>>, t: Throwable) {
                 Snackbar.make(view, t.toString(), Snackbar.LENGTH_LONG).show()
             }
         })
     }
 
-    @SuppressLint("SetTextI18n")
     fun addQuestion(listQuestion: Array<String?>,
                     listAnswerA: Array<String?>,
                     listAnswerB: Array<String?>,
@@ -99,9 +98,10 @@ class AIGameTwoFragment : Fragment() {
 
         val questionSize = listQuestion.size
         val randNumber = (0 until questionSize).random()
+        val fixRandNumber = randNumber + 1
 
         binding.question.text = listQuestion[randNumber]
-        binding.questionNumber.text = resources.getString(R.string.question) + (randNumber + 1)
+        binding.questionNumber.text = resources.getString(R.string.question, fixRandNumber)
         binding.textViewAAnswer.text = listAnswerA[randNumber]
         binding.textViewBAnswer.text = listAnswerB[randNumber]
         binding.textViewCAnswer.text = listAnswerC[randNumber]

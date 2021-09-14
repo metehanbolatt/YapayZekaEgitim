@@ -41,7 +41,6 @@ class UserSignUpFragment : Fragment() {
         return view
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -56,8 +55,8 @@ class UserSignUpFragment : Fragment() {
 
         binding.userDateSignUp.setOnClickListener {
             val dpd = DatePickerDialog(requireContext(), { _, mYear, mMonth, mDay->
-                binding.userDateSignUp.setText("$mDay/$mMonth/$mYear")
-            },year,month,day)
+                binding.userDateSignUp.setText(resources.getString(R.string.sign_up_date, mDay, mMonth, mYear))
+            }, year, month, day)
             dpd.show()
         }
 
@@ -96,6 +95,9 @@ class UserSignUpFragment : Fragment() {
         userDataMap[resources.getString(R.string.firebase_thirdCoin)] = 0
         userDataMap[resources.getString(R.string.firebase_fourthCoin)] = 0
         userDataMap[resources.getString(R.string.firebase_fifthCoin)] = 0
+        userDataMap[resources.getString(R.string.firebase_first_achievement)] = 0
+        userDataMap[resources.getString(R.string.firebase_second_achievement)] = 0
+        userDataMap[resources.getString(R.string.firebase_third_achievement)] = 0
         userDataMap[resources.getString(R.string.firebase_sixthCoin)] = 0
         userDataMap[resources.getString(R.string.ai_learning_one)] = resources.getString(R.string.false_ai)
         userDataMap[resources.getString(R.string.ai_learning_two)] = resources.getString(R.string.false_ai)

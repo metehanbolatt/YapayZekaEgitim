@@ -64,14 +64,6 @@ class UserSignInFragment : Fragment() {
             navController = findNavController()
             navController.navigate(R.id.action_userSignInFragment_to_userSignUpFragment)
         }
-
-        binding.googleLinear.setOnClickListener {
-            // Google ile giriş yapılacak.
-        }
-
-        binding.facebookLinear.setOnClickListener {
-            // Facebook ile giriş yapılacak.
-        }
     }
 
     override fun onDestroyView() {

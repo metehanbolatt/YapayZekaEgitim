@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gift_add_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.mainviews.gift.GiftAwardsAddFragment">
+
+    <TextView
+        android:id="@+id/giftAddText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prize_island"
+        android:textColor="@color/gift_island_text_color"
+        android:textSize="36sp"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/gotham_bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="match_parent"
@@ -17,9 +33,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="390dp"
         android:src="@drawable/gift_background_2_1"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
@@ -50,38 +67,46 @@
         android:textColor="@color/black"
         android:background="@drawable/gift_edit_text_background"
         android:fontFamily="@font/gotham_bold"
+        android:textColorHint="@color/gift_island_text_color"
         android:gravity="center"
         android:padding="10dp"
+        android:maxLength="15"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/giftAddText"
+        android:importantForAutofill="no"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/coinAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_coin"
+        android:textColorHint="@color/gift_island_text_color"
         android:textColor="@color/black"
         android:background="@drawable/gift_edit_text_background"
         android:fontFamily="@font/gotham_bold"
         android:inputType="number"
+        android:maxLength="3"
         android:gravity="center"
         android:padding="10dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/awardName" />
+        app:layout_constraintTop_toBottomOf="@id/awardName"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/awardsAddButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#25ADE3"
+        android:backgroundTint="@color/gift_button_background_color"
+        android:textColor="@color/white"
         android:fontFamily="@font/gotham_bold"
         app:layout_constraintStart_toStartOf="@id/coinAmount"
         app:layout_constraintEnd_toEndOf="@id/coinAmount"

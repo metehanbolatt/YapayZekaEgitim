@@ -31,8 +31,8 @@ class EightDrawBigFragment : Fragment() {
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
-        binding.cizimSekizImage.setOnClickListener {
-            val extras = FragmentNavigatorExtras(binding.cizimSekizImage to resources.getString(R.string.image_small))
+        binding.drawEightImage.setOnClickListener {
+            val extras = FragmentNavigatorExtras(binding.drawEightImage to resources.getString(R.string.image_small))
             val action = EightDrawBigFragmentDirections.actionEightDrawBigFragmentToHowComputerVisionFragment(1)
             findNavController().navigate(
                 R.id.action_eightDrawBigFragment_to_howComputerVisionFragment,

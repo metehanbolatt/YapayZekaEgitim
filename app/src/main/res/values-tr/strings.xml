@@ -83,6 +83,8 @@
     <string name="machine_view">Makine Görüsü</string>
     <string name="default_coin">10</string>
 
+    <string name="achievement">Başarımlar</string>
+
     <string name="error_occurred">Hata oluştu.</string>
     <string name="not_seen">Görülmedi</string>
     <string name="not_answered">Cevaplanmadı</string>
@@ -110,6 +112,8 @@
     <string name="empty" />
 
     <string name="add">Ekle</string>
+
+    <string name="prize_island">Ödül Adası</string>
 
     <string name="prize_updated_as">\u0020ödülü\u0020</string>
     <string name="coin_updated_as">\u0020altın olarak güncellendi.</string>
@@ -197,6 +201,11 @@
     <string name="ai_game_true">Doğru</string>
     <string name="ai_game_false">False</string>
 
+    <string name="word_game">Kelime Oyunu</string>
+    <string name="word_game_enter_word">Son harfi ile biten kelime yazın…</string>
+    <string name="word_game_random_word">Random Kelime Getir</string>
+    <string name="word_game_last_word">Son Harfi İle Biten Kelime Getir</string>
+
     <string name="exit">Ayrıl</string>
     <string name="true_ai">True</string>
     <string name="false_ai">False</string>
@@ -214,7 +223,7 @@
 
     <string name="prize">\u0020ödülünü kazandın</string>
 
-    <string name="question">Soru: </string>
+    <string name="question">Soru: %1$d</string>
 
     <string name="what_is_ai">Yapay Zeka Nedir?</string>
     <string name="is_ai_one">Yapay zekâ, bir bilgisayar sisteminin, genellikle akıllı varlıklara özgü yeteneklerle ilişkili görevleri gerçekleştirme yeteneğidir.</string>
@@ -250,12 +259,21 @@
 
     <string name="basic_ai">Yapay Zeka Temelleri</string>
 
+    <string name="achievement_first_text">Bilgisayar Görüsü Yeteneği Kazanıldı</string>
+    <string name="get">Al</string>
+
+    <string name="computer_vision">Bilgisayar Görüsü</string>
+
+    <string name="great">Harika !!</string>
+
     <string name="classification">Sınıflandırma</string>
     <string name="clustering">Kümeleme</string>
     <string name="algorithm">Algoritma</string>
 
     <string name="enter_coin">Altın miktarı giriniz…</string>
     <string name="enter_prize">Ödülün ismini giriniz…</string>
+
+    <string name="roundStart">%1$d. Tur Başla</string>
 
     <string name="welcome_gift_fragment_snackbar">Ödüller sistemine hoşgeldiniz. Butona tıklayarak ödül havuzu oluşturabilirsiniz.</string>
 
@@ -335,6 +353,9 @@
     <string name="firebase_fourthCoin">fourthCoin</string>
     <string name="firebase_fifthCoin">fifthCoin</string>
     <string name="firebase_sixthCoin">sixthCoin</string>
+    <string name="firebase_first_achievement">firstAchievement</string>
+    <string name="firebase_second_achievement">secondAchievement</string>
+    <string name="firebase_third_achievement">thirdAchievement</string>
 
     <string name="image_small">image_small</string>
     <string name="image_small2">image_small2</string>
@@ -357,5 +378,20 @@
     <string name="firebase_mail_error">The email address is badly formatted.</string>
     <string name="firebase_pass_error">The password is invalid or the user does not have a password.</string>
     <string name="firebase_sign_up_pass_error">The given password is invalid. [ Password should be at least 6 characters ]</string>
+
+    <string name="_one">1</string>
+    <string name="_two">2</string>
+    <string name="_three">3</string>
+    <string name="_four">4</string>
+
+    <string name="tr">tr</string>
+    <string name="id">id</string>
+    <string name="btn_">btn_%1$d</string>
+
+    <string name="comma">, </string>
+
+    <string name="name_surname">%1$s %2$s</string>
+
+    <string name="sign_up_date">%1$d/%2$d/%3$d</string>
 
 </resources>

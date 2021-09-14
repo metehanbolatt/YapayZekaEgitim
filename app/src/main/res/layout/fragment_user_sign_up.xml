@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -61,7 +62,8 @@
         android:textColorHint="@color/drawable_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearSignUp" />
+        app:layout_constraintTop_toBottomOf="@id/linearSignUp"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/userSurnameSignUp"
@@ -81,7 +83,8 @@
         android:background="@drawable/edittext_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userNameSignUp" />
+        app:layout_constraintTop_toBottomOf="@id/userNameSignUp"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/userNickSignUp"
@@ -102,7 +105,8 @@
         android:background="@drawable/edittext_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userSurnameSignUp" />
+        app:layout_constraintTop_toBottomOf="@id/userSurnameSignUp"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/userEmailSignUp"
@@ -122,7 +126,8 @@
         android:background="@drawable/edittext_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userNickSignUp" />
+        app:layout_constraintTop_toBottomOf="@id/userNickSignUp"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/userPasswordSignUp"
@@ -142,7 +147,8 @@
         android:background="@drawable/edittext_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userEmailSignUp" />
+        app:layout_constraintTop_toBottomOf="@id/userEmailSignUp"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/userDateSignUp"
@@ -165,7 +171,8 @@
         android:background="@drawable/edittext_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userPasswordSignUp" />
+        app:layout_constraintTop_toBottomOf="@id/userPasswordSignUp"
+        android:importantForAutofill="no" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/userEducationLevelSignUp"

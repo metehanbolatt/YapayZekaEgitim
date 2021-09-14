@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -79,7 +80,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:textColor="#EA1A74"
+            android:textColor="@color/tic_tac_toe_text_color"
             android:fontFamily="@font/gotham_bold"
             android:text="@string/your_turn"
             app:layout_constraintStart_toEndOf="@id/tictactoeYouLinear"
@@ -117,7 +118,7 @@
             android:id="@+id/btn_0"
             android:layout_width="110dp"
             android:layout_height="100dp"
-            android:backgroundTint="#E8FF05"
+            android:backgroundTint="@color/tic_tac_toe_button_color"
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold" />
@@ -127,7 +128,7 @@
             android:id="@+id/btn_1"
             android:layout_width="110dp"
             android:layout_height="100dp"
-            android:backgroundTint="#E8FF05"
+            android:backgroundTint="@color/tic_tac_toe_button_color"
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold"
@@ -137,7 +138,7 @@
             android:id="@+id/btn_2"
             android:layout_width="110dp"
             android:layout_height="100dp"
-            android:backgroundTint="#E8FF05"
+            android:backgroundTint="@color/tic_tac_toe_button_color"
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold"
@@ -147,7 +148,7 @@
             android:id="@+id/btn_3"
             android:layout_width="110dp"
             android:layout_height="100dp"
-            android:backgroundTint="#E8FF05"
+            android:backgroundTint="@color/tic_tac_toe_button_color"
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold" />
@@ -156,7 +157,7 @@
             android:id="@+id/btn_4"
             android:layout_width="110dp"
             android:layout_height="100dp"
-            android:backgroundTint="#E8FF05"
+            android:backgroundTint="@color/tic_tac_toe_button_color"
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold"
@@ -166,7 +167,7 @@
             android:id="@+id/btn_5"
             android:layout_width="110dp"
             android:layout_height="100dp"
-            android:backgroundTint="#E8FF05"
+            android:backgroundTint="@color/tic_tac_toe_button_color"
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold"
@@ -176,7 +177,7 @@
             android:id="@+id/btn_6"
             android:layout_width="110dp"
             android:layout_height="100dp"
-            android:backgroundTint="#E8FF05"
+            android:backgroundTint="@color/tic_tac_toe_button_color"
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold" />
@@ -185,7 +186,7 @@
             android:id="@+id/btn_7"
             android:layout_width="110dp"
             android:layout_height="100dp"
-            android:backgroundTint="#E8FF05"
+            android:backgroundTint="@color/tic_tac_toe_button_color"
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold"
@@ -195,7 +196,7 @@
             android:id="@+id/btn_8"
             android:layout_width="110dp"
             android:layout_height="100dp"
-            android:backgroundTint="#E8FF05"
+            android:backgroundTint="@color/tic_tac_toe_button_color"
             android:gravity="center"
             android:textSize="60sp"
             android:textStyle="bold"
@@ -209,9 +210,9 @@
         android:layout_height="50dp"
         android:src="@drawable/reset_game"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@id/raundButton"
-        app:layout_constraintEnd_toEndOf="@id/raundButton"
-        app:layout_constraintTop_toBottomOf="@id/raundButton"/>
+        app:layout_constraintStart_toStartOf="@id/roundButton"
+        app:layout_constraintEnd_toEndOf="@id/roundButton"
+        app:layout_constraintTop_toBottomOf="@id/roundButton"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -223,10 +224,10 @@
         app:layout_constraintTop_toBottomOf="@id/resetGame" />
 
     <Button
-        android:id="@+id/raundButton"
+        android:id="@+id/roundButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#2B8F00"
+        android:backgroundTint="@color/tic_tac_toe_button_two_color"
         android:text="@string/reset"
         android:textAllCaps="false"
         android:layout_marginTop="20dp"

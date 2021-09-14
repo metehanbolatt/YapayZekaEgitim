@@ -2,7 +2,7 @@ package com.metehanbolat.teknofestegitim.utils
 
 import com.google.firebase.firestore.FirebaseFirestore
 
-class UserCoin(var firebaseFirestore: FirebaseFirestore, collectionPath : String, documentPath: String,) {
+class UserFirebaseProcess(var firebaseFirestore: FirebaseFirestore, collectionPath : String, documentPath: String) {
 
     val getUserCoin = firebaseFirestore.collection(collectionPath).document(documentPath)
 
@@ -30,6 +30,12 @@ class UserCoin(var firebaseFirestore: FirebaseFirestore, collectionPath : String
         val newCurrentCoin = currentCoin - amountOfDecrease
         getUserCoin.update(coinPath, newCurrentCoin)
         return newCurrentCoin
+
+    }
+
+    fun userAchievement(achievementPath : String, achievementPoint : Int){
+
+        getUserCoin.update(achievementPath, achievementPoint)
 
     }
 

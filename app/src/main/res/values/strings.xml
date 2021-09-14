@@ -7,7 +7,6 @@
     <string name="update">Update</string>
     <string name="get_Awards">Get Awards</string>
 
-    <string name="this_awards_delete">prize have been deleted.</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="user_nick">Username</string>
     <string name="password">Password</string>
@@ -82,6 +81,8 @@
     <string name="are_u_sure_exit">Are you sure that you want to exit?</string>
     <string name="againClickExit">Please press again to exit.</string>
 
+    <string name="achievement">Achievements</string>
+
     <string name="no_user_data">User data not found.</string>
     <string name="earned_gold">Coins have earned.</string>
     <string name="earn_ten_gold">10 coins have earned.</string>
@@ -113,8 +114,11 @@
 
     <string name="add">Add</string>
 
+    <string name="prize_island">Prize Island</string>
+
     <string name="prize_updated_as">\u0020prize update as\u0020</string>
     <string name="coin_updated_as">\u0020coin\u0020</string>
+    <string name="this_awards_delete">\u0020prize have been deleted.</string>
     <string name="prize_has_been_added">\u0020prize has been added</string>
     <string name="new_coin_value">You must enter the new coin value.</string>
 
@@ -196,6 +200,11 @@
     <string name="next_question">Next question</string>
     <string name="are_u_sure_quit_game">Do you want to leave the game?</string>
 
+    <string name="word_game">Word Game</string>
+    <string name="word_game_enter_word">Write a word that ends with…</string>
+    <string name="word_game_random_word">Get Random Word</string>
+    <string name="word_game_last_word">Get Last Letter Word</string>
+
     <string name="ai_game_true">True</string>
     <string name="ai_game_false">False</string>
 
@@ -216,7 +225,7 @@
 
     <string name="mine_sweeper">Mine Sweeper</string>
 
-    <string name="question">Question: </string>
+    <string name="question">Question: %1$d</string>
 
     <string name="what_is_ai">What is artificial intelligence?</string>
     <string name="is_ai_one">Artificial intelligence is the ability of a computer system to perform tasks often associated with abilities unique to intelligent beings.</string>
@@ -250,11 +259,20 @@
     <string name="education_four_info_one">Let\'s See the Difference of Artificial Intelligence</string>
     <string name="done_education_four">You Have Successfully Completed the Artificial Intelligence Basic Level Training</string>
 
+    <string name="achievement_first_text">You Have Acquired The Computer Vision Skill</string>
+    <string name="get">Earn</string>
+
+    <string name="computer_vision">Computer Vision</string>
+
+    <string name="great">Great !!</string>
+
     <string name="basic_ai">Artificial Intelligence Fundamentals</string>
 
     <string name="classification">Classification</string>
     <string name="clustering">Clustering</string>
     <string name="algorithm">Algorithm</string>
+
+    <string name="roundStart">Start %1$d. Round</string>
 
     <string name="enter_coin">Enter amount of coin…</string>
     <string name="enter_prize">Enter prize name…</string>
@@ -337,6 +355,9 @@
     <string name="firebase_fourthCoin">fourthCoin</string>
     <string name="firebase_fifthCoin">fifthCoin</string>
     <string name="firebase_sixthCoin">sixthCoin</string>
+    <string name="firebase_first_achievement">firstAchievement</string>
+    <string name="firebase_second_achievement">secondAchievement</string>
+    <string name="firebase_third_achievement">thirdAchievement</string>
 
     <string name="image_small">image_small</string>
     <string name="image_small2">image_small2</string>
@@ -359,5 +380,20 @@
     <string name="firebase_mail_error">The email address is badly formatted.</string>
     <string name="firebase_pass_error">The password is invalid or the user does not have a password.</string>
     <string name="firebase_sign_up_pass_error">The given password is invalid. [ Password should be at least 6 characters ]</string>
+
+    <string name="_one">1</string>
+    <string name="_two">2</string>
+    <string name="_three">3</string>
+    <string name="_four">4</string>
+
+    <string name="tr">tr</string>
+    <string name="id">id</string>
+    <string name="btn_">btn_%1$d</string>
+
+    <string name="comma">, </string>
+
+    <string name="name_surname">%1$s %2$s</string>
+
+    <string name="sign_up_date">%1$d/%2$d/%3$d</string>
 
 </resources>

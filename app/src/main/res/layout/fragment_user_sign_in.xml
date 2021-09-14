@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -48,7 +49,8 @@
         android:background="@drawable/edittext_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logoText" />
+        app:layout_constraintTop_toBottomOf="@id/logoText"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/userPasswordSignIn"
@@ -68,7 +70,8 @@
         android:background="@drawable/edittext_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userNameSignIn" />
+        app:layout_constraintTop_toBottomOf="@id/userNameSignIn"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/userButtonSignIn"
@@ -103,7 +106,7 @@
             android:padding="6dp"
             android:orientation="vertical">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/facebook"
@@ -126,7 +129,7 @@
             android:padding="6dp"
             android:orientation="vertical">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/google"

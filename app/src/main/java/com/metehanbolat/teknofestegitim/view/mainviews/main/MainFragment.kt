@@ -1,13 +1,11 @@
 package com.metehanbolat.teknofestegitim.view.mainviews.main
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
@@ -112,7 +110,6 @@ class MainFragment : Fragment() {
 
     }
 
-    @SuppressLint("SetTextI18n")
     private fun getUserData(name : String, view : View){
         val getUserData = firestore.collection(resources.getString(R.string.firebase_userData)).document(name)
         getUserData.get().addOnSuccessListener { document ->
@@ -126,17 +123,14 @@ class MainFragment : Fragment() {
                     userBirthday = document.data!![resources.getString(R.string.firebase_userBirthday)]
                     userCoin = document.data!![resources.getString(R.string.firebase_userCoin)]
 
-                    binding.userName.text = "$userName $userSurname"
+                    binding.userName.text = resources.getString(R.string.name_surname, userName.toString(), userSurname.toString())
                     binding.userCoin.text = userCoin.toString()
                     binding.progressBar.visibility = View.INVISIBLE
                     binding.cardGridLayout.visibility = View.VISIBLE
-
                 }else{
                     Snackbar.make(view, resources.getString(R.string.no_user_data), Snackbar.LENGTH_LONG).show()
                 }
             }
-        }.addOnFailureListener {
-            Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_SHORT).show()
         }
     }
 

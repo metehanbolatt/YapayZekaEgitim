@@ -29,7 +29,6 @@ class EducationTwo : Fragment() {
     private var userCoin : Any? = null
     private var learningTwo : Any? = null
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,

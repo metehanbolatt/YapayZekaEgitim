@@ -31,8 +31,8 @@ class EightHashBigFragment : Fragment() {
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
-        binding.hashSekizImage.setOnClickListener {
-            val extras = FragmentNavigatorExtras(binding.hashSekizImage to resources.getString(R.string.image_small3))
+        binding.hashEightImage.setOnClickListener {
+            val extras = FragmentNavigatorExtras(binding.hashEightImage to resources.getString(R.string.image_small3))
             val action = EightHashBigFragmentDirections.actionEightHashBigFragmentToHowComputerVisionFragment(3)
             findNavController().navigate(
                 R.id.action_eightHashBigFragment_to_howComputerVisionFragment,

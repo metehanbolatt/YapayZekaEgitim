@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_user"
+    app:layoutDescription="@xml/fragment_achievement_scene"
     tools:context=".view.mainviews.achievement.AchievementFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Achievement" />
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:elevation="3dp"
+        android:fontFamily="@font/lemon_milk"
+        android:text="@string/achievement"
+        android:textAllCaps="true"
+        android:textColor="@color/background_design_end_color"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@id/achievementRecyclerGif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</FrameLayout>
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/achievementRecyclerGif"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:elevation="2dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/achievement_gif"
+        app:layout_constraintBottom_toBottomOf="@id/achievementRecyclerHeader"
+        app:layout_constraintEnd_toEndOf="@id/achievementRecyclerHeader"
+        app:layout_constraintStart_toStartOf="@id/achievementRecyclerHeader"
+        app:loopCount="1" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/achievementRecyclerHeader"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/recycler_achievement_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/achievementRecyclerHeader" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

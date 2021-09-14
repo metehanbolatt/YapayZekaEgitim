@@ -1,10 +1,14 @@
 package com.metehanbolat.teknofestegitim.view.mainviews.gameroom
 
+import android.graphics.Color
 import android.os.Bundle
+import android.util.TypedValue
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import java.util.*
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
@@ -15,6 +19,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentMachineMineSweeperBinding
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionAPI
+import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionAPIEnglish
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -33,8 +38,8 @@ class MachineMineSweeperFragment : Fragment() {
     private lateinit var map : Array<IntArray>
     private lateinit var board : Array<IntArray>
     private var rand = Random()
-    private var secim1 = 0
-    private var secim2 = 0
+    private var chooseOne = 0
+    private var chooseTwo = 0
     private var success = 0
     private val mineNumber = 6
     private lateinit var questionSeen : String
@@ -47,6 +52,8 @@ class MachineMineSweeperFragment : Fragment() {
     private var questionModels : ArrayList<QuestionModel> ?= null
     private lateinit var questionsRightAnswer : String
     private var questionNumber = 0
+
+    private lateinit var call : Call<List<QuestionModel>>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -81,7 +88,7 @@ class MachineMineSweeperFragment : Fragment() {
 
         loadData()
 
-        mayinTarlasi(rowNumber, colNumber)
+        mineSweeper(rowNumber, colNumber)
         prepareGame()
 
         binding.restartMineGame.setOnClickListener {
@@ -90,11 +97,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn1.setOnClickListener {
-            secim1 = 0
-            secim2 = 0
+            chooseOne = 0
+            chooseTwo = 0
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn1.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn1.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn1.setBackgroundResource(R.drawable.bomb)
             }
@@ -102,11 +109,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn2.setOnClickListener {
-            secim1 = 0
-            secim2 = 1
+            chooseOne = 0
+            chooseTwo = 1
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn2.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn2.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn2.setBackgroundResource(R.drawable.bomb)
             }
@@ -114,11 +121,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn3.setOnClickListener {
-            secim1 = 0
-            secim2 = 2
+            chooseOne = 0
+            chooseTwo = 2
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn3.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn3.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn3.setBackgroundResource(R.drawable.bomb)
             }
@@ -127,11 +134,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn4.setOnClickListener {
-            secim1 = 0
-            secim2 = 3
+            chooseOne = 0
+            chooseTwo = 3
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn4.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn4.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn4.setBackgroundResource(R.drawable.bomb)
             }
@@ -139,11 +146,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn5.setOnClickListener {
-            secim1 = 1
-            secim2 = 0
+            chooseOne = 1
+            chooseTwo = 0
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn5.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn5.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn5.setBackgroundResource(R.drawable.bomb)
             }
@@ -151,11 +158,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn6.setOnClickListener {
-            secim1 = 1
-            secim2 = 1
+            chooseOne = 1
+            chooseTwo = 1
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn6.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn6.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn6.setBackgroundResource(R.drawable.bomb)
             }
@@ -163,11 +170,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn7.setOnClickListener {
-            secim1 = 1
-            secim2 = 2
+            chooseOne = 1
+            chooseTwo = 2
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn7.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn7.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn7.setBackgroundResource(R.drawable.bomb)
             }
@@ -175,11 +182,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn8.setOnClickListener {
-            secim1 = 1
-            secim2 = 3
+            chooseOne = 1
+            chooseTwo = 3
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn8.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn8.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn8.setBackgroundResource(R.drawable.bomb)
             }
@@ -187,11 +194,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn9.setOnClickListener {
-            secim1 = 2
-            secim2 = 0
+            chooseOne = 2
+            chooseTwo = 0
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn9.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn9.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn9.setBackgroundResource(R.drawable.bomb)
             }
@@ -199,11 +206,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn10.setOnClickListener {
-            secim1 = 2
-            secim2 = 1
+            chooseOne = 2
+            chooseTwo = 1
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn10.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn10.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn10.setBackgroundResource(R.drawable.bomb)
             }
@@ -211,11 +218,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn11.setOnClickListener {
-            secim1 = 2
-            secim2 = 2
+            chooseOne = 2
+            chooseTwo = 2
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn11.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn11.text = board[chooseOne][chooseTwo].toString()
 
             }else{
                 binding.btn11.setBackgroundResource(R.drawable.bomb)
@@ -224,11 +231,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn12.setOnClickListener {
-            secim1 = 2
-            secim2 = 3
+            chooseOne = 2
+            chooseTwo = 3
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn12.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn12.text = board[chooseOne][chooseTwo].toString()
 
             }else{
                 binding.btn12.setBackgroundResource(R.drawable.bomb)
@@ -237,11 +244,11 @@ class MachineMineSweeperFragment : Fragment() {
 
         }
         binding.btn13.setOnClickListener {
-            secim1 = 3
-            secim2 = 0
+            chooseOne = 3
+            chooseTwo = 0
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn13.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn13.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn13.setBackgroundResource(R.drawable.bomb)
             }
@@ -249,11 +256,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn14.setOnClickListener {
-            secim1 = 3
-            secim2 = 1
+            chooseOne = 3
+            chooseTwo = 1
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn14.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn14.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn14.setBackgroundResource(R.drawable.bomb)
             }
@@ -261,11 +268,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn15.setOnClickListener {
-            secim1 = 3
-            secim2 = 2
+            chooseOne = 3
+            chooseTwo = 2
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn15.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn15.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn15.setBackgroundResource(R.drawable.bomb)
             }
@@ -273,11 +280,11 @@ class MachineMineSweeperFragment : Fragment() {
         }
 
         binding.btn16.setOnClickListener {
-            secim1 = 3
-            secim2 = 3
+            chooseOne = 3
+            chooseTwo = 3
             pressButton(it)
-            if (map[secim1][secim2] != -1){
-                binding.btn16.text = board[secim1][secim2].toString()
+            if (map[chooseOne][chooseTwo] != -1){
+                binding.btn16.text = board[chooseOne][chooseTwo].toString()
             }else{
                 binding.btn16.setBackgroundResource(R.drawable.bomb)
             }
@@ -317,8 +324,8 @@ class MachineMineSweeperFragment : Fragment() {
     }
 
     private fun pressButton(view : View){
-        if (map[secim1][secim2] != -1) {
-            checkMine(secim1, secim2)
+        if (map[chooseOne][chooseTwo] != -1) {
+            checkMine(chooseOne, chooseTwo)
             success++
             if (success == (size-(mineNumber))) {
                 Snackbar.make(view, resources.getString(R.string.congratulations),Snackbar.LENGTH_SHORT).show()
@@ -329,7 +336,7 @@ class MachineMineSweeperFragment : Fragment() {
         }
     }
 
-    private fun mayinTarlasi(rowNumber: Int, colNumber: Int) {
+    private fun mineSweeper(rowNumber: Int, colNumber: Int) {
         this.rowNumber = rowNumber
         this.colNumber = colNumber
         map = Array(rowNumber) { IntArray(colNumber) }
@@ -360,8 +367,13 @@ class MachineMineSweeperFragment : Fragment() {
     private fun loadData(){
 
         val retrofit = Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build()
-        val service = retrofit.create(QuestionAPI::class.java)
-        val call = service.getData()
+        call = if (Locale.getDefault().language.toString() == resources.getString(R.string.tr)){
+            val service = retrofit.create(QuestionAPI::class.java)
+            service.getData()
+        }else{
+            val service = retrofit.create(QuestionAPIEnglish::class.java)
+            service.getData()
+        }
 
         call.enqueue(object : Callback<List<QuestionModel>> {
             override fun onResponse(
@@ -396,8 +408,15 @@ class MachineMineSweeperFragment : Fragment() {
 
         val options = arrayOf(questionModels!![questionNumber].answer1,questionModels!![questionNumber].answer2,questionModels!![questionNumber].answer3 ,questionModels!![questionNumber].answer4)
         val builder = AlertDialog.Builder(requireContext())
-        questionsRightAnswer=questionModels!![questionNumber].rightAnswer
-        builder.setTitle(questionModels!![questionNumber].question)
+        questionsRightAnswer = questionModels!![questionNumber].rightAnswer
+        val titleOfDialog = TextView(requireContext())
+        titleOfDialog.height = 500
+        titleOfDialog.setBackgroundColor(Color.RED)
+        titleOfDialog.text = questionModels!![questionNumber].question
+        titleOfDialog.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20F)
+        titleOfDialog.setTextColor(Color.WHITE)
+        titleOfDialog.gravity = Gravity.CENTER
+        builder.setCustomTitle(titleOfDialog)
         builder.setCancelable(false)
         builder.setItems(options) { _, i ->
             if (i == 0) {

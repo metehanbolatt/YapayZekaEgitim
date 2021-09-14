@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -83,8 +84,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/informationHow1" >
 
-        <ImageView
-            android:id="@+id/cizimSekizImage"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/drawEightImage"
             android:layout_width="0dp"
             android:layout_height="130dp"
             android:transitionName="image_small"
@@ -92,8 +93,8 @@
             android:layout_weight="1"
             android:src="@drawable/draw_eight" />
 
-        <ImageView
-            android:id="@+id/cizimHashSekizImage"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/drawHashEightImage"
             android:layout_width="0dp"
             android:layout_height="130dp"
             android:transitionName="image_small2"
@@ -101,8 +102,8 @@
             android:layout_weight="1"
             android:src="@drawable/draw_hash_eight" />
 
-        <ImageView
-            android:id="@+id/hashSekizImage"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/hashEightImage"
             android:layout_width="0dp"
             android:layout_height="130dp"
             android:transitionName="image_small3"

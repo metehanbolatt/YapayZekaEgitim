@@ -16,14 +16,14 @@ import com.metehanbolat.teknofestegitim.databinding.FragmentMachineWordGameBindi
 
 class MachineWordGameFragment : Fragment() {
 
-    private lateinit var navController: NavController
-
     private var _binding : FragmentMachineWordGameBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var random : String
     private lateinit var notRandom : String
     private lateinit var randomOrNot : String
+
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,7 +66,7 @@ class MachineWordGameFragment : Fragment() {
 
         val wordArray = resources.getStringArray(R.array.word_array)
 
-        var randomNumber = (0 until (wordArray.size)-1).random()
+        var randomNumber = (0 until (wordArray.size) - 1).random()
         binding.wordTextView.text = wordArray[randomNumber]
         binding.pastWords.append(binding.wordTextView.text.toString())
         binding.wordEditText.setOnKeyListener(View.OnKeyListener { keyView, i, keyEvent ->
@@ -74,16 +74,16 @@ class MachineWordGameFragment : Fragment() {
             if (keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER){
                 if (randomOrNot == random && binding.wordEditText.text.first() == binding.wordTextView.text.last()){
                     Snackbar.make(keyView, resources.getString(R.string.nice_answer), Snackbar.LENGTH_SHORT).show()
-                    binding.pastWords.append(", " + binding.wordEditText.text.toString())
+                    binding.pastWords.append(resources.getString(R.string.comma) + binding.wordEditText.text.toString())
                     binding.wordEditText.setText(resources.getString(R.string.empty))
-                    randomNumber = (0 until (wordArray.size)-1).random()
+                    randomNumber = (0 until (wordArray.size) - 1).random()
                     binding.wordTextView.text = wordArray[randomNumber]
-                    binding.pastWords.append(", " + binding.wordTextView.text.toString() )
+                    binding.pastWords.append(resources.getString(R.string.comma) + binding.wordTextView.text.toString() )
                 }else if (randomOrNot == notRandom && binding.wordEditText.text.first() == binding.wordTextView.text.last()){
-                    binding.pastWords.append(", "+binding.wordEditText.text)
+                    binding.pastWords.append(resources.getString(R.string.comma) + binding.wordEditText.text)
                     if (wordArray.find { it.first() == binding.wordEditText.text.last() } != null){
                         binding.wordTextView.text = wordArray.find { it.first() == binding.wordEditText.text.last() }
-                        binding.pastWords.append(", "+ binding.wordTextView.text.toString())
+                        binding.pastWords.append(resources.getString(R.string.comma) + binding.wordTextView.text.toString())
                     }else{
                         binding.wordTextView.text = resources.getString(R.string.you_won)
                     }

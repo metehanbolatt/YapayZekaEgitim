@@ -1,13 +1,16 @@
 package com.metehanbolat.teknofestegitim.view.mainviews.gameroom
 
-import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
+import android.util.TypedValue
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
@@ -18,14 +21,20 @@ import com.google.android.material.snackbar.Snackbar
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentMachineTicTacToeBinding
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionAPI
+import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionAPIEnglish
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
+
+    private var _binding : FragmentMachineTicTacToeBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var navController: NavController
 
@@ -41,7 +50,7 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
     private var roundCount = 0
     private var secondTour = 0
     private var thirdTour = 0
-    private var turSayaci = 0
+    private var turnCounter = 0
 
     private lateinit var answerOne : String
     private lateinit var answerTwo : String
@@ -66,8 +75,7 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
     private var questionSeeControl = false
     private var buttonControl = false
 
-    private var _binding : FragmentMachineTicTacToeBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var call : Call<List<QuestionModel>>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -87,7 +95,6 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
         return view
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -104,8 +111,8 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
         loadData()
 
         for (i in buttons.indices) {
-            val buttonID = "btn_$i"
-            val resourceID = resources.getIdentifier(buttonID, "id", view.context.packageName)
+            val buttonID = resources.getString(R.string.btn_, i)
+            val resourceID = resources.getIdentifier(buttonID, resources.getString(R.string.id), view.context.packageName)
             buttons[i] = getView()?.findViewById<View>(resourceID) as Button
             buttons[i]!!.setOnClickListener(this)
         }
@@ -119,40 +126,40 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
         binding.turnButton.text = resources.getString(R.string.see_question)
 
         buttonControl = true
-        binding.raundButton.visibility = View.INVISIBLE
+        binding.roundButton.visibility = View.INVISIBLE
 
         binding.turnButton.setOnClickListener {
             showImagePickDialog(it)
 
             if (secondTour == 1) {
-                binding.raundButton.text = "$turSayaci. Tura Başla"
+                binding.roundButton.text = resources.getString(R.string.roundStart, turnCounter)
             }
             if (thirdTour == 1) {
-                binding.raundButton.text = resources.getString(R.string.third_round_start)
+                binding.roundButton.text = resources.getString(R.string.third_round_start)
             }
             binding.turnButton.visibility = View.VISIBLE
-            binding.raundButton.visibility = View.INVISIBLE
+            binding.roundButton.visibility = View.INVISIBLE
 
         }
 
-        binding.raundButton.setOnClickListener {
+        binding.roundButton.setOnClickListener {
             playerAgain()
 
             for (i in buttons.indices) {
                 buttons[i]!!.text = resources.getString(R.string.empty)
             }
             if (secondTour == 1) {
-                binding.raundButton.text = "$turSayaci. Tura Başla"
+                binding.roundButton.text = resources.getString(R.string.roundStart, turnCounter)
             }
             if (thirdTour == 1) {
-                binding.raundButton.text = resources.getString(R.string.third_round_start)
+                binding.roundButton.text = resources.getString(R.string.third_round_start)
             }
             binding.turnButton.visibility = View.VISIBLE
-            binding.raundButton.visibility = View.INVISIBLE
+            binding.roundButton.visibility = View.INVISIBLE
         }
         secondTour = 0
         thirdTour = 0
-        turSayaci = 1
+        turnCounter = 1
 
     }
 
@@ -197,9 +204,9 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
             if (checkWinner()) {
                 if (activePlayer) {
                     playerOneScoreCount++
-                    turSayaci += 1
+                    turnCounter += 1
                     binding.turnButton.visibility = View.INVISIBLE
-                    binding.raundButton.visibility = View.VISIBLE
+                    binding.roundButton.visibility = View.VISIBLE
                     if (playerOneScoreCount == 3 && secondTour == 0) {
                         secondTour = 1
                     } else if (playerOneScoreCount == 3 && secondTour == 1) {
@@ -214,9 +221,9 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
 
                 } else {
                     playerTwoScoreCount++
-                    turSayaci += 1
+                    turnCounter += 1
                     binding.turnButton.visibility = View.INVISIBLE
-                    binding.raundButton.visibility = View.VISIBLE
+                    binding.roundButton.visibility = View.VISIBLE
                     updatePlayerScore()
 
                 }
@@ -232,7 +239,7 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
         } else {
             if (binding.turnButton.isVisible){
                 Snackbar.make(view, resources.getString(R.string.click_question_see), Snackbar.LENGTH_SHORT).show()
-            }else if (binding.raundButton.isVisible){
+            }else if (binding.roundButton.isVisible){
                 Snackbar.make(view, resources.getString(R.string.please_click_round_button), Snackbar.LENGTH_SHORT).show()
             }
         }
@@ -253,11 +260,10 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
         return winnerResult
     }
 
-    @SuppressLint("SetTextI18n")
     private fun updatePlayerScore() {
         binding.playerTwoScore.text = playerOneScoreCount.toString()
         binding.playerOneScore.text = playerTwoScoreCount.toString()
-        binding.raundButton.text = "$turSayaci. Tura Başla"
+        binding.roundButton.text = resources.getString(R.string.roundStart, turnCounter)
     }
 
     private fun showImagePickDialog(view : View) {
@@ -266,6 +272,14 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
         val builder = AlertDialog.Builder(requireContext())
         questionsRightAnswer = questionModels!![questionNumber].rightAnswer
         builder.setTitle(questionModels!![questionNumber].question)
+        val titleOfDialog = TextView(requireContext())
+        titleOfDialog.height = 500
+        titleOfDialog.setBackgroundColor(Color.RED)
+        titleOfDialog.text = questionModels!![questionNumber].question
+        titleOfDialog.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20F)
+        titleOfDialog.setTextColor(Color.WHITE)
+        titleOfDialog.gravity = Gravity.CENTER
+        builder.setCustomTitle(titleOfDialog)
         builder.setCancelable(false)
         builder.setItems(options) { _, i ->
             if (i == 0) {
@@ -297,7 +311,7 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                 }
                 questionNumber += 1
             }
-            if (i==2){
+            if (i == 2){
                 if (questionsRightAnswer == answerThree){
                     Snackbar.make(view, resources.getString(R.string.true_answer_two), Snackbar.LENGTH_SHORT).show()
                     control = true
@@ -333,8 +347,13 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
     private fun loadData(){
 
         val retrofit = Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build()
-        val service = retrofit.create(QuestionAPI::class.java)
-        val call = service.getData()
+        call = if (Locale.getDefault().language.toString() == resources.getString(R.string.tr)){
+            val service = retrofit.create(QuestionAPI::class.java)
+            service.getData()
+        }else{
+            val service = retrofit.create(QuestionAPIEnglish::class.java)
+            service.getData()
+        }
 
         call.enqueue(object : Callback<List<QuestionModel>> {
             override fun onResponse(

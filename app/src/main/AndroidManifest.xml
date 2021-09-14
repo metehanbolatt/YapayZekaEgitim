@@ -14,7 +14,7 @@
         <activity
             android:name=".view.userviews.UserActivity"
             android:exported="true"
-            android:windowSoftInputMode="stateVisible|adjustPan"
+            android:windowSoftInputMode="adjustPan"
             android:theme="@style/splashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
         </activity>
         <activity
             android:name=".view.mainviews.main.MainActivity"
-            android:windowSoftInputMode="stateVisible|adjustPan"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true" />
     </application>
 

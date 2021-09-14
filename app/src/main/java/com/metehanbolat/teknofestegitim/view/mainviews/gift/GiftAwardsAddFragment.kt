@@ -24,7 +24,7 @@ class GiftAwardsAddFragment : Fragment() {
     private var _binding : FragmentGiftAwardsAddBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var navController: NavController
+    private lateinit var navController : NavController
 
     private lateinit var firestore : FirebaseFirestore
     private lateinit var firebaseAuth : FirebaseAuth

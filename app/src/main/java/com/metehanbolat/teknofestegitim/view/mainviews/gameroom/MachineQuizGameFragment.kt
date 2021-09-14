@@ -20,12 +20,15 @@ import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentMachineQuizGameBinding
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionAPI
+import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionAPIEnglish
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MachineQuizGameFragment : Fragment() {
 
@@ -53,6 +56,8 @@ class MachineQuizGameFragment : Fragment() {
     private lateinit var answerTwo : String
     private lateinit var answerThree : String
     private lateinit var answerFour : String
+
+    private lateinit var call : Call<List<QuestionModel>>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -257,8 +262,13 @@ class MachineQuizGameFragment : Fragment() {
     private fun loadData(){
 
         val retrofit = Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build()
-        val service = retrofit.create(QuestionAPI::class.java)
-        val call = service.getData()
+        call = if (Locale.getDefault().language.toString() == resources.getString(R.string.tr)){
+            val service = retrofit.create(QuestionAPI::class.java)
+            service.getData()
+        }else{
+            val service = retrofit.create(QuestionAPIEnglish::class.java)
+            service.getData()
+        }
 
         call.enqueue(object : Callback<List<QuestionModel>>{
             override fun onResponse(

@@ -45,11 +45,22 @@
     <color name="education_textcolor">#BCBCBC</color>
     <color name="green_text">#41DA47</color>
 
+    <color name="tic_tac_toe_button_color">#E8FF05</color>
+    <color name="tic_tac_toe_button_two_color">#2B8F00</color>
+    <color name="tic_tac_toe_text_color">#EA1A74</color>
+
+    <color name="machine_word_big_color">#F1E506</color>
+
     <color name="anim_mine_sweeper_status">#86b4ce</color>
 
     <color name="green_color_button">#00C853</color>
 
     <color name="gift_edit_text_stroke_color">#94d3ec</color>
     <color name="gift_add_background">#E8F8FA</color>
+
+    <color name="gift_island_text_color">#6A7273</color>
+    <color name="gift_button_background_color">#25ADE3</color>
+
+    <color name="recycler_achievement_background">#f7f7f7</color>
 
 </resources>
