@@ -36,7 +36,7 @@ class EducationOne : Fragment() {
         _binding = FragmentEducationOneBinding.inflate(inflater,container,false)
         val view = binding.root
 
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_design_start_color)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.fragment_education_background)
 
         auth = Firebase.auth
         firestore = Firebase.firestore
@@ -53,52 +53,39 @@ class EducationOne : Fragment() {
         auth = Firebase.auth
         firestore = Firebase.firestore
 
-        binding.informationTextEduOne.text = resources.getString(R.string.education_one_info_one)
-        binding.informationEduOneImageTwo.setImageResource(R.drawable.right_arrow)
-        binding.informationEduOneImage.setImageResource(R.drawable.ai_two)
-
-        binding.informationEduOneImageTwo.setOnClickListener {
-
+        binding.educationOneButtonTwo.setOnClickListener {
             when(eduControl){
                 0 -> {
-                    binding.informationTextEduOne.text = resources.getString(R.string.education_one_info_two)
-                    binding.informationEduOneImageTwo.setImageResource(R.drawable.right_arrow)
-                    binding.informationEduOneImage.setImageResource(R.drawable.ai_date)
+                    binding.educationOneImage.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.father_ai))
+                    binding.educationOneInfoTwo.alpha = 1f
+                    eduControl = 1
                 }
                 1 -> {
-                    binding.informationTextEduOne.text = resources.getString(R.string.education_one_info_three)
-                    binding.informationEduOneImageTwo.setImageResource(R.drawable.right_arrow)
-                    binding.informationEduOneImage.setImageResource(R.drawable.data_analysis)
+                    binding.educationOneImage.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.ai_data))
+                    binding.educationOneInfoThree.alpha = 1f
+                    eduControl = 2
                 }
                 2 -> {
-                    binding.informationTextEduOne.text = resources.getString(R.string.education_one_info_four)
-                    binding.informationEduOneImageTwo.setImageResource(R.drawable.right_arrow)
-                    binding.informationEduOneImage.setImageResource(R.drawable.chess)
+                    binding.educationOneImage.setImageDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.ai_skills))
+                    binding.educationOneInfoFour.alpha = 1f
+                    binding.educationOneButtonTwo.text = resources.getString(R.string.back)
+                    eduControl = 3
                 }
                 3 -> {
-                    binding.informationTextEduOne.visibility = View.INVISIBLE
-                    binding.informationEduOneImageTwo.visibility = View.INVISIBLE
-                    binding.informationEduOneImage.visibility = View.INVISIBLE
-                    binding.informationAll.visibility = View.VISIBLE
-                    binding.educationOneEndText.visibility = View.VISIBLE
-                    binding.educationOneEndTextGift.visibility = View.VISIBLE
+                    if (learningOne!! == resources.getString(R.string.true_ai)) {
+                        Snackbar.make(it, resources.getString(R.string.awards_already_collected_ai), Snackbar.LENGTH_LONG).show()
+                    }else{
+                        val getData = firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString())
+                        val userCoinInt : Int = userCoin.toString().toInt()
+                        val newCoin : Int = userCoinInt + 10
+                        getData.update(resources.getString(R.string.ai_learning_one),resources.getString(R.string.true_ai),resources.getString(R.string.firebase_userCoin),newCoin)
+                        Snackbar.make(it, resources.getString(R.string.earn_ten_gold), Snackbar.LENGTH_LONG).show()
+                    }
+                    navController = findNavController()
+                    navController.navigate(R.id.action_educationOne_to_mainEducation)
                 }
             }
-            eduControl += 1
-        }
 
-        binding.educationOneEndTextGift.setOnClickListener {
-
-            if (learningOne!! == resources.getString(R.string.true_ai)) {
-                Snackbar.make(it, resources.getString(R.string.awards_already_collected_ai), Snackbar.LENGTH_LONG).show()
-            }else{
-                val getData = firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString())
-                val userCoinInt : Int = userCoin.toString().toInt()
-                val newCoin : Int = userCoinInt + 10
-                getData.update(resources.getString(R.string.ai_learning_one),resources.getString(R.string.true_ai),resources.getString(R.string.firebase_userCoin),newCoin)
-            }
-            navController = findNavController()
-            navController.navigate(R.id.action_educationOne_to_mainEducation)
         }
 
         val callback = object : OnBackPressedCallback(true){

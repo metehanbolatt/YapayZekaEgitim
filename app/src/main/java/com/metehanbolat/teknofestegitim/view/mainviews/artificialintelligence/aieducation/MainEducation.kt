@@ -40,11 +40,11 @@ class MainEducation : Fragment() {
         }
         binding.cardViewEducationTwo.setOnClickListener {
             navController = findNavController()
-            navController.navigate(R.id.action_mainEducation_to_educationTwo)
+            navController.navigate(R.id.action_mainEducation_to_educationThree)
         }
         binding.cardViewEducationThree.setOnClickListener {
             navController = findNavController()
-            navController.navigate(R.id.action_mainEducation_to_educationThree)
+            navController.navigate(R.id.action_mainEducation_to_educationTwo)
         }
         binding.cardViewGame.setOnClickListener {
             navController = findNavController()

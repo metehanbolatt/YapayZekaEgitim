@@ -78,10 +78,15 @@
 
     <string name="no_user_data">Kullanıcı verisi bulunamadı.</string>
     <string name="earned_gold">Altın kazanılmış.</string>
-    <string name="earn_ten_gold">10 Altın kazandın.</string>
+    <string name="earn_thirty_gold">30 Altın Kazandın</string>
+    <string name="earn_ten_gold">10 Altın Kazandın</string>
+    <string name="earn_five_gold">5 Altın Kazandın</string>
     <string name="todo">TODO</string>
     <string name="machine_view">Makine Görüsü</string>
     <string name="default_coin">10</string>
+
+    <string name="neural_network_model">Yapay Sinir Ağı Modeli</string>
+    <string name="real_neural_cell">Gerçek Sinir Hücresi</string>
 
     <string name="achievement">Başarımlar</string>
 
@@ -188,6 +193,8 @@
     <string name="machine_choose_section_info_one">Şuana kadar insanlar ve robotlar hakkında birçok bilgi edindin. Bunları pekiştirmek ve daha fazlasını öğrenmek için oyun dünyasına geçebiliriz.</string>
     <string name="game_world">Oyun Dünyası</string>
 
+    <string name="entrance">Giriş</string>
+
     <string name="back_main_menu">Anasayfaya dönmek ister misin?</string>
     <string name="click_main_menu">Anasayfaya Dön</string>
     <string name="back">Dön</string>
@@ -288,6 +295,13 @@
 
     <string name="back_to_education_ai">Yapay Zekâ eğitim sayfasına mı dönmek istiyorsunuz?</string>
 
+    <string name="classification_model">Sınıflandırma Modeli</string>
+    <string name="algorithm_model">Algoritma Modeli</string>
+
+    <string name="ai_difference"><u><b>Yapay Zekâ Farkı ?</b></u></string>
+
+    <string name="ai_summary">Uzun lafın kısası, makineler insan sinir hücrelerinin çalışma şeklini taklit ederek öğrenmeye, anlamaya ve uygulamaya çalışır. Bu sayede gördüğü veya algıladığı nesneleri yapay sinir ağlarından geçirerek anlamlı hale getirebilir. Yapay sinir ağları ne kadar çok geliştirilebilirse, makineler o kadar doğru sonuçlar üretecektir.</string>
+    <string name="ai_summary_title">Yapay Zekâ</string>
     <string name="ai">Yapay Zeka</string>
     <string name="fiveNoneK">5N1K</string>
     <string name="games">Oyunlar</string>
@@ -301,6 +315,15 @@
     <string name="example_question">Yaşlılar tarafından, dondurma yedikten sonra, ılık su içmesi için uyarılmayan yoktur herhalde. Peki bunun nedeni ne? Gerçekten sağlıklı mı, yoksa bir saçmalık mı?</string>
 
     <string name="email_or_password_empty">Email veya şifre boş bırakıldı.</string>
+
+    <string name="next">Sonraki</string>
+    
+    <string name="what">NE</string>
+    <string name="why">NEDEN</string>
+    <string name="where">NEREDE</string>
+    <string name="when_str">NE ZAMAN</string>
+    <string name="who">WHO</string>
+    <string name="how">HOW</string>
 
     <string-array name="education_level">
         <item>Okul Öncesi</item>

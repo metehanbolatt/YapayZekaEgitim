@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+       </KeyFrameSet>
+        <OnClick motion:targetId="@+id/education_one_button_one" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/education_one_title"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="50dp"
+            android:alpha="1" />
+        <Constraint
+            android:id="@+id/education_one_image"
+            motion:layout_constraintEnd_toEndOf="@id/education_one_title"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            motion:layout_constraintTop_toBottomOf="@id/education_one_title"
+            motion:layout_constraintStart_toStartOf="@id/education_one_title"
+            android:layout_marginTop="50dp"
+            android:alpha="1" />
+        <Constraint
+            android:id="@+id/education_one_info_one"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            motion:layout_constraintTop_toBottomOf="@id/education_one_image"
+            android:layout_marginStart="30dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            android:alpha="1" />
+        <Constraint
+            android:id="@+id/education_one_info_two"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            motion:layout_constraintTop_toBottomOf="@id/education_one_info_one"
+            android:layout_marginStart="30dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/education_one_info_three"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            motion:layout_constraintTop_toBottomOf="@id/education_one_info_two"
+            android:layout_marginStart="30dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/education_one_info_four"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            motion:layout_constraintTop_toBottomOf="@id/education_one_info_three"
+            android:layout_marginStart="30dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/education_one_button_two"
+            motion:layout_constraintEnd_toEndOf="@id/education_one_info_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            motion:layout_constraintStart_toStartOf="@id/education_one_info_one"
+            android:alpha="0"
+            android:visibility="invisible" />
+        <Constraint
+            android:id="@+id/education_one_button_one"
+            motion:layout_constraintEnd_toEndOf="@id/education_one_info_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="230dp"
+            motion:layout_constraintStart_toStartOf="@id/education_one_info_one"
+            android:visibility="visible"
+            android:alpha="1" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/education_one_title"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="-75dp"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/education_one_image"
+            motion:layout_constraintEnd_toEndOf="@id/education_one_title"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            motion:layout_constraintTop_toBottomOf="@id/education_one_title"
+            motion:layout_constraintStart_toStartOf="@id/education_one_title"
+            android:layout_marginTop="50dp"
+            android:alpha="1" />
+        <Constraint
+            android:id="@+id/education_one_info_two"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            motion:layout_constraintTop_toBottomOf="@id/education_one_info_one"
+            android:layout_marginStart="30dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/education_one_info_three"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            motion:layout_constraintTop_toBottomOf="@id/education_one_info_two"
+            android:layout_marginStart="30dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/education_one_info_four"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            motion:layout_constraintTop_toBottomOf="@id/education_one_info_three"
+            android:layout_marginStart="30dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/education_one_button_one"
+            motion:layout_constraintEnd_toEndOf="@id/education_one_info_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            motion:layout_constraintStart_toStartOf="@id/education_one_info_one"
+            android:alpha="0"
+            android:visibility="invisible" />
+    </ConstraintSet>
+</MotionScene>

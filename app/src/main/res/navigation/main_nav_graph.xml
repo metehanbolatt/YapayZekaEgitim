@@ -362,13 +362,18 @@
         tools:layout="@layout/fragment_main_education" >
         <action
             android:id="@+id/action_mainEducation_to_educationOne"
-            app:destination="@id/educationOne" />
+            app:destination="@id/educationOne"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
         <action
             android:id="@+id/action_mainEducation_to_educationTwo"
-            app:destination="@id/educationTwo" />
-        <action
-            android:id="@+id/action_mainEducation_to_educationThree"
-            app:destination="@id/educationThree" />
+            app:destination="@id/educationTwo"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_mainEducation_to_gameRoomAnimFragment"
             app:destination="@id/gameRoomAnimFragment" />
@@ -379,6 +384,13 @@
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_mainEducation_to_educationThree"
+            app:destination="@id/educationThree"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/AIGameOneFragment"
@@ -386,46 +398,17 @@
         android:label="fragment_a_i_game_one"
         tools:layout="@layout/fragment_a_i_game_one" />
     <fragment
-        android:id="@+id/educationFour"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationFour"
-        android:label="fragment_education_four"
-        tools:layout="@layout/fragment_education_four" >
-        <action
-            android:id="@+id/action_educationFour_to_mainEducation"
-            app:destination="@id/mainEducation" />
-    </fragment>
-    <fragment
         android:id="@+id/educationOne"
         android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationOne"
         android:label="fragment_education_one"
         tools:layout="@layout/fragment_education_one" >
         <action
             android:id="@+id/action_educationOne_to_mainEducation"
-            app:destination="@id/mainEducation" />
-    </fragment>
-    <fragment
-        android:id="@+id/educationThree"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationThree"
-        android:label="fragment_education_three"
-        tools:layout="@layout/fragment_education_three" >
-        <action
-            android:id="@+id/action_educationThree_to_mainEducation"
-            app:destination="@id/mainEducation" />
-        <action
-            android:id="@+id/action_educationThree_to_educationThreetwo"
-            app:destination="@id/educationThreetwo" />
-    </fragment>
-    <fragment
-        android:id="@+id/educationThreetwo"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationThreetwo"
-        android:label="fragment_education_threetwo"
-        tools:layout="@layout/fragment_education_threetwo" >
-        <action
-            android:id="@+id/action_educationThreetwo_to_educationFour"
-            app:destination="@id/educationFour" />
-        <action
-            android:id="@+id/action_educationThreetwo_to_mainEducation"
-            app:destination="@id/mainEducation" />
+            app:destination="@id/mainEducation"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/educationTwo"
@@ -434,7 +417,11 @@
         tools:layout="@layout/fragment_education_two" >
         <action
             android:id="@+id/action_educationTwo_to_mainEducation"
-            app:destination="@id/mainEducation" />
+            app:destination="@id/mainEducation"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
     <fragment
         android:id="@+id/animMachineMineSweeperFragment"
@@ -506,5 +493,145 @@
             android:name="award"
             app:argType="string"
             app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationFour"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationFour"
+        android:label="fragment_education_four"
+        tools:layout="@layout/fragment_education_four" >
+        <action
+            android:id="@+id/action_educationFour_to_educationThree"
+            app:destination="@id/educationThree"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_educationFour_to_educationSix"
+            app:destination="@id/educationSix"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationFive"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationFive"
+        android:label="fragment_education_five"
+        tools:layout="@layout/fragment_education_five" >
+        <action
+            android:id="@+id/action_educationFive_to_educationSix"
+            app:destination="@id/educationSix"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_educationFive_to_educationSeven"
+            app:destination="@id/educationSeven"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationEight"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationEight"
+        android:label="fragment_education_eight"
+        tools:layout="@layout/fragment_education_eight" >
+        <action
+            android:id="@+id/action_educationEight_to_educationNine"
+            app:destination="@id/educationNine"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_educationEight_to_educationSeven"
+            app:destination="@id/educationSeven"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationNine"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationNine"
+        android:label="fragment_education_nine"
+        tools:layout="@layout/fragment_education_nine" >
+        <action
+            android:id="@+id/action_educationNine_to_educationEight"
+            app:destination="@id/educationEight"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_educationNine_to_mainEducation"
+            app:destination="@id/mainEducation"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationSeven"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationSeven"
+        android:label="fragment_education_seven"
+        tools:layout="@layout/fragment_education_seven" >
+        <action
+            android:id="@+id/action_educationSeven_to_educationEight"
+            app:destination="@id/educationEight"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_educationSeven_to_educationFive"
+            app:destination="@id/educationFive"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationSix"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationSix"
+        android:label="fragment_education_six"
+        tools:layout="@layout/fragment_education_six" >
+        <action
+            android:id="@+id/action_educationSix_to_educationFour"
+            app:destination="@id/educationFour"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_educationSix_to_educationFive"
+            app:destination="@id/educationFive"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/educationThree"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationThree"
+        android:label="fragment_education_three"
+        tools:layout="@layout/fragment_education_three" >
+        <action
+            android:id="@+id/action_educationThree_to_mainEducation"
+            app:destination="@id/mainEducation"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_educationThree_to_educationFour"
+            app:destination="@id/educationFour"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
 </navigation>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/fragment_education_background"
+    tools:context=".view.mainviews.artificialintelligence.aieducation.EducationEight">
+
+    <TextView
+        android:id="@+id/education_eight_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/autonomous_cars"
+        android:textColor="@color/fragment_education_two_button_color"
+        android:textSize="28sp"
+        android:fontFamily="@font/gotham_bold"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/education_eight_info_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/education_four_ai_info_one"
+        android:textColor="@color/white"
+        android:fontFamily="@font/gotham_book"
+        android:justificationMode="inter_word"
+        android:lineSpacingExtra="5dp"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/education_eight_title" />
+
+    <LinearLayout
+        android:id="@+id/education_eight_linear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/education_eight_info_one"
+        app:layout_constraintEnd_toEndOf="@id/education_eight_info_one"
+        app:layout_constraintTop_toBottomOf="@id/education_eight_info_one"
+        android:orientation="horizontal">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/real_car" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:src="@drawable/model_car" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/education_eight_difference_ai_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ai_difference"
+        android:textColor="@color/fragment_education_two_button_color"
+        android:fontFamily="@font/gotham_bold"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/education_eight_linear"
+        app:layout_constraintTop_toBottomOf="@id/education_eight_linear" />
+
+    <TextView
+        android:id="@+id/education_eight_difference_ai_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/education_four_ai_info_two"
+        android:textColor="@color/white"
+        android:justificationMode="inter_word"
+        android:fontFamily="@font/gotham_book"
+        android:lineSpacingExtra="5dp"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/education_eight_linear"
+        app:layout_constraintEnd_toEndOf="@id/education_eight_linear"
+        app:layout_constraintTop_toBottomOf="@id/education_eight_difference_ai_title" />
+
+    <Button
+        android:id="@+id/education_eight_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/fragment_education_two_button_color"
+        app:layout_constraintStart_toStartOf="@id/education_eight_difference_ai_info"
+        app:layout_constraintEnd_toEndOf="@id/education_eight_difference_ai_info"
+        app:layout_constraintTop_toBottomOf="@id/education_eight_difference_ai_info" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -90,7 +90,7 @@
                         android:gravity="center"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/gotham_bold"
-                        android:text="@string/enter"
+                        android:text="@string/entrance"
                         android:textColor="@color/white" />
 
                 </LinearLayout>
@@ -117,7 +117,7 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/ai_two" />
+                        android:background="@drawable/ai_three" />
 
                     <TextView
                         android:layout_width="100dp"
@@ -125,7 +125,7 @@
                         android:gravity="center"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/gotham_bold"
-                        android:text="@string/fiveNoneK"
+                        android:text="@string/ai"
                         android:textColor="@color/white" />
 
                 </LinearLayout>
@@ -159,13 +159,13 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/ai_three" />
+                        android:background="@drawable/ai_two" />
 
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="@string/ai"
+                        android:text="@string/fiveNoneK"
                         android:fontFamily="@font/gotham_bold"
                         android:layout_marginTop="10dp"
                         android:textColor="@color/white" />

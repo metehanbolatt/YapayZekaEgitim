@@ -10,11 +10,11 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.metehanbolat.teknofestegitim.R
-import com.metehanbolat.teknofestegitim.databinding.FragmentEducationThreeBinding
+import com.metehanbolat.teknofestegitim.databinding.FragmentEducationEightBinding
 
-class EducationThree : Fragment() {
+class EducationEight : Fragment() {
 
-    private var _binding : FragmentEducationThreeBinding? = null
+    private var _binding : FragmentEducationEightBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var navController: NavController
@@ -23,7 +23,7 @@ class EducationThree : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        _binding = FragmentEducationThreeBinding.inflate(inflater, container, false)
+        _binding = FragmentEducationEightBinding.inflate(inflater, container, false)
         val view = binding.root
 
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.fragment_education_background)
@@ -31,7 +31,7 @@ class EducationThree : Fragment() {
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 navController = findNavController()
-                navController.navigate(R.id.action_educationThree_to_mainEducation)
+                navController.navigate(R.id.action_educationEight_to_educationSeven)
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
@@ -42,11 +42,10 @@ class EducationThree : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.educationThreeButton.setOnClickListener {
+        binding.educationEightButton.setOnClickListener {
             navController = findNavController()
-            navController.navigate(R.id.action_educationThree_to_educationFour)
+            navController.navigate(R.id.action_educationEight_to_educationNine)
         }
-
     }
 
     override fun onDestroyView() {

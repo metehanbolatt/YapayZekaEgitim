@@ -51,6 +51,10 @@
 
     <color name="machine_word_big_color">#F1E506</color>
 
+    <color name="fragment_education_two_button_color">#2962FF</color>
+
+    <color name="fragment_education_background">#020713</color>
+
     <color name="anim_mine_sweeper_status">#86b4ce</color>
 
     <color name="green_color_button">#00C853</color>
@@ -62,5 +66,7 @@
     <color name="gift_button_background_color">#25ADE3</color>
 
     <color name="recycler_achievement_background">#f7f7f7</color>
+
+    <color name="fragment_education_nine_background">#001A2C</color>
 
 </resources>

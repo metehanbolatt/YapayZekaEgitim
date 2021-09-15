@@ -83,9 +83,14 @@
 
     <string name="achievement">Achievements</string>
 
+    <string name="neural_network_model">Neural Network Model</string>
+    <string name="real_neural_cell">Real Neural Cell</string>
+
     <string name="no_user_data">User data not found.</string>
     <string name="earned_gold">Coins have earned.</string>
-    <string name="earn_ten_gold">10 coins have earned.</string>
+    <string name="earn_thirty_gold">30 coins have earned</string>
+    <string name="earn_ten_gold">10 coins have earned</string>
+    <string name="earn_five_gold">5 coins have earned</string>
     <string name="todo">TODO</string>
     <string name="machine_view">Machine View</string>
     <string name="default_coin">10</string>
@@ -190,6 +195,15 @@
     <string name="machine_choose_section_info_one">You\'ve learned a lot about humans and robots so far. We can move on to the game world to reinforce these and learn more.</string>
     <string name="game_world">Game World</string>
 
+    <string name="entrance">Entrance</string>
+
+    <string name="what">WHAT</string>
+    <string name="why">WHY</string>
+    <string name="where">WHERE</string>
+    <string name="when_str">WHEN</string>
+    <string name="who">WHO</string>
+    <string name="how">HOW</string>
+
     <string name="back_main_menu">Do you want to go to Homepage?</string>
     <string name="click_main_menu">Go to Homepage</string>
     <string name="back">Back</string>
@@ -226,6 +240,8 @@
     <string name="mine_sweeper">Mine Sweeper</string>
 
     <string name="question">Question: %1$d</string>
+
+    <string name="next">Next</string>
 
     <string name="what_is_ai">What is artificial intelligence?</string>
     <string name="is_ai_one">Artificial intelligence is the ability of a computer system to perform tasks often associated with abilities unique to intelligent beings.</string>
@@ -268,6 +284,10 @@
 
     <string name="basic_ai">Artificial Intelligence Fundamentals</string>
 
+    <string name="ai_difference"><u><b>The Artificial Intelligence Difference ?</b></u></string>
+
+    <string name="ai_summary">Long story short, machines try to learn, understand and apply by imitating the way human nerve cells work. In this way, he can make the objects he sees or perceive meaningful by passing them through artificial neural networks. The more artificial neural networks can be developed, the more accurate results the machines will produce.</string>
+    <string name="ai_summary_title">The A.I.</string>
     <string name="classification">Classification</string>
     <string name="clustering">Clustering</string>
     <string name="algorithm">Algorithm</string>
@@ -289,6 +309,9 @@
     <string name="get_awards_and_back_main">Get your reward and return to the Homepage</string>
 
     <string name="back_to_education_ai">Get your reward and return to the Homepage</string>
+
+    <string name="classification_model">Classification Model</string>
+    <string name="algorithm_model">Algorithm Model</string>
 
     <string name="ai">Artificial Intelligence</string>
     <string name="fiveNoneK">5 Ws</string>

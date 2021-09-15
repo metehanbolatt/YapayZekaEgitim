@@ -22,7 +22,7 @@ class EducationTwo : Fragment() {
 
     private var _binding : FragmentEducationTwoBinding?= null
     private val binding get() = _binding!!
-    private var controlNK : Int = 0
+    private var control : Int = 0
     private lateinit var navController: NavController
     private lateinit var auth : FirebaseAuth
     private lateinit var firestore : FirebaseFirestore
@@ -36,7 +36,7 @@ class EducationTwo : Fragment() {
         _binding = FragmentEducationTwoBinding.inflate(inflater,container,false)
         val view = binding.root
 
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.background_design_start_color)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.fragment_education_background)
 
         auth = Firebase.auth
         firestore = Firebase.firestore
@@ -57,59 +57,52 @@ class EducationTwo : Fragment() {
         }
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
-        binding.aiQuestionWhat.text = resources.getString(R.string.what_is_ai)
-        binding.aiInfoWhat.text = resources.getString(R.string.is_ai_one)
-
-        binding.root.setOnClickListener {
-            controlNK += 1
-            when(controlNK){
+        binding.educationTwoButton.setOnClickListener {
+            when(control){
+                0 -> {
+                    binding.educationTwoTitle.text = resources.getString(R.string.why)
+                    binding.educationTwoInfoOne.text = resources.getString(R.string.education_two_info)
+                    binding.educationTwoImage.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.why))
+                    control = 1
+                }
                 1 -> {
-                    binding.aiQuestionWhy.visibility = View.VISIBLE
-                    binding.aiInfoWhy.visibility = View.VISIBLE
-                    binding.aiQuestionWhy.text = resources.getString(R.string.need_ai)
-                    binding.aiInfoWhy.text = resources.getString(R.string.education_two_info)
+                    binding.educationTwoTitle.text = resources.getString(R.string.where)
+                    binding.educationTwoInfoOne.text = resources.getString(R.string.that_where_work_ai)
+                    binding.educationTwoImage.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.where_sign))
+                    control = 2
                 }
                 2 -> {
-                    binding.aiQuestionHow.visibility = View.VISIBLE
-                    binding.aiInfoHow.visibility = View.VISIBLE
-                    binding.aiQuestionHow.text = resources.getString(R.string.how_work_ai)
-                    binding.aiInfoHow.text = resources.getString(R.string.that_work_ai)
+                    binding.educationTwoTitle.text = resources.getString(R.string.when_str)
+                    binding.educationTwoInfoOne.text = resources.getString(R.string.that_when_work_ai)
+                    binding.educationTwoImage.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.when_watch))
+                    control = 3
                 }
                 3 -> {
-                    binding.aiQuestionWhere.visibility = View.VISIBLE
-                    binding.aiInfoWhere.visibility = View.VISIBLE
-                    binding.aiQuestionWhere.text = resources.getString(R.string.where_use_ai)
-                    binding.aiInfoWhere.text = resources.getString(R.string.that_where_work_ai)
+                    binding.educationTwoTitle.text = resources.getString(R.string.who)
+                    binding.educationTwoInfoOne.text = resources.getString(R.string.that_who_use_ai)
+                    binding.educationTwoImage.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.who))
+                    control = 4
                 }
                 4 -> {
-                    binding.aiQuestionWhen.visibility = View.VISIBLE
-                    binding.aiInfoWhen.visibility = View.VISIBLE
-                    binding.aiQuestionWhen.text = resources.getString(R.string.when_work_ai)
-                    binding.aiInfoWhen.text = resources.getString(R.string.that_when_work_ai)
+                    binding.educationTwoTitle.text = resources.getString(R.string.how)
+                    binding.educationTwoInfoOne.text = resources.getString(R.string.that_work_ai)
+                    binding.educationTwoImage.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.how))
+                    control = 5
                 }
                 5 -> {
-                    binding.educationTwoEndText.visibility = View.VISIBLE
-                    binding.educationTwoEndTextGift.visibility = View.VISIBLE
-                    binding.aiQuestionWho.visibility = View.VISIBLE
-                    binding.aiInfoWho.visibility = View.VISIBLE
-                    binding.aiQuestionWho.text = resources.getString(R.string.who_use_ai)
-                    binding.aiInfoWho.text = resources.getString(R.string.that_who_use_ai)
+                    if (learningTwo!! == resources.getString(R.string.true_ai)) {
+                        Snackbar.make(it, resources.getString(R.string.awards_already_collected_ai), Snackbar.LENGTH_LONG).show()
+                    }else{
+                        val getData = firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString())
+                        val userCoinInt: Int = userCoin.toString().toInt()
+                        val newCoin: Int = userCoinInt + 5
+                        getData.update(resources.getString(R.string.ai_learning_two),resources.getString(R.string.true_ai),resources.getString(R.string.firebase_userCoin), newCoin)
+                        Snackbar.make(it, resources.getString(R.string.earn_five_gold), Snackbar.LENGTH_LONG).show()
+                    }
+                    navController = findNavController()
+                    navController.navigate(R.id.action_educationTwo_to_mainEducation)
                 }
             }
-
-        }
-
-        binding.educationTwoEndTextGift.setOnClickListener {
-            if (learningTwo!! == resources.getString(R.string.true_ai)) {
-                Snackbar.make(it, resources.getString(R.string.awards_already_collected_ai), Snackbar.LENGTH_LONG).show()
-            }else{
-                val getData = firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString())
-                val userCoinInt: Int = userCoin.toString().toInt()
-                val newCoin: Int = userCoinInt + 5
-                getData.update(resources.getString(R.string.ai_learning_two),resources.getString(R.string.true_ai),resources.getString(R.string.firebase_userCoin),newCoin)
-            }
-            navController = findNavController()
-            navController.navigate(R.id.action_educationTwo_to_mainEducation)
         }
     }
 
