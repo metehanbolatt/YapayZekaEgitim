@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.ActivityUserBinding
@@ -14,6 +16,7 @@ class UserActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityUserBinding
     private lateinit var auth : FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +25,8 @@ class UserActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         auth = Firebase.auth
+        firestore = Firebase.firestore
+
     }
 
     override fun onStart() {

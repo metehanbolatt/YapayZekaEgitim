@@ -40,6 +40,10 @@
     <string name="didYouReadInfo">Did you read the info?</string>
     <string name="iRead">Yes, i have read</string>
 
+    <string name="code">Code</string>
+    <string name="student">Student</string>
+    <string name="teacher">Teacher</string>
+
     <string name="reallyCant">Your really did not see that? \n Look closer…</string>
     <string name="really">Did you really saw there a number 8 :(</string>
     <string name="cant_see">Are you pretty sure to see that?</string>
@@ -277,6 +281,11 @@
     <string name="education_three_info_three">Let\'s Take A Look At A Real Neural Network</string>
     <string name="education_three_info_four">As we can see in the images, the way the artificial neural network and the simple biological nervous system work is very similar. In other words, it is the digital modeling of biological neuron cells and the synaptic bond that these cells establish with each other.</string>
 
+    <string name="teacher_auth_failure_message">Incorrect code entry. Remaining attempts: %1$d</string>
+    <string name="teacher_auth_remaining_zero">Your password is wrong. You must sign up with student account.</string>
+
+    <string name="okay">Okay</string>
+
     <string name="education_four_info">Uses of Artificial Intelligence Autonomous Vehicles</string>
     <string name="education_four_info_one">Let\'s See the Difference of Artificial Intelligence</string>
     <string name="done_education_four">You Have Successfully Completed the Artificial Intelligence Basic Level Training</string>
@@ -375,6 +384,7 @@
     </string-array>
 
     <string name="firebase_userData">UserData</string>
+    <string name="firebase_teacherData">TeacherData</string>
     <string name="firebase_userName">userName</string>
     <string name="firebase_userSurname">userSurname</string>
     <string name="firebase_userEmail">userEmail</string>
@@ -395,6 +405,7 @@
     <string name="firebase_first_achievement">firstAchievement</string>
     <string name="firebase_second_achievement">secondAchievement</string>
     <string name="firebase_third_achievement">thirdAchievement</string>
+    <string name="firebase_job">job</string>
 
     <string name="image_small">image_small</string>
     <string name="image_small2">image_small2</string>
@@ -435,5 +446,7 @@
     <string name="sign_up_date">%1$d/%2$d/%3$d</string>
 
     <string name="_null">null</string>
+
+    <string name="teacher_authentication_code">mko1kmo2omk3mok4okm5kom6</string>
 
 </resources>

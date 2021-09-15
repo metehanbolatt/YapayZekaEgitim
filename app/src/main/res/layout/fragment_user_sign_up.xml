@@ -207,19 +207,50 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <EditText
+        android:id="@+id/userTeacherCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/code"
+        android:textColorHint="@color/drawable_color"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:drawableTint="@color/drawable_color"
+        android:drawableStart="@drawable/ic_code"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:padding="10dp"
+        android:visibility="invisible"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userDateSignUp"
+        android:importantForAutofill="no" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sign_up_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gotham_bold"
+        android:text="@string/student"
+        app:layout_constraintEnd_toEndOf="@id/userEducationLevelSignUp"
+        app:layout_constraintTop_toBottomOf="@id/userEducationLevelSignUp" />
+
     <Button
         android:id="@+id/signUpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sign_up"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
         android:textColor="@color/white"
         android:background="@drawable/user_button_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userEducationLevelSignUp" />
+        app:layout_constraintTop_toBottomOf="@id/sign_up_switch" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

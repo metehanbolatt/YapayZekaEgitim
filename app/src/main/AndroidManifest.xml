@@ -13,10 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeknofestEgitim">
         <activity
+            android:name=".view.teacherviews.TeacherActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.userviews.UserActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan"
-            android:theme="@style/splashScreenTheme">
+            android:theme="@style/splashScreenTheme"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,8 +28,8 @@
         </activity>
         <activity
             android:name=".view.mainviews.main.MainActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

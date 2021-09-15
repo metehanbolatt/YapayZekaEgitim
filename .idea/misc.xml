@@ -16,6 +16,7 @@
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/how_computer_card.xml" value="0.3310810810810811" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/ic_add.xml" value="0.32666666666666666" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/ic_butterfly.xml" value="0.32666666666666666" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/ic_email.xml" value="0.3310810810810811" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/machine_learning_background.xml" value="0.32666666666666666" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/quiz_game_question_background.xml" value="0.3310810810810811" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/drawable/recycler_achievement_background.xml" value="0.3310810810810811" />
@@ -23,6 +24,7 @@
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/activity_deneme.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/activity_main.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/activity_teacher.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/activity_user.xml" value="0.3171171171171171" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/ai_game_two_dialog_design.xml" value="0.33" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/dropdown_item.xml" value="0.3171171171171171" />
@@ -70,7 +72,7 @@
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_main.xml" value="0.25" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_main_education.xml" value="0.25" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_user_sign_in.xml" value="0.33" />
-        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_user_sign_up.xml" value="0.3171171171171171" />
+        <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/fragment_user_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/gift_alert_dialog.xml" value="0.33" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/gift_card_layout.xml" value="0.5" />
         <entry key="..\:/Users/meteb/AndroidStudioProjects/TeknofestEgitim/app/src/main/res/layout/layout_nav_drawer_header.xml" value="0.22" />
