@@ -393,11 +393,6 @@
             app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
-        android:id="@+id/AIGameOneFragment"
-        android:name="com.metehanbolat.teknofestegitim.view.mainviews.gameroom.AIGameOneFragment"
-        android:label="fragment_a_i_game_one"
-        tools:layout="@layout/fragment_a_i_game_one" />
-    <fragment
         android:id="@+id/educationOne"
         android:name="com.metehanbolat.teknofestegitim.view.mainviews.artificialintelligence.aieducation.EducationOne"
         android:label="fragment_education_one"
@@ -458,6 +453,9 @@
         <action
             android:id="@+id/action_AIGameTwoFragment_to_machineGameListFragment"
             app:destination="@id/machineGameListFragment" />
+        <action
+            android:id="@+id/action_AIGameTwoFragment_self"
+            app:destination="@id/AIGameTwoFragment" />
     </fragment>
     <fragment
         android:id="@+id/animAIQuizGameFragment"

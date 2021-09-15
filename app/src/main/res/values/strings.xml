@@ -13,6 +13,8 @@
     <string name="enter">Enter</string>
     <string name="forget_password">Forgot your password?</string>
 
+    <string name="homepage">Homepage</string>
+
     <string name="email">Email</string>
     <string name="birthday">Birthday</string>
     <string name="education_level">Education Level</string>
@@ -53,6 +55,10 @@
     <string name="congrats">Congratulations.\n Now we are ready for see all of it.</string>
 
     <string name="congratulations_gift">Congratulations, you won the\u0020</string>
+
+    <string name="play_again">Play Again</string>
+
+    <string name="ready_for_the_game">Ready for the game?</string>
 
     <string name="stillNo">Can you see that now?</string>
     <string name="hereEight">Here is a number 8.</string>
@@ -211,7 +217,7 @@
     <string name="your">You: </string>
     <string name="retry_game">Restart the game</string>
     <string name="reset">Reset</string>
-    <string name="next_question">Next question</string>
+    <string name="next_question">Next Question</string>
     <string name="are_u_sure_quit_game">Do you want to leave the game?</string>
 
     <string name="word_game">Word Game</string>
@@ -235,7 +241,7 @@
     <string name="game_two">Second game</string>
     <string name="score">Score</string>
 
-    <string name="prize">prize</string>
+    <string name="prize">\u0020prize</string>
 
     <string name="mine_sweeper">Mine Sweeper</string>
 
@@ -327,6 +333,14 @@
 
     <string name="email_or_password_empty">Email or password is empty.</string>
 
+    <string name="nice_try">Nice Try!!</string>
+    <string name="correct_answer">Correct Answer: %1$s</string>
+    <string name="earned_coin">Coin Earned: %1$d</string>
+    <string name="bravo">Bravo!!!</string>
+    <string name="better_than_this">Congratulations! You can do better.</string>
+    <string name="are_u_awake">Heyy! Are You Here?</string>
+    <string name="u_should_move">You have to move to win.</string>
+
     <string-array name="education_level">
         <item>pre-school education</item>
         <item>Primary School</item>
@@ -408,6 +422,7 @@
     <string name="_two">2</string>
     <string name="_three">3</string>
     <string name="_four">4</string>
+    <string name="_twenty">20</string>
 
     <string name="tr">tr</string>
     <string name="id">id</string>
@@ -418,5 +433,7 @@
     <string name="name_surname">%1$s %2$s</string>
 
     <string name="sign_up_date">%1$d/%2$d/%3$d</string>
+
+    <string name="_null">null</string>
 
 </resources>

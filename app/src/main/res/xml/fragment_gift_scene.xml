@@ -39,12 +39,12 @@
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             motion:layout_constraintTop_toBottomOf="@+id/linearGift"
             android:id="@+id/giftRecyclerView"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
             android:layout_marginBottom="10dp" />
     </ConstraintSet>
 </MotionScene>

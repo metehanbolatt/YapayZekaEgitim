@@ -16,8 +16,14 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentMachineMineSweeperBinding
+import com.metehanbolat.teknofestegitim.utils.UserFirebaseProcess
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionAPI
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionAPIEnglish
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionModel
@@ -31,6 +37,9 @@ class MachineMineSweeperFragment : Fragment() {
 
     private var _binding : FragmentMachineMineSweeperBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var firebaseFirestore: FirebaseFirestore
+    private lateinit var firebaseAuth: FirebaseAuth
 
     private var rowNumber = 4
     private var colNumber = 4
@@ -63,6 +72,9 @@ class MachineMineSweeperFragment : Fragment() {
         val view = binding.root
 
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.mine_sweeper_background_color)
+
+        firebaseAuth = Firebase.auth
+        firebaseFirestore = Firebase.firestore
 
         questionSeen = resources.getString(R.string.not_seen)
         questionAnswered = resources.getString(R.string.not_answered)
@@ -327,8 +339,12 @@ class MachineMineSweeperFragment : Fragment() {
         if (map[chooseOne][chooseTwo] != -1) {
             checkMine(chooseOne, chooseTwo)
             success++
-            if (success == (size-(mineNumber))) {
+            if (success == (size - (mineNumber))) {
                 Snackbar.make(view, resources.getString(R.string.congratulations),Snackbar.LENGTH_SHORT).show()
+                val earnGold = UserFirebaseProcess(firebaseFirestore, resources.getString(R.string.firebase_userData), firebaseAuth.currentUser!!.email.toString())
+                earnGold.getCoin(resources.getString(R.string.firebase_userCoin)){
+                    earnGold.userCoinIncrease(resources.getString(R.string.firebase_userCoin), it!!, 10)
+                }
             }
         } else {
             Snackbar.make(view, resources.getString(R.string.press_mine),Snackbar.LENGTH_SHORT).show()
@@ -430,6 +446,10 @@ class MachineMineSweeperFragment : Fragment() {
                     questionAnswered = haventAnswered
                     questionSeen = haventSeen
                     bombProcess()
+                    val coinDecrease = UserFirebaseProcess(firebaseFirestore, resources.getString(R.string.firebase_userData), firebaseAuth.currentUser!!.email.toString())
+                    coinDecrease.getCoin(resources.getString(R.string.firebase_userCoin)){
+                        coinDecrease.userCoinDecrease(resources.getString(R.string.firebase_userCoin), it!!, 5)
+                    }
                 }
                 questionNumber += 1
             }
@@ -443,6 +463,10 @@ class MachineMineSweeperFragment : Fragment() {
                     questionAnswered = haventAnswered
                     questionSeen = haventSeen
                     bombProcess()
+                    val coinDecrease = UserFirebaseProcess(firebaseFirestore, resources.getString(R.string.firebase_userData), firebaseAuth.currentUser!!.email.toString())
+                    coinDecrease.getCoin(resources.getString(R.string.firebase_userCoin)){
+                        coinDecrease.userCoinDecrease(resources.getString(R.string.firebase_userCoin), it!!, 5)
+                    }
                 }
                 questionNumber += 1
             }
@@ -456,6 +480,10 @@ class MachineMineSweeperFragment : Fragment() {
                     questionAnswered = haventAnswered
                     questionSeen = haventSeen
                     bombProcess()
+                    val coinDecrease = UserFirebaseProcess(firebaseFirestore, resources.getString(R.string.firebase_userData), firebaseAuth.currentUser!!.email.toString())
+                    coinDecrease.getCoin(resources.getString(R.string.firebase_userCoin)){
+                        coinDecrease.userCoinDecrease(resources.getString(R.string.firebase_userCoin), it!!, 5)
+                    }
                 }
                 questionNumber += 1
 
@@ -470,6 +498,10 @@ class MachineMineSweeperFragment : Fragment() {
                     questionAnswered = haventSeen
                     questionSeen = haventAnswered
                     bombProcess()
+                    val coinDecrease = UserFirebaseProcess(firebaseFirestore, resources.getString(R.string.firebase_userData), firebaseAuth.currentUser!!.email.toString())
+                    coinDecrease.getCoin(resources.getString(R.string.firebase_userCoin)){
+                        coinDecrease.userCoinDecrease(resources.getString(R.string.firebase_userCoin), it!!, 5)
+                    }
                 }
                 questionNumber += 1
             }

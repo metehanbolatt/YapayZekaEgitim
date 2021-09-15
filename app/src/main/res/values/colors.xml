@@ -45,6 +45,8 @@
     <color name="education_textcolor">#BCBCBC</color>
     <color name="green_text">#41DA47</color>
 
+    <color name="fragment_ai_game_two_text_color">#006D9E</color>
+
     <color name="tic_tac_toe_button_color">#E8FF05</color>
     <color name="tic_tac_toe_button_two_color">#2B8F00</color>
     <color name="tic_tac_toe_text_color">#EA1A74</color>

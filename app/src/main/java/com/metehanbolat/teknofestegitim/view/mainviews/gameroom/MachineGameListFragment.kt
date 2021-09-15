@@ -11,13 +11,22 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentMachineGameListBinding
+import com.metehanbolat.teknofestegitim.utils.UserFirebaseProcess
 
 class MachineGameListFragment : Fragment() {
 
     private var _binding : FragmentMachineGameListBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var firestore : FirebaseFirestore
+    private lateinit var auth : FirebaseAuth
 
     private lateinit var navController : NavController
 
@@ -28,7 +37,15 @@ class MachineGameListFragment : Fragment() {
         _binding = FragmentMachineGameListBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        firestore = Firebase.firestore
+        auth = Firebase.auth
+
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.game_fragment)
+
+        val userCoin = UserFirebaseProcess(firestore, resources.getString(R.string.firebase_userData), auth.currentUser!!.email.toString())
+        userCoin.getCoin(resources.getString(R.string.firebase_userCoin)){
+            binding.userCoin.text = it.toString()
+        }
 
         return view
     }

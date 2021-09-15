@@ -19,6 +19,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentMachineQuizGameBinding
+import com.metehanbolat.teknofestegitim.utils.UserFirebaseProcess
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionAPI
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionAPIEnglish
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionModel
@@ -47,7 +48,6 @@ class MachineQuizGameFragment : Fragment() {
 
     private lateinit var questionsRightAnswer : String
 
-    private var userMoney : Int? = null
     private lateinit var firestore : FirebaseFirestore
     private lateinit var firebaseUser : FirebaseUser
     private lateinit var auth : FirebaseAuth
@@ -97,12 +97,9 @@ class MachineQuizGameFragment : Fragment() {
         firebaseUser= FirebaseAuth.getInstance().currentUser!!
         auth = Firebase.auth
 
-        getMoneyData(view)
-
         val colorIdGreen = android.R.color.holo_green_dark
         val colorIdRed = android.R.color.holo_red_dark
         val colorIdQuizGameAnswers = R.color.quiz_game_answer_background
-        val colorQuestID = R.color.quiz_game_question_background
 
         binding.nextButton.setOnClickListener {
 
@@ -114,8 +111,6 @@ class MachineQuizGameFragment : Fragment() {
             binding.answer3CardView.backgroundTintList = ColorStateList.valueOf(color3Answer)
             val color4Answer = binding.answer4CardView.context.getColor(colorIdQuizGameAnswers)
             binding.answer4CardView.backgroundTintList = ColorStateList.valueOf(color4Answer)
-            val colorQuest = binding.questionCardView.context.getColor(colorQuestID)
-            binding.questionCardView.backgroundTintList = ColorStateList.valueOf(colorQuest)
 
             if (questionNumber < (questionModels!!.size)){
                 if (chosen == 1){
@@ -132,6 +127,7 @@ class MachineQuizGameFragment : Fragment() {
             }else{
                 val empty : String = resources.getString(R.string.empty)
                 Snackbar.make(it, resources.getString(R.string.all_question_answered), Snackbar.LENGTH_SHORT).show()
+                increaseCoin(5)
                 binding.questionTextView.text = resources.getString(R.string.all_question_answered)
                 binding.answer1TextView.text = empty
                 binding.answer2TextView.text = empty
@@ -146,12 +142,11 @@ class MachineQuizGameFragment : Fragment() {
             if (chosen == 0 && choosable == 1 && questionsRightAnswer == answerOne){
                 val colorGreen = binding.answer1CardView.context.getColor(colorIdGreen)
                 binding.answer1CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
-                getMoneyData(it)
-                userMoney = userMoney!! + 10
-                firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString()).update(resources.getString(R.string.firebase_userMoney), userMoney)
+                increaseCoin(2)
             }else if (chosen == 0 && choosable == 1 && questionsRightAnswer != answerOne){
                 val colorRed = binding.answer1CardView.context.getColor(colorIdRed)
                 binding.answer1CardView.backgroundTintList = ColorStateList.valueOf(colorRed)
+                decreaseCoin()
 
                 when(questionsRightAnswer){
                     resources.getString(R.string.answer_two) -> {
@@ -175,12 +170,11 @@ class MachineQuizGameFragment : Fragment() {
             if (chosen == 0 && choosable == 1 && questionsRightAnswer == answerTwo){
                 val colorGreen = binding.answer2CardView.context.getColor(colorIdGreen)
                 binding.answer2CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
-                getMoneyData(it)
-                userMoney = userMoney!! + 10
-                firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString()).update(resources.getString(R.string.firebase_userMoney), userMoney)
+                increaseCoin(2)
             }else if (chosen == 0 && choosable == 1 && questionsRightAnswer != answerTwo){
                 val colorRed = binding.answer2CardView.context.getColor(colorIdRed)
                 binding.answer2CardView.backgroundTintList = ColorStateList.valueOf(colorRed)
+                decreaseCoin()
 
                 when(questionsRightAnswer){
                     resources.getString(R.string.answer_one) -> {
@@ -204,12 +198,11 @@ class MachineQuizGameFragment : Fragment() {
             if (chosen == 0 && choosable == 1 && questionsRightAnswer == answerThree){
                 val colorGreen = binding.answer3CardView.context.getColor(colorIdGreen)
                 binding.answer3CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
-                getMoneyData(it)
-                userMoney = userMoney!! + 10
-                firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString()).update(resources.getString(R.string.firebase_userMoney), userMoney)
+                increaseCoin(2)
             }else if (chosen == 0 && choosable == 1 && questionsRightAnswer != answerThree){
                 val colorRed = binding.answer3CardView.context.getColor(colorIdRed)
                 binding.answer3CardView.backgroundTintList = ColorStateList.valueOf(colorRed)
+                decreaseCoin()
 
                 when(questionsRightAnswer){
                     resources.getString(R.string.answer_one) -> {
@@ -233,12 +226,11 @@ class MachineQuizGameFragment : Fragment() {
             if (chosen == 0 && choosable == 1 && questionsRightAnswer == answerFour){
                 val colorGreen = binding.answer4CardView.context.getColor(colorIdGreen)
                 binding.answer4CardView.backgroundTintList = ColorStateList.valueOf(colorGreen)
-                getMoneyData(it)
-                userMoney = userMoney!! + 10
-                firestore.collection(resources.getString(R.string.firebase_userData)).document(auth.currentUser!!.email.toString()).update(resources.getString(R.string.firebase_userMoney), userMoney)
+                increaseCoin(2)
             }else if (chosen == 0 && choosable == 1 && questionsRightAnswer != answerFour){
                 val colorRed = binding.answer4CardView.context.getColor(colorIdRed)
                 binding.answer4CardView.backgroundTintList = ColorStateList.valueOf(colorRed)
+                decreaseCoin()
 
                 when(questionsRightAnswer){
                     resources.getString(R.string.answer_one) -> {
@@ -296,20 +288,18 @@ class MachineQuizGameFragment : Fragment() {
         })
     }
 
-    private fun getMoneyData(view : View){
-        firestore.collection(resources.getString(R.string.firebase_userData)).whereEqualTo(resources.getString(R.string.firebase_userEmail),auth.currentUser!!.email.toString()).addSnapshotListener { value, error ->
-            if (error != null){
-                Snackbar.make(view, resources.getString(R.string.error_occurred),Snackbar.LENGTH_SHORT).show()
-            }else{
-                if (value != null){
-                    if (!value.isEmpty){
-                        val documents = value.documents
-                        for (document in documents){
-                            userMoney = (document.get(resources.getString(R.string.firebase_userCoin)) as Long).toInt()
-                        }
-                    }
-                }
-            }
+    private fun increaseCoin(amountOfIncrease : Int){
+        val earnGold = UserFirebaseProcess(firestore, resources.getString(R.string.firebase_userData), auth.currentUser!!.email.toString())
+        earnGold.getCoin(resources.getString(R.string.firebase_userCoin)){
+            earnGold.userCoinIncrease(resources.getString(R.string.firebase_userCoin), it!!, amountOfIncrease)
         }
     }
+
+    private fun decreaseCoin(){
+        val earnGold = UserFirebaseProcess(firestore, resources.getString(R.string.firebase_userData), auth.currentUser!!.email.toString())
+        earnGold.getCoin(resources.getString(R.string.firebase_userCoin)){
+            earnGold.userCoinDecrease(resources.getString(R.string.firebase_userCoin), it!!, 2)
+        }
+    }
+
 }

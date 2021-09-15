@@ -18,8 +18,14 @@ import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentMachineTicTacToeBinding
+import com.metehanbolat.teknofestegitim.utils.UserFirebaseProcess
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionAPI
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionAPIEnglish
 import com.metehanbolat.teknofestegitim.view.mainviews.machinelearning.model.QuestionModel
@@ -35,6 +41,9 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
 
     private var _binding : FragmentMachineTicTacToeBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var firestore : FirebaseFirestore
+    private lateinit var firebaseAuth : FirebaseAuth
 
     private lateinit var navController: NavController
 
@@ -85,6 +94,9 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
         val view = binding.root
 
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.tictactoe_background)
+
+        firebaseAuth = Firebase.auth
+        firestore = Firebase.firestore
 
         baseUrl = resources.getString(R.string.baseUrl)
         answerOne = resources.getString(R.string.answer_one)
@@ -204,6 +216,10 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
             if (checkWinner()) {
                 if (activePlayer) {
                     playerOneScoreCount++
+                    val coinDecrease = UserFirebaseProcess(firestore, resources.getString(R.string.firebase_userData), firebaseAuth.currentUser!!.email.toString())
+                    coinDecrease.getCoin(resources.getString(R.string.firebase_userCoin)){
+                        coinDecrease.userCoinDecrease(resources.getString(R.string.firebase_userCoin), it!!, 5)
+                    }
                     turnCounter += 1
                     binding.turnButton.visibility = View.INVISIBLE
                     binding.roundButton.visibility = View.VISIBLE
@@ -225,6 +241,10 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                     binding.turnButton.visibility = View.INVISIBLE
                     binding.roundButton.visibility = View.VISIBLE
                     updatePlayerScore()
+                    val earnGold = UserFirebaseProcess(firestore, resources.getString(R.string.firebase_userData), firebaseAuth.currentUser!!.email.toString())
+                    earnGold.getCoin(resources.getString(R.string.firebase_userCoin)){
+                        earnGold.userCoinIncrease(resources.getString(R.string.firebase_userCoin), it!!, 10)
+                    }
 
                 }
             }

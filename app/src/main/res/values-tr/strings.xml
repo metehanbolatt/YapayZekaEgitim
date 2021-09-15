@@ -32,6 +32,8 @@
     <string name="didYouReadInfo">Bilgileri okudun mu?</string>
     <string name="iRead">Okudum</string>
 
+    <string name="homepage">Anasayfa</string>
+
     <string name="reallyCant">Gerçekten göremedin mi? \n Biraz yaklaş…</string>
     <string name="really">Gerçekten orada bir 8 mi gördün :(</string>
     <string name="cant_see">Gördüğüne gerçekten emin misin?</string>
@@ -74,7 +76,7 @@
     <string name="are_u_sure_exit">Çıkmak istediğine emin misin?</string>
     <string name="againClickExit">Çıkmak için tekrar basın.</string>
 
-    <string name="this_awards_delete"> ödülü silindi.</string>
+    <string name="this_awards_delete">\u0020ödülü silindi.</string>
 
     <string name="no_user_data">Kullanıcı verisi bulunamadı.</string>
     <string name="earned_gold">Altın kazanılmış.</string>
@@ -149,6 +151,8 @@
     <string name="zero">0</string>
     <string name="x">X</string>
 
+    <string name="play_again">Tekrar Oyna</string>
+
     <string name="game_win">Oyunu Kazandınız. Tebrikler!</string>
     <string name="game_lose">Oyunu Kaybettiniz. Tekrar Oynayın!</string>
     <string name="lets_play">Hadi Oynayalım!</string>
@@ -194,6 +198,8 @@
     <string name="game_world">Oyun Dünyası</string>
 
     <string name="entrance">Giriş</string>
+
+    <string name="ready_for_the_game">Oyun için hazır mısın?</string>
 
     <string name="back_main_menu">Anasayfaya dönmek ister misin?</string>
     <string name="click_main_menu">Anasayfaya Dön</string>
@@ -322,8 +328,16 @@
     <string name="why">NEDEN</string>
     <string name="where">NEREDE</string>
     <string name="when_str">NE ZAMAN</string>
-    <string name="who">WHO</string>
-    <string name="how">HOW</string>
+    <string name="who">KİM</string>
+    <string name="how">NASIL</string>
+
+    <string name="nice_try">İyi Deneme!!</string>
+    <string name="correct_answer">Doğru Cevap: %1$s</string>
+    <string name="earned_coin">Kazanılan Altın: %1$d</string>
+    <string name="bravo">Bravo!!!</string>
+    <string name="better_than_this">Tebrikler! Daha iyisini yapabilirsin.</string>
+    <string name="are_u_awake">Heyy! Burada mısın?</string>
+    <string name="u_should_move">Kazanmak için ilerlemelisin.</string>
 
     <string-array name="education_level">
         <item>Okul Öncesi</item>
@@ -406,6 +420,7 @@
     <string name="_two">2</string>
     <string name="_three">3</string>
     <string name="_four">4</string>
+    <string name="_twenty">20</string>
 
     <string name="tr">tr</string>
     <string name="id">id</string>
@@ -416,5 +431,7 @@
     <string name="name_surname">%1$s %2$s</string>
 
     <string name="sign_up_date">%1$d/%2$d/%3$d</string>
+
+    <string name="_null">null</string>
 
 </resources>

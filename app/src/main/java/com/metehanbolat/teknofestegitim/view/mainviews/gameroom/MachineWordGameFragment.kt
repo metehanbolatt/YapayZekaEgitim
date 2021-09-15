@@ -11,13 +11,22 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentMachineWordGameBinding
+import com.metehanbolat.teknofestegitim.utils.UserFirebaseProcess
 
 class MachineWordGameFragment : Fragment() {
 
     private var _binding : FragmentMachineWordGameBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var firestore : FirebaseFirestore
+    private lateinit var firebaseAuth : FirebaseAuth
 
     private lateinit var random : String
     private lateinit var notRandom : String
@@ -54,6 +63,9 @@ class MachineWordGameFragment : Fragment() {
 
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
+        firebaseAuth = Firebase.auth
+        firestore = Firebase.firestore
+
         randomOrNot = random
 
         binding.randomWordButton.setOnClickListener {
@@ -74,6 +86,10 @@ class MachineWordGameFragment : Fragment() {
             if (keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER){
                 if (randomOrNot == random && binding.wordEditText.text.first() == binding.wordTextView.text.last()){
                     Snackbar.make(keyView, resources.getString(R.string.nice_answer), Snackbar.LENGTH_SHORT).show()
+                    val earnGold = UserFirebaseProcess(firestore, resources.getString(R.string.firebase_userData), firebaseAuth.currentUser!!.email.toString())
+                    earnGold.getCoin(resources.getString(R.string.firebase_userCoin)){
+                        earnGold.userCoinIncrease(resources.getString(R.string.firebase_userCoin), it!!, 2)
+                    }
                     binding.pastWords.append(resources.getString(R.string.comma) + binding.wordEditText.text.toString())
                     binding.wordEditText.setText(resources.getString(R.string.empty))
                     randomNumber = (0 until (wordArray.size) - 1).random()
@@ -81,14 +97,25 @@ class MachineWordGameFragment : Fragment() {
                     binding.pastWords.append(resources.getString(R.string.comma) + binding.wordTextView.text.toString() )
                 }else if (randomOrNot == notRandom && binding.wordEditText.text.first() == binding.wordTextView.text.last()){
                     binding.pastWords.append(resources.getString(R.string.comma) + binding.wordEditText.text)
+                    val earnGold = UserFirebaseProcess(firestore, resources.getString(R.string.firebase_userData), firebaseAuth.currentUser!!.email.toString())
+                    earnGold.getCoin(resources.getString(R.string.firebase_userCoin)){
+                        earnGold.userCoinIncrease(resources.getString(R.string.firebase_userCoin), it!!, 2)
+                    }
                     if (wordArray.find { it.first() == binding.wordEditText.text.last() } != null){
                         binding.wordTextView.text = wordArray.find { it.first() == binding.wordEditText.text.last() }
                         binding.pastWords.append(resources.getString(R.string.comma) + binding.wordTextView.text.toString())
                     }else{
                         binding.wordTextView.text = resources.getString(R.string.you_won)
+                        earnGold.getCoin(resources.getString(R.string.firebase_userCoin)){
+                            earnGold.userCoinIncrease(resources.getString(R.string.firebase_userCoin), it!!, 5)
+                        }
                     }
                 } else{
                     Snackbar.make(keyView, resources.getString(R.string.last_word_press_enter), Snackbar.LENGTH_SHORT).show()
+                    val earnGold = UserFirebaseProcess(firestore, resources.getString(R.string.firebase_userData), firebaseAuth.currentUser!!.email.toString())
+                    earnGold.getCoin(resources.getString(R.string.firebase_userCoin)) {
+                        earnGold.userCoinDecrease(resources.getString(R.string.firebase_userCoin), it!!, 5)
+                    }
                 }
                 return@OnKeyListener true
             }

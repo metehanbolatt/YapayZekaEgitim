@@ -74,4 +74,6 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
 }
