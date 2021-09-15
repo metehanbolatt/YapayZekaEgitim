@@ -15,6 +15,7 @@ import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentUserSignInBinding
 import com.metehanbolat.teknofestegitim.view.mainviews.main.MainActivity
+import com.metehanbolat.teknofestegitim.view.teacherviews.TeacherActivity
 
 class UserSignInFragment : Fragment() {
 
@@ -46,15 +47,22 @@ class UserSignInFragment : Fragment() {
             if (email.isEmpty() || password.isEmpty()){
                 Snackbar.make(it, resources.getString(R.string.email_or_password_empty), Snackbar.LENGTH_SHORT).show()
             }else{
+                val newEmail = getFirst(email)
                 auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
-                    val intent = Intent(requireContext(), MainActivity::class.java)
-                    startActivity(intent)
-                    activity?.finish()
+                    if (newEmail == resources.getString(R.string._tmail)){
+                        val intent = Intent(requireContext(), TeacherActivity::class.java)
+                        startActivity(intent)
+                        activity?.finish()
+                    }else if (newEmail == resources.getString(R.string._smail)){
+                        val intent = Intent(requireContext(), MainActivity::class.java)
+                        startActivity(intent)
+                        activity?.finish()
+                    }
                 }.addOnFailureListener { e ->
-                    if (e.localizedMessage == resources.getString(R.string.firebase_mail_error)){
-                        Snackbar.make(view, resources.getString(R.string.please_check_your_email), Snackbar.LENGTH_LONG).show()
-                    }else if (e.localizedMessage == resources.getString(R.string.firebase_pass_error)){
-                        Snackbar.make(view, resources.getString(R.string.please_check_your_pass), Snackbar.LENGTH_LONG).show()
+                    when(e.localizedMessage){
+                        resources.getString(R.string.firebase_mail_error) -> Snackbar.make(view, resources.getString(R.string.please_check_your_email), Snackbar.LENGTH_LONG).show()
+                        resources.getString(R.string.firebase_pass_error) -> Snackbar.make(view, resources.getString(R.string.please_check_your_pass), Snackbar.LENGTH_LONG).show()
+                        resources.getString(R.string.firebase_exist_user_error) -> Snackbar.make(view, resources.getString(R.string.exist_user_entry), Snackbar.LENGTH_LONG).show()
                     }
                 }
             }
@@ -69,6 +77,18 @@ class UserSignInFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun getFirst(word:String) : String{
+        var length = 0
+        var subsEmail : String? = null
+        while(length <= word.length - 1){
+            if (word[length].toString() == resources.getString(R.string._et)){
+                subsEmail = (word.substring(length + 1, word.length))
+            }
+            length += 1
+        }
+        return subsEmail.toString()
     }
 
 }

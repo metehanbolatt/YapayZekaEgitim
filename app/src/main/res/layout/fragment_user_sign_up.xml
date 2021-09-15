@@ -115,19 +115,35 @@
         android:hint="@string/email"
         android:textColorHint="@color/drawable_color"
         android:inputType="textEmailAddress"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:drawableTint="@color/drawable_color"
         android:drawableStart="@drawable/ic_email"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
         android:drawablePadding="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:padding="10dp"
+        android:maxLength="12"
         android:background="@drawable/edittext_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/userNickSignUp"
         android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/userEmailSignUpTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/student_mail"
+        android:textColor="@color/black"
+        android:maxLength="22"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        android:layout_marginStart="45dp"
+        app:layout_constraintTop_toTopOf="@id/userEmailSignUp"
+        app:layout_constraintBottom_toBottomOf="@id/userEmailSignUp"
+        app:layout_constraintStart_toStartOf="@id/userEmailSignUp" />
 
     <EditText
         android:id="@+id/userPasswordSignUp"
@@ -140,7 +156,7 @@
         android:textColor="@color/black"
         android:drawableStart="@drawable/ic_lock"
         android:drawablePadding="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:padding="10dp"
@@ -251,6 +267,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sign_up_switch" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,8 @@ package com.metehanbolat.teknofestegitim.view.userviews
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +33,9 @@ class UserSignUpFragment : Fragment() {
     private var control : Int = 1
     private var maxRemaining : Int = 3
 
+    private lateinit var beforeMail : String
+    private lateinit var newEmail : String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,16 +52,52 @@ class UserSignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.userEmailSignUp.addTextChangedListener(object: TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+                if (binding.signUpSwitch.isChecked){
+                    if (p0.isNullOrBlank()){
+                        binding.userEmailSignUpTextView.visibility = View.INVISIBLE
+                    }else{
+                        binding.userEmailSignUpTextView.visibility = View.VISIBLE
+                        newEmail = p0.toString() + resources.getString(R.string.teacher_mail)
+                        beforeMail = p0.toString()
+                        binding.userEmailSignUpTextView.text = newEmail
+                    }
+                }else{
+                    if (p0.isNullOrBlank()){
+                        binding.userEmailSignUpTextView.visibility = View.INVISIBLE
+                    }else{
+                        binding.userEmailSignUpTextView.visibility = View.VISIBLE
+                        newEmail = p0.toString() + resources.getString(R.string.student_mail)
+                        beforeMail = p0.toString()
+                        binding.userEmailSignUpTextView.text = newEmail
+                    }
+                }
+
+            }
+
+        })
+
         binding.signUpSwitch.setOnCheckedChangeListener { _, b ->
             if (!b){
                 binding.signUpSwitch.text = resources.getString(R.string.student)
                 binding.userEducationLevelSignUp.visibility = View.VISIBLE
                 binding.userTeacherCode.visibility = View.INVISIBLE
+                binding.userEmailSignUpTextView.text = resources.getString(R.string.modify_student_mail, beforeMail)
 
             }else{
                 binding.signUpSwitch.text = resources.getString(R.string.teacher)
                 binding.userEducationLevelSignUp.visibility = View.INVISIBLE
                 binding.userTeacherCode.visibility = View.VISIBLE
+                binding.userEmailSignUpTextView.text = resources.getString(R.string.modify_teacher_mail, beforeMail)
             }
         }
 
@@ -77,8 +118,9 @@ class UserSignUpFragment : Fragment() {
         }
 
         binding.signUpButton.setOnClickListener {
+
             if (!binding.signUpSwitch.isChecked){
-                val email = binding.userEmailSignUp.text.toString()
+                val email = beforeMail + resources.getString(R.string.student_mail)
                 val password = binding.userPasswordSignUp.text.toString()
                 val name = binding.userNameSignUp.text.toString()
                 val surname = binding.userSurnameSignUp.text.toString()
@@ -90,7 +132,7 @@ class UserSignUpFragment : Fragment() {
                     studentData(it)
                 }
             }else{
-                val email = binding.userEmailSignUp.text.toString()
+                val email = beforeMail + resources.getString(R.string.teacher_mail)
                 val password = binding.userPasswordSignUp.text.toString()
                 val name = binding.userNameSignUp.text.toString()
                 val surname = binding.userSurnameSignUp.text.toString()
@@ -120,6 +162,7 @@ class UserSignUpFragment : Fragment() {
                     }
                 }
             }
+
         }
     }
 
@@ -140,12 +183,12 @@ class UserSignUpFragment : Fragment() {
         teacherDataMap[resources.getString(R.string.firebase_userName)] = binding.userNameSignUp.text.toString()
         teacherDataMap[resources.getString(R.string.firebase_userSurname)] = binding.userSurnameSignUp.text.toString()
         teacherDataMap[resources.getString(R.string.firebase_userNick)] = binding.userNickSignUp.text.toString()
-        teacherDataMap[resources.getString(R.string.firebase_userEmail)] = binding.userEmailSignUp.text.toString()
+        teacherDataMap[resources.getString(R.string.firebase_userEmail)] = beforeMail + resources.getString(R.string.teacher_mail)
         teacherDataMap[resources.getString(R.string.firebase_userBirthday)] = binding.userDateSignUp.text.toString()
         teacherDataMap[resources.getString(R.string.firebase_job)] = binding.signUpSwitch.text.toString()
 
-        firestore.collection(resources.getString(R.string.firebase_teacherData)).document(binding.userEmailSignUp.text.toString()).set(teacherDataMap).addOnSuccessListener {
-            auth.createUserWithEmailAndPassword(binding.userEmailSignUp.text.toString(), binding.userPasswordSignUp.text.toString()).addOnSuccessListener {
+        firestore.collection(resources.getString(R.string.firebase_teacherData)).document(beforeMail + resources.getString(R.string.teacher_mail)).set(teacherDataMap).addOnSuccessListener {
+            auth.createUserWithEmailAndPassword(beforeMail + resources.getString(R.string.teacher_mail), binding.userPasswordSignUp.text.toString()).addOnSuccessListener {
                 goTeacherActivity()
             }.addOnFailureListener {
                 if (it.localizedMessage == resources.getString(R.string.firebase_mail_error)){
@@ -163,7 +206,7 @@ class UserSignUpFragment : Fragment() {
         userDataMap[resources.getString(R.string.firebase_userName)] = binding.userNameSignUp.text.toString()
         userDataMap[resources.getString(R.string.firebase_userSurname)] = binding.userSurnameSignUp.text.toString()
         userDataMap[resources.getString(R.string.firebase_userNick)] = binding.userNickSignUp.text.toString()
-        userDataMap[resources.getString(R.string.firebase_userEmail)] = binding.userEmailSignUp.text.toString()
+        userDataMap[resources.getString(R.string.firebase_userEmail)] = beforeMail + resources.getString(R.string.student_mail)
         userDataMap[resources.getString(R.string.firebase_userBirthday)] = binding.userDateSignUp.text.toString()
         userDataMap[resources.getString(R.string.firebase_educationLevel)] = binding.autoCompleteTextView.text.toString()
         userDataMap[resources.getString(R.string.firebase_job)] = binding.signUpSwitch.text.toString()
@@ -181,8 +224,8 @@ class UserSignUpFragment : Fragment() {
         userDataMap[resources.getString(R.string.ai_learning_two)] = resources.getString(R.string.false_ai)
         userDataMap[resources.getString(R.string.ai_learning_three)] = resources.getString(R.string.false_ai)
 
-        firestore.collection(resources.getString(R.string.firebase_userData)).document(binding.userEmailSignUp.text.toString()).set(userDataMap).addOnSuccessListener {
-            auth.createUserWithEmailAndPassword(binding.userEmailSignUp.text.toString(),binding.userPasswordSignUp.text.toString()).addOnSuccessListener {
+        firestore.collection(resources.getString(R.string.firebase_userData)).document(beforeMail + resources.getString(R.string.student_mail)).set(userDataMap).addOnSuccessListener {
+            auth.createUserWithEmailAndPassword(beforeMail + resources.getString(R.string.student_mail),binding.userPasswordSignUp.text.toString()).addOnSuccessListener {
                 goMainActivity()
             }.addOnFailureListener {
                 if (it.localizedMessage == resources.getString(R.string.firebase_mail_error)){

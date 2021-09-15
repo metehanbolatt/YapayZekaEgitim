@@ -350,6 +350,11 @@
     <string name="are_u_awake">Heyy! Are You Here?</string>
     <string name="u_should_move">You have to move to win.</string>
 
+    <string name="modify_teacher_mail">%1$s\@tmail.com</string>
+    <string name="modify_student_mail">%1$s\@smail.com</string>
+
+    <string name="exist_user_entry">No user record</string>
+
     <string-array name="education_level">
         <item>pre-school education</item>
         <item>Primary School</item>
@@ -407,6 +412,9 @@
     <string name="firebase_third_achievement">thirdAchievement</string>
     <string name="firebase_job">job</string>
 
+    <string name="teacher_mail">\@tmail.com</string>
+    <string name="student_mail">\@smail.com</string>
+
     <string name="image_small">image_small</string>
     <string name="image_small2">image_small2</string>
     <string name="image_small3">image_small3</string>
@@ -428,6 +436,7 @@
     <string name="firebase_mail_error">The email address is badly formatted.</string>
     <string name="firebase_pass_error">The password is invalid or the user does not have a password.</string>
     <string name="firebase_sign_up_pass_error">The given password is invalid. [ Password should be at least 6 characters ]</string>
+    <string name="firebase_exist_user_error">There is no user record corresponding to this identifier. The user may have been deleted.</string>
 
     <string name="_one">1</string>
     <string name="_two">2</string>
@@ -446,6 +455,11 @@
     <string name="sign_up_date">%1$d/%2$d/%3$d</string>
 
     <string name="_null">null</string>
+
+    <string name="_smail">smail.com</string>
+    <string name="_tmail">tmail.com</string>
+
+    <string name="_et">\@</string>
 
     <string name="teacher_authentication_code">mko1kmo2omk3mok4okm5kom6</string>
 
