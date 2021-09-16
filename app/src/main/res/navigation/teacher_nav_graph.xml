@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/teacher_nav_graph"
+    app:startDestination="@id/teacherMainFragment">
+
+    <fragment
+        android:id="@+id/teacherMainFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.teacherviews.main.TeacherMainFragment"
+        android:label="fragment_teacher_main"
+        tools:layout="@layout/fragment_teacher_main" >
+        <action
+            android:id="@+id/action_teacherMainFragment_to_teacherQuizFragment"
+            app:destination="@id/teacherQuizFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/teacherQuizFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.teacherviews.quizroom.TeacherQuizFragment"
+        android:label="fragment_teacher_quiz"
+        tools:layout="@layout/fragment_teacher_quiz" >
+        <action
+            android:id="@+id/action_teacherQuizFragment_to_teacherMainFragment"
+            app:destination="@id/teacherMainFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+</navigation>

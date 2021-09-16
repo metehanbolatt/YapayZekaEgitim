@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Genç Yazılımcı</string>
-    <!-- TODO: Remove or change this placeholder text -->
 
     <string name="delete">Delete</string>
     <string name="update">Update</string>
@@ -388,8 +387,13 @@
         <item>edison</item>
     </string-array>
 
-    <string name="firebase_userData">UserData</string>
     <string name="firebase_teacherData">TeacherData</string>
+    <string name="firebase_teacherName">teacherName</string>
+    <string name="firebase_teacherSurname">teacherSurname</string>
+    <string name="firebase_teacherEmail">teacherEmail</string>
+    <string name="firebase_teacherNick">teacherNick</string>
+    <string name="firebase_teacherBirthday">teacherBirthday</string>
+    <string name="firebase_userData">UserData</string>
     <string name="firebase_userName">userName</string>
     <string name="firebase_userSurname">userSurname</string>
     <string name="firebase_userEmail">userEmail</string>
@@ -462,5 +466,9 @@
     <string name="_et">\@</string>
 
     <string name="teacher_authentication_code">mko1kmo2omk3mok4okm5kom6</string>
+
+    <string name="channel_id">channelId</string>
+    <string name="channel_name">channelName</string>
+    <string name="channel_promotion">channelPromotion</string>
 
 </resources>

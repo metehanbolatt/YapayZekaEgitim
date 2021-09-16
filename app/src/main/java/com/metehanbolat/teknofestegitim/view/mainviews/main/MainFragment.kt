@@ -32,11 +32,8 @@ class MainFragment : Fragment() {
 
     private var userName : Any? = null
     private var userSurname : Any? = null
-    private var userEmail : Any? = null
-    private var userNick : Any? = null
-    private var userEducationLevel : Any? = null
-    private var userBirthday : Any? = null
     private var userCoin : Any? = null
+
     private var counter = 0
 
     override fun onCreateView(
@@ -45,6 +42,11 @@ class MainFragment : Fragment() {
     ): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        auth = Firebase.auth
+        firestore = Firebase.firestore
+
+        getUserData(auth.currentUser!!.email.toString(), view)
 
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
@@ -59,15 +61,9 @@ class MainFragment : Fragment() {
                 }
             }
         }
-
         requireActivity().onBackPressedDispatcher.addCallback(callback)
 
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.header_status_bar)
-
-        auth = Firebase.auth
-        firestore = Firebase.firestore
-
-        getUserData(auth.currentUser!!.email.toString(), view)
 
         return view
     }
@@ -117,10 +113,6 @@ class MainFragment : Fragment() {
                 if (document.data != null){
                     userName = document.data!![resources.getString(R.string.firebase_userName)]
                     userSurname = document.data!![resources.getString(R.string.firebase_userSurname)]
-                    userEmail = document.data!![resources.getString(R.string.firebase_userEmail)]
-                    userNick = document.data!![resources.getString(R.string.firebase_userNick)]
-                    userEducationLevel = document.data!![resources.getString(R.string.firebase_educationLevel)]
-                    userBirthday = document.data!![resources.getString(R.string.firebase_userBirthday)]
                     userCoin = document.data!![resources.getString(R.string.firebase_userCoin)]
 
                     binding.userName.text = resources.getString(R.string.name_surname, userName.toString(), userSurname.toString())

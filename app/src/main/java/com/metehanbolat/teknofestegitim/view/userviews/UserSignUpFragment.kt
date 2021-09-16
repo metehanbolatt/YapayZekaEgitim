@@ -19,7 +19,7 @@ import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentUserSignUpBinding
 import com.metehanbolat.teknofestegitim.view.mainviews.main.MainActivity
-import com.metehanbolat.teknofestegitim.view.teacherviews.TeacherActivity
+import com.metehanbolat.teknofestegitim.view.teacherviews.main.TeacherActivity
 import java.util.*
 
 class UserSignUpFragment : Fragment() {
@@ -33,8 +33,8 @@ class UserSignUpFragment : Fragment() {
     private var control : Int = 1
     private var maxRemaining : Int = 3
 
-    private lateinit var beforeMail : String
-    private lateinit var newEmail : String
+    private var beforeMail : String? = null
+    private var newEmail : String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -180,11 +180,11 @@ class UserSignUpFragment : Fragment() {
 
     private fun teacherData(view : View){
         val teacherDataMap = hashMapOf<String, Any>()
-        teacherDataMap[resources.getString(R.string.firebase_userName)] = binding.userNameSignUp.text.toString()
-        teacherDataMap[resources.getString(R.string.firebase_userSurname)] = binding.userSurnameSignUp.text.toString()
-        teacherDataMap[resources.getString(R.string.firebase_userNick)] = binding.userNickSignUp.text.toString()
-        teacherDataMap[resources.getString(R.string.firebase_userEmail)] = beforeMail + resources.getString(R.string.teacher_mail)
-        teacherDataMap[resources.getString(R.string.firebase_userBirthday)] = binding.userDateSignUp.text.toString()
+        teacherDataMap[resources.getString(R.string.firebase_teacherName)] = binding.userNameSignUp.text.toString()
+        teacherDataMap[resources.getString(R.string.firebase_teacherSurname)] = binding.userSurnameSignUp.text.toString()
+        teacherDataMap[resources.getString(R.string.firebase_teacherNick)] = binding.userNickSignUp.text.toString()
+        teacherDataMap[resources.getString(R.string.firebase_teacherEmail)] = beforeMail + resources.getString(R.string.teacher_mail)
+        teacherDataMap[resources.getString(R.string.firebase_teacherBirthday)] = binding.userDateSignUp.text.toString()
         teacherDataMap[resources.getString(R.string.firebase_job)] = binding.signUpSwitch.text.toString()
 
         firestore.collection(resources.getString(R.string.firebase_teacherData)).document(beforeMail + resources.getString(R.string.teacher_mail)).set(teacherDataMap).addOnSuccessListener {

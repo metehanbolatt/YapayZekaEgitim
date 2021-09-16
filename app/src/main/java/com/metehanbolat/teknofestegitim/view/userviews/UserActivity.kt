@@ -9,7 +9,7 @@ import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.ActivityUserBinding
 import com.metehanbolat.teknofestegitim.view.mainviews.main.MainActivity
-import com.metehanbolat.teknofestegitim.view.teacherviews.TeacherActivity
+import com.metehanbolat.teknofestegitim.view.teacherviews.main.TeacherActivity
 
 class UserActivity : AppCompatActivity() {
 
