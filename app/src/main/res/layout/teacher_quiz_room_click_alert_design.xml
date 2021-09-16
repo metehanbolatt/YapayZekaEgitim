@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/alertTeacherTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sınav Odası Oluşturun"
+        android:textColor="@color/black"
+        android:fontFamily="@font/gotham_bold"
+        android:textSize="18sp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/alertTeacherEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Sınav odası kodu girin..."
+        android:background="@drawable/edittext_background"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/alertTeacherTitle"
+        app:layout_constraintStart_toStartOf="@id/alertTeacherTitle"
+        app:layout_constraintTop_toBottomOf="@id/alertTeacherTitle" />
+
+    <Button
+        android:id="@+id/alertTeacherButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oluştur"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/gotham_bold"
+        android:backgroundTint="@color/button_move_on_color"
+        app:layout_constraintStart_toStartOf="@id/alertTeacherEditText"
+        app:layout_constraintEnd_toEndOf="@id/alertTeacherEditText"
+        app:layout_constraintTop_toBottomOf="@id/alertTeacherEditText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

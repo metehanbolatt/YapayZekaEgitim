@@ -29,6 +29,7 @@ class TeacherQuizFragment : Fragment() {
     private lateinit var firestore : FirebaseFirestore
 
     private var counter = 0
+    private var radioControl = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,6 +64,69 @@ class TeacherQuizFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.radioButtonOne.setOnClickListener{
+            binding.radioButtonOne.text = "Doğru"
+            binding.radioButtonTwo.text = resources.getString(R.string.empty)
+            binding.radioButtonThree.text = resources.getString(R.string.empty)
+            binding.radioButtonFour.text = resources.getString(R.string.empty)
+            radioControl = 1
+        }
+
+        binding.radioButtonTwo.setOnClickListener{
+            binding.radioButtonOne.text = resources.getString(R.string.empty)
+            binding.radioButtonTwo.text = "Doğru"
+            binding.radioButtonThree.text = resources.getString(R.string.empty)
+            binding.radioButtonFour.text = resources.getString(R.string.empty)
+            radioControl = 2
+        }
+
+        binding.radioButtonThree.setOnClickListener{
+            binding.radioButtonOne.text = resources.getString(R.string.empty)
+            binding.radioButtonTwo.text = resources.getString(R.string.empty)
+            binding.radioButtonThree.text = "Doğru"
+            binding.radioButtonFour.text = resources.getString(R.string.empty)
+            radioControl = 3
+        }
+
+        binding.radioButtonFour.setOnClickListener{
+            binding.radioButtonOne.text = resources.getString(R.string.empty)
+            binding.radioButtonTwo.text = resources.getString(R.string.empty)
+            binding.radioButtonThree.text = resources.getString(R.string.empty)
+            binding.radioButtonFour.text = "Doğru"
+            radioControl = 4
+        }
+
+        binding.quizButton.setOnClickListener {
+
+            if (binding.quizQuestionEditText.text.isNullOrBlank()){
+                Snackbar.make(view, "Lütfen soru giriniz!!", Snackbar.LENGTH_LONG).show()
+            }else{
+                if (binding.quizAnswerOne.text.isNullOrBlank() || binding.quizAnswerTwo.text.isNullOrBlank() || binding.quizAnswerThree.text.isNullOrBlank() || binding.quizAnswerFour.text.isNullOrBlank()){
+                    Snackbar.make(view, "Lütfen boş cevap bırakmayın", Snackbar.LENGTH_LONG).show()
+                }else{
+                    if (binding.radioButtonOne.text == "Doğru" || binding.radioButtonTwo.text == "Doğru" || binding.radioButtonThree.text == "Doğru" || binding.radioButtonFour.text == "Doğru"){
+                        val questionMap = hashMapOf<String, Any>()
+                        questionMap["question"] = binding.quizQuestionEditText.text.toString()
+                        questionMap["answer_one"] = binding.quizAnswerOne.text.toString()
+                        questionMap["answer_two"] = binding.quizAnswerTwo.text.toString()
+                        questionMap["answer_three"] = binding.quizAnswerThree.text.toString()
+                        questionMap["answer_four"] = binding.quizAnswerFour.text.toString()
+                        questionMap["correct_answer"] = radioControl.toString()
+
+                        firestore.collection("quizRoom").document("qwe123").collection("questions").document("question").update(questionMap).addOnSuccessListener {
+                            Snackbar.make(view, "Soru öğrencilere gönderildi.", Snackbar.LENGTH_LONG).show()
+                        }.addOnFailureListener {
+                            Snackbar.make(view, "Soru gönderilirken hata oluştu", Snackbar.LENGTH_LONG).show()
+                        }
+                    }else{
+                        Snackbar.make(view, "Şıklardan birini doğru olarak işaretlemelisiniz", Snackbar.LENGTH_LONG).show()
+                    }
+                }
+            }
+
+
+        }
     }
 
     override fun onDestroyView() {

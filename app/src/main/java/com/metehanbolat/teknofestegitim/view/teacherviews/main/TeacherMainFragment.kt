@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -18,6 +19,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentTeacherMainBinding
+import com.metehanbolat.teknofestegitim.databinding.TeacherQuizRoomClickAlertDesignBinding
 import com.metehanbolat.teknofestegitim.view.userviews.UserActivity
 import java.util.*
 
@@ -25,6 +27,9 @@ class TeacherMainFragment : Fragment() {
 
     private var _binding : FragmentTeacherMainBinding? = null
     private val binding get() = _binding!!
+
+    private var _alertBinding : TeacherQuizRoomClickAlertDesignBinding? = null
+    private val alertBinding get() = _alertBinding!!
 
     private lateinit var navController: NavController
 
@@ -41,6 +46,7 @@ class TeacherMainFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentTeacherMainBinding.inflate(inflater, container, false)
+        _alertBinding = TeacherQuizRoomClickAlertDesignBinding.inflate(inflater, container, false)
         val view = binding.root
 
         auth = Firebase.auth
@@ -76,8 +82,33 @@ class TeacherMainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.quizCardView.setOnClickListener {
-            navController = findNavController()
-            navController.navigate(R.id.action_teacherMainFragment_to_teacherQuizFragment)
+
+            val builder = AlertDialog.Builder(requireContext()).create()
+            builder.setView(alertBinding.root)
+            alertBinding.alertTeacherButton.setOnClickListener {
+                if (alertBinding.alertTeacherEditText.text.isNullOrBlank()){
+                    Snackbar.make(view, "Sınav odası oluşturmak için lütfen şifre girin.", Snackbar.LENGTH_LONG).show()
+                }else{
+                    val quizRoomPassword = alertBinding.alertTeacherEditText.text.toString()
+                    val quizDataMap = hashMapOf<String, Any>()
+                    quizDataMap["question"] = resources.getString(R.string.empty)
+                    quizDataMap["answer_one"] = resources.getString(R.string.empty)
+                    quizDataMap["answer_two"] = resources.getString(R.string.empty)
+                    quizDataMap["answer_three"] = resources.getString(R.string.empty)
+                    quizDataMap["answer_four"] = resources.getString(R.string.empty)
+                    quizDataMap["correct_answer"] = resources.getString(R.string.empty)
+
+                    firestore.collection("quizRoom").document(quizRoomPassword).collection("questions").document("question").set(quizDataMap).addOnSuccessListener {
+                        navController = findNavController()
+                        navController.navigate(R.id.action_teacherMainFragment_to_teacherQuizFragment)
+                        builder.dismiss()
+                    }.addOnFailureListener {
+                        Snackbar.make(view, "Soru odası oluşturulamadı", Snackbar.LENGTH_LONG).show()
+                        builder.dismiss()
+                    }
+                }
+            }
+            builder.show()
         }
 
         binding.signOutCardView.setOnClickListener {
@@ -91,6 +122,7 @@ class TeacherMainFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        _alertBinding = null
     }
 
     private fun getTeacherData(name : String, view : View){

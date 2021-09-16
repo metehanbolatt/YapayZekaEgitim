@@ -198,7 +198,6 @@ class UserSignUpFragment : Fragment() {
                 }
             }
         }
-
     }
 
     private fun studentData(view : View){
