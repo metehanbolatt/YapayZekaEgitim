@@ -30,5 +30,8 @@
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right" />
+        <argument
+            android:name="quizRoomId"
+            app:argType="string" />
     </fragment>
 </navigation>

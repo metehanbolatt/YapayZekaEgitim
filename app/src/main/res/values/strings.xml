@@ -354,6 +354,41 @@
 
     <string name="exist_user_entry">No user record</string>
 
+    <string name="create_quiz_room_password">You must enter a password to create an quiz room…</string>
+    <string name="failed_quiz_room_create">Failed to create quiz room.</string>
+    <string name="quiz_true">True</string>
+    <string name="quiz_false">False</string>
+    <string name="u_must_write_a_question">Question field can not be empty.</string>
+    <string name="u_must_write_whole_answer_field">Please fill in all answer fields.</string>
+    <string name="success_question_send">The question was sent to all students.</string>
+    <string name="failed_question_send">There is a problem! The question could not be sent.</string>
+    <string name="one_answer_must_correct">You must select at least one correct answer.</string>
+
+    <string name="create_quiz_room_alert">Creating an Quiz Room</string>
+    <string name="enter_quiz_room_pass">Password for quiz room…</string>
+    <string name="quiz_button_alert">Create</string>
+
+    <string name="user_log_in_quiz_room">Enter The Quiz Room</string>
+    <string name="user_enter_quiz_room_password">Enter a valid code…</string>
+    <string name="user_alert_button">Login</string>
+    
+    <string name="write_question_ask">Write the question you want to ask…</string>
+    <string name="first_answer">1. Answer</string>
+    <string name="second_answer">2. Answer</string>
+    <string name="third_answer">3. Answer</string>
+    <string name="fourth_answer">4. Answer</string>
+
+    <string name="ask">Ask</string>
+    <string name="close_quiz_room">Close The Room</string>
+    <string name="quiz_room_title">Quiz Room %1$s</string>
+    <string name="close_quiz_room_snack_text">Quiz room %1$s has been successfully closed.</string>
+    <string name="are_u_sure_leave_quiz">Are you sure you want to leave the exam room?</string>
+
+    <string name="question_number">Question %1$s</string>
+
+    <string name="are_u_sure_close_quiz_room">Quiz room %1$s is closing…</string>
+    <string name="close">Close</string>
+
     <string-array name="education_level">
         <item>pre-school education</item>
         <item>Primary School</item>
@@ -416,6 +451,16 @@
     <string name="firebase_third_achievement">thirdAchievement</string>
     <string name="firebase_job">job</string>
 
+    <string name="quiz_room">QuizRoom</string>
+    <string name="quiz_questions">questions</string>
+    <string name="quiz_question">question</string>
+    <string name="quiz_answer_one">answer_one</string>
+    <string name="quiz_answer_two">answer_two</string>
+    <string name="quiz_answer_three">answer_three</string>
+    <string name="quiz_answer_four">answer_four</string>
+    <string name="quiz_correct_answer">correct_answer</string>
+    <string name="quiz_question_number">question_number</string>
+
     <string name="teacher_mail">\@tmail.com</string>
     <string name="student_mail">\@smail.com</string>
 
@@ -442,6 +487,7 @@
     <string name="firebase_sign_up_pass_error">The given password is invalid. [ Password should be at least 6 characters ]</string>
     <string name="firebase_exist_user_error">There is no user record corresponding to this identifier. The user may have been deleted.</string>
 
+    <string name="_zero">0</string>
     <string name="_one">1</string>
     <string name="_two">2</string>
     <string name="_three">3</string>
@@ -470,5 +516,7 @@
     <string name="channel_id">channelId</string>
     <string name="channel_name">channelName</string>
     <string name="channel_promotion">channelPromotion</string>
+
+    <string name="document_id">document_id</string>
 
 </resources>

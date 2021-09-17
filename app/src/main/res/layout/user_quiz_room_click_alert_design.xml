@@ -6,10 +6,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ProgressBar
-        android:id="@+id/teacherProgress"
+        android:id="@+id/studentProgressBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="invisible"
         android:elevation="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,47 +16,51 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <TextView
-        android:id="@+id/alertTeacherTitle"
-        android:layout_width="wrap_content"
+        android:id="@+id/alertUserTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/create_quiz_room_alert"
+        android:text="@string/user_log_in_quiz_room"
         android:textColor="@color/black"
+        android:gravity="center"
         android:fontFamily="@font/gotham_bold"
+        android:visibility="invisible"
         android:textSize="18sp"
-        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/alertTeacherEditText"
-        android:layout_width="250dp"
+        android:id="@+id/alertUserEditText"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:hint="@string/enter_quiz_room_pass"
+        android:hint="@string/user_enter_quiz_room_password"
         android:background="@drawable/edittext_background"
         android:gravity="center"
+        android:visibility="invisible"
         android:padding="10dp"
         android:maxLength="15"
         android:textColor="@color/black"
         android:inputType="text"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="@id/alertTeacherTitle"
-        app:layout_constraintStart_toStartOf="@id/alertTeacherTitle"
-        app:layout_constraintTop_toBottomOf="@id/alertTeacherTitle"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/alertUserTitle"
+        app:layout_constraintStart_toStartOf="@id/alertUserTitle"
+        app:layout_constraintTop_toBottomOf="@id/alertUserTitle"
         android:importantForAutofill="no" />
 
     <Button
-        android:id="@+id/alertTeacherButton"
+        android:id="@+id/alertUserButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/quiz_button_alert"
+        android:text="@string/user_alert_button"
+        android:visibility="invisible"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/gotham_bold"
         android:backgroundTint="@color/button_move_on_color"
-        app:layout_constraintStart_toStartOf="@id/alertTeacherEditText"
-        app:layout_constraintEnd_toEndOf="@id/alertTeacherEditText"
-        app:layout_constraintTop_toBottomOf="@id/alertTeacherEditText" />
+        app:layout_constraintStart_toStartOf="@id/alertUserEditText"
+        app:layout_constraintEnd_toEndOf="@id/alertUserEditText"
+        app:layout_constraintTop_toBottomOf="@id/alertUserEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

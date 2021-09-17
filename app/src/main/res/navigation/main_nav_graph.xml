@@ -45,6 +45,13 @@
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_studentQuizFragment"
+            app:destination="@id/studentQuizFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/giftFragment"
@@ -631,5 +638,21 @@
             app:exitAnim="@anim/to_left"
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentQuizFragment"
+        android:name="com.metehanbolat.teknofestegitim.view.mainviews.quizroom.StudentQuizFragment"
+        android:label="fragment_student_quiz"
+        tools:layout="@layout/fragment_student_quiz" >
+        <action
+            android:id="@+id/action_studentQuizFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <argument
+            android:name="title"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -1,23 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/teacher_quiz_fragment"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.teacherviews.quizroom.TeacherQuizFragment">
 
-    <EditText
-        android:id="@+id/quizQuestionEditText"
+    <TextView
+        android:id="@+id/teacher_quiz_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/edittext_background"
-        android:hint="Sormak istediğiniz soruyu yazın..."
-        android:padding="10dp"
-        android:layout_marginTop="160dp"
-        android:textColor="@color/black"
+        android:textColor="@color/button_move_on_color"
+        android:textSize="28sp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/gotham_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/quizQuestionEditText"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edittext_background"
+        android:gravity="center"
+        android:hint="@string/write_question_ask"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:justificationMode="inter_word"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="50dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/teacher_quiz_title" />
 
     <LinearLayout
         android:id="@+id/quizLinear"
@@ -36,43 +57,63 @@
 
             <EditText
                 android:id="@+id/quizAnswerOne"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:hint="1. Cevap"
+                android:hint="@string/first_answer"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/black"
                 android:background="@drawable/edittext_background"
-                android:padding="8dp" />
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="5dp"
+                android:importantForAutofill="no"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/quizAnswerTwo"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:hint="2. Cevap"
+                android:hint="@string/second_answer"
                 android:layout_marginTop="7dp"
                 android:textColor="@color/black"
                 android:background="@drawable/edittext_background"
-                android:padding="8dp" />
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="5dp"
+                android:importantForAutofill="no"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/quizAnswerThree"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:hint="3. Cevap"
+                android:hint="@string/third_answer"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/black"
                 android:background="@drawable/edittext_background"
-                android:padding="8dp" />
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="5dp"
+                android:importantForAutofill="no"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/quizAnswerFour"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:hint="4. Cevap"
+                android:hint="@string/fourth_answer"
                 android:layout_marginTop="7dp"
                 android:textColor="@color/black"
                 android:background="@drawable/edittext_background"
-                android:padding="8dp" />
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="5dp"
+                android:importantForAutofill="no"
+                android:inputType="text" />
 
         </LinearLayout>
 
@@ -86,21 +127,33 @@
 
             <RadioButton
                 android:id="@+id/radioButtonOne"
+                android:textColor="@color/white"
+                android:fontFamily="@font/gotham_bold"
+                android:buttonTint="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <RadioButton
                 android:id="@+id/radioButtonTwo"
+                android:textColor="@color/white"
+                android:buttonTint="@color/white"
+                android:fontFamily="@font/gotham_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <RadioButton
                 android:id="@+id/radioButtonThree"
+                android:textColor="@color/white"
+                android:buttonTint="@color/white"
+                android:fontFamily="@font/gotham_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <RadioButton
                 android:id="@+id/radioButtonFour"
+                android:textColor="@color/white"
+                android:fontFamily="@font/gotham_bold"
+                android:buttonTint="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -113,10 +166,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/button_move_on_color"
-        android:text="Sor"
+        android:text="@string/ask"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="@id/quizQuestionEditText"
         app:layout_constraintEnd_toEndOf="@id/quizQuestionEditText"
         app:layout_constraintTop_toBottomOf="@id/quizLinear" />
+
+    <Button
+        android:id="@+id/quizClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/close_quiz_room"
+        android:backgroundTint="@color/red"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

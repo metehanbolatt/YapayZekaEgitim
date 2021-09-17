@@ -70,5 +70,7 @@
     <color name="recycler_achievement_background">#f7f7f7</color>
 
     <color name="fragment_education_nine_background">#001A2C</color>
+    
+    <color name="teacher_quiz_fragment">#331161</color>
 
 </resources>

@@ -30,6 +30,9 @@ class TeacherQuizFragment : Fragment() {
 
     private var counter = 0
     private var radioControl = 0
+    private var questionNumberControl = 1
+
+    private lateinit var quizRoom : String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +42,11 @@ class TeacherQuizFragment : Fragment() {
         val view = binding.root
 
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.black)
+
+        arguments?.let {
+            quizRoom = TeacherQuizFragmentArgs.fromBundle(it).quizRoomId
+            binding.teacherQuizTitle.text = resources.getString(R.string.quiz_room_title, quizRoom)
+        }
 
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
@@ -66,7 +74,7 @@ class TeacherQuizFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.radioButtonOne.setOnClickListener{
-            binding.radioButtonOne.text = "Doğru"
+            binding.radioButtonOne.text = resources.getString(R.string.quiz_true)
             binding.radioButtonTwo.text = resources.getString(R.string.empty)
             binding.radioButtonThree.text = resources.getString(R.string.empty)
             binding.radioButtonFour.text = resources.getString(R.string.empty)
@@ -75,7 +83,7 @@ class TeacherQuizFragment : Fragment() {
 
         binding.radioButtonTwo.setOnClickListener{
             binding.radioButtonOne.text = resources.getString(R.string.empty)
-            binding.radioButtonTwo.text = "Doğru"
+            binding.radioButtonTwo.text = resources.getString(R.string.quiz_true)
             binding.radioButtonThree.text = resources.getString(R.string.empty)
             binding.radioButtonFour.text = resources.getString(R.string.empty)
             radioControl = 2
@@ -84,7 +92,7 @@ class TeacherQuizFragment : Fragment() {
         binding.radioButtonThree.setOnClickListener{
             binding.radioButtonOne.text = resources.getString(R.string.empty)
             binding.radioButtonTwo.text = resources.getString(R.string.empty)
-            binding.radioButtonThree.text = "Doğru"
+            binding.radioButtonThree.text = resources.getString(R.string.quiz_true)
             binding.radioButtonFour.text = resources.getString(R.string.empty)
             radioControl = 3
         }
@@ -93,39 +101,51 @@ class TeacherQuizFragment : Fragment() {
             binding.radioButtonOne.text = resources.getString(R.string.empty)
             binding.radioButtonTwo.text = resources.getString(R.string.empty)
             binding.radioButtonThree.text = resources.getString(R.string.empty)
-            binding.radioButtonFour.text = "Doğru"
+            binding.radioButtonFour.text = resources.getString(R.string.quiz_true)
             radioControl = 4
         }
 
         binding.quizButton.setOnClickListener {
 
             if (binding.quizQuestionEditText.text.isNullOrBlank()){
-                Snackbar.make(view, "Lütfen soru giriniz!!", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(view, resources.getString(R.string.u_must_write_a_question), Snackbar.LENGTH_LONG).show()
             }else{
                 if (binding.quizAnswerOne.text.isNullOrBlank() || binding.quizAnswerTwo.text.isNullOrBlank() || binding.quizAnswerThree.text.isNullOrBlank() || binding.quizAnswerFour.text.isNullOrBlank()){
-                    Snackbar.make(view, "Lütfen boş cevap bırakmayın", Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(view, resources.getString(R.string.u_must_write_whole_answer_field), Snackbar.LENGTH_LONG).show()
                 }else{
-                    if (binding.radioButtonOne.text == "Doğru" || binding.radioButtonTwo.text == "Doğru" || binding.radioButtonThree.text == "Doğru" || binding.radioButtonFour.text == "Doğru"){
+                    if (binding.radioButtonOne.text == resources.getString(R.string.quiz_true) || binding.radioButtonTwo.text == resources.getString(R.string.quiz_true) || binding.radioButtonThree.text == resources.getString(R.string.quiz_true) || binding.radioButtonFour.text == resources.getString(R.string.quiz_true)){
                         val questionMap = hashMapOf<String, Any>()
-                        questionMap["question"] = binding.quizQuestionEditText.text.toString()
-                        questionMap["answer_one"] = binding.quizAnswerOne.text.toString()
-                        questionMap["answer_two"] = binding.quizAnswerTwo.text.toString()
-                        questionMap["answer_three"] = binding.quizAnswerThree.text.toString()
-                        questionMap["answer_four"] = binding.quizAnswerFour.text.toString()
-                        questionMap["correct_answer"] = radioControl.toString()
+                        questionMap[resources.getString(R.string.quiz_question)] = binding.quizQuestionEditText.text.toString()
+                        questionMap[resources.getString(R.string.quiz_answer_one)] = binding.quizAnswerOne.text.toString()
+                        questionMap[resources.getString(R.string.quiz_answer_two)] = binding.quizAnswerTwo.text.toString()
+                        questionMap[resources.getString(R.string.quiz_answer_three)] = binding.quizAnswerThree.text.toString()
+                        questionMap[resources.getString(R.string.quiz_answer_four)] = binding.quizAnswerFour.text.toString()
+                        questionMap[resources.getString(R.string.quiz_correct_answer)] = radioControl.toString()
+                        questionMap[resources.getString(R.string.quiz_question_number)] = questionNumberControl
 
-                        firestore.collection("quizRoom").document("qwe123").collection("questions").document("question").update(questionMap).addOnSuccessListener {
-                            Snackbar.make(view, "Soru öğrencilere gönderildi.", Snackbar.LENGTH_LONG).show()
+                        firestore.collection(resources.getString(R.string.quiz_room)).document(quizRoom).collection(resources.getString(R.string.quiz_questions)).document(resources.getString(R.string.quiz_question)).update(questionMap).addOnSuccessListener {
+                            Snackbar.make(view, resources.getString(R.string.success_question_send), Snackbar.LENGTH_LONG).show()
+                            questionNumberControl++
                         }.addOnFailureListener {
-                            Snackbar.make(view, "Soru gönderilirken hata oluştu", Snackbar.LENGTH_LONG).show()
+                            Snackbar.make(view, resources.getString(R.string.failed_question_send), Snackbar.LENGTH_LONG).show()
                         }
                     }else{
-                        Snackbar.make(view, "Şıklardan birini doğru olarak işaretlemelisiniz", Snackbar.LENGTH_LONG).show()
+                        Snackbar.make(view, resources.getString(R.string.one_answer_must_correct), Snackbar.LENGTH_LONG).show()
                     }
                 }
             }
+        }
 
-
+        binding.quizClose.setOnClickListener {
+            Snackbar.make(it, resources.getString(R.string.are_u_sure_close_quiz_room, quizRoom), Snackbar.LENGTH_INDEFINITE).setAction(resources.getString(R.string.close)){
+                firestore.collection(resources.getString(R.string.quiz_room)).document(quizRoom).collection(resources.getString(R.string.quiz_questions)).document(resources.getString(R.string.quiz_question)).delete().addOnSuccessListener {
+                    firestore.collection(resources.getString(R.string.quiz_room)).document(quizRoom).delete().addOnSuccessListener {
+                        Snackbar.make(view, resources.getString(R.string.close_quiz_room_snack_text, quizRoom), Snackbar.LENGTH_LONG).show()
+                        navController = findNavController()
+                        navController.navigate(R.id.action_teacherQuizFragment_to_teacherMainFragment)
+                    }
+                }
+            }.show()
         }
     }
 

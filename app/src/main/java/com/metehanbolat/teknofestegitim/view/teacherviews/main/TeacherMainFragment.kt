@@ -87,26 +87,44 @@ class TeacherMainFragment : Fragment() {
             builder.setView(alertBinding.root)
             alertBinding.alertTeacherButton.setOnClickListener {
                 if (alertBinding.alertTeacherEditText.text.isNullOrBlank()){
-                    Snackbar.make(view, "Sınav odası oluşturmak için lütfen şifre girin.", Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(view, resources.getString(R.string.create_quiz_room_password), Snackbar.LENGTH_LONG).show()
                 }else{
+                    alertBinding.alertTeacherButton.visibility = View.INVISIBLE
+                    alertBinding.alertTeacherEditText.visibility = View.INVISIBLE
+                    alertBinding.alertTeacherTitle.visibility = View.INVISIBLE
+                    alertBinding.teacherProgress.visibility = View.VISIBLE
+
                     val quizRoomPassword = alertBinding.alertTeacherEditText.text.toString()
                     val quizDataMap = hashMapOf<String, Any>()
-                    quizDataMap["question"] = resources.getString(R.string.empty)
-                    quizDataMap["answer_one"] = resources.getString(R.string.empty)
-                    quizDataMap["answer_two"] = resources.getString(R.string.empty)
-                    quizDataMap["answer_three"] = resources.getString(R.string.empty)
-                    quizDataMap["answer_four"] = resources.getString(R.string.empty)
-                    quizDataMap["correct_answer"] = resources.getString(R.string.empty)
+                    quizDataMap[resources.getString(R.string.quiz_question)] = resources.getString(R.string.empty)
+                    quizDataMap[resources.getString(R.string.quiz_answer_one)] = resources.getString(R.string.empty)
+                    quizDataMap[resources.getString(R.string.quiz_answer_two)] = resources.getString(R.string.empty)
+                    quizDataMap[resources.getString(R.string.quiz_answer_three)] = resources.getString(R.string.empty)
+                    quizDataMap[resources.getString(R.string.quiz_answer_four)] = resources.getString(R.string.empty)
+                    quizDataMap[resources.getString(R.string.quiz_correct_answer)] = resources.getString(R.string.empty)
+                    quizDataMap[resources.getString(R.string.quiz_question_number)] = resources.getString(R.string._zero)
 
-                    firestore.collection("quizRoom").document(quizRoomPassword).collection("questions").document("question").set(quizDataMap).addOnSuccessListener {
+                    val emptyHashMap = hashMapOf<String, Any>()
+                    emptyHashMap[resources.getString(R.string.document_id)] = quizRoomPassword
+
+                    firestore.collection(resources.getString(R.string.quiz_room)).document(quizRoomPassword).set(emptyHashMap)
+                    firestore.collection(resources.getString(R.string.quiz_room)).document(quizRoomPassword).collection(resources.getString(R.string.quiz_questions)).document(resources.getString(R.string.quiz_question)).set(quizDataMap).addOnSuccessListener {
                         navController = findNavController()
-                        navController.navigate(R.id.action_teacherMainFragment_to_teacherQuizFragment)
+                        val action = TeacherMainFragmentDirections.actionTeacherMainFragmentToTeacherQuizFragment(quizRoomPassword)
+                        navController.navigate(action)
                         builder.dismiss()
                     }.addOnFailureListener {
-                        Snackbar.make(view, "Soru odası oluşturulamadı", Snackbar.LENGTH_LONG).show()
+                        Snackbar.make(view, resources.getString(R.string.failed_quiz_room_create), Snackbar.LENGTH_LONG).show()
+                        alertBinding.alertTeacherButton.visibility = View.VISIBLE
+                        alertBinding.alertTeacherEditText.visibility = View.VISIBLE
+                        alertBinding.alertTeacherTitle.visibility = View.VISIBLE
+                        alertBinding.teacherProgress.visibility = View.INVISIBLE
                         builder.dismiss()
                     }
                 }
+            }
+            builder.setOnCancelListener {
+                (alertBinding.root.parent as ViewGroup).removeView(alertBinding.root)
             }
             builder.show()
         }

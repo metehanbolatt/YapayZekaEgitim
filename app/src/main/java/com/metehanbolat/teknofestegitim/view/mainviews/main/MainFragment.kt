@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -18,12 +19,16 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.metehanbolat.teknofestegitim.R
 import com.metehanbolat.teknofestegitim.databinding.FragmentMainBinding
+import com.metehanbolat.teknofestegitim.databinding.UserQuizRoomClickAlertDesignBinding
 import com.metehanbolat.teknofestegitim.view.userviews.UserActivity
 
 class MainFragment : Fragment() {
 
     private var _binding : FragmentMainBinding? = null
     private val binding get() = _binding!!
+
+    private var _alertBinding : UserQuizRoomClickAlertDesignBinding? = null
+    private val alertBinding get() = _alertBinding!!
 
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
@@ -34,6 +39,8 @@ class MainFragment : Fragment() {
     private var userSurname : Any? = null
     private var userCoin : Any? = null
 
+    private lateinit var list : ArrayList<String>
+
     private var counter = 0
 
     override fun onCreateView(
@@ -41,6 +48,7 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
+        _alertBinding = UserQuizRoomClickAlertDesignBinding.inflate(inflater, container, false)
         val view = binding.root
 
         auth = Firebase.auth
@@ -77,8 +85,31 @@ class MainFragment : Fragment() {
         }
 
         binding.achievementCardView.setOnClickListener {
-            navController = findNavController()
-            navController.navigate(R.id.action_mainFragment_to_achievementFragment)
+
+            getQuizRoomList()
+
+            val builder = AlertDialog.Builder(requireContext()).create()
+            builder.setView(alertBinding.root)
+            alertBinding.alertUserButton.setOnClickListener {
+                if (alertBinding.alertUserEditText.text.isNullOrBlank()){
+                    Snackbar.make(view, resources.getString(R.string.user_enter_quiz_room_password), Snackbar.LENGTH_LONG).show()
+                }else{
+                    for (id in list){
+                        if (id == alertBinding.alertUserEditText.text.toString()){
+                            navController = findNavController()
+                            val action = MainFragmentDirections.actionMainFragmentToStudentQuizFragment(id)
+                            navController.navigate(action)
+                            builder.dismiss()
+                            break
+                        }
+                    }
+                }
+            }
+
+            builder.setOnCancelListener {
+                (alertBinding.root.parent as ViewGroup).removeView(alertBinding.root)
+            }
+            builder.show()
         }
 
         binding.machineLearningCardView.setOnClickListener {
@@ -88,8 +119,8 @@ class MainFragment : Fragment() {
 
         binding.computerVision.setOnClickListener {
             navController = findNavController()
-            val action = MainFragmentDirections.actionMainFragmentToComputerVisionFragment(auth.currentUser?.email.toString(),userCoin.toString().toInt())
-            navController.navigate(R.id.action_mainFragment_to_computerVisionFragment,action.arguments)
+            val action = MainFragmentDirections.actionMainFragmentToComputerVisionFragment(auth.currentUser?.email.toString(), userCoin.toString().toInt())
+            navController.navigate(R.id.action_mainFragment_to_computerVisionFragment, action.arguments)
         }
 
         binding.giftCardView.setOnClickListener {
@@ -103,7 +134,6 @@ class MainFragment : Fragment() {
             startActivity(intent)
             activity?.finish()
         }
-
     }
 
     private fun getUserData(name : String, view : View){
@@ -114,7 +144,6 @@ class MainFragment : Fragment() {
                     userName = document.data!![resources.getString(R.string.firebase_userName)]
                     userSurname = document.data!![resources.getString(R.string.firebase_userSurname)]
                     userCoin = document.data!![resources.getString(R.string.firebase_userCoin)]
-
                     binding.userName.text = resources.getString(R.string.name_surname, userName.toString(), userSurname.toString())
                     binding.userCoin.text = userCoin.toString()
                     binding.progressBar.visibility = View.INVISIBLE
@@ -126,9 +155,27 @@ class MainFragment : Fragment() {
         }
     }
 
+    private fun getQuizRoomList(){
+
+        firestore.collection(resources.getString(R.string.quiz_room)).get().addOnCompleteListener {
+            if (it.isSuccessful){
+                list = ArrayList()
+                for (doc in it.result!!){
+                    list.add(doc.id)
+                }
+                alertBinding.alertUserEditText.visibility = View.VISIBLE
+                alertBinding.alertUserButton.visibility = View.VISIBLE
+                alertBinding.alertUserTitle.visibility = View.VISIBLE
+                alertBinding.studentProgressBar.visibility = View.INVISIBLE
+            }
+        }
+
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        _alertBinding = null
     }
 
 }
