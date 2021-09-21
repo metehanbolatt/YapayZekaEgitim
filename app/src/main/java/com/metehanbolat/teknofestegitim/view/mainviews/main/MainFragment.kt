@@ -128,6 +128,13 @@ class MainFragment : Fragment() {
             navController.navigate(R.id.action_mainFragment_to_giftFragment)
         }
 
+        binding.giftCardView.setOnLongClickListener {
+            navController = findNavController()
+            navController.navigate(R.id.action_mainFragment_to_achievementFragment)
+
+            return@setOnLongClickListener true
+        }
+
         binding.signOutCardView.setOnClickListener {
             auth.signOut()
             val intent = Intent(requireContext(), UserActivity::class.java)

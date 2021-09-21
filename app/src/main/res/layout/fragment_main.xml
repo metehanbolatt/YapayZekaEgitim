@@ -224,8 +224,7 @@
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="95dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/chest"
-                    android:scaleType="centerCrop"
+                    android:src="@drawable/quiz_room_card"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

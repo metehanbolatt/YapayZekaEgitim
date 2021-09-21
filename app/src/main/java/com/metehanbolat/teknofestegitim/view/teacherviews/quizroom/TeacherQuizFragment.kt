@@ -41,7 +41,7 @@ class TeacherQuizFragment : Fragment() {
         _binding = FragmentTeacherQuizBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.black)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.teacher_quiz_fragment)
 
         arguments?.let {
             quizRoom = TeacherQuizFragmentArgs.fromBundle(it).quizRoomId

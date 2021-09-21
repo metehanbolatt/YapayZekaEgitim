@@ -45,7 +45,7 @@ class StudentQuizFragment : Fragment() {
             binding.studentQuestionRoomTitle.text = resources.getString(R.string.quiz_room_title, title)
         }
 
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.black)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), R.color.teacher_quiz_fragment)
 
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
