@@ -51,7 +51,7 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
 
     private var questionModels : ArrayList<QuestionModel> ?= null
     private lateinit var questionsRightAnswer : String
-    private var questionNumber = 0
+    private var questionNumber = Random().nextInt(24)
 
     private val buttons = arrayOfNulls<Button>(9)
     private var playerOneScoreCount = 0
@@ -142,6 +142,7 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
 
         binding.turnButton.setOnClickListener {
             showImagePickDialog(it)
+            it.visibility = View.INVISIBLE
 
             if (secondTour == 1) {
                 binding.roundButton.text = resources.getString(R.string.roundStart, turnCounter)
@@ -149,9 +150,7 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
             if (thirdTour == 1) {
                 binding.roundButton.text = resources.getString(R.string.third_round_start)
             }
-            binding.turnButton.visibility = View.VISIBLE
             binding.roundButton.visibility = View.INVISIBLE
-
         }
 
         binding.roundButton.setOnClickListener {
@@ -205,12 +204,14 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                 gameState[gameStatePointer] = 0
                 questionSeeControl = false
                 activePlayer = true
+                binding.turnButton.visibility = View.VISIBLE
             } else {
                 view.text = resources.getString(R.string.x)
                 view.setTextColor(ContextCompat.getColor(view.context, R.color.white))
                 gameState[gameStatePointer] = 1
                 questionSeeControl = false
                 activePlayer = false
+                binding.turnButton.visibility = View.VISIBLE
             }
             roundCount++
             if (checkWinner()) {
@@ -308,13 +309,15 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                     Snackbar.make(view, resources.getString(R.string.true_answer_two), Snackbar.LENGTH_SHORT).show()
                     control = true
                     questionSeeControl = true
+                    binding.turnButton.visibility = View.INVISIBLE
+
                 }else{
                     Snackbar.make(view, resources.getString(R.string.wrong_answer_two), Snackbar.LENGTH_SHORT).show()
                     control = false
                     questionSeeControl = false
                     wrongAnswer()
                 }
-                questionNumber += 1
+                questionNumber = Random().nextInt(24)
             }
             if (i == 1) {
 
@@ -322,6 +325,8 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                     Snackbar.make(view, resources.getString(R.string.true_answer_two), Snackbar.LENGTH_SHORT).show()
                     control = true
                     questionSeeControl = true
+                    binding.turnButton.visibility = View.INVISIBLE
+
                 }else{
                     Snackbar.make(view, resources.getString(R.string.wrong_answer_two), Snackbar.LENGTH_SHORT).show()
                     control = false
@@ -329,13 +334,15 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                     wrongAnswer()
 
                 }
-                questionNumber += 1
+                questionNumber = Random().nextInt(24)
             }
             if (i == 2){
                 if (questionsRightAnswer == answerThree){
                     Snackbar.make(view, resources.getString(R.string.true_answer_two), Snackbar.LENGTH_SHORT).show()
                     control = true
                     questionSeeControl = true
+                    binding.turnButton.visibility = View.INVISIBLE
+
                 }else{
                     Snackbar.make(view, resources.getString(R.string.wrong_answer_two), Snackbar.LENGTH_SHORT).show()
                     control = false
@@ -343,7 +350,7 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                     wrongAnswer()
 
                 }
-                questionNumber += 1
+                questionNumber = Random().nextInt(24)
 
             }
             if (i == 3){
@@ -351,6 +358,8 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                     Snackbar.make(view, resources.getString(R.string.true_answer_two), Snackbar.LENGTH_SHORT).show()
                     control = true
                     questionSeeControl = true
+                    binding.turnButton.visibility = View.INVISIBLE
+
                 }else{
                     Snackbar.make(view, resources.getString(R.string.wrong_answer_two), Snackbar.LENGTH_SHORT).show()
                     control = false
@@ -358,7 +367,7 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
                     wrongAnswer()
 
                 }
-                questionNumber += 1
+                questionNumber = Random().nextInt(24)
             }
         }
         builder.create().show()
@@ -395,6 +404,7 @@ class MachineTicTacToeFragment : Fragment(),View.OnClickListener {
 
     private fun wrongAnswer(){
 
+        binding.turnButton.visibility = View.VISIBLE
         activePlayer =! activePlayer
         if (binding.playerStatus.text == resources.getString(R.string.your_turn)){
             binding.playerStatus.text = resources.getString(R.string.rival_turn)

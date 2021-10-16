@@ -60,7 +60,7 @@ class MachineMineSweeperFragment : Fragment() {
 
     private var questionModels : ArrayList<QuestionModel> ?= null
     private lateinit var questionsRightAnswer : String
-    private var questionNumber = 0
+    private var questionNumber = Random().nextInt(24)
 
     private lateinit var call : Call<List<QuestionModel>>
 
@@ -451,7 +451,7 @@ class MachineMineSweeperFragment : Fragment() {
                         coinDecrease.userCoinDecrease(resources.getString(R.string.firebase_userCoin), it!!, 5)
                     }
                 }
-                questionNumber += 1
+                questionNumber = Random().nextInt(24)
             }
             if (i == 1) {
                 if (questionsRightAnswer == answerTwo){
@@ -468,7 +468,7 @@ class MachineMineSweeperFragment : Fragment() {
                         coinDecrease.userCoinDecrease(resources.getString(R.string.firebase_userCoin), it!!, 5)
                     }
                 }
-                questionNumber += 1
+                questionNumber = Random().nextInt(24)
             }
             if (i == 2){
                 if (questionsRightAnswer == answerThree){
@@ -485,7 +485,7 @@ class MachineMineSweeperFragment : Fragment() {
                         coinDecrease.userCoinDecrease(resources.getString(R.string.firebase_userCoin), it!!, 5)
                     }
                 }
-                questionNumber += 1
+                questionNumber = Random().nextInt(24)
 
             }
             if (i == 3){
@@ -503,7 +503,7 @@ class MachineMineSweeperFragment : Fragment() {
                         coinDecrease.userCoinDecrease(resources.getString(R.string.firebase_userCoin), it!!, 5)
                     }
                 }
-                questionNumber += 1
+                questionNumber = Random().nextInt(24)
             }
         }
         builder.create().show()
