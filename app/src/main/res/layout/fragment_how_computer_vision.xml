@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="180dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/computer_vision_background"
+        android:background="@color/black"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize20"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
